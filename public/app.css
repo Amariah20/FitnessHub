@@ -1,7 +1,15 @@
 
-.body{
-    font-family: 'Trebuchet MS', Helvetica, sans-serif; /*not working*/
 
+
+body {
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    font-family: 'Trebuchet MS', Helvetica, sans-serif; /*not working*/
+}
+
+#app {
+    flex: 1; /* Allow the main content to grow and fill available space */
 }
 
 .nav-logo{
