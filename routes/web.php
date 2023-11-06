@@ -37,7 +37,8 @@ Route::middleware(['auth', 'global.admin'])->group(function () {
     Route::post('/AdminAccess/{user}/revoke-admin-access', [App\Http\Controllers\GlobalAdminController::class, 'revokeAdminAccess'])->name('revokeAdminAccess');
 });
 
-
+//The code for password reset is from laravel documentation: https://laravel.com/docs/10.x/passwords
+    
 Route::get('/forgot-password', function () {
     return view('auth.passwords.email');
 })->middleware('guest')->name('password.request');
