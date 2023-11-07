@@ -13,35 +13,35 @@
 
     <div class="mb">
         <label class="label">Name of your Fitness Centre</label>
-        <input type="text" name="name" class="form-control" id="" placeholder="">
+        <input type="text" name="name" class="form-control" required>
     </div>
     <div class="mb">
         <label class="label">Location</label>
-        <input type="text" name="location" class="form-control" id="" placeholder="">
+        <input type="text" name="location" class="form-control" required>
     </div>
     <div class="mb">
         <label class="label">Opening Hours</label>
-        <input type="text" name="opening_hours" class="form-control" id="" placeholder="">
+        <input type="text" name="opening_hours" class="form-control" required>
     </div>
     <div class="mb">
         <label class="label">Phone Number</label>
-        <input type="number" name="phone_number" class="form-control" id="" placeholder="">
+        <input type="number" name="phone_number" class="form-control" required>
     </div>
     <div class="mb">
         <label class="label">Email Adress</label>
-        <input type="email" name="email" class="form-control" id="" placeholder="">
+        <input type="email" name="email" class="form-control" required>
     </div>
     <div class="mb">
         <label class="label">Instagram username</label>
-        <input type="text" name="instagram" class="form-control" id="" placeholder="">
+        <input type="text" name="instagram" class="form-control">
     </div>
     <div class="mb">
         <label class="label">Facebook Username</label>
-        <input type="text" name="facebook" class="form-control" id="" placeholder="">
+        <input type="text" name="facebook" class="form-control">
     </div>
     <div class="mb">
         <label class="label">Write a captivating description</label>
-        <textarea class="form-control" name="description" id="" rows="3"></textarea>
+        <textarea class="form-control" name="description" required rows="3"></textarea>
     </div>
         <button type="submit">Continue </button>
          

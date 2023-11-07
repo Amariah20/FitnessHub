@@ -102,3 +102,4 @@ Route::post('StoreMembership', 'App\Http\Controllers\MembershipController@storeM
 Route::get('gymIndividual/{Gym_id}', 'App\Http\Controllers\GymController@show')->name('gymIndividual');
 
 Route::get('gymAll','App\Http\Controllers\GymController@list')->name('list_gym');
+

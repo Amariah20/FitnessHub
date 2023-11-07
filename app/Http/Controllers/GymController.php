@@ -52,8 +52,12 @@ class GymController extends Controller
         $NewGym-> facebook =  $gymFacebook;
         $NewGym -> opening_hours =  $gymOpeningHours;
         $NewGym->user_id = $userId;
+        
 
         $NewGym-> save();
+        return redirect('Popup.blade.php')->with('success', 'Data saved');
+
+       
 
 
         
