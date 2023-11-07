@@ -1,0 +1,96 @@
+/*I used this for help with splitting the screen in two: https://www.w3schools.com/howto/howto_css_split_screen.asp */
+
+.split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 10%;
+  }
+
+  /*control left side*/
+  .left{
+    left:0;
+  }
+
+    /* Control the right side */
+.right {
+    right: 0;
+    
+ }
+
+.right .container{
+    background-color: #E6E6E6;
+    
+}
+
+.heading{
+    color:#4e4d4d;
+    font-size: 40px;
+}
+
+
+p{
+    font-size:20px;
+}
+
+.banner{
+    font-size: 45px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.logo{
+    display: flex;
+    margin:0 auto;
+    position: relative;
+    top: -10%; 
+    height: 160px;
+    width: 160px;
+  }
+
+  button{
+    background-color: #2A2A2A;
+    color: white;
+    position:absolute;
+    right: 10%;
+    bottom: 25%;
+    width: 250px;
+    height: 62px;
+    font-size: 30px;
+    
+  }
+
+  .gympic{
+    width: 20%;
+    height: 10%;
+    position: absolute;
+    right: 0%;
+    
+    
+  }
+
+  /*for addGym*/
+
+  .container{
+    position: relative;
+    font-size: large;
+    padding-top: 20px;;
+    
+    
+  }
+
+  .mb{
+    width: 30%;
+    
+
+    
+  }
+
+  
+    
+  
+
+  
