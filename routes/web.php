@@ -83,3 +83,22 @@ Route::post('/reset-password', function (Request $request) {
                 ? redirect()->route('login')->with('status', __($status))
                 : back()->withErrors(['email' => [__($status)]]);
 })->middleware('guest')->name('password.update');
+
+
+//to register gym
+Route::get('registerGym/getStarted', function () {
+    return view('registerGym.getStarted');
+});
+
+//Route::get('registerGym/addGym', function(){
+  //  return view('registerGym.addGym');
+//})->name('gyms.create');
+
+Route::get('/gyms/create', 'App\Http\Controllers\GymController@createGym')->name('gyms.create'); //only admins have access to this
+Route::post('storeGym',  'App\Http\Controllers\GymController@storeGym');
+Route::get('/membership/create', 'App\Http\Controllers\MembershipController@createMembership')->name('membership.create'); //only admins have access to this
+Route::post('StoreMembership', 'App\Http\Controllers\MembershipController@storeMembership')->name('memberships.store');
+
+Route::get('gymIndividual/{Gym_id}', 'App\Http\Controllers\GymController@show')->name('gymIndividual');
+
+Route::get('gymAll','App\Http\Controllers\GymController@list')->name('list_gym');
