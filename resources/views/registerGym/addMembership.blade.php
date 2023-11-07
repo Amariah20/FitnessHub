@@ -25,11 +25,23 @@
         <textarea class="form-control" name="description" id="" rows="3"></textarea>
     </div>
 
+    <div class="mb">
+    <label class="label">Which gym do you want to associate with this membership?</label>
+    <select name="SelectedGymID">
+       
+            @foreach($gym as $gym)
+                <option value="{{ $gym->Gym_id }}">{{ $gym->name }}</option>
+            @endforeach
+       
+    </select>
+</div>
+
+
     <!--<input type="hidden" name="gym_id" value="{{ auth()->user()->gym_id }}">-->
 
     
 
-    <button type="submit">Add Another Membership </button><br>
+  
         <button type="submit">Continue </button>
 
          

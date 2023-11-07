@@ -60,9 +60,9 @@ class User extends Authenticatable
         $this-> notify (new CustomisedResetPassword($token));
     }
      
-     //rela between gym and user. NEED TO CHANGE TO ALLOW A USER TO ADD MANY GYMS
+     //rela between gym and user. a user can add many gyms
      public function gym()
      {
-         return $this->hasOne(Gym::class); 
+         return $this->hasMany(Gym::class); 
      }
 }

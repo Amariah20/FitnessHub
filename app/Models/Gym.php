@@ -15,7 +15,7 @@ class Gym extends Model
          return $this->hasMany(Membership::class);
      }
  
-     //rela between gym and user //NEED TO ADD SOMETHING IN USER MODEL TO SHOW A USER CAN OWN MANY GYMS?
+     //rela between gym and user 
     public function user()
      {
          return $this->belongsTo(User::class); 

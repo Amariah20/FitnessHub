@@ -11,17 +11,29 @@ use Illuminate\Support\Facades\Auth;
 class MembershipController extends Controller
 {
     public function createMembership(){
-        return view('registerGym.addMembership'); 
+/*Go through gyms table, see what gyms are associated with the user id (the user that is logged in). 
+display these in a drop down and let them select which gym they want the membership to apply to*/
+
+        $user = Auth::user(); // Get the logged in user
+       
+        $gym = $user->gym; // Retrieve the gyms associated with the user
+
+        
+        return view('registerGym.addMembership', compact('gym'));
     }
 
     public function storeMembership(Request $req)
         {
             $CurrentUser = Auth::user();
             
-        
+         
             // Checking if user has a gym
-            if (!$CurrentUser->gym) { //there's a rela between gym and user in modelS. NEED TO ADD THIS IN USER MODEL TOO??
+            if (!$CurrentUser->gyms) { //there's a rela between gym and user in models.
                return 'You must create a gym first, before adding memberships.';
+            }
+
+            if (empty($SelectedGymID)) {
+                return 'Please select a gym before adding a membership.';
             }
 
            
@@ -31,12 +43,15 @@ class MembershipController extends Controller
             $MembershipName = $req-> name;
             $MembershipPrice= $req->price;
             $MembershipDescription = $req-> description;
+            $SelectedGymID= $req -> SelectedGymID;
+
+          
 
             $NewMembership = new \App\Models\Membership();
             $NewMembership->name = $MembershipName;
             $NewMembership->price = $MembershipPrice;
             $NewMembership->description =  $MembershipDescription;
-            $NewMembership->gym_id = $CurrentUser-> gym->Gym_id; 
+            $NewMembership->gym_id = $SelectedGymID;
 
             $NewMembership->save();
             
