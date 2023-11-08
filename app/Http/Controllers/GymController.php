@@ -55,7 +55,8 @@ class GymController extends Controller
         
 
         $NewGym-> save();
-        return redirect('Popup.blade.php')->with('success', 'Data saved');
+        return redirect()->route('membership.create')->with('success', 'Membership successfully added');
+
 
        
 

@@ -3,6 +3,20 @@
 @section('content')
 <!--I used bootstrap for the forms to register gym: https://getbootstrap.com/docs/5.0/forms/form-control/-->
 <link rel="stylesheet" type="text/css" href="/getStarted.css"> 
+@if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 
 
 
@@ -13,23 +27,24 @@
 
     <div class="mb">
         <label class="label">Membership Name</label>
-        <input type="text" name="name" class="form-control" id="" placeholder="">
+        <input type="text" name="name" class="form-control" required>
     </div>
     <div class="mb">
         <label class="label">Price of Membership</label>
-        <input type="number" name="price" class="form-control" id="" placeholder="">
+        <input type="number" name="price" class="form-control"  required>
     </div>
    
     <div class="mb">
         <label class="label">Write a brief description</label>
-        <textarea class="form-control" name="description" id="" rows="3"></textarea>
+        <textarea class="form-control" name="description"  rows="3" required></textarea>
     </div>
 
     <div class="mb">
     <label class="label">Which gym do you want to associate with this membership?</label>
     <select name="SelectedGymID">
-       
+    <option>Select Gym</option>
             @foreach($gym as $gym)
+                
                 <option value="{{ $gym->Gym_id }}">{{ $gym->name }}</option>
             @endforeach
        

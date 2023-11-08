@@ -28,9 +28,12 @@ display these in a drop down and let them select which gym they want the members
             
              
             // Checking if user has a gym
-            if (!$CurrentUser->gym) { //there's a rela between gym and user in models.
-               return 'You must create a gym first, before adding memberships.';
+            if ($CurrentUser->gym->isEmpty()) { //there's a rela between gym and user in models.
+             // return 'You must create a gym first, before adding memberships.';
+              //return redirect()->back()->with('error', 'You must create a gym first, before adding memberships.');
+              return redirect()->back()->withErrors(['error' => 'You must create a gym first, before adding memberships.']);
             }
+            
 
             //if (empty($SelectedGymID)) {
            //     return 'Please select a gym before adding a membership.';
