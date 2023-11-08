@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Classes;
 use App\Models\Membership;
 use App\Models\User;
+use App\Models\Offerings;
 
 class Gym extends Model
 {
@@ -29,6 +30,13 @@ class Gym extends Model
      {
          return $this->hasMany(Classes::class); 
      }
+
+      //rela between gym & offerings. gym has many offerings
+      public function offerings()
+      {
+          return $this->hasMany(Offerings::class);
+      }
+  
 
      
 }
