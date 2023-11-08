@@ -112,4 +112,6 @@ Route::post('StoreClass', 'App\Http\Controllers\ClassesController@storeClass')->
 Route::get('/offering/create', 'App\Http\Controllers\OfferingController@createOffering')->name('offering.create'); //only admins have access to this
 Route::post('StoreOffering', 'App\Http\Controllers\OfferingController@storeOffering')->name('offering.store');
 
+Route::get('/image/create', 'App\Http\Controllers\ImageController@createImage')->name('image.create'); //only admins have access to this
+Route::post('StoreImage', 'App\Http\Controllers\ImageController@storeImage')->name('image.store');
 
