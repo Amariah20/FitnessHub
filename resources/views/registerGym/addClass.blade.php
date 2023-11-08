@@ -69,7 +69,7 @@
     </select>
 </div>
     
-        <button type="submit">Continue </button>
+        <button type="submit">Add</button>
          
 </form>
 </div>

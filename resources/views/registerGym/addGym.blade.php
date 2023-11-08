@@ -43,7 +43,7 @@
         <label class="label">Write a captivating description</label>
         <textarea class="form-control" name="description" required rows="3"></textarea>
     </div>
-        <button type="submit">Continue </button>
+        <button type="submit">Add </button>
          
 </form>
 </div>
