@@ -22,10 +22,12 @@ class SuccessController extends Controller
     public function display(Request $req){
         
         $Gym_id= $req-> SelectedGymID;
-
-
         
-        return view("{{ route('gymIndividual', ['Gym_id' => $Gym_id]) }}" );
+        //duplicated code. this is same as function show in GymController
+        $gym = Gym::where('Gym_id', $Gym_id)->first();
+        return view('gymIndividual', compact('gym'));
+       
+
 
     }
 }

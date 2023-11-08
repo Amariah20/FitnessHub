@@ -15,12 +15,12 @@
             @endforeach
 
     </select>
-   <!--@foreach($gym as $gym)
-<ul> 
-   <li> <h1><a href="{{ route('gymIndividual', ['Gym_id' => $gym->Gym_id]) }}">{{ $gym->name }}</a></h1> </li>
+</div>
+
+   
 
     
     <button type="submit">View</button>
-    </form>-->
+    </form>
 
 @endsection
