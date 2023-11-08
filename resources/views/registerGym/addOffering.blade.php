@@ -22,8 +22,8 @@
         {{ session('success_offering') }}
     </div>
 
-    <!-- Add a button specific to the current page -->
-    <button type="submit"> <a href="{{ route('class.create') }}">Next</a></button>
+   
+    <button type="submit"> <a href="{{ route('image.create') }}">Next</a></button>
 @endif
 
 

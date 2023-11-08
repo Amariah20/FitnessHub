@@ -22,6 +22,7 @@
 
 
 
+
 <div class="container">
 <div class="card-header"><img src="{{ asset('images/FitnessHubLogo.png') }}"  width="400" height="70"></div>
 <form method="POST" action="{{ route('image.store') }}" enctype="multipart/form-data">

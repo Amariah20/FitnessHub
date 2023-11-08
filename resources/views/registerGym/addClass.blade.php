@@ -22,7 +22,7 @@
         {{ session('success_class') }}
     </div>
 
-    <!-- Add a button specific to the current page -->
+   
     <button type="submit"> <a href="{{ route('aboutus') }}">Next</a></button>
 @endif
 

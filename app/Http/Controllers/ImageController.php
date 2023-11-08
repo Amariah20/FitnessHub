@@ -45,27 +45,35 @@ class ImageController extends Controller
            $newImage= new \App\Models\Images();
            $SelectedGymID= $req -> SelectedGymID;
            $newImage->gym_id = $SelectedGymID;
+
+             // Create a subfolder based on the gym's id so that the images for each gym is in its own folder
+            $gymFolder = 'public/images/uploaded/gym_' . $SelectedGymID;
+
+            // checking that subfolder exists, and if not, create it
+            if (!file_exists($gymFolder)) {
+                mkdir($gymFolder, 0755, true);
+            }
            
            if($req->hasfile('logo')){
-            $file=$req->file('logo');
-            $extention= $file->getClientOriginalExtension();
-            $logo= time().'.'.$extention;
-            $file->move('public/images/uploaded/', $logo);
+            $pic=$req->file('logo');
+            $extension= $pic->getClientOriginalExtension();
+            $logo= time().'.'.$extension;
+            $pic->move($gymFolder, $logo);
             $newImage->logo=$logo;
            }
 
            if($req->hasfile('banner')){
-            $file=$req->file('banner');
-            $extention= $file->getClientOriginalExtension();
-            $banner= time().'._banner.'.$extention;
-            $file->move('public/images/uploaded/', $banner);
+            $pic=$req->file('banner');
+            $extension= $pic->getClientOriginalExtension();
+            $banner= time().'._banner.'.$extension;
+            $pic->move($gymFolder, $banner);
             $newImage->banner= $banner;
            }
            if($req->hasfile('extra_image')){
-            $file=$req->file('extra_image');
-            $extention= $file->getClientOriginalExtension();
-            $extra= time().'._extra_image.'.$extention;
-            $file->move('public/images/uploaded/', $extra);
+            $pic=$req->file('extra_image');
+            $extension= $pic->getClientOriginalExtension();
+            $extra= time().'._extra_image.'.$extension;
+            $pic->move($gymFolder, $extra);
             $newImage->extra_image=$extra;
            }
 
@@ -73,6 +81,9 @@ class ImageController extends Controller
 
            $newImage->save();
 
+           
+           //This view doesn't work. need to fix it
+          // return redirect()->route('sucessGym');
     }
         
     
