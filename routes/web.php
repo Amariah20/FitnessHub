@@ -7,6 +7,8 @@ use App\Models\User;
 use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use App\Http\Controllers\GlobalAdminController;
+use App\Http\Middleware\AdminAccess;
  
 
 /*
@@ -31,7 +33,7 @@ Route::get('/AboutUs', function () {
     return view('AboutUs');
 })->name('aboutus');
 
-
+//I used this for help to write routes that only admin/global admin can access: https://www.youtube.com/watch?v=-a7JvwW60xk
 Route::middleware(['auth', 'global.admin'])->group(function () {
     Route::get('/AdminAccess', [App\Http\Controllers\GlobalAdminController::class, 'listUsers'])->name('allUsers');
     Route::post('/AdminAccess/{user}/grant-admin-access', [App\Http\Controllers\GlobalAdminController::class, 'grantAdminAccess'])->name('grantAdminAccess');
@@ -99,20 +101,22 @@ Route::get('registerGym/getStarted', function () {
   //  return view('registerGym.addGym');
 //})->name('gyms.create');
 
-Route::get('/gyms/create', 'App\Http\Controllers\GymController@createGym')->name('gyms.create'); //only admins have access to this
+
+
+Route::get('/gyms/create', 'App\Http\Controllers\GymController@createGym')->middleware('admin')->name('gyms.create'); //only admins have access to this
 Route::post('storeGym',  'App\Http\Controllers\GymController@storeGym');
 
-Route::get('/membership/create', 'App\Http\Controllers\MembershipController@createMembership')->name('membership.create'); //only admins have access to this
+Route::get('/membership/create', 'App\Http\Controllers\MembershipController@createMembership')->middleware('admin')->name('membership.create'); //only admins have access to this
 Route::post('StoreMembership', 'App\Http\Controllers\MembershipController@storeMembership')->name('memberships.store');
 
 
-Route::get('/class/create', 'App\Http\Controllers\ClassesController@createClass')->name('class.create'); //only admins have access to this
+Route::get('/class/create', 'App\Http\Controllers\ClassesController@createClass')->middleware('admin')->name('class.create'); //only admins have access to this
 Route::post('StoreClass', 'App\Http\Controllers\ClassesController@storeClass')->name('class.store');
 
-Route::get('/offering/create', 'App\Http\Controllers\OfferingController@createOffering')->name('offering.create'); //only admins have access to this
+Route::get('/offering/create', 'App\Http\Controllers\OfferingController@createOffering')->middleware('admin')->name('offering.create'); //only admins have access to this
 Route::post('StoreOffering', 'App\Http\Controllers\OfferingController@storeOffering')->name('offering.store');
 
-Route::get('/image/create', 'App\Http\Controllers\ImageController@createImage')->name('image.create'); //only admins have access to this
+Route::get('/image/create', 'App\Http\Controllers\ImageController@createImage')->middleware('admin')->name('image.create'); //only admins have access to this
 Route::post('StoreImage', 'App\Http\Controllers\ImageController@storeImage')->name('image.store');
 
 Route::get('/successGym', 'App\Http\Controllers\SuccessController@message' )->name('sucessGym');

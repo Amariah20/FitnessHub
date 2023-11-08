@@ -80,8 +80,9 @@ class ImageController extends Controller
            
 
            $newImage->save();
-
            
+
+
            //This view doesn't work. need to fix it
           // return redirect()->route('sucessGym');
     }
