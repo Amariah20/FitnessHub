@@ -35,19 +35,18 @@ display these in a drop down and let them select which gym they want the members
             }
             
 
-            //if (empty($SelectedGymID)) {
-           //     return 'Please select a gym before adding a membership.';
-           // }
-
            
-
-            
- 
+            if (($req->SelectedGymID== "Select Gym")) {
+                //return 'Please select a gym before adding a membership.';
+                return redirect()->back()->withErrors(['error' => 'Please select a gym before adding a membership.']);
+           }
+                     
             $MembershipName = $req-> name;
             $MembershipPrice= $req->price;
             $MembershipDescription = $req-> description;
             $SelectedGymID= $req -> SelectedGymID;
 
+            
           
 
             $NewMembership = new \App\Models\Membership();
@@ -57,6 +56,7 @@ display these in a drop down and let them select which gym they want the members
             $NewMembership->gym_id = $SelectedGymID;
 
             $NewMembership->save();
+            return redirect()->route('membership.create')->with('success', 'Membership successfully added. You may add more or move to the next section.');
             
 
 
