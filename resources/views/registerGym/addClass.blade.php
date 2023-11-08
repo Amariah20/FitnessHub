@@ -3,7 +3,28 @@
 @section('content')
 <!--I used bootstrap for the forms to register gym: https://getbootstrap.com/docs/5.0/forms/form-control/-->
 <link rel="stylesheet" type="text/css" href="/getStarted.css"> 
+@if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                {{ $error }}
+            @endforeach
+        </ul>
+    </div>
+@endif
+@if(session('success_class'))
+    <div class="alert alert-success">
+        {{ session('success_class') }}
+    </div>
 
+    <!-- Add a button specific to the current page -->
+    <button type="submit"> <a href="{{ route('aboutus') }}">Next</a></button>
+@endif
 
 
 <div class="container">
