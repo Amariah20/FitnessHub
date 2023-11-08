@@ -29,7 +29,8 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/AboutUs', function () {
     return view('AboutUs');
-});
+})->name('aboutus');
+
 
 Route::middleware(['auth', 'global.admin'])->group(function () {
     Route::get('/AdminAccess', [App\Http\Controllers\GlobalAdminController::class, 'listUsers'])->name('allUsers');

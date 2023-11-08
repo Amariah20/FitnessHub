@@ -17,6 +17,14 @@
         </ul>
     </div>
 @endif
+@if(session('success_membership'))
+    <div class="alert alert-success">
+        {{ session('success_membership') }}
+    </div>
+
+    <!-- Add a button specific to the current page -->
+    <button type="submit"> <a href="{{ route('aboutus') }}">Next</a></button>
+@endif
 
 
 
