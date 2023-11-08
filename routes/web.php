@@ -85,8 +85,12 @@ Route::post('/reset-password', function (Request $request) {
                 : back()->withErrors(['email' => [__($status)]]);
 })->middleware('guest')->name('password.update');
 
+//to display gyms
+Route::get('gymIndividual/{Gym_id}', 'App\Http\Controllers\GymController@show')->name('gymIndividual');
 
-//to register gym
+Route::get('gymAll','App\Http\Controllers\GymController@list')->name('list_gym');
+
+//to register gyms
 Route::get('registerGym/getStarted', function () {
     return view('registerGym.getStarted');
 });
@@ -97,10 +101,12 @@ Route::get('registerGym/getStarted', function () {
 
 Route::get('/gyms/create', 'App\Http\Controllers\GymController@createGym')->name('gyms.create'); //only admins have access to this
 Route::post('storeGym',  'App\Http\Controllers\GymController@storeGym');
+
 Route::get('/membership/create', 'App\Http\Controllers\MembershipController@createMembership')->name('membership.create'); //only admins have access to this
 Route::post('StoreMembership', 'App\Http\Controllers\MembershipController@storeMembership')->name('memberships.store');
 
-Route::get('gymIndividual/{Gym_id}', 'App\Http\Controllers\GymController@show')->name('gymIndividual');
 
-Route::get('gymAll','App\Http\Controllers\GymController@list')->name('list_gym');
+Route::get('/class/create', 'App\Http\Controllers\ClassesController@createClass')->name('class.create'); //only admins have access to this
+Route::post('StoreClass', 'App\Http\Controllers\ClassesController@storeClass')->name('class.store');
+
 

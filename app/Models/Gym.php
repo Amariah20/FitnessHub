@@ -4,6 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Classes;
+use App\Models\Membership;
+use App\Models\User;
 
 class Gym extends Model
 {
@@ -20,4 +23,12 @@ class Gym extends Model
      {
          return $this->belongsTo(User::class); 
      }
+
+     //one gym has many classes. one to many rela between gym and classes
+     public function classes()
+     {
+         return $this->hasMany(Classes::class); 
+     }
+
+     
 }
