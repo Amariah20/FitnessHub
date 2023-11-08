@@ -26,15 +26,15 @@ display these in a drop down and let them select which gym they want the members
         {
             $CurrentUser = Auth::user();
             
-         
+             
             // Checking if user has a gym
-            if (!$CurrentUser->gyms) { //there's a rela between gym and user in models.
+            if (!$CurrentUser->gym) { //there's a rela between gym and user in models.
                return 'You must create a gym first, before adding memberships.';
             }
 
-            if (empty($SelectedGymID)) {
-                return 'Please select a gym before adding a membership.';
-            }
+            //if (empty($SelectedGymID)) {
+           //     return 'Please select a gym before adding a membership.';
+           // }
 
            
 
