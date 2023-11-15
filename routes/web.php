@@ -95,7 +95,7 @@ Route::get('gymAll','App\Http\Controllers\GymController@list')->name('list_gym')
 //to register gyms
 Route::get('registerGym/getStarted', function () {
     return view('registerGym.getStarted');
-});
+})->middleware('admin');
 
 //Route::get('registerGym/addGym', function(){
   //  return view('registerGym.addGym');
