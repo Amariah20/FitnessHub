@@ -3,10 +3,10 @@
 @section('content')
 <h1>{{$class->name}}</h1>
 
-<p>{{$class->description}}</p>
-<p>{{$class->location}}</p>
-<p>{{$class->schedule}}</p>
-<p>{{$class->duration}}</p>
-<p>{{$class->capacity}}</p>
-<p>{{$class->price}}</p>
+<p>Description: {{$class->description}}</p>
+<p>Location: {{$class->location}}</p>
+<p>Schedule: {{$class->schedule}}</p>
+<p>Duration: {{$class->duration}}</p>
+<p>Maximum number of person per class (capacity):{{$class->capacity}}</p>
+<p>Price: {{$class->price}}</p>
 @endsection
