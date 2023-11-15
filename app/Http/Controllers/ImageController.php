@@ -86,6 +86,10 @@ class ImageController extends Controller
            //This view doesn't work. need to fix it
           return redirect()->route('sucessGym');
     }
+
+    public function displayImage(){
+        
+    }
         
     
 }

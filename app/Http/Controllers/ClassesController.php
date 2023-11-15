@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Gym;
 use App\Models\Classes;
+use App\Models\Offerings;
 use Illuminate\Support\Facades\Auth;
 
 //I used this for guidance for most of my controllers: https://www.youtube.com/watch?v=GAPzqFMSxVY&t=933s
@@ -62,11 +63,16 @@ class ClassesController extends Controller
     
                 $NewClass->save();
                 return redirect()->route('class.create')->with('success_class', 'Class successfully added. You may add more or move to the next section.');
-                
-    
-    
-    
-    
-    
+                   
             }
+
+            public function show($Class_id){
+                //$class= Classes::where('Class_id', $Class_id);
+                $class= Classes::find($Class_id);
+                return view ('classShow', compact('class'));
+
+
+            }
+
+           
 }

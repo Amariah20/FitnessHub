@@ -8,6 +8,7 @@ use App\Models\Classes;
 use App\Models\Membership;
 use App\Models\User;
 use App\Models\Offerings;
+use App\Models\Images;
 
 class Gym extends Model
 {
@@ -37,6 +38,11 @@ class Gym extends Model
           return $this->hasMany(Offerings::class);
       }
   
-
+      public function images()
+      {
+         // return $this->hasMany(Images::class, 'gym_id', 'Gym_id');
+         return $this->hasMany(Images::class); //not sure if this is ok. might need to change ERD
+      }
+  
      
 }

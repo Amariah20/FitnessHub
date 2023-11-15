@@ -7,7 +7,10 @@ use App\Models\Gym;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\redirect;
 use App\Http\Controllers\view;
-
+use App\Models\Classes;
+use App\Models\Images;
+use App\Models\Membership;
+use App\Models\Offerings;
 
 //I used this for guidance for most of my controllers: https://www.youtube.com/watch?v=GAPzqFMSxVY&t=933s
 //need to allow admins to add more than one gym 
@@ -16,7 +19,26 @@ class GymController extends Controller
       //for showing one gym
       public function show($Gym_id){
         $gym = Gym::where('Gym_id', $Gym_id)->first();
-        return view('gymIndividual', compact('gym')); //compact ('gym') is passing the variable gym to the view
+       // return view('gymIndividual', compact('gym')); //compact ('gym') is passing the variable gym to the view
+
+       // Retrieve last images entered in database associated with the gym
+       $images = Images::where('gym_id', $Gym_id)->latest()->first();
+       $memberships= Membership::where('gym_id', $Gym_id)->get();
+       $numOfclasses= Classes::where('gym_id', $Gym_id)->count();
+       $numOfofferings= Offerings::where('gym_id',$Gym_id)->count();
+       $count= $numOfclasses + $numOfofferings;
+       
+
+       return view('gymIndividual', compact('gym', 'images', 'memberships', 'count', 'numOfclasses','numOfofferings'));
+    }
+
+    //to display all classes and offerings in that gym
+    public function showOfferings($Gym_id){
+        $gym = Gym::where('Gym_id', $Gym_id)->first();
+        $classes = Classes::where('gym_id', $Gym_id)->get();
+        $offerings =  Offerings::where('gym_id',$Gym_id)->get();
+
+        return view('classesOfferings',  compact('gym', 'classes', 'offerings'));
     }
 
     
