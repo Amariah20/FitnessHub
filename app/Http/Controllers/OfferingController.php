@@ -59,10 +59,12 @@ class OfferingController extends Controller
             return redirect()->route('offering.create')->with('success_offering', 'Item successfully added. You may add more or move to the next section.');
             
 
+      }
+      public function show($Offering_id){
+        $offering= Offerings::where('offerings_id', $Offering_id)->first();
+       
+        return view ('offeringShow', compact('offering'));
 
 
-
-
-        }
-        
+    }
 }

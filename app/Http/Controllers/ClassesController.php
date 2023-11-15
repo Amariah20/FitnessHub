@@ -47,6 +47,7 @@ class ClassesController extends Controller
                 $ClassDescription = $req-> description;
                 $ClassCapacity= $req-> capacity;
                 $ClassDuration= $req-> duration;
+                $ClassSchedule= $req-> schedule;
                 $SelectedGymID= $req -> SelectedGymID;
     
                 
@@ -60,6 +61,7 @@ class ClassesController extends Controller
                 $NewClass-> capacity= $ClassCapacity;
                 $NewClass->duration=  $ClassDuration;
                 $NewClass->location=  $ClassLocation;
+                $NewClass->schedule= $ClassSchedule;
     
                 $NewClass->save();
                 return redirect()->route('class.create')->with('success_class', 'Class successfully added. You may add more or move to the next section.');

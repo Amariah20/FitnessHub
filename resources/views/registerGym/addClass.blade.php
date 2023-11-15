@@ -45,6 +45,10 @@
         <textarea class="form-control" name="description" required rows="3"></textarea>
     </div>
     <div class="mb">
+        <label class="label">Schedule</label>
+        <textarea class="form-control" name="schedule" required rows="3"></textarea>
+    </div>
+    <div class="mb">
         <label class="label">Capacity</label>
         <input type="number" name="capacity" class="form-control" required>
     </div>

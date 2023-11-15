@@ -11,7 +11,7 @@
 
     <h2>Offerings:</h2>
     @foreach($offerings as $offering)
-        <p>{{ $offering->name }}</p>
+    <a href= "{{route('offeringShow', ['Offering_id'=>$offering->offerings_id])}}">   <p>{{ $offering->name }}</p></a>
         
         <hr>
     @endforeach
