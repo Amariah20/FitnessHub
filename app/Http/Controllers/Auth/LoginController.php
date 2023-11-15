@@ -31,9 +31,12 @@ class LoginController extends Controller
    
    // protected $redirectTo = RouteServiceProvider::HOME; 
 
+   //I used this for help for showing different login screens: https://www.youtube.com/watch?v=xhngdDtJOUY
+    
+
    protected function authenticated(Request $req,$user){
-       // dd (!$user->is_admin && !$user->email = 'globaladmin@gmail.com');
-      //dd($user->is_admin);
+       
+      
         if($user->email == 'globaladmin@gmail.com'){
             return redirect('/AdminAccess');
         }
@@ -47,17 +50,7 @@ class LoginController extends Controller
         
    }
 
-   /*added by me. these don't work
-   protected function redirectTo(){
-    if (auth()->user()?->email == 'globaladmin@gmail.com') {
-        return view('/AdminAccess');
-
-    }elseif (auth()->user()->is_admin) {
-        return view('registerGym/getStarted');
-    } else{
-        return view('/');
-    }
-   }
+   
 
     /**
      * Create a new controller instance.
