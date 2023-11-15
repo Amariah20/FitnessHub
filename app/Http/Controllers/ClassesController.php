@@ -67,8 +67,8 @@ class ClassesController extends Controller
             }
 
             public function show($Class_id){
-                //$class= Classes::where('Class_id', $Class_id);
-                $class= Classes::find($Class_id);
+                $class= Classes::where('Class_id', $Class_id)->first();
+                //$class= Classes::find($Class_id);
                 return view ('classShow', compact('class'));
 
 
