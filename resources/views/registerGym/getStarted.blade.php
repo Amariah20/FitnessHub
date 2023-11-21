@@ -17,18 +17,14 @@
         <br>
     <img class="gympic" src="{{ asset('images/gym.png') }}">
         <h1 class="heading">1. Introduce Your Centre</h1>
-        <p>Share essential details like name, location, opening hours, and a captivating description</p>
+        <p>Share essential details like name, location, opening hours, a captivating description and your images</p>
         
         <br><br>
         <img class="gympic" src="{{ asset('images/gym 1.png') }}">
         <h1 class="heading">2. Highlight Your Offerings</h1>
         <p>Showcase the diverse range of classes, services and facilities your fitness centre offers</p>
        
-        <br><br>
-        <img class="gympic" src="{{ asset('images/gym 2.png') }}">
-        <h1 class="heading">3. Ignite the Experience</h1>
-        <p>Ignite the excitement with captivating pictures and publish your gym</p>
-        <br>
+        
        
     </div>
     
