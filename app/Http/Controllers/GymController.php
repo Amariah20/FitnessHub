@@ -63,6 +63,9 @@ class GymController extends Controller
         $gymInstagram= $req->instagram;
         $gymFacebook= $req->facebook;
         $userId = $req->user()->id;
+
+
+        
         
         $NewGym= new \App\Models\Gym;
         $NewGym-> name = $gymName;
@@ -74,18 +77,49 @@ class GymController extends Controller
         $NewGym-> facebook =  $gymFacebook;
         $NewGym -> opening_hours =  $gymOpeningHours;
         $NewGym->user_id = $userId;
+
+        $gymFolder = 'public/images/uploaded/gym_' . $userId.$gymName; //gym Id has not been created yet
+
+            // checking that subfolder exists, and if not, create it
+            if (!file_exists($gymFolder)) {
+                mkdir($gymFolder, 0755, true);
+            }
+           
+           if($req->hasfile('logo')){
+            $pic=$req->file('logo');
+            $extension= $pic->getClientOriginalExtension();
+            $logo= time().'._logo.'.$extension;
+            $pic->move($gymFolder, $logo);
+            $NewGym->logo=$logo;
+           }
+
+           if($req->hasfile('banner')){
+            $pic=$req->file('banner');
+            $extension= $pic->getClientOriginalExtension();
+            $banner= time().'._banner.'.$extension;
+            $pic->move($gymFolder, $banner);
+            $NewGym->banner= $banner;
+           }
+           if($req->hasfile('extra_image')){
+            $pic=$req->file('extra_image');
+            $extension= $pic->getClientOriginalExtension();
+            $extra= time().'._extra_image.'.$extension;
+            $pic->move($gymFolder, $extra);
+            $NewGym->extra_image=$extra;
+           }
+
+           
+
+        
+
         
 
         $NewGym-> save();
         
         return redirect()->route('membership.create')->with('success', 'Membership successfully added');
 
-
-       
-
-
-        
-
-
     }
+
+
+    
 }

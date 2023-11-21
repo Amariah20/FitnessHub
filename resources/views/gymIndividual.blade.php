@@ -34,17 +34,18 @@
         
     </li>
 
-    @if($images)
+    @if(($gym->logo || $gym->banner || $gym->extra_image >= 1)) 
     <li>Images:</li>
         <ul>
           
                 <li>
-                    <img src="{{ asset('public/images/uploaded/gym_' . $gym->Gym_id . '/' . $images->logo) }}" alt="Logo">
-                    <img src="{{ asset('public/images/uploaded/gym_' . $gym->Gym_id . '/' . $images->banner) }}" alt="banner">
-                    <img src="{{ asset('public/images/uploaded/gym_' . $gym->Gym_id . '/' . $images->extra_image) }}" alt="extra image">
+                    <img src="{{ asset('public/images/uploaded/gym_' . $gym->user_id.$gym->name . '/' . $gym->logo) }}" alt="Logo">
+                    <img src="{{ asset('public/images/uploaded/gym_' . $gym->user_id.$gym->name . '/' . $gym->banner) }}" alt="banner">
+                    <img src="{{ asset('public/images/uploaded/gym_' . $gym->user_id.$gym->name . '/' . $gym->extra_image) }}" alt="extra image">
                 </li>     
+               
         </ul>
-    @endif
+@endif
    
 </ul>
     

@@ -8,7 +8,7 @@
 
 <div class="container">
 <div class="card-header"><img src="{{ asset('images/FitnessHubLogo.png') }}"  width="400" height="70"></div>
-<form method="POST" action="/storeGym">
+<form method="POST" action="/storeGym" enctype="multipart/form-data">
 @csrf
 
     <div class="mb">
@@ -42,6 +42,19 @@
     <div class="mb">
         <label class="label">Write a captivating description</label>
         <textarea class="form-control" name="description" required rows="3"></textarea>
+    </div>
+
+    <div class="mb">
+        <label class="label">Logo</label>
+        <input type="file" name="logo" class="form-control" required>
+    </div>
+    <div class="mb">
+        <label class="label">Banner</label>
+        <input type="file" name="banner" class="form-control" required>
+    </div>
+    <div class="mb">
+        <label class="label">Additional Image to be displayed on website</label>
+        <input type="file" name="extra_image" class="form-control" required>
     </div>
         <button type="submit">Add </button>
          
