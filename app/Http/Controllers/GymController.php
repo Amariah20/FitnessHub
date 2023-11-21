@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\redirect;
 use App\Http\Controllers\view;
 use App\Models\Classes;
-use App\Models\Images;
+//use App\Models\Images;
 use App\Models\Membership;
 use App\Models\Offerings;
 
@@ -22,14 +22,14 @@ class GymController extends Controller
        // return view('gymIndividual', compact('gym')); //compact ('gym') is passing the variable gym to the view
 
        // Retrieve last images entered in database associated with the gym
-       $images = Images::where('gym_id', $Gym_id)->latest()->first();
+       //$images = Images::where('gym_id', $Gym_id)->latest()->first();
        $memberships= Membership::where('gym_id', $Gym_id)->get();
        $numOfclasses= Classes::where('gym_id', $Gym_id)->count();
        $numOfofferings= Offerings::where('gym_id',$Gym_id)->count();
        $count= $numOfclasses + $numOfofferings;
        
 
-       return view('gymIndividual', compact('gym', 'images', 'memberships', 'count', 'numOfclasses','numOfofferings'));
+       return view('gymIndividual', compact('gym', 'memberships', 'count', 'numOfclasses','numOfofferings'));
     }
 
     //to display all classes and offerings in that gym

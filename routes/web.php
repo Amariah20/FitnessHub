@@ -126,3 +126,8 @@ Route::post('StoreOffering', 'App\Http\Controllers\OfferingController@storeOffer
 
 Route::get('/successGym', 'App\Http\Controllers\SuccessController@message' )->name('sucessGym');
 Route::get('/success','App\Http\Controllers\SuccessController@display' )->name('display');
+
+//Admin Interface
+Route::get('/AdminWelcome',function(){
+    return view ('AdminInterface.adminWelcome');
+});
