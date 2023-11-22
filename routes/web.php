@@ -137,3 +137,7 @@ Route::get('AdminOffering/{Gym_id}', 'App\Http\Controllers\AdminPanelController@
 Route::get('AdminMembership/{Gym_id}', 'App\Http\Controllers\AdminPanelController@AdminMembership')->name('AdminMembership');
 Route::get('EditGym/{Gym_id}','App\Http\Controllers\AdminPanelController@EditGym')->name('EditGym');
 Route::patch('UpdateGym/{Gym_id}','App\Http\Controllers\AdminPanelController@UpdateGym')->name('UpdateGym');
+Route::get('EditClass/{Class_id}','App\Http\Controllers\AdminPanelController@EditClass')->name('EditClass');
+Route::patch('UpdateClass/{Class_id}','App\Http\Controllers\AdminPanelController@UpdateClass')->name('UpdateClass');
+
+

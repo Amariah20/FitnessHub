@@ -23,7 +23,7 @@
     </div>
 
    
-    <button type="submit"> <a href="{{ route('aboutus') }}">Next</a></button>
+    <button type="submit"> <a href="{{ route('offering.create') }}">Next</a></button>
 @endif
 
 

@@ -77,7 +77,8 @@ class GymController extends Controller
         $NewGym-> facebook =  $gymFacebook;
         $NewGym -> opening_hours =  $gymOpeningHours;
         $NewGym->user_id = $userId;
-
+        //dd($NewGym->Gym_id);
+        //$gymFolder = 'public/images/uploaded/gym_' .$NewGym->Gym_id;
         $gymFolder = 'public/images/uploaded/gym_' . $userId.$gymName; //gym Id has not been created yet
 
             // checking that subfolder exists, and if not, create it

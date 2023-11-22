@@ -11,24 +11,24 @@
 @method("patch")
 
     <div class="mb">
-        <label class="label">Name of your Fitness Centre</label>
-        <input type="text" name="name" value="{{$gym->name}}" class="form-control" required>
+        <label class="label">Name of your Fitness Centre:</label>
+        {{$gym->name}}
     </div>
     <div class="mb">
         <label class="label">Location</label>
-        <input type="text" name="location" value="{{$gym->location}}" class="form-control" required>
+        <input type="text" name="location" value="{{$gym->location}}" required class="form-control">
     </div>
     <div class="mb">
         <label class="label">Opening Hours</label>
-        <input type="text" name="opening_hours" value="{{$gym->opening_hours}}" class="form-control" required>
+        <input type="text" name="opening_hours" value="{{$gym->opening_hours}}" required class="form-control">
     </div>
     <div class="mb">
         <label class="label">Phone Number</label>
-        <input type="number" name="phone_number" value="{{$gym->phone_number}}" class="form-control" required>
+        <input type="number" name="phone_number" value="{{$gym->phone_number}}" required class="form-control">
     </div>
     <div class="mb">
         <label class="label">Email Adress</label>
-        <input type="email" name="email" value="{{$gym->email}}" class="form-control" required>
+        <input type="email" name="email" value="{{$gym->email}}" required class="form-control">
     </div>
     <div class="mb">
         <label class="label">Instagram username</label>
@@ -40,20 +40,24 @@
     </div>
     <div class="mb">
         <label class="label">Write a captivating description</label>
-        <textarea class="form-control" name="description" value="{{$gym->description}}" required rows="3"></textarea>
+        <input class="form-control" name="description" value="{{$gym->description}}" required></input>
     </div>
 
     <div class="mb">
         <label class="label">Logo</label>
-        <input type="file" name="logo" value="{{$gym->logo}}" class="form-control" required>
+
+        <input type="file" name="logo" class="form-control">
+        
     </div>
     <div class="mb">
         <label class="label">Banner</label>
-        <input type="file" name="banner" value="{{$gym->banner}}" class="form-control" required>
+
+        <input type="file" name="banner" class="form-control">
     </div>
     <div class="mb">
         <label class="label">Additional Image to be displayed on website</label>
-        <input type="file" name="extra_image" value="{{$gym->extra_image}}" class="form-control" required>
+        
+        <input type="file" name="extra_image" class="form-control" >
     </div>
         <button type="submit">Update </button>
          

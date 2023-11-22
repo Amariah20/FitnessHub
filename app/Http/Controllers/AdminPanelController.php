@@ -99,7 +99,7 @@ class AdminPanelController extends Controller
 
         $gym = Gym::where('Gym_id', $Gym_id)->first();    
         //$gym->Gym_id= $Gym_id;
-        $gym->name= $req->name;
+       // $gym->name= $req->name;
         $gym->description= $req-> description;
         $gym->location= $req-> location;
         $gym->opening_hours= $req-> opening_hours;
@@ -107,7 +107,37 @@ class AdminPanelController extends Controller
         $gym->email= $req-> email;
         $gym->instagram= $req->instagram;
         $gym->facebook= $req->facebook;
-        $gym->user_id = $req->user()->id;
+        $gym->user_id = $req->user()->id; 
+        $gymFolder = 'public/images/uploaded/gym_' .  $gym->user_id. $gym->name; //gym Id has not been created yet. 
+
+            // checking that subfolder exists, and if not, create it
+            if (!file_exists($gymFolder)) {
+                mkdir($gymFolder, 0755, true);
+            }
+           
+           if($req->hasfile('logo')){
+            $pic=$req->file('logo');
+            $extension= $pic->getClientOriginalExtension();
+            $logo= time().'._logo.'.$extension;
+            $pic->move($gymFolder, $logo);
+            $gym->logo=$logo;
+           }
+
+           if($req->hasfile('banner')){
+            $pic=$req->file('banner');
+            $extension= $pic->getClientOriginalExtension();
+            $banner= time().'._banner.'.$extension;
+            $pic->move($gymFolder, $banner);
+            $gym->banner= $banner;
+           }
+           if($req->hasfile('extra_image')){
+            $pic=$req->file('extra_image');
+            $extension= $pic->getClientOriginalExtension();
+            $extra= time().'._extra_image.'.$extension;
+            $pic->move($gymFolder, $extra);
+            $gym->extra_image=$extra;
+           }
+
        
         $gym->update();
         //return('done');
@@ -116,6 +146,30 @@ class AdminPanelController extends Controller
         return redirect()->route('AdminWelcome', ['SelectedGymID' => $Gym_id])->with('Success', 'Gym Updated Successfully');
 
     }
+
+    public function EditClass($Class_id){
+        // $gym = Gym::find($Gym_id);
+        //$gym = Gym::where('Gym_id', $Gym_id)->first();
+        $class= Classes::where('Class_id', $Class_id)->first();
+         return view ('AdminInterface.editClass', compact('class'));
+ 
+     }
+
+     public function UpdateClass(Request $req,$Class_id){
+
+        $class= Classes::where('Class_id', $Class_id)->first();
+        $class->name = $req-> name;
+        $class->price = $req->price;
+        $class->description =  $req-> description;
+        $class-> capacity= $req-> capacity;
+        $class->duration=  $req-> duration;
+        $class->location=  $req-> location;
+        $class->schedule= $req-> schedule;
+
+        $class->update();
+        return redirect()->route('AdminClass', ['Gym_id' => $class->gym_id])->with('Success', 'Class Updated Successfully');
+
+     }
 
     }
 
