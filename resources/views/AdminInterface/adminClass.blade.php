@@ -21,6 +21,7 @@
       <th scope="col">Capacity</th>
       <th scope="col">Price</th>
       <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
       
     </tr>
   </thead>
@@ -37,6 +38,7 @@
       <td>{{$class->capacity}}</td>
       <td> {{$class->price}}</td>
       <td><a href="{{route('EditClass', ['Class_id' => $class->Class_id] )}}"><button type= "submit">Edit</button></a></td>
+      <td><a href="{{route('DeleteClass', ['Class_id' => $class->Class_id] )}}"><button type= "submit">Delete</button></a></td>
     </tr>
  @endforeach
  </tbody>
