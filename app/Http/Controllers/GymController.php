@@ -118,6 +118,7 @@ class GymController extends Controller
         
         return redirect()->route('membership.create')->with('success', 'Membership successfully added');
 
+        
     }
 
 

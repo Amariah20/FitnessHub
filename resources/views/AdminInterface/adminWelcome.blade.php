@@ -1,6 +1,6 @@
 @extends('layouts.adminPage')
 
 @section('content')
-<p>TEST</p>
+<p>Welcome</p>
 
 @endsection

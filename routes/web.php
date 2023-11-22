@@ -127,7 +127,13 @@ Route::post('StoreOffering', 'App\Http\Controllers\OfferingController@storeOffer
 Route::get('/successGym', 'App\Http\Controllers\SuccessController@message' )->name('sucessGym');
 Route::get('/success','App\Http\Controllers\SuccessController@display' )->name('display');
 
+
+
 //Admin Interface
-Route::get('/AdminWelcome',function(){
-    return view ('AdminInterface.adminWelcome');
-});
+
+Route::get('AdminWelcome',  'App\Http\Controllers\AdminPanelController@AdminWelcome' )->name('AdminWelcome');
+Route::get('AdminFirst', 'App\Http\Controllers\AdminPanelController@AdminFirst')->name('AdminFirst');
+Route::get('AdminClass/{Gym_id}', 'App\Http\Controllers\AdminPanelController@AdminClass')->name('AdminClass');
+Route::get('AdminOffering/{Gym_id}', 'App\Http\Controllers\AdminPanelController@AdminOffering')->name('AdminOffering');
+Route::get('AdminMembership/{Gym_id}', 'App\Http\Controllers\AdminPanelController@AdminMembership')->name('AdminMembership');
+

@@ -35,13 +35,13 @@
 
     <ul>
         <li>
-            <a href="">Classes</a>
+            <a href="{{ route('AdminClass', ['Gym_id' => $Gym_id]) }}">Classes</a>
         </li>
         <li>
-            <a href="">Offerings</a>
+            <a href="{{ route('AdminOffering', ['Gym_id' => $Gym_id]) }}">Offerings</a>
         </li>
         <li>
-            <a href="">Memberships</a>
+            <a href="{{ route('AdminMembership', ['Gym_id' => $Gym_id]) }}">Memberships</a>
         </li>
         <li>
             <a href="">Update Information</a>
