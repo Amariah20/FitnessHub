@@ -73,9 +73,9 @@ class AdminPanelController extends Controller
     }
    
     public function AdminOffering (Request $req, $Gym_id){
-        $offerings= Offerings::where('Gym_id', $Gym_id)->get();
+        $offering= Offerings::where('Gym_id', $Gym_id)->get();
 
-        return view('AdminInterface.adminOffering', compact ('Gym_id', 'offerings'));
+        return view('AdminInterface.adminOffering', compact ('Gym_id', 'offering'));
     }
 
     public function AdminMembership (Request $req, $Gym_id){
@@ -188,7 +188,28 @@ class AdminPanelController extends Controller
         return redirect()->route('AdminMembership', ['Gym_id' => $membership->gym_id] )->with('Success', 'Membership updated successfully');
      }
 
+     public function EditOffering($Offering_id){
+        
+        $offering= Offerings::where('offerings_id', $Offering_id)->first();
+         return view ('AdminInterface.editOffering', compact('offering'));
+ 
+     }
+
+     public function UpdateOffering(Request $req, $Offering_id){
+        $offering= Offerings::where('offerings_id', $Offering_id)->first();
+        $offering->name= $req->name;
+        $offering->description= $req->description;
+        $offering->price=$req->price;
+        $offering->update();
+
+        return redirect()->route('AdminOffering', ['Gym_id' => $offering->gym_id] )->with('Success', 'Membership updated successfully');
+     }
+
+
+
+
     }
+    
 
    
 

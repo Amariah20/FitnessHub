@@ -141,3 +141,5 @@ Route::get('EditClass/{Class_id}','App\Http\Controllers\AdminPanelController@Edi
 Route::patch('UpdateClass/{Class_id}','App\Http\Controllers\AdminPanelController@UpdateClass')->name('UpdateClass');
 Route::get('EditMembership/{Membership_id}','App\Http\Controllers\AdminPanelController@EditMembership')->name('EditMembership');
 Route::patch('UpdateMembership/{Membership_id}','App\Http\Controllers\AdminPanelController@UpdateMembership')->name('UpdateMembership');
+Route::get('EditOffering/{Offering_id}','App\Http\Controllers\AdminPanelController@EditOffering')->name('EditOffering');
+Route::patch('UpdateOffering/{Offering_id}','App\Http\Controllers\AdminPanelController@UpdateOffering')->name('UpdateOffering');
