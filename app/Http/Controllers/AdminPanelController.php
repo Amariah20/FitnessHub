@@ -15,17 +15,8 @@ use Illuminate\Support\Facades\Auth;
 class AdminPanelController extends Controller
 {
 
-
-   /* public function AdminFirst(Request $req)
-    {
-        $user = Auth::user();
-        $gym = $user->gym;
-        $selectedGymID = $req->SelectedGymID;
-
-        dd($selectedGymID);
-        // Pass the selectedGymID as a parameter when redirecting to AdminWelcome
-        return redirect()->route('AdminWelcome', ['selectedGymID' => $selectedGymID]);
-    }*/
+//protected $currentGymId;
+    
 
 
 
@@ -36,6 +27,7 @@ class AdminPanelController extends Controller
         $gym = $user->gym; // Retrieve the gyms associated with the user
 
         $Gym_Id= $req->SelectedGymID;
+        //$this->currentGymId = $req->SelectedGymID;
        
         
       //  return view('AdminWelcome', compact('gym', 'Gym_Id'));
@@ -50,6 +42,7 @@ class AdminPanelController extends Controller
         $user = Auth::user(); 
         $Gym_id= $req->SelectedGymID;
       //  $Gym_id = $req->Gym_id;
+        //$this->currentGymId = $Gym_id;
         $gym = Gym::where('Gym_id', $Gym_id)->first();
         $classes = Classes::where('gym_id', $Gym_id)->get();
         $offerings =  Offerings::where('gym_id',$Gym_id)->get();
@@ -82,6 +75,7 @@ class AdminPanelController extends Controller
         $memberships= Membership::where('Gym_id', $Gym_id)->get();
 
         return view('AdminInterface.adminMembership', compact ('Gym_id', 'memberships'));
+
     }
 
     //I used this for help with updating: https://www.fundaofwebit.com/laravel-8/how-to-edit-update-data-in-laravel 
@@ -202,10 +196,94 @@ class AdminPanelController extends Controller
         $offering->price=$req->price;
         $offering->update();
 
-        return redirect()->route('AdminOffering', ['Gym_id' => $offering->gym_id] )->with('Success', 'Membership updated successfully');
+        return redirect()->route('AdminOffering', ['Gym_id' => $offering->gym_id] )->with('Success', 'Offering updated successfully');
      }
 
 
+     public function AdminCreateClass(Request $req, $Gym_id){
+        
+        $Gym_id= $Gym_id;   
+        return view('AdminInterface.AdminAddClass',['Gym_id'=> $Gym_id]);
+ }
+
+     public function AdminClassStore(Request $req, $Gym_id){
+
+                $ClassName = $req-> name;
+                $ClassLocation= $req-> location;
+                $ClassPrice= $req->price;
+                $ClassDescription = $req-> description;
+                $ClassCapacity= $req-> capacity;
+                $ClassDuration= $req-> duration;
+                $ClassSchedule= $req-> schedule;
+              
+
+                $NewClass = new \App\Models\Classes();
+                $NewClass->name = $ClassName;
+                $NewClass->price = $ClassPrice;
+                $NewClass->description = $ClassDescription;
+                $NewClass->gym_id = $Gym_id;
+                $NewClass-> capacity= $ClassCapacity;
+                $NewClass->duration=  $ClassDuration;
+                $NewClass->location=  $ClassLocation;
+                $NewClass->schedule= $ClassSchedule;
+    
+                $NewClass->save();
+                return redirect()->route('AdminClass', ['Gym_id' => $Gym_id])->with('Success', 'Class Added Successfully');
+
+     }
+
+     public function AdminCreateMembership(Request $req, $Gym_id){
+        
+        $Gym_id= $Gym_id;   
+        return view('AdminInterface.AdminAddMembership',['Gym_id'=> $Gym_id]);
+    }
+
+    public function AdminMembershipStore(Request $req, $Gym_id){
+        $MembershipName = $req-> name;
+        $MembershipPrice= $req->price;
+        $MembershipDescription = $req-> description;
+
+
+        
+      
+
+        $NewMembership = new \App\Models\Membership();
+        $NewMembership->name = $MembershipName;
+        $NewMembership->price = $MembershipPrice;
+        $NewMembership->description =  $MembershipDescription;
+        $NewMembership->gym_id = $Gym_id;
+
+        $NewMembership->save();
+        return redirect()->route('AdminMembership', ['Gym_id' => $Gym_id] )->with('Success', 'Membership added successfully');
+    }
+
+    public function AdminCreateOffering(Request $req, $Gym_id){
+        
+        $Gym_id= $Gym_id;   
+        return view('AdminInterface.AdminAddOffering',['Gym_id'=> $Gym_id]);
+    }
+
+    public function AdminOfferingStore(Request $req, $Gym_id){
+        $OfferingName = $req-> name;
+            $OfferingPrice= $req->price;
+            $OfferingDescription = $req-> description;
+            
+
+            
+          
+
+            $NewOffering = new \App\Models\Offerings();
+            $NewOffering->name = $OfferingName;
+            $NewOffering->price = $OfferingPrice;
+            $NewOffering->description =  $OfferingDescription;
+            $NewOffering->gym_id = $Gym_id;
+
+            $NewOffering->save();
+            return redirect()->route('AdminOffering', ['Gym_id' => $Gym_id] )->with('Success', 'Offering Apdated successfully');
+
+    }
+
+    
 
 
     }

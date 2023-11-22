@@ -143,3 +143,9 @@ Route::get('EditMembership/{Membership_id}','App\Http\Controllers\AdminPanelCont
 Route::patch('UpdateMembership/{Membership_id}','App\Http\Controllers\AdminPanelController@UpdateMembership')->name('UpdateMembership');
 Route::get('EditOffering/{Offering_id}','App\Http\Controllers\AdminPanelController@EditOffering')->name('EditOffering');
 Route::patch('UpdateOffering/{Offering_id}','App\Http\Controllers\AdminPanelController@UpdateOffering')->name('UpdateOffering');
+Route::get('AdminAddClass/{Gym_id}','App\Http\Controllers\AdminPanelController@AdminCreateClass')->name('AdminAddClass');
+Route::post('AdminClassStore/{Gym_id}', 'App\Http\Controllers\AdminPanelController@AdminClassStore')->name('AdminClassStore');
+Route::get('AdminAddMembership/{Gym_id}','App\Http\Controllers\AdminPanelController@AdminCreateMembership')->name('AdminAddMembership');
+Route::post('AdminMembershipStore/{Gym_id}', 'App\Http\Controllers\AdminPanelController@AdminMembershipStore')->name('AdminMembershipStore');
+Route::get('AdminAddOffering/{Gym_id}','App\Http\Controllers\AdminPanelController@AdminCreateOffering')->name('AdminAddOffering');
+Route::post('AdminOfferingStore/{Gym_id}', 'App\Http\Controllers\AdminPanelController@AdminOfferingStore')->name('AdminOfferingStore');

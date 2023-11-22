@@ -6,8 +6,11 @@
 
 <h2>Offerings</h2>
 @if (session('Success'))
-                <h6 class="alert alert-success">{{ session('Success') }}</h6>
-            @endif
+    <h6 class="alert alert-success">{{ session('Success') }}</h6>
+@endif
+
+<a href="{{route('AdminAddOffering', ['Gym_id' => $Gym_id])}}"><button>Add New Offering</button></a>
+
 
 
 

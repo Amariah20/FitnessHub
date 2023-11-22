@@ -7,6 +7,7 @@
                 <h6 class="alert alert-success">{{ session('Success') }}</h6>
             @endif
 
+<a href="{{route('AdminAddClass', ['Gym_id' => $Gym_id])}}"><button>Add New Class</button></a>
 
 
 <table class="table table-striped">

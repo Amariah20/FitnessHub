@@ -4,8 +4,9 @@
 <h2>Memberships</h2>
 @if (session('Success'))
                 <h6 class="alert alert-success">{{ session('Success') }}</h6>
-            @endif
+ @endif
 
+  <a href="{{route('AdminAddMembership', ['Gym_id' => $Gym_id])}}"><button>Add New Membership</button></a>
 
 
 <table class="table table-striped">
