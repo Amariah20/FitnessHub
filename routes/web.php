@@ -150,3 +150,5 @@ Route::post('AdminMembershipStore/{Gym_id}', 'App\Http\Controllers\AdminPanelCon
 Route::get('AdminAddOffering/{Gym_id}','App\Http\Controllers\AdminPanelController@AdminCreateOffering')->name('AdminAddOffering');
 Route::post('AdminOfferingStore/{Gym_id}', 'App\Http\Controllers\AdminPanelController@AdminOfferingStore')->name('AdminOfferingStore');
 Route::get('DeleteClass/{Class_id}', 'App\Http\Controllers\AdminPanelController@DeleteClass')->name('DeleteClass');
+Route::get('DeleteMembership/{Membership_id}', 'App\Http\Controllers\AdminPanelController@DeleteMembership')->name('DeleteMembership');
+Route::get('DeleteOffering/{Offering_id}', 'App\Http\Controllers\AdminPanelController@DeleteOffering')->name('DeleteOffering');

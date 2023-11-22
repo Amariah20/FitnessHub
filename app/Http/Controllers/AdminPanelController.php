@@ -289,9 +289,31 @@ class AdminPanelController extends Controller
        
 
         $class->delete();
-        //this works. just need to redirect. 
-       // return ('done');
+    
         return redirect()->route('AdminClass', ['Gym_id' =>  $Gym_id])->with('Success', 'Class Deleted Successfully');
+
+    }
+
+    
+    public function DeleteMembership($Membership_id){
+        $membership= Membership::where('membership_id',$Membership_id)->first();
+        $Gym_id= $membership->gym_id;
+       
+
+        $membership->delete();
+    
+        return redirect()->route('AdminMembership', ['Gym_id' =>  $Gym_id])->with('Success', 'Membership Deleted Successfully');
+
+    }
+
+    public function DeleteOffering($Offering_id){
+        $offering= Offerings::where('Offerings_id',$Offering_id)->first();
+        $Gym_id= $offering->gym_id;
+       
+
+        $offering->delete();
+    
+        return redirect()->route('AdminOffering', ['Gym_id' =>  $Gym_id])->with('Success', 'Offering Deleted Successfully');
 
     }
 
