@@ -23,7 +23,8 @@
     </div>
 
    
-    <button type="submit"> <a href="{{ route('image.create') }}">Next</a></button>
+    <button type="submit"> <a href="{{ route('display') }}">Next</a></button>
+   
 @endif
 
 
@@ -34,7 +35,7 @@
 @csrf
 
     <div class="mb">
-        <label class="label">Name</label>
+        <label class="label">Name of Service/Offering</label>
         <input type="text" name="name" class="form-control" required>
     </div>
     <div class="mb">

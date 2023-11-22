@@ -26,7 +26,7 @@
 @csrf
 
     <div class="mb">
-        <label class="label">Name</label>
+        <label class="label">Name of Service/Offering</label>
         <input type="text" name="name" class="form-control" required>
     </div>
     <div class="mb">
