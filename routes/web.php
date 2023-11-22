@@ -130,10 +130,10 @@ Route::get('/success','App\Http\Controllers\SuccessController@display' )->name('
 
 
 //Admin Interface
-
 Route::get('AdminWelcome',  'App\Http\Controllers\AdminPanelController@AdminWelcome' )->name('AdminWelcome');
 Route::get('AdminFirst', 'App\Http\Controllers\AdminPanelController@AdminFirst')->name('AdminFirst');
 Route::get('AdminClass/{Gym_id}', 'App\Http\Controllers\AdminPanelController@AdminClass')->name('AdminClass');
 Route::get('AdminOffering/{Gym_id}', 'App\Http\Controllers\AdminPanelController@AdminOffering')->name('AdminOffering');
 Route::get('AdminMembership/{Gym_id}', 'App\Http\Controllers\AdminPanelController@AdminMembership')->name('AdminMembership');
-
+Route::get('EditGym/{Gym_id}','App\Http\Controllers\AdminPanelController@EditGym')->name('EditGym');
+Route::patch('UpdateGym/{Gym_id}','App\Http\Controllers\AdminPanelController@UpdateGym')->name('UpdateGym');

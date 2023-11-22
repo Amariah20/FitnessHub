@@ -12,7 +12,7 @@ use App\Models\Images;
 
 class Gym extends Model
 {
-    
+    protected $primaryKey = 'Gym_id'; //added when trying to edit gym info
 
      //rela between gym & memberships. gym has many memberships
      public function memberships()

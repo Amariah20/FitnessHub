@@ -47,7 +47,7 @@
             <a href="">Update Information</a>
         </li>
         <li>
-            <a href="">Add New Gym</a>
+            <a href="registerGym/getStarted">Add New Gym</a>
         </li>
     </ul>
     </aside>

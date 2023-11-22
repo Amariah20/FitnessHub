@@ -42,12 +42,14 @@ class AdminPanelController extends Controller
       //return view("{{route('AdminWelcome', ['Gym_id'=>$Gym_Id])}}" , compact('gym', 'Gym_Id'));
      // return redirect()->route('AdminWelcome', ['Gym_id'=>$Gym_Id]);
      //return redirect()->route('AdminWelcome/{$Gym_Id}');
-     return view ('AdminInterface.adminFirst', compact ('gym'));
+     return view ('AdminInterface.adminFirst', compact ('gym', 'user'));
     }
 
     public function AdminWelcome(Request $req)
     {
+        $user = Auth::user(); 
         $Gym_id= $req->SelectedGymID;
+      //  $Gym_id = $req->Gym_id;
         $gym = Gym::where('Gym_id', $Gym_id)->first();
         $classes = Classes::where('gym_id', $Gym_id)->get();
         $offerings =  Offerings::where('gym_id',$Gym_id)->get();
@@ -57,7 +59,7 @@ class AdminPanelController extends Controller
        
        // return redirect()->route('AdminInterface.adminWelcome',compact('Gym_id' ));
         //return view('AdminInterface.adminWelcome', compact('Gym_id'));
-        return view('AdminInterface.adminWelcome', compact('Gym_id', 'gym', 'classes', 'offerings','memberships'));
+        return view('AdminInterface.adminWelcome', compact('Gym_id', 'gym', 'classes', 'offerings','memberships', 'user'));
     }
 
     public function AdminClass(Request $req, $Gym_id)
@@ -82,7 +84,40 @@ class AdminPanelController extends Controller
         return view('AdminInterface.adminMembership', compact ('Gym_id', 'memberships'));
     }
 
+    //I used this for help with updating: https://www.fundaofwebit.com/laravel-8/how-to-edit-update-data-in-laravel 
 
+    public function EditGym($Gym_id){
+       // $gym = Gym::find($Gym_id);
+       $gym = Gym::where('Gym_id', $Gym_id)->first();
+        return view ('AdminInterface.editGym', compact('gym'));
+
+    }
+
+    public function UpdateGym(Request $req,$Gym_id){
+
+       
+
+        $gym = Gym::where('Gym_id', $Gym_id)->first();    
+        //$gym->Gym_id= $Gym_id;
+        $gym->name= $req->name;
+        $gym->description= $req-> description;
+        $gym->location= $req-> location;
+        $gym->opening_hours= $req-> opening_hours;
+        $gym->phone_number= $req-> phone_number;
+        $gym->email= $req-> email;
+        $gym->instagram= $req->instagram;
+        $gym->facebook= $req->facebook;
+        $gym->user_id = $req->user()->id;
+       
+        $gym->update();
+        //return('done');
+        //return redirect()->route('AdminWelcome', compact('Gym_id', 'gym'))->with('Success','Gym Updated Successfully');
+        //return redirect()->route('AdminWelcome', compact('Gym_id'))->with('Success','Gym Updated Successfully');
+        return redirect()->route('AdminWelcome', ['SelectedGymID' => $Gym_id])->with('Success', 'Gym Updated Successfully');
+
+    }
+
+    }
 
    
-}
+
