@@ -139,5 +139,5 @@ Route::get('EditGym/{Gym_id}','App\Http\Controllers\AdminPanelController@EditGym
 Route::patch('UpdateGym/{Gym_id}','App\Http\Controllers\AdminPanelController@UpdateGym')->name('UpdateGym');
 Route::get('EditClass/{Class_id}','App\Http\Controllers\AdminPanelController@EditClass')->name('EditClass');
 Route::patch('UpdateClass/{Class_id}','App\Http\Controllers\AdminPanelController@UpdateClass')->name('UpdateClass');
-
-
+Route::get('EditMembership/{Membership_id}','App\Http\Controllers\AdminPanelController@EditMembership')->name('EditMembership');
+Route::patch('UpdateMembership/{Membership_id}','App\Http\Controllers\AdminPanelController@UpdateMembership')->name('UpdateMembership');

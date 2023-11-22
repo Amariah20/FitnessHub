@@ -8,6 +8,7 @@ use App\Models\Gym;
 
 class Offerings extends Model
 {
+    protected $primaryKey = 'offerings_id'; //added when trying to edit gym info
     //rela between gym and offering
     public function gym()
     {

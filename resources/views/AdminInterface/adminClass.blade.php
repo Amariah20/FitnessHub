@@ -19,6 +19,7 @@
       <th scope="col">Duration</th>
       <th scope="col">Capacity</th>
       <th scope="col">Price</th>
+      <th scope="col">Edit</th>
       
     </tr>
   </thead>

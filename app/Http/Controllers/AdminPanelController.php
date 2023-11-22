@@ -171,6 +171,23 @@ class AdminPanelController extends Controller
 
      }
 
+     public function EditMembership($Membership_id){
+        
+        $membership= Membership::where('membership_id', $Membership_id)->first();
+         return view ('AdminInterface.editMembership', compact('membership'));
+ 
+     }
+
+     public function UpdateMembership(Request $req, $Membership_id){
+        $membership= Membership::where('membership_id', $Membership_id)->first();
+        $membership->name= $req->name;
+        $membership->description= $req->description;
+        $membership->price=$req->price;
+        $membership->update();
+
+        return redirect()->route('AdminMembership', ['Gym_id' => $membership->gym_id] )->with('Success', 'Membership updated successfully');
+     }
+
     }
 
    
