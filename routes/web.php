@@ -134,6 +134,7 @@ Route::get('success','App\Http\Controllers\SuccessController@display' )->name('d
 
 
 //Admin Interface
+Route::middleware(['auth', 'admin'])->group(function () {
 Route::get('AdminWelcome',  'App\Http\Controllers\AdminPanelController@AdminWelcome' )->name('AdminWelcome');
 Route::get('AdminFirst', 'App\Http\Controllers\AdminPanelController@AdminFirst')->name('AdminFirst');
 Route::get('AdminClass/{Gym_id}', 'App\Http\Controllers\AdminPanelController@AdminClass')->name('AdminClass');
@@ -162,3 +163,4 @@ Route::get('DeleteClass/{Class_id}', 'App\Http\Controllers\AdminPanelController@
 Route::get('DeleteMembership/{Membership_id}', 'App\Http\Controllers\AdminPanelController@DeleteMembership')->name('DeleteMembership');
 Route::get('DeleteOffering/{Offering_id}', 'App\Http\Controllers\AdminPanelController@DeleteOffering')->name('DeleteOffering');
 Route::get('DeleteEquipment/{Equipment_id}', 'App\Http\Controllers\AdminPanelController@DeleteEquipment')->name('DeleteEquipment');
+});
