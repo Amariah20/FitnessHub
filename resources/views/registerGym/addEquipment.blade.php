@@ -23,7 +23,7 @@
     </div>
 
    
-    <button type="submit"> <a href="{{ route('display') }}">Next</a></button>
+    <button type="submit"> <a href="{{ route('AdminFirst') }}">Next</a></button>
    
 @endif
 
