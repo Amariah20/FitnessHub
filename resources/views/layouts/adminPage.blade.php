@@ -25,7 +25,9 @@
 </head>
 <body>
     <header class="header">
-        <a href="">LOGO</a>
+    
+<a href="{{ route('gymIndividual', ['Gym_id' => $Gym_id]) }}">LOGO</a>
+
 
         <div class="logout">
        
