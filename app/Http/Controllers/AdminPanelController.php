@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\redirect;
 use App\Http\Controllers\view;
 use App\Models\Classes;
+use App\Models\Equipment;
 use App\Models\Membership;
 use App\Models\Offerings;
 use Illuminate\Support\Facades\Auth;
@@ -75,6 +76,13 @@ class AdminPanelController extends Controller
         $memberships= Membership::where('Gym_id', $Gym_id)->get();
 
         return view('AdminInterface.adminMembership', compact ('Gym_id', 'memberships'));
+
+    }
+
+    public function AdminEquipment (Request $req, $Gym_id){
+        $equipments= Equipment::where('Gym_id', $Gym_id)->get();
+
+        return view('AdminInterface.adminEquipment', compact ('Gym_id', 'equipments'));
 
     }
 
@@ -200,6 +208,25 @@ class AdminPanelController extends Controller
      }
 
 
+     public function EditEquipment($Equipment_id){
+        
+        $equipment= Equipment::where('equipment_id', $Equipment_id)->first();
+         return view ('AdminInterface.editEquipment', compact('equipment'));
+ 
+     }
+
+     public function UpdateEquipment(Request $req, $Equipment_id){
+        $equipment= Equipment::where('equipment_id', $Equipment_id)->first();
+        $equipment->name= $req->name;
+        $equipment->description= $req->description;
+       
+        $equipment->update();
+
+        return redirect()->route('AdminEquipment', ['Gym_id' => $equipment->gym_id] )->with('Success', 'Equipment updated successfully');
+     }
+
+
+
      public function AdminCreateClass(Request $req, $Gym_id){
         
         $Gym_id= $Gym_id;   
@@ -267,9 +294,7 @@ class AdminPanelController extends Controller
         $OfferingName = $req-> name;
             $OfferingPrice= $req->price;
             $OfferingDescription = $req-> description;
-            
-
-            
+                      
           
 
             $NewOffering = new \App\Models\Offerings();
@@ -279,7 +304,31 @@ class AdminPanelController extends Controller
             $NewOffering->gym_id = $Gym_id;
 
             $NewOffering->save();
-            return redirect()->route('AdminOffering', ['Gym_id' => $Gym_id] )->with('Success', 'Offering Apdated successfully');
+            return redirect()->route('AdminOffering', ['Gym_id' => $Gym_id] )->with('Success', 'Offering added successfully');
+
+    }
+
+    public function AdminCreateEquipment(Request $req, $Gym_id){
+        
+        $Gym_id= $Gym_id;   
+        return view('AdminInterface.AdminAddEquipment',['Gym_id'=> $Gym_id]);
+    }
+
+    public function AdminEquipmentStore(Request $req, $Gym_id){
+             $EquipmentName = $req-> name;
+     
+            $EquipmentDescription = $req-> description;
+                      
+          
+
+            $NewEquipment = new \App\Models\Equipment();
+            $NewEquipment->name = $EquipmentName;
+       
+            $NewEquipment->description =  $EquipmentDescription;
+            $NewEquipment->gym_id = $Gym_id;
+
+            $NewEquipment->save();
+            return redirect()->route('AdminEquipment', ['Gym_id' => $Gym_id] )->with('Success', 'Equipment added successfully');
 
     }
 
@@ -314,6 +363,17 @@ class AdminPanelController extends Controller
         $offering->delete();
     
         return redirect()->route('AdminOffering', ['Gym_id' =>  $Gym_id])->with('Success', 'Offering Deleted Successfully');
+
+    }
+
+    public function DeleteEquipment($Equipment_id){
+        $equipment= Equipment::where('equipment_id',$Equipment_id)->first();
+        $Gym_id= $equipment->gym_id;
+       
+
+        $equipment->delete();
+    
+        return redirect()->route('AdminEquipment', ['Gym_id' =>  $Gym_id])->with('Success', 'Equipment Deleted Successfully');
 
     }
 

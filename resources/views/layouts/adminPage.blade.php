@@ -43,6 +43,9 @@
         <li>
             <a href="{{ route('AdminMembership', ['Gym_id' => $Gym_id]) }}">Memberships</a>
         </li>
+        <li>
+            <a href="{{ route('AdminEquipment', ['Gym_id' => $Gym_id]) }}">Equipments</a>
+        </li>
      
         <li>
             <a href="registerGym/getStarted">Add New Gym</a>
