@@ -7,6 +7,7 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use User;
+use App\Models\Gym;
 
 class LoginController extends Controller
 {
@@ -43,9 +44,11 @@ class LoginController extends Controller
         else if($user->is_admin==0){
             return redirect('gymAll');
         }
-        else if($user->is_admin==1){
+        else if($user->is_admin==1 && $user->gym->isEmpty()){
             return redirect('registerGym/getStarted');
-        } 
+        } else if($user->is_admin==1){
+            return redirect ('AdminFirst');
+        }
         
         
    }
