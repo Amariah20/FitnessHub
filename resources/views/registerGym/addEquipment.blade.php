@@ -17,13 +17,13 @@
         </ul>
     </div>
 @endif
-@if(session('success_offering'))
+@if(session('success_equipment'))
     <div class="alert alert-success">
-        {{ session('success_offering') }}
+        {{ session('success_equipment') }}
     </div>
 
    
-    <button type="submit"> <a href="{{ route('equipment.create') }}">Next</a></button>
+    <button type="submit"> <a href="{{ route('display') }}">Next</a></button>
    
 @endif
 
@@ -31,25 +31,21 @@
 
 <div class="container">
 <div class="card-header"><img src="{{ asset('images/FitnessHubLogo.png') }}"  width="400" height="70"></div>
-<form method="POST" action="{{ route('offering.store') }}">
+<form method="POST" action="{{ route('equipment.store') }}">
 @csrf
 
     <div class="mb">
-        <label class="label">Name of Service/Offering</label>
-        <input type="text" name="name" class="form-control" required>
+        <label class="label">Name of Equipment</label>
+        <input type="text" name="name" class="form-control">
     </div>
-    <div class="mb">
-        <label class="label">Price</label>
-        <input type="number" name="price" class="form-control"  required>
-    </div>
-   
-    <div class="mb">
+ 
+       <div class="mb">
         <label class="label">Write a brief description</label>
-        <textarea class="form-control" name="description"  rows="3" required></textarea>
+        <textarea class="form-control" name="description"  rows="3"></textarea>
     </div>
 
     <div class="mb">
-    <label class="label">Which gym do you want to associate with this offering?</label>
+    <label class="label">Which gym do you want to associate with this equipment?</label>
     <select name="SelectedGymID">
     <option>Select Gym</option>
             @foreach($gym as $gym)

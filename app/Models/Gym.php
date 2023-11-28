@@ -9,6 +9,8 @@ use App\Models\Membership;
 use App\Models\User;
 use App\Models\Offerings;
 use App\Models\Images;
+use App\Models\Equipment;
+
 
 class Gym extends Model
 {
@@ -43,6 +45,12 @@ class Gym extends Model
          // return $this->hasMany(Images::class, 'gym_id', 'Gym_id');
          return $this->hasMany(Images::class); //not sure if this is ok. might need to change ERD
       }
+
+        //rela between gym & offerings. gym has many offerings
+        public function equipments()
+        {
+            return $this->hasMany(Equipment::class);
+        }
   
      
 }

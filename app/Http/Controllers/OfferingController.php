@@ -31,14 +31,14 @@ class OfferingController extends Controller
             if ($CurrentUser->gym->isEmpty()) { //there's a rela between gym and user in models.
              // return 'You must create a gym first, before adding memberships.';
               //return redirect()->back()->with('error', 'You must create a gym first, before adding memberships.');
-              return redirect()->back()->withErrors(['error' => 'You must create a gym first, before adding memberships.']);
+              return redirect()->back()->withErrors(['error' => 'You must create a gym first, before adding an offering.']);
             }
             
 
            
             if (($req->SelectedGymID== "Select Gym")) {
                 //return 'Please select a gym before adding a membership.';
-                return redirect()->back()->withErrors(['error' => 'Please select a gym before adding a membership.']);
+                return redirect()->back()->withErrors(['error' => 'Please select a gym before adding an offering.']);
            }
                      
             $OfferingName = $req-> name;
