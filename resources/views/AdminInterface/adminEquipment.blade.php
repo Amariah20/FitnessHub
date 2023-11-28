@@ -20,6 +20,7 @@
       <th scope="col">Name</th>
       <th scope="col">Decription</th>
       <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
       
     </tr>
   </thead>
@@ -34,18 +35,9 @@
      
       
       <td><a href="{{route('EditEquipment', ['Equipment_id' => $equipment->equipment_id] )}}"><button type= "submit">Edit</button></a></td>
-      <td><a href="{{route('DeleteEquipment',['Equipment_id' => $equipment->equipment_id])}}"><button type= "submit">Delete</button></a></td>
+      <td><a onclick="return confirm('Are you sure you want to delete?')" href="{{route('DeleteEquipment',['Equipment_id' => $equipment->equipment_id])}}"><button type= "submit">Delete</button></a></td>
     </tr>
  @endforeach
  </tbody>
  </table>
-      
-      
-    
-
-
-
-
-
-
 @endsection

@@ -2,7 +2,12 @@
 
 @section('content')
 
+
 <h2>Classes</h2>
+
+
+
+
 @if (session('Success'))
                 <h6 class="alert alert-success">{{ session('Success') }}</h6>
             @endif
@@ -38,18 +43,9 @@
       <td>{{$class->capacity}}</td>
       <td> {{$class->price}}</td>
       <td><a href="{{route('EditClass', ['Class_id' => $class->Class_id] )}}"><button type= "submit">Edit</button></a></td>
-      <td><a href="{{route('DeleteClass', ['Class_id' => $class->Class_id] )}}"><button type= "submit">Delete</button></a></td>
+   <td><a onclick="return confirm('Are you sure you want to delete?')" href="{{route('DeleteClass', ['Class_id' => $class->Class_id] )}}"><button type="submit">Delete</button></a></td>
     </tr>
  @endforeach
  </tbody>
  </table>
-      
-      
-    
-
-
-
-
-
-
 @endsection

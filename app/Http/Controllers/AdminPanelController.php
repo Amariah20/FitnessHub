@@ -336,8 +336,12 @@ class AdminPanelController extends Controller
     }
 
     public function DeleteClass($Class_id){
+     
+
+     
         $class= Classes::where('Class_id',$Class_id)->first();
-        $Gym_id= $class->gym_id;
+         $Gym_id= $class->gym_id;
+
        
 
         $class->delete();
@@ -379,6 +383,8 @@ class AdminPanelController extends Controller
         return redirect()->route('AdminEquipment', ['Gym_id' =>  $Gym_id])->with('Success', 'Equipment Deleted Successfully');
 
     }
+
+   
 
 
     }

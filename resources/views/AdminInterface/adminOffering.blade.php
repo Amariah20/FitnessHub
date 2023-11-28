@@ -35,7 +35,7 @@
       <td>{{$offerin->price}}</td>
       
       <td><a href="{{route('EditOffering', ['Offering_id' => $offerin->offerings_id] )}}"><button type= "submit">Edit</button></a></td>
-      <td><a href="{{route('DeleteOffering',['Offering_id' => $offerin->offerings_id])}}"><button type= "submit">Delete</button></a></td>
+      <td><a onclick="return confirm('Are you sure you want to delete?')" href="{{route('DeleteOffering',['Offering_id' => $offerin->offerings_id])}}"><button type= "submit">Delete</button></a></td>
     </tr>
  @endforeach
  </tbody>
