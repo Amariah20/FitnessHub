@@ -18,7 +18,10 @@ class AdminPanelController extends Controller
 
 //protected $currentGymId;
     
-
+ public function logout(){
+    Auth::guard('web')->logout();
+    return redirect('/');
+ }
 
 
 

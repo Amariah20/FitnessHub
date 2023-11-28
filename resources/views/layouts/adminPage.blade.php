@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -26,9 +27,18 @@
     <header class="header">
         <a href="">LOGO</a>
 
-        <div class="logout" >
-            <a href="" class="btn btn-primary">Log out</a>
+        <div class="logout">
+       
+                                    
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+        @csrf
+            
+            <a href="" class="btn btn-primary"  onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+             {{ __('Logout') }}</a>
         </div>
+        
+        </form>
     </header>
     
     <aside>
@@ -58,3 +68,4 @@
     </div>
 </body>
 <html>
+
