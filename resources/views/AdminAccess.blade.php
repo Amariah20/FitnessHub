@@ -9,6 +9,12 @@
 @endif
     <h1>User List</h1>
 
+    <!--search-->
+<form method="GET" action="{{route ('searchUser')}}" >
+                <input type="text" placeholder="Find something" name="search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>  
+</form>
+
     <table>
         <thead>
             <tr>

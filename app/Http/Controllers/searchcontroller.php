@@ -12,6 +12,8 @@ use App\Models\Classes;
 use App\Models\Equipment;
 use App\Models\Membership;
 use App\Models\Offerings;
+use Laravel\Ui\Presets\React;
+use App\Models\User;
 
 //I used these for help:  https://laracasts.com/series/laravel-8-from-scratch/episodes/37 and https://www.youtube.com/watch?v=aPYEOVDTV6E, https://stackoverflow.com/questions/39321570/laravel-wherein-or-wheren-with-where#:~:text=Note%3A%20where%20will%20compare%20with,compare%20evey%20index%20of%20array. 
     //I found information about pluck method here: https://laravel.com/docs/10.x/collections
@@ -126,6 +128,17 @@ public function search(Request $req){
         ->where('name',  'like','%'.$searchitems. '%')->get(); 
 
         return view('AdminInterface.adminMembership', compact('memberships', 'Gym_id'));
+
+    }
+
+    public function searchUser(Request $req){
+        $searchitems = $req->search;
+
+        $users= User::where('name', 'like','%'.$searchitems. '%')
+        ->orWhere('email',  'like','%'.$searchitems. '%')->get();
+
+        return view('AdminAccess', compact('users'));
+
 
     }
 
