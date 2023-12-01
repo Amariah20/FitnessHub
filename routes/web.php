@@ -169,5 +169,9 @@ Route::get('DeleteEquipment/{Equipment_id}', 'App\Http\Controllers\AdminPanelCon
 });
 
 
+//searching
 Route::get('search','App\Http\Controllers\searchcontroller@search')->name('search');
-Route::get('searchAdmin','App\Http\Controllers\searchcontroller@searchAdmin');
+Route::get('searchClass/{Gym_id}','App\Http\Controllers\searchcontroller@searchClass')->name('searchClass');
+Route::get('searchOffering/{Gym_id}','App\Http\Controllers\searchcontroller@searchOffering')->name('searchOffering');
+Route::get('searchEquipment/{Gym_id}','App\Http\Controllers\searchcontroller@searchEquipment')->name('searchEquipment');
+Route::get('searchMembership/{Gym_id}','App\Http\Controllers\searchcontroller@searchMembership')->name('searchMembership');

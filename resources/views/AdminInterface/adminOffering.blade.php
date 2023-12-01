@@ -10,6 +10,11 @@
 @endif
 
 <a href="{{route('AdminAddOffering', ['Gym_id' => $Gym_id])}}"><button>Add New Offering</button></a>
+<!--search-->
+<form method="GET" action="{{route ('searchOffering', ['Gym_id' => $Gym_id])}}" >
+                <input type="text" placeholder="Find something" name="search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>  
+</form>
 
 
 

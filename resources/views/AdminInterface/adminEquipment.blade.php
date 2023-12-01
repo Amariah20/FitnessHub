@@ -4,12 +4,18 @@
 
 
 
-<h2>Offerings</h2>
+<h2>Equipments</h2>
 @if (session('Success'))
     <h6 class="alert alert-success">{{ session('Success') }}</h6>
 @endif
 
+
 <a href="{{route('AdminAddEquipment', ['Gym_id' => $Gym_id])}}"><button>Add New Equipment</button></a>
+<!--search-->
+<form method="GET" action="{{route ('searchEquipment', ['Gym_id' => $Gym_id])}}" >
+                <input type="text" placeholder="Find something" name="search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>  
+</form>
 
 
 

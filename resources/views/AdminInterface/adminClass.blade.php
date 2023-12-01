@@ -13,7 +13,11 @@
             @endif
 
 <a href="{{route('AdminAddClass', ['Gym_id' => $Gym_id])}}"><button>Add New Class</button></a>
-
+<!--search bar-->
+<form method="GET" action="{{route ('searchClass', ['Gym_id' => $Gym_id])}}" >
+                <input type="text" placeholder="Find something" name="search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>  
+</form>
 
 <table class="table table-striped">
   <thead class="thead-light">

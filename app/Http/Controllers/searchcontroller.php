@@ -82,6 +82,54 @@ public function search(Request $req){
             
             return view('gymAll', compact('gyms'));
     }
+
+    public function searchClass(Request $req, $Gym_id){
+        $searchitems = $req->search;
+        
+
+        $classes= Classes::where('gym_id', $Gym_id)
+        ->where('name',  'like','%'.$searchitems. '%')->get(); 
+
+        return view('AdminInterface.adminClass', compact('classes', 'Gym_id'));
+
+    }
+
+    
+    public function searchEquipment(Request $req, $Gym_id){
+        $searchitems = $req->search;
+        
+
+        $equipments= Equipment::where('gym_id', $Gym_id)
+        ->where('name',  'like','%'.$searchitems. '%')->get(); 
+
+        return view('AdminInterface.adminEquipment', compact('equipments', 'Gym_id'));
+
+    }
+
+       
+    public function searchOffering(Request $req, $Gym_id){
+        $searchitems = $req->search;
+        
+
+        $offering= Offerings::where('gym_id', $Gym_id)
+        ->where('name',  'like','%'.$searchitems. '%')->get(); 
+
+        return view('AdminInterface.adminOffering', compact('offering', 'Gym_id'));
+
+    }
+
+    public function searchMembership(Request $req, $Gym_id){
+        $searchitems = $req->search;
+        
+
+        $memberships= Membership::where('gym_id', $Gym_id)
+        ->where('name',  'like','%'.$searchitems. '%')->get(); 
+
+        return view('AdminInterface.adminMembership', compact('memberships', 'Gym_id'));
+
+    }
+
+
 }
 
 

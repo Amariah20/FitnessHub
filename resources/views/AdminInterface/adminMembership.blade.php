@@ -7,6 +7,13 @@
  @endif
 
   <a href="{{route('AdminAddMembership', ['Gym_id' => $Gym_id])}}"><button>Add New Membership</button></a>
+ 
+<!--search-->
+
+<form method="GET" action="{{route ('searchMembership', ['Gym_id' => $Gym_id])}}" >
+    <input type="text" placeholder="Find something" name="search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>  
+</form>
 
 
 <table class="table table-striped">
