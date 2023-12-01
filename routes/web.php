@@ -178,4 +178,8 @@ Route::get('searchMembership/{Gym_id}','App\Http\Controllers\searchcontroller@se
 Route::get('searchUser','App\Http\Controllers\searchcontroller@searchUser')->name('searchUser');
 
 //emails
+Route::get('/createMail', function(){
+    return view ('writeEmail');
+})->name('createMail');
+
 Route::get('sendMail', 'App\Http\Controllers\MailController@sendMail')->name('sendMail');

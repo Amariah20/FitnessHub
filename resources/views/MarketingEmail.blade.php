@@ -1,5 +1,7 @@
+
 @component('mail::message')
 
-testing market
+{{$subject}}
+{{$message}}
 
 @endcomponent
