@@ -20,7 +20,7 @@ class searchcontroller extends Controller
 {
 
     
-    
+   /* 
     public function search(Request $req){
         $searchitems= $req->search;
       //  $gyms= Gym::all();
@@ -81,8 +81,68 @@ class searchcontroller extends Controller
             }  
         }
     }
-}
+  }
+}*/
+
+
+ 
+public function search(Request $req){
+    $searchitems= $req->search;
+  //  $gyms= Gym::all();
+   // $classes= Classes::all();
+
+    
+    $gyms= Gym::query()->where(function($query) use ($searchitems){
+         $query->where('name', 'like', '%'.$searchitems. '%')
+         ->orWhere(function($query) use ($searchitems){
+            $query ->where('description', 'like','%'.$searchitems. '%')
+         ->orWhere('location', 'like', '%'.$searchitems. '%')
+        ->orWhere('instagram', 'like','%'.$searchitems. '%')
+        ->orWhere('facebook', 'like', '%'.$searchitems. '%');
+         });
+    })->get();
+
+    
+              
+        $classes=Classes::query()->where(function($query) use ($searchitems){
+            $query->where('name',  'like','%'.$searchitems. '%');
+            })->get();
+
+             if($classes->isNotEmpty()){
+        
+
+                 $gym_Ids=$classes->pluck('gym_id')->toArray(); //pluck gets the gym ids of each class. these are put in an array
+                 $gyms= $gyms->merge(Gym::whereIn('Gym_id', $gym_Ids)->get());  // where will compare with just first value of array or just one single value. and whereIn will compare evey index of array.
+        //combining gyms that matches something in gym table AND in class table
+                
+             } 
+
+
+
+
+            $offerings=Offerings::query()->where(function($query) use ($searchitems){
+                $query->where('name',  'like','%'.$searchitems. '%');
+                })->get();
+            if($offerings->isNotEmpty()){
+
+            $gym_Ids= $offerings->pluck('gym_id')->toArray(); //pluck gets the gym ids of each class. these are put in an array
+            $gyms=  $gyms->merge(Gym::whereIn('Gym_id', $gym_Ids)->get());  // where will compare with just first value of array or just one single value. and whereIn will compare evey index of array.
+  
+             }  
+
+            $equipments =Equipment::query()->where(function($query) use ($searchitems){
+                $query->where('name',  'like','%'.$searchitems. '%');
+                })->get();
+
+            if($equipments->isNotEmpty()){
+
+            $gym_Ids= $equipments->pluck('gym_id')->toArray(); //pluck gets the gym ids of each class. these are put in an array
+            $gyms= $gyms->merge( Gym::whereIn('Gym_id', $gym_Ids)->get());  // where will compare with just first value of array or just one single value. and whereIn will compare evey index of array.
+            }  
+
+            return view('gymAll', compact('gyms'));
     }
+}
 
 
 
@@ -129,7 +189,7 @@ class searchcontroller extends Controller
         } */
 
 
-        }
+        
 
 
 
