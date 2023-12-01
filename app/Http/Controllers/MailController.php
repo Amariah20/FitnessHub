@@ -5,18 +5,11 @@ use App\Mail\Marketing;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 
+//used this for help: https://www.youtube.com/watch?v=xigpoxOW1MY 
 
 class MailController extends Controller
 {
- /*
-    public function createMail(){
-
-        
-        return view('writeEmail');
-       
-
-
-    }*/
+ 
     public function sendMail(Request $req){
 /*
         $req->validate([

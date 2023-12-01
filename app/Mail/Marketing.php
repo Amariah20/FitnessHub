@@ -9,7 +9,7 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-//used this for help: https://www.youtube.com/watch?v=xigpoxOW1MY (REFER TO EAT FOR EXTRA STUFF)
+//used this for help: https://www.youtube.com/watch?v=xigpoxOW1MY (REFER TO IT FOR EXTRA STUFF)
 
 class Marketing extends Mailable
 {
