@@ -176,3 +176,6 @@ Route::get('searchOffering/{Gym_id}','App\Http\Controllers\searchcontroller@sear
 Route::get('searchEquipment/{Gym_id}','App\Http\Controllers\searchcontroller@searchEquipment')->name('searchEquipment');
 Route::get('searchMembership/{Gym_id}','App\Http\Controllers\searchcontroller@searchMembership')->name('searchMembership');
 Route::get('searchUser','App\Http\Controllers\searchcontroller@searchUser')->name('searchUser');
+
+//emails
+Route::get('sendMail', 'App\Http\Controllers\MailController@sendMail')->name('sendMail');
