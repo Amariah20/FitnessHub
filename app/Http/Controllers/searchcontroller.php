@@ -75,6 +75,11 @@ public function search(Request $req){
             $gyms= $gyms->merge( Gym::whereIn('Gym_id', $gym_Ids)->get());  // where will compare with just first value of array or just one single value. and whereIn will compare evey index of array.
             }  
 
+            if($gyms->isEmpty())
+            {
+                return redirect('gymAll')->with('no_result', 'No Results maching your search were found');
+            }
+            
             return view('gymAll', compact('gyms'));
     }
 }

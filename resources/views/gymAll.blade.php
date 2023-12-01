@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+@if (session('no_result'))
+    <div class="alert alert-danger">
+        {{ session('no_result') }}
+    </div>
+@endif
 NOTE: Figure out which piece of info to display here in addition to gym name. what's most important for customers?
     @foreach($gyms as $gym)
 <ul> 
