@@ -40,6 +40,8 @@ class GymController extends Controller
     }
 }
 
+  
+
     //to display all classes and offerings in that gym
     public function showOfferings($Gym_id){
         $gym = Gym::where('Gym_id', $Gym_id)->first();
@@ -53,6 +55,7 @@ class GymController extends Controller
     //for showing all gyms 
     public function list(){
         return view ('/gymAll', array('gyms'=>Gym::all()) );
+        
     }
     
 

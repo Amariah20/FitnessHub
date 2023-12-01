@@ -7,6 +7,7 @@ use App\Models\Gym;
 use App\Models\Equipment;
 use Illuminate\Support\Facades\Auth;
 
+
 class EquipmentController extends Controller
 {
     public function createEquipment(){

@@ -164,3 +164,6 @@ Route::get('DeleteMembership/{Membership_id}', 'App\Http\Controllers\AdminPanelC
 Route::get('DeleteOffering/{Offering_id}', 'App\Http\Controllers\AdminPanelController@DeleteOffering')->name('DeleteOffering');
 Route::get('DeleteEquipment/{Equipment_id}', 'App\Http\Controllers\AdminPanelController@DeleteEquipment')->name('DeleteEquipment');
 });
+
+
+Route::get('/search','App\Http\Controllers\searchcontroller@search');
