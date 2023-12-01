@@ -87,7 +87,7 @@
                     </ul>
                 </div>
                 <!--search bar-->
-             <form method="GET" action="/search">
+             <form method="GET" action="{{route('search')}}">
              <input type="text" placeholder="Find something" name="search">
              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
              

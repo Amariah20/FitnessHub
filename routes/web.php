@@ -169,4 +169,5 @@ Route::get('DeleteEquipment/{Equipment_id}', 'App\Http\Controllers\AdminPanelCon
 });
 
 
-Route::get('/search','App\Http\Controllers\searchcontroller@search');
+Route::get('search','App\Http\Controllers\searchcontroller@search')->name('search');
+Route::get('searchAdmin','App\Http\Controllers\searchcontroller@searchAdmin');
