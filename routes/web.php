@@ -97,6 +97,9 @@ Route::get('classesOfferings/{Gym_id}', 'App\Http\Controllers\GymController@show
 Route::get('classShow, {Class_id}', 'App\Http\Controllers\ClassesController@show')->name('classShow');
 Route::get('offeringShow, {Offering_id}', 'App\Http\Controllers\OfferingController@show')->name('offeringShow');
 
+Route::get('showEquipments/{Gym_id}', 'App\Http\Controllers\GymController@showEquipments')->name('showEquipments');
+//Route::get('equipments, {Gym_id}', 'App\Http\Controllers\EquipmentController@show')->name('equipments');
+
 //to register gyms
 Route::get('registerGym/getStarted', function () {
     return view('registerGym.getStarted');

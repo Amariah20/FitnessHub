@@ -29,12 +29,17 @@
         @elseif($numOfclasses==1)
             <p>View our Class</p>
         @elseif($numOfofferings==1)
-            <p>View our Services</p>
+            <p>View our Service</p>
         @endif
         <button type="submit"> <a href="{{ route('classesOfferings', ['Gym_id'=>$gym->Gym_id]) }}">Learn More</a></button>
     @endif
         
     </li>
+
+    @if($numequipment>=1)
+    <h5>View Our Equipments</h5>
+    <button type="submit"> <a href="{{ route('showEquipments', ['Gym_id'=>$gym->Gym_id]) }}">Learn More</a></button>
+    @endif
 
     @if(($gym->logo || $gym->banner || $gym->extra_image >= 1)) 
     <li>Images:</li>

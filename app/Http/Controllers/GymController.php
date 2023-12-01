@@ -11,6 +11,7 @@ use App\Models\Classes;
 //use App\Models\Images;
 use App\Models\Membership;
 use App\Models\Offerings;
+use App\Models\Equipment;
 
 
 //I used this for guidance for most of my controllers: https://www.youtube.com/watch?v=GAPzqFMSxVY&t=933s
@@ -30,9 +31,10 @@ class GymController extends Controller
        $numOfclasses= Classes::where('gym_id', $Gym_id)->count();
        $numOfofferings= Offerings::where('gym_id',$Gym_id)->count();
        $count= $numOfclasses + $numOfofferings;
+       $numequipment = Equipment::where('gym_id', $Gym_id)->count();
        
 
-       return view('gymIndividual', compact('gym', 'memberships', 'count', 'numOfclasses','numOfofferings'));
+       return view('gymIndividual', compact('gym', 'memberships', 'count', 'numOfclasses','numOfofferings', 'numequipment'));
     } catch (\Exception $e){
         $error= "An error occured:". $e->getMessage();
         //return view ('gymIndividual', compact('error'));
@@ -49,6 +51,14 @@ class GymController extends Controller
         $offerings =  Offerings::where('gym_id',$Gym_id)->get();
 
         return view('classesOfferings',  compact('gym', 'classes', 'offerings'));
+    }
+
+
+    public function showEquipments($Gym_id){
+        $gym = Gym::where('Gym_id', $Gym_id)->first();
+        $equipments = Equipment::where('gym_id', $Gym_id)->get();
+        return view('equipments', compact('gym', 'equipments'));
+
     }
 
     
