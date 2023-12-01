@@ -66,6 +66,10 @@
         <li>
             <a href="registerGym/getStarted">Add New Gym</a>
         </li>
+
+        <li>
+            <a href="createMail">Send Email</a>
+        </li>
     </ul>
     </aside>
     
