@@ -25,6 +25,8 @@ class ClassesController extends Controller
 
             public function storeClass(Request $req)
             {
+
+                try{
                 $CurrentUser = Auth::user();
                 
                  
@@ -66,6 +68,11 @@ class ClassesController extends Controller
                 $NewClass->save();
                 return redirect()->route('class.create')->with('success_class', 'Class successfully added. You may add more or move to the next section.');
                    
+            } catch (\Exception $e){
+                $error= "An error occured:". $e->getMessage();
+                //return view ('gymIndividual', compact('error'));
+                return redirect()->back()->withErrors(['error'=>$error]);
+            }
             }
 
             public function show($Class_id){

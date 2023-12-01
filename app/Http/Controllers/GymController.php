@@ -12,12 +12,15 @@ use App\Models\Classes;
 use App\Models\Membership;
 use App\Models\Offerings;
 
+
 //I used this for guidance for most of my controllers: https://www.youtube.com/watch?v=GAPzqFMSxVY&t=933s
 //need to allow admins to add more than one gym 
 class GymController extends Controller
 {
       //for showing one gym
       public function show($Gym_id){
+
+      try{
         $gym = Gym::where('Gym_id', $Gym_id)->first();
        // return view('gymIndividual', compact('gym')); //compact ('gym') is passing the variable gym to the view
 
@@ -30,7 +33,12 @@ class GymController extends Controller
        
 
        return view('gymIndividual', compact('gym', 'memberships', 'count', 'numOfclasses','numOfofferings'));
+    } catch (\Exception $e){
+        $error= "An error occured:". $e->getMessage();
+        //return view ('gymIndividual', compact('error'));
+        return redirect()->back()->withErrors(['error'=>$error]);
     }
+}
 
     //to display all classes and offerings in that gym
     public function showOfferings($Gym_id){
@@ -54,6 +62,8 @@ class GymController extends Controller
     }
 
     function storeGym(Request $req){
+
+    try{
         $gymName= $req-> name; 
         $gymDescription= $req-> description;
         $gymLocation= $req-> location;
@@ -118,6 +128,11 @@ class GymController extends Controller
         $NewGym-> save();
         
         return redirect()->route('membership.create')->with('success', 'successfully added');
+    } catch (\Exception $e){
+        $error= "An error occured:". $e->getMessage();
+        //return view ('gymIndividual', compact('error'));
+        return redirect()->back()->withErrors(['error'=>$error]);
+    }
 
         
     }

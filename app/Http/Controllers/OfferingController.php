@@ -24,6 +24,8 @@ class OfferingController extends Controller
 
             public function storeOffering(Request $req)
         {
+
+            try{
             $CurrentUser = Auth::user();
             
              
@@ -57,7 +59,11 @@ class OfferingController extends Controller
 
             $NewOffering->save();
             return redirect()->route('offering.create')->with('success_offering', 'Item successfully added. You may add more or move to the next section.');
-            
+        } catch (\Exception $e){
+            $error= "An error occured:". $e->getMessage();
+            //return view ('gymIndividual', compact('error'));
+            return redirect()->back()->withErrors(['error'=>$error]);
+        }  
 
       }
       public function show($Offering_id){

@@ -23,6 +23,7 @@ class EquipmentController extends Controller
 
         public function storeEquipment(Request $req)
         {
+            try{
             $CurrentUser = Auth::user();
             
              
@@ -56,7 +57,11 @@ class EquipmentController extends Controller
 
             $NewEquipment->save();
             return redirect()->route('equipment.create')->with('success_equipment', 'Equipment successfully added. You may add more or move to the next section.');
-            
+        } catch (\Exception $e){
+            $error= "An error occured:". $e->getMessage();
+            //return view ('gymIndividual', compact('error'));
+            return redirect()->back()->withErrors(['error'=>$error]);
+        }     
 
       }
       public function show($Equipment_id){

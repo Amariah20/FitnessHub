@@ -101,7 +101,7 @@ class AdminPanelController extends Controller
     public function UpdateGym(Request $req,$Gym_id){
 
        
-
+     try{
         $gym = Gym::where('Gym_id', $Gym_id)->first();    
         //$gym->Gym_id= $Gym_id;
        // $gym->name= $req->name;
@@ -149,6 +149,11 @@ class AdminPanelController extends Controller
         //return redirect()->route('AdminWelcome', compact('Gym_id', 'gym'))->with('Success','Gym Updated Successfully');
         //return redirect()->route('AdminWelcome', compact('Gym_id'))->with('Success','Gym Updated Successfully');
         return redirect()->route('AdminWelcome', ['SelectedGymID' => $Gym_id])->with('Success', 'Gym Updated Successfully');
+    } catch (\Exception $e){
+        $error= "An error occured:". $e->getMessage();
+        //return view ('gymIndividual', compact('error'));
+        return redirect()->back()->withErrors(['error'=>$error]);
+    }
 
     }
 
@@ -162,6 +167,8 @@ class AdminPanelController extends Controller
 
      public function UpdateClass(Request $req,$Class_id){
 
+        try{
+
         $class= Classes::where('Class_id', $Class_id)->first();
         $class->name = $req-> name;
         $class->price = $req->price;
@@ -173,6 +180,11 @@ class AdminPanelController extends Controller
 
         $class->update();
         return redirect()->route('AdminClass', ['Gym_id' => $class->gym_id])->with('Success', 'Class Updated Successfully');
+    } catch (\Exception $e){
+        $error= "An error occured:". $e->getMessage();
+        //return view ('gymIndividual', compact('error'));
+        return redirect()->back()->withErrors(['error'=>$error]);
+    }
 
      }
 
@@ -184,6 +196,8 @@ class AdminPanelController extends Controller
      }
 
      public function UpdateMembership(Request $req, $Membership_id){
+
+        try{
         $membership= Membership::where('membership_id', $Membership_id)->first();
         $membership->name= $req->name;
         $membership->description= $req->description;
@@ -191,7 +205,13 @@ class AdminPanelController extends Controller
         $membership->update();
 
         return redirect()->route('AdminMembership', ['Gym_id' => $membership->gym_id] )->with('Success', 'Membership updated successfully');
-     }
+    } catch (\Exception $e){
+        $error= "An error occured:". $e->getMessage();
+        //return view ('gymIndividual', compact('error'));
+        return redirect()->back()->withErrors(['error'=>$error]);
+    } 
+    }
+
 
      public function EditOffering($Offering_id){
         
@@ -201,6 +221,8 @@ class AdminPanelController extends Controller
      }
 
      public function UpdateOffering(Request $req, $Offering_id){
+
+        try{
         $offering= Offerings::where('offerings_id', $Offering_id)->first();
         $offering->name= $req->name;
         $offering->description= $req->description;
@@ -208,7 +230,12 @@ class AdminPanelController extends Controller
         $offering->update();
 
         return redirect()->route('AdminOffering', ['Gym_id' => $offering->gym_id] )->with('Success', 'Offering updated successfully');
-     }
+    } catch (\Exception $e){
+        $error= "An error occured:". $e->getMessage();
+        //return view ('gymIndividual', compact('error'));
+        return redirect()->back()->withErrors(['error'=>$error]);
+    }
+    }
 
 
      public function EditEquipment($Equipment_id){
@@ -219,6 +246,8 @@ class AdminPanelController extends Controller
      }
 
      public function UpdateEquipment(Request $req, $Equipment_id){
+
+        try{
         $equipment= Equipment::where('equipment_id', $Equipment_id)->first();
         $equipment->name= $req->name;
         $equipment->description= $req->description;
@@ -226,7 +255,12 @@ class AdminPanelController extends Controller
         $equipment->update();
 
         return redirect()->route('AdminEquipment', ['Gym_id' => $equipment->gym_id] )->with('Success', 'Equipment updated successfully');
-     }
+    } catch (\Exception $e){
+        $error= "An error occured:". $e->getMessage();
+        //return view ('gymIndividual', compact('error'));
+        return redirect()->back()->withErrors(['error'=>$error]);
+    }
+    }
 
 
 
@@ -238,6 +272,7 @@ class AdminPanelController extends Controller
 
      public function AdminClassStore(Request $req, $Gym_id){
 
+            try{ 
                 $ClassName = $req-> name;
                 $ClassLocation= $req-> location;
                 $ClassPrice= $req->price;
@@ -259,6 +294,11 @@ class AdminPanelController extends Controller
     
                 $NewClass->save();
                 return redirect()->route('AdminClass', ['Gym_id' => $Gym_id])->with('Success', 'Class Added Successfully');
+            } catch (\Exception $e){
+                $error= "An error occured:". $e->getMessage();
+                //return view ('gymIndividual', compact('error'));
+                return redirect()->back()->withErrors(['error'=>$error]);
+            }
 
      }
 
@@ -269,6 +309,8 @@ class AdminPanelController extends Controller
     }
 
     public function AdminMembershipStore(Request $req, $Gym_id){
+
+        try{
         $MembershipName = $req-> name;
         $MembershipPrice= $req->price;
         $MembershipDescription = $req-> description;
@@ -285,6 +327,11 @@ class AdminPanelController extends Controller
 
         $NewMembership->save();
         return redirect()->route('AdminMembership', ['Gym_id' => $Gym_id] )->with('Success', 'Membership added successfully');
+    } catch (\Exception $e){
+        $error= "An error occured:". $e->getMessage();
+        //return view ('gymIndividual', compact('error'));
+        return redirect()->back()->withErrors(['error'=>$error]);
+    }
     }
 
     public function AdminCreateOffering(Request $req, $Gym_id){
@@ -294,6 +341,8 @@ class AdminPanelController extends Controller
     }
 
     public function AdminOfferingStore(Request $req, $Gym_id){
+
+        try{
         $OfferingName = $req-> name;
             $OfferingPrice= $req->price;
             $OfferingDescription = $req-> description;
@@ -308,6 +357,11 @@ class AdminPanelController extends Controller
 
             $NewOffering->save();
             return redirect()->route('AdminOffering', ['Gym_id' => $Gym_id] )->with('Success', 'Offering added successfully');
+        } catch (\Exception $e){
+            $error= "An error occured:". $e->getMessage();
+            //return view ('gymIndividual', compact('error'));
+            return redirect()->back()->withErrors(['error'=>$error]);
+        }
 
     }
 
@@ -318,6 +372,7 @@ class AdminPanelController extends Controller
     }
 
     public function AdminEquipmentStore(Request $req, $Gym_id){
+        try{
              $EquipmentName = $req-> name;
      
             $EquipmentDescription = $req-> description;
@@ -332,6 +387,11 @@ class AdminPanelController extends Controller
 
             $NewEquipment->save();
             return redirect()->route('AdminEquipment', ['Gym_id' => $Gym_id] )->with('Success', 'Equipment added successfully');
+        } catch (\Exception $e){
+            $error= "An error occured:". $e->getMessage();
+            //return view ('gymIndividual', compact('error'));
+            return redirect()->back()->withErrors(['error'=>$error]);
+        }
 
     }
 
@@ -383,11 +443,7 @@ class AdminPanelController extends Controller
         return redirect()->route('AdminEquipment', ['Gym_id' =>  $Gym_id])->with('Success', 'Equipment Deleted Successfully');
 
     }
-
-   
-
-
-    }
+}
     
 
    

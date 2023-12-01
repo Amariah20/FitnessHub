@@ -24,6 +24,7 @@ display these in a drop down and let them select which gym they want the members
 
     public function storeMembership(Request $req)
         {
+            try{
             $CurrentUser = Auth::user();
             
              
@@ -58,7 +59,11 @@ display these in a drop down and let them select which gym they want the members
             $NewMembership->save();
             return redirect()->route('membership.create')->with('success_membership', 'Membership successfully added. You may add more or move to the next section.');
             
-
+        } catch (\Exception $e){
+            $error= "An error occured:". $e->getMessage();
+            //return view ('gymIndividual', compact('error'));
+            return redirect()->back()->withErrors(['error'=>$error]);
+        }
 
 
 
