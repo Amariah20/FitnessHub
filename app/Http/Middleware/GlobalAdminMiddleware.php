@@ -19,6 +19,7 @@ class GlobalAdminMiddleware
         //only global admin can access requested page
         if(auth()->user()?->email != 'globaladmin@gmail.com'){     
             abort(Response::HTTP_FORBIDDEN);
+           
         }
         return $next($request);
         return $next($request);
