@@ -21,7 +21,7 @@ class GlobalAdminMiddleware
             abort(Response::HTTP_FORBIDDEN);
            
         }
-        return $next($request);
+       
         return $next($request);
     }
 }
