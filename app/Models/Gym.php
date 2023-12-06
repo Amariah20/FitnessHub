@@ -10,6 +10,7 @@ use App\Models\User;
 use App\Models\Offerings;
 use App\Models\Images;
 use App\Models\Equipment;
+use App\Models\subscription;
 
 
 class Gym extends Model
@@ -50,6 +51,11 @@ class Gym extends Model
         public function equipments()
         {
             return $this->hasMany(Equipment::class);
+        }
+
+        public function subscriptions()
+        {
+            return $this->hasMany(subscription::class);
         }
   
      

@@ -23,7 +23,8 @@
 
 <div class="container">
 <div class="card-header"><img src="{{ asset('images/FitnessHubLogo.png') }}"  width="400" height="70"></div>
-<form method="GET" action="{{ route('sendMail') }}">
+ 
+<form method="GET" action="{{ route('sendMail', ) }}">
 @csrf
 
     <div class="mb">

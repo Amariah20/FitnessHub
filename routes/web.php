@@ -184,3 +184,4 @@ Route::get('/createMail', function(){
 
 Route::get('sendMail', 'App\Http\Controllers\MailController@sendMail')->name('sendMail');
 Route::get('clientSendMail/{Gym_id}', 'App\Http\Controllers\MailController@clientSendMail')->name('clientSendMail');
+Route::get('subscribe/{Gym_id}', 'App\Http\Controllers\MailController@subscribe')->name('subscribe');

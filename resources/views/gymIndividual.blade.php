@@ -24,7 +24,7 @@
     <li>Location: {{$gym->location}}</li>
     <li>Opening Hours: {{$gym-> opening_hours}}</li>
     <li>Phone Number: {{$gym->phone_number}}</li>
-    <li>Email: {{$gym->email}}</li>
+    <li>Email: {{$gym->email}}</li> 
     <li>Instagram: {{$gym->instagram}}</li>
     <li>Facebook: {{$gym->facebook}}</li>
     <li>Memberships: 
@@ -102,7 +102,13 @@
     <button type="submit">Send Email</button>
 </form>
 
-    
+<form action="{{route('subscribe',['Gym_id' => $gym->Gym_id])}}" method="get">
+    @csrf
+<p>Join our mailing list and be the first to hear about our exciting offers</p>
+<input type="email" name="email" class="form-control" required placeholder="email@example.com">
+
+<button type="submit">Subscribe</button>
+</form>
     
     
    
