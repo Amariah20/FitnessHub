@@ -1,6 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
+@if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                {{ $error }}
+            @endforeach
+        </ul>
+    </div>
+@endif
 
 
 <h1>Gym: {{$gym->name}}</h1>
@@ -55,7 +69,39 @@
 @endif
    
 </ul>
-    
+
+<h3>Contact us</h3>
+<form method="GET" action="{{ route('clientSendMail',['Gym_id' => $gym->Gym_id]) }}">
+@csrf
+
+<div class="mb">
+        <label class="label">Name</label>
+        <input type="text" name="name" class="form-control" required placeholder="Please enter your name">
+    </div>
+
+    <div class="mb">
+        <label class="label">Email Address</label>
+        <input type="email" name="email" class="form-control" required placeholder="Please enter your email address">
+    </div>
+
+    <div class="mb">
+        <label class="label">Phone Number</label>
+        <input type="text" name="number" class="form-control" placeholder="Please enter your phone number">
+    </div>
+
+    <div class="mb">
+        <label class="label">Subject of Email</label>
+        <input type="text" name="subject" class="form-control" required placeholder="Briefly state the purpose of your email">
+    </div>
+ 
+       <div class="mb">
+        <label class="label">Email Message</label>
+        <textarea class="form-control" name="message"  rows="3" required placeholder="Please write your message"></textarea>
+    </div>
+    <br>
+    <button type="submit">Send Email</button>
+</form>
+
     
     
     
