@@ -31,7 +31,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/AboutUs', function () {
     return view('AboutUs');
-})->name('aboutus');
+})->name('AboutUs');
 
 //I used this for help to write routes that only admin/global admin can access: https://www.youtube.com/watch?v=-a7JvwW60xk
 Route::middleware(['auth', 'global.admin'])->group(function () {
