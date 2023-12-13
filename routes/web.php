@@ -178,10 +178,12 @@ Route::get('searchMembership/{Gym_id}','App\Http\Controllers\searchcontroller@se
 Route::get('searchUser','App\Http\Controllers\searchcontroller@searchUser')->name('searchUser');
 
 //emails
-Route::get('/createMail', function(){
+/*
+Route::get('createMail/{Gym_id}', function(){
     return view ('writeEmail');
-})->name('createMail');
+})->name('createMail');*/
+Route::get('createMail/{Gym_id}', 'App\Http\Controllers\AdminPanelController@adminWriteEmail')->name('createMail'); //for admin to send emails
 
-Route::get('sendMail', 'App\Http\Controllers\MailController@sendMail')->name('sendMail');
+Route::get('sendMail/{Gym_id}', 'App\Http\Controllers\MailController@sendMail')->name('sendMail');
 Route::get('clientSendMail/{Gym_id}', 'App\Http\Controllers\MailController@clientSendMail')->name('clientSendMail');
 Route::get('subscribe/{Gym_id}', 'App\Http\Controllers\MailController@subscribe')->name('subscribe');

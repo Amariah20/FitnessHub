@@ -68,7 +68,8 @@
         </li>
 
         <li>
-            <a href="createMail">Send Email</a>
+            <a href="{{route ('createMail' , ['Gym_id' => $Gym_id])}}">Send Email</a>
+            
         </li>
     </ul>
     </aside>

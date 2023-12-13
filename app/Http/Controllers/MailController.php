@@ -7,13 +7,19 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 use App\Models\Gym;
 use App\Models\subscription;
+use Illuminate\Notifications\Notification;
+use Illuminate\Support\Facades;
+use Illuminate\Support\Facades\Notification as FacadesNotification;
 
 //used this for help: https://www.youtube.com/watch?v=xigpoxOW1MY 
 
 class MailController extends Controller
 {
  
-    public function sendMail(Request $req){
+
+  
+
+    public function sendMail(Request $req, $Gym_id){
 /*
         $req->validate([
             'subject'=> 'required!string|max:100',
@@ -26,10 +32,17 @@ class MailController extends Controller
         //When admin accesses writeEmail.blade.php, retrieve all the email associated with current gym_id in the table. send email to all these people.
         //how to get the gym's id from admin panel?
        
+        //FacadesNotification::route('mail','rigodonamariah16@gmail.com')->notify(new Marketing($subject, $message));
+
+        $subscribers= subscription::where('gym_id',$Gym_id)->pluck('userEmail');
+
+        foreach($subscribers as $subscriber){
+            Mail::to($subscriber)->send(new Marketing($subject, $message));
+        }
         
-        //Mail::to('rigodonamariah16@gmail.com')->subject($subject)-> send(new Marketing());
-     Mail::to('rigodonamariah16@gmail.com')->send(new Marketing($subject, $message));
-     return redirect()->route('createMail')->with('success', 'Email successfully sent.');
+     //   //Mail::to('rigodonamariah16@gmail.com')->subject($subject)-> send(new Marketing());
+    // Mail::to('rigodonamariah16@gmail.com')->send(new Marketing($subject, $message));
+     return redirect()->route('createMail', ['Gym_id' =>  $Gym_id])->with('success', 'Email successfully sent.');
 
     }
 

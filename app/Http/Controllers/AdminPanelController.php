@@ -443,6 +443,11 @@ class AdminPanelController extends Controller
         return redirect()->route('AdminEquipment', ['Gym_id' =>  $Gym_id])->with('Success', 'Equipment Deleted Successfully');
 
     }
+
+    public function adminWriteEmail(Request $req, $Gym_id){
+            
+        return view('AdminInterface.writeEmail', compact('Gym_id'));
+}
 }
     
 
