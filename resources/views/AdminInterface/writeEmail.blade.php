@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.adminPage')
 
 @section('content')
 <!--I used bootstrap for the forms to register gym: https://getbootstrap.com/docs/5.0/forms/form-control/-->
@@ -22,18 +22,19 @@
 
 
 <div class="container">
-<div class="card-header"><img src="{{ asset('images/FitnessHubLogo.png') }}"  width="400" height="70"></div>
+    <h1>Write a message to your subsribers</h1>
+<div class="card-header"></div>
  
 <form method="GET" action="{{ route('sendMail', ['Gym_id' => $Gym_id] ) }}">
 @csrf
 
     <div class="mb">
-        <label class="label">Subject of Email</label>
+        <label class="form-label">Subject of Email</label>
         <input type="text" name="subject" class="form-control" required>
     </div>
  
        <div class="mb">
-        <label class="label">Email Message</label>
+        <label class="form-label">Email Message</label>
         <textarea class="form-control" name="message"  rows="3" required></textarea>
     </div>
 
