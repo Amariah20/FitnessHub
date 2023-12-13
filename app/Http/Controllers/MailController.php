@@ -20,16 +20,20 @@ class MailController extends Controller
   
 
     public function sendMail(Request $req, $Gym_id){
-
-           
+        $gym = Gym::where('Gym_id', $Gym_id)->first();
+        //$gymNames= Gym::where('Gym_id',$Gym_id)->pluck('name'); //this returns an array because we're using pluck
+        $gymName= $gym->name;
+        $gymEmail= $gym->email;
         $subject= $req->subject;
         $message= $req->message;
      
-
+        //getting the people who subscribed to this gym.  
         $subscribers= subscription::where('gym_id',$Gym_id)->pluck('userEmail');
+       // $gymURL= route('gymIndividual', ['Gym_id' => $Gym_id]);
+
 
         foreach($subscribers as $subscriber){
-            Mail::to($subscriber)->send(new Marketing($subject, $message));
+            Mail::to($subscriber)->send(new Marketing($subject, $message, $gymName,  $gymEmail));
         }
         
      
