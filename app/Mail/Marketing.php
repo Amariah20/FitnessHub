@@ -11,7 +11,7 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Mail\Mailables\Address;
 
 
-//used this for help: https://www.youtube.com/watch?v=xigpoxOW1MY (REFER TO IT FOR EXTRA STUFF)
+//used these for help: https://laravel.com/docs/10.x/mail#attachments and https://www.youtube.com/watch?v=xigpoxOW1MY (REFER TO IT FOR EXTRA STUFF)
 
 class Marketing extends Mailable
 {
