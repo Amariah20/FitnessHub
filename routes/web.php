@@ -112,7 +112,7 @@ Route::get('registerGym/getStarted', function () {
 
 
 Route::get('/gyms/create', 'App\Http\Controllers\GymController@createGym')->middleware('admin')->name('gyms.create'); //only admins have access to this
-Route::post('storeGym',  'App\Http\Controllers\GymController@storeGym')->middleware('admin');
+Route::post('storeGym',  'App\Http\Controllers\GymController@storeGym')->middleware('admin')->name('gym.store');
 
 Route::get('/membership/create', 'App\Http\Controllers\MembershipController@createMembership')->middleware('admin')->name('membership.create'); //only admins have access to this
 Route::post('StoreMembership', 'App\Http\Controllers\MembershipController@storeMembership')->middleware('admin')->name('memberships.store');
