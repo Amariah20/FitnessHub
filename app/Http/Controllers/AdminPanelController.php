@@ -12,6 +12,11 @@ use App\Models\Equipment;
 use App\Models\Membership;
 use App\Models\Offerings;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\ClassValidation;
+use App\Http\Requests\EquipmentValidation;
+use App\Http\Requests\MembershipValidation;
+use App\Http\Requests\OfferingValidation;
+
 
 class AdminPanelController extends Controller
 {
@@ -270,17 +275,21 @@ class AdminPanelController extends Controller
         return view('AdminInterface.AdminAddClass',['Gym_id'=> $Gym_id]);
  }
 
-     public function AdminClassStore(Request $req, $Gym_id){
+     public function AdminClassStore(ClassValidation $req, $Gym_id){
+
 
             try{ 
-                $ClassName = $req-> name;
-                $ClassLocation= $req-> location;
-                $ClassPrice= $req->price;
-                $ClassDescription = $req-> description;
-                $ClassCapacity= $req-> capacity;
-                $ClassDuration= $req-> duration;
-                $ClassSchedule= $req-> schedule;
-              
+
+                $validate = $req->validated();
+                if ($validate ==true){
+                    $ClassName = $req-> name;
+                    $ClassLocation= $req-> location;
+                    $ClassPrice= $req->price;
+                    $ClassDescription = $req-> description;
+                    $ClassCapacity= $req-> capacity;
+                    $ClassDuration= $req-> duration;
+                    $ClassSchedule= $req-> schedule;
+                }
 
                 $NewClass = new \App\Models\Classes();
                 $NewClass->name = $ClassName;
@@ -308,12 +317,15 @@ class AdminPanelController extends Controller
         return view('AdminInterface.AdminAddMembership',['Gym_id'=> $Gym_id]);
     }
 
-    public function AdminMembershipStore(Request $req, $Gym_id){
+    public function AdminMembershipStore(MembershipValidation $req, $Gym_id){
 
         try{
-        $MembershipName = $req-> name;
-        $MembershipPrice= $req->price;
-        $MembershipDescription = $req-> description;
+            $validate = $req->validated();
+            if ($validate ==true){
+                    $MembershipName = $req-> name;
+                    $MembershipPrice= $req->price;
+                    $MembershipDescription = $req-> description;
+            }
 
 
         
@@ -340,12 +352,16 @@ class AdminPanelController extends Controller
         return view('AdminInterface.AdminAddOffering',['Gym_id'=> $Gym_id]);
     }
 
-    public function AdminOfferingStore(Request $req, $Gym_id){
+    public function AdminOfferingStore(OfferingValidation $req, $Gym_id){
 
         try{
-        $OfferingName = $req-> name;
-            $OfferingPrice= $req->price;
-            $OfferingDescription = $req-> description;
+
+            $validate = $req->validated();
+            if ($validate ==true){
+                    $OfferingName = $req-> name;
+                    $OfferingPrice= $req->price;
+                    $OfferingDescription = $req-> description;
+            }
                       
           
 
@@ -371,12 +387,16 @@ class AdminPanelController extends Controller
         return view('AdminInterface.AdminAddEquipment',['Gym_id'=> $Gym_id]);
     }
 
-    public function AdminEquipmentStore(Request $req, $Gym_id){
+    public function AdminEquipmentStore(EquipmentValidation $req, $Gym_id){
         try{
-             $EquipmentName = $req-> name;
-     
-            $EquipmentDescription = $req-> description;
-                      
+
+            $validate = $req->validated();
+            if ($validate ==true){
+                    $EquipmentName = $req-> name;
+            
+                    $EquipmentDescription = $req-> description;
+            }
+                            
           
 
             $NewEquipment = new \App\Models\Equipment();
