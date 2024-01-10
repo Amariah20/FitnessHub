@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\EquipmentValidation;
 use Illuminate\Http\Request;
 use App\Models\Gym;
 use App\Models\Equipment;
@@ -22,7 +23,7 @@ class EquipmentController extends Controller
                 return view('registerGym.addEquipment', compact('gym'));
             }
 
-        public function storeEquipment(Request $req)
+        public function storeEquipment(EquipmentValidation $req)
         {
             try{
             $CurrentUser = Auth::user();
@@ -41,11 +42,14 @@ class EquipmentController extends Controller
                 //return 'Please select a gym before adding a membership.';
                 return redirect()->back()->withErrors(['error' => 'Please select a gym before adding equipments.']);
            }
-                     
+         
+           $validate = $req->validated();
+           if ($validate==true){
             $EquipmentName = $req-> name;
           
             $EquipmentDescription = $req-> description;
             $SelectedGymID= $req -> SelectedGymID;
+           }
 
            
           

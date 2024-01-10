@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\MembershipValidation;
 use Illuminate\Http\Request;
 use App\Models\Gym;
 use App\Models\Membership;
@@ -22,7 +23,7 @@ display these in a drop down and let them select which gym they want the members
         return view('registerGym.addMembership', compact('gym'));
     }
 
-    public function storeMembership(Request $req)
+    public function storeMembership(MembershipValidation $req)
         {
             try{
             $CurrentUser = Auth::user();
@@ -41,11 +42,15 @@ display these in a drop down and let them select which gym they want the members
                 //return 'Please select a gym before adding a membership.';
                 return redirect()->back()->withErrors(['error' => 'Please select a gym before adding a membership.']);
            }
-                     
+            
+           $validate = $req->validated();
+           
+           if ($validate ==true){
             $MembershipName = $req-> name;
             $MembershipPrice= $req->price;
             $MembershipDescription = $req-> description;
             $SelectedGymID= $req -> SelectedGymID;
+           }
 
             
           

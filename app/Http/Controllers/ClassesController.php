@@ -7,6 +7,7 @@ use App\Models\Gym;
 use App\Models\Classes;
 use App\Models\Offerings;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\ClassValidation;
 
 //I used this for guidance for most of my controllers: https://www.youtube.com/watch?v=GAPzqFMSxVY&t=933s
 class ClassesController extends Controller
@@ -23,7 +24,7 @@ class ClassesController extends Controller
                 return view('registerGym.addClass', compact('gym'));
             }
 
-            public function storeClass(Request $req)
+            public function storeClass(ClassValidation $req)
             {
 
                 try{
@@ -42,15 +43,18 @@ class ClassesController extends Controller
                     
                     return redirect()->back()->withErrors(['error' => 'Please select a gym before adding a class.']);
                }
-                         
-                $ClassName = $req-> name;
-                $ClassLocation= $req-> location;
-                $ClassPrice= $req->price;
-                $ClassDescription = $req-> description;
-                $ClassCapacity= $req-> capacity;
-                $ClassDuration= $req-> duration;
-                $ClassSchedule= $req-> schedule;
-                $SelectedGymID= $req -> SelectedGymID;
+               
+               $validate = $req->validated();
+                if ($validate ==true){
+                    $ClassName = $req-> name;
+                    $ClassLocation= $req-> location;
+                    $ClassPrice= $req->price;
+                    $ClassDescription = $req-> description;
+                    $ClassCapacity= $req-> capacity;
+                    $ClassDuration= $req-> duration;
+                    $ClassSchedule= $req-> schedule;
+                    $SelectedGymID= $req -> SelectedGymID;
+                }
     
                 
               

@@ -112,21 +112,23 @@ Route::get('registerGym/getStarted', function () {
 
 
 Route::get('/gyms/create', 'App\Http\Controllers\GymController@createGym')->middleware('admin')->name('gyms.create'); //only admins have access to this
-Route::post('storeGym',  'App\Http\Controllers\GymController@storeGym');
+Route::post('storeGym',  'App\Http\Controllers\GymController@storeGym')->middleware('admin');
 
 Route::get('/membership/create', 'App\Http\Controllers\MembershipController@createMembership')->middleware('admin')->name('membership.create'); //only admins have access to this
-Route::post('StoreMembership', 'App\Http\Controllers\MembershipController@storeMembership')->name('memberships.store');
+Route::post('StoreMembership', 'App\Http\Controllers\MembershipController@storeMembership')->middleware('admin')->name('memberships.store');
 
 
 Route::get('/class/create', 'App\Http\Controllers\ClassesController@createClass')->middleware('admin')->name('class.create'); //only admins have access to this
-Route::post('StoreClass', 'App\Http\Controllers\ClassesController@storeClass')->name('class.store');
+Route::post('StoreClass', 'App\Http\Controllers\ClassesController@storeClass')->middleware('admin')->name('class.store');
+
 
 Route::get('/offering/create', 'App\Http\Controllers\OfferingController@createOffering')->middleware('admin')->name('offering.create'); //only admins have access to this
-Route::post('StoreOffering', 'App\Http\Controllers\OfferingController@storeOffering')->name('offering.store');
+Route::post('StoreOffering', 'App\Http\Controllers\OfferingController@storeOffering')->middleware('admin')->name('offering.store');
 
 
 Route::get('/equipment/create', 'App\Http\Controllers\EquipmentController@createEquipment')->middleware('admin')->name('equipment.create'); //only admins have access to this
-Route::post('StoreEquipment', 'App\Http\Controllers\EquipmentController@storeEquipment')->name('equipment.store');
+Route::post('StoreEquipment', 'App\Http\Controllers\EquipmentController@storeEquipment')->middleware('admin')->name('equipment.store');
+
 
 //Route::get('/image/create', 'App\Http\Controllers\ImageController@createImage')->middleware('admin')->name('image.create'); //only admins have access to this
 //Route::post('StoreImage', 'App\Http\Controllers\ImageController@storeImage')->name('image.store');

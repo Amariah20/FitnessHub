@@ -82,7 +82,7 @@ class GymController extends Controller
       
             
         $validate = $req->validated();
-        if ($validated=true){
+        if ($validate==true){
             $gymName= $req-> name; 
             $gymDescription= $req-> description;
             $gymLocation= $req-> location;
