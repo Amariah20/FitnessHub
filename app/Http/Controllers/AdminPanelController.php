@@ -16,6 +16,11 @@ use App\Http\Requests\ClassValidation;
 use App\Http\Requests\EquipmentValidation;
 use App\Http\Requests\MembershipValidation;
 use App\Http\Requests\OfferingValidation;
+use App\Http\Requests\updateGymValidation;
+use App\Http\Requests\updateClassValidation;
+use App\Http\Requests\updateMembershipValidation;
+use App\Http\Requests\updateEquipmentValidation;
+use App\Http\Requests\updateOfferingValidation;
 
 
 class AdminPanelController extends Controller
@@ -103,13 +108,15 @@ class AdminPanelController extends Controller
 
     }
 
-    public function UpdateGym(Request $req,$Gym_id){
+    public function UpdateGym(updateGymValidation $req,$Gym_id){
 
        
      try{
         $gym = Gym::where('Gym_id', $Gym_id)->first();    
         //$gym->Gym_id= $Gym_id;
        // $gym->name= $req->name;
+       $validate = $req->validated();
+       if ($validate ==true){
         $gym->description= $req-> description;
         $gym->location= $req-> location;
         $gym->opening_hours= $req-> opening_hours;
@@ -147,7 +154,7 @@ class AdminPanelController extends Controller
             $pic->move($gymFolder, $extra);
             $gym->extra_image=$extra;
            }
-
+        }
        
         $gym->update();
         //return('done');
@@ -170,19 +177,20 @@ class AdminPanelController extends Controller
  
      }
 
-     public function UpdateClass(Request $req,$Class_id){
+     public function UpdateClass(updateClassValidation $req,$Class_id){
 
         try{
-
-        $class= Classes::where('Class_id', $Class_id)->first();
-        $class->name = $req-> name;
-        $class->price = $req->price;
-        $class->description =  $req-> description;
-        $class-> capacity= $req-> capacity;
-        $class->duration=  $req-> duration;
-        $class->location=  $req-> location;
-        $class->schedule= $req-> schedule;
-
+            $validate = $req->validated();
+            if ($validate ==true){
+                    $class= Classes::where('Class_id', $Class_id)->first();
+                    $class->name = $req-> name;
+                    $class->price = $req->price;
+                    $class->description =  $req-> description;
+                    $class-> capacity= $req-> capacity;
+                    $class->duration=  $req-> duration;
+                    $class->location=  $req-> location;
+                    $class->schedule= $req-> schedule;
+            }
         $class->update();
         return redirect()->route('AdminClass', ['Gym_id' => $class->gym_id])->with('Success', 'Class Updated Successfully');
     } catch (\Exception $e){
@@ -200,13 +208,16 @@ class AdminPanelController extends Controller
  
      }
 
-     public function UpdateMembership(Request $req, $Membership_id){
+     public function UpdateMembership(UpdateMembershipValidation $req, $Membership_id){
 
         try{
-        $membership= Membership::where('membership_id', $Membership_id)->first();
-        $membership->name= $req->name;
-        $membership->description= $req->description;
-        $membership->price=$req->price;
+            $validate = $req->validated();
+            if ($validate ==true){
+                $membership= Membership::where('membership_id', $Membership_id)->first();
+                $membership->name= $req->name;
+                $membership->description= $req->description;
+                $membership->price=$req->price;
+            }
         $membership->update();
 
         return redirect()->route('AdminMembership', ['Gym_id' => $membership->gym_id] )->with('Success', 'Membership updated successfully');
@@ -225,13 +236,17 @@ class AdminPanelController extends Controller
  
      }
 
-     public function UpdateOffering(Request $req, $Offering_id){
+     public function UpdateOffering(UpdateOfferingValidation $req, $Offering_id){
 
         try{
-        $offering= Offerings::where('offerings_id', $Offering_id)->first();
-        $offering->name= $req->name;
-        $offering->description= $req->description;
-        $offering->price=$req->price;
+
+            $validate = $req->validated();
+            if ($validate ==true){
+                $offering= Offerings::where('offerings_id', $Offering_id)->first();
+                $offering->name= $req->name;
+                $offering->description= $req->description;
+                $offering->price=$req->price;
+            }
         $offering->update();
 
         return redirect()->route('AdminOffering', ['Gym_id' => $offering->gym_id] )->with('Success', 'Offering updated successfully');
@@ -250,12 +265,15 @@ class AdminPanelController extends Controller
  
      }
 
-     public function UpdateEquipment(Request $req, $Equipment_id){
+     public function UpdateEquipment(UpdateEquipmentValidation $req, $Equipment_id){
 
         try{
-        $equipment= Equipment::where('equipment_id', $Equipment_id)->first();
-        $equipment->name= $req->name;
-        $equipment->description= $req->description;
+            $validate = $req->validated();
+            if ($validate ==true){
+                $equipment= Equipment::where('equipment_id', $Equipment_id)->first();
+                $equipment->name= $req->name;
+                $equipment->description= $req->description;
+            }
        
         $equipment->update();
 

@@ -1,5 +1,14 @@
 <div class="container">
 <div class="card-header">Edit Class</div>
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                {{ $error }}
+            @endforeach
+        </ul>
+    </div>
+@endif
 <form method="POST" action="{{route('UpdateClass',  ['Class_id' => $class->Class_id])}}">
 @csrf
 @method("patch")

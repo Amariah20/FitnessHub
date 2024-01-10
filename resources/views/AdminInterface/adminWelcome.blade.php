@@ -7,6 +7,15 @@
 <br><br>
 
 <h2>Business Information</h2>
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                {{ $error }}
+            @endforeach
+        </ul>
+    </div>
+@endif
 @if (session('Success'))
                 <h6 class="alert alert-success">{{ session('Success') }}</h6>
             @endif
