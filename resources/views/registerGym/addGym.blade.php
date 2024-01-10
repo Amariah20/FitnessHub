@@ -1,6 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
+@if($errors->any())
+<div class="alert alert-danger">
+    <ul>
+        @foreach($errors->all() as $error)
+        <li>{{ $error}}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
 <!--I used bootstrap for the forms to register gym: https://getbootstrap.com/docs/5.0/forms/form-control/-->
 <link rel="stylesheet" type="text/css" href="/getStarted.css"> 
 
@@ -61,4 +70,4 @@
 </form>
 </div>
 
-@endSection
+@endsection

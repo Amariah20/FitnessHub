@@ -7,11 +7,13 @@ use App\Models\Gym;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\redirect;
 use App\Http\Controllers\view;
+use App\Http\Requests\GymValidation;
 use App\Models\Classes;
 //use App\Models\Images;
 use App\Models\Membership;
 use App\Models\Offerings;
 use App\Models\Equipment;
+
 
 
 //I used this for guidance for most of my controllers: https://www.youtube.com/watch?v=GAPzqFMSxVY&t=933s
@@ -74,18 +76,23 @@ class GymController extends Controller
         return view('registerGym.addGym');
     }
 
-    function storeGym(Request $req){
+    function storeGym(GymValidation $req) {
 
     try{
-        $gymName= $req-> name; 
-        $gymDescription= $req-> description;
-        $gymLocation= $req-> location;
-        $gymOpeningHours= $req-> opening_hours;
-        $gymNumber= $req-> phone_number;
-        $gymEmail= $req-> email;
-        $gymInstagram= $req->instagram;
-        $gymFacebook= $req->facebook;
-        $userId = $req->user()->id;
+      
+            
+        $validate = $req->validated();
+        if ($validated=true){
+            $gymName= $req-> name; 
+            $gymDescription= $req-> description;
+            $gymLocation= $req-> location;
+            $gymOpeningHours= $req-> opening_hours;
+            $gymNumber= $req-> phone_number;
+            $gymEmail= $req-> email;
+            $gymInstagram=$req->instagram;
+            $gymFacebook =$req->facebook;
+            $userId = $req->user()->id;
+        }
 
 
         
