@@ -103,7 +103,7 @@ Route::get('showEquipments/{Gym_id}', 'App\Http\Controllers\GymController@showEq
 //to register gyms
 Route::get('registerGym/getStarted', function () {
     return view('registerGym.getStarted');
-})->middleware('admin');
+})->middleware('admin')->name('registerGym.getStarted');
 
 //Route::get('registerGym/addGym', function(){
   //  return view('registerGym.addGym');

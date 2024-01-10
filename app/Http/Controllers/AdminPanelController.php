@@ -43,7 +43,7 @@ class AdminPanelController extends Controller
       //return view("{{route('AdminWelcome', ['Gym_id'=>$Gym_Id])}}" , compact('gym', 'Gym_Id'));
      // return redirect()->route('AdminWelcome', ['Gym_id'=>$Gym_Id]);
      //return redirect()->route('AdminWelcome/{$Gym_Id}');
-     return view ('AdminInterface.adminFirst', compact ('gym', 'user'));
+     return view ('AdminInterface.adminFirst', compact ('Gym_Id','gym', 'user'));
     }
 
     public function AdminWelcome(Request $req)

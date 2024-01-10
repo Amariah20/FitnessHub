@@ -45,7 +45,8 @@ class LoginController extends Controller
             return redirect('gymAll');
         }
         else if($user->is_admin==1 && $user->gym->isEmpty()){
-            return redirect('registerGym/getStarted');
+            //return redirect('registerGym/getStarted');
+            return redirect('registerGym.getStarted');
         } else if($user->is_admin==1){
             return redirect ('AdminFirst');
         }

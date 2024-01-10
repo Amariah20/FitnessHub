@@ -50,6 +50,10 @@
     <aside>
 
     <ul>
+    <!--<li>
+            <a href="{{ route('AdminWelcome', ['Gym_id' => $Gym_id])}}">Business Information</a>
+        </li>-->
+    
         <li>
             <a href="{{ route('AdminClass', ['Gym_id' => $Gym_id]) }}">Classes</a>
         </li>
@@ -64,7 +68,7 @@
         </li>
      
         <li>
-            <a href="registerGym/getStarted">Add New Gym</a>
+            <a href="{{route ('registerGym.getStarted')}}">Add New Gym</a>
         </li>
 
         <li>
