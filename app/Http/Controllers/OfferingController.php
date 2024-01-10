@@ -25,7 +25,7 @@ class OfferingController extends Controller
 
             public function storeOffering(OfferingValidation $req)
             {
-            dd('true');
+          
 
             try{
 
