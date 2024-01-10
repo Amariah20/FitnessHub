@@ -68,7 +68,7 @@
         </li>
      
         <li>
-            <a href="{{route ('registerGym.getStarted')}}">Add New Gym</a>
+            <a href="{{route ('registerGym/getStarted')}}">Add New Gym</a>
         </li>
 
         <li>
