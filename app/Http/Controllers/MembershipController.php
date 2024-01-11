@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use App\Models\Gym;
 use App\Models\Membership;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Log;
+use Illuminate\Support\Facades\DB;
+
 
 //I used this for guidance for most of my controllers: https://www.youtube.com/watch?v=GAPzqFMSxVY&t=933s
 class MembershipController extends Controller
@@ -45,11 +48,13 @@ display these in a drop down and let them select which gym they want the members
             
            $validate = $req->validated();
            
-           if ($validate ==true){
+           if ($validate == true){
             $MembershipName = $req-> name;
             $MembershipPrice= $req->price;
             $MembershipDescription = $req-> description;
+            $MembershipType= $req->membership_type;
             $SelectedGymID= $req -> SelectedGymID;
+
            }
 
             
@@ -59,10 +64,21 @@ display these in a drop down and let them select which gym they want the members
             $NewMembership->name = $MembershipName;
             $NewMembership->price = $MembershipPrice;
             $NewMembership->description =  $MembershipDescription;
+            $NewMembership->membership_type = $MembershipType;
             $NewMembership->gym_id = $SelectedGymID;
 
+            
+            
+
             $NewMembership->save();
-            return redirect()->route('membership.create')->with('success_membership', 'Membership successfully added. You may add more or move to the next section.');
+          
+             return redirect()->route('membership.create')->with('success_membership', 'Membership successfully added. You may add more or move to the next section.');
+
+           // }else{
+           ///     Log::error($NewMembership->errors());
+          //  }
+          
+            
             
         } catch (\Exception $e){
             $error= "An error occured:". $e->getMessage();

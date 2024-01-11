@@ -24,6 +24,7 @@ class updateMembershipValidation extends FormRequest
         return [
             'name'=> 'string|max:255',
             'description'=>'string|max:255',
+            'membership_type' => 'string',
         ];
     }
 }

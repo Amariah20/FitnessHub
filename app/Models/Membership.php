@@ -14,4 +14,11 @@ class Membership extends Model
       {
           return $this->belongsTo(Gym::class, 'gym_id');
       }
+
+      protected $fillable = [
+        'name',
+        'price',
+        'description',
+        'membership_type',
+      ];
 }
