@@ -37,6 +37,11 @@ class Gym extends Model
     
     protected $primaryKey = 'Gym_id'; //added when trying to edit gym info
 
+    //I used this for guidance for slugs and route model binding: https://laracasts.com/series/laravel-8-from-scratch/episodes/23 
+   // public function getRouteKeyName(){
+     //   return 'slug';
+    ///}
+
      //rela between gym & memberships. gym has many memberships
      public function memberships()
      {
