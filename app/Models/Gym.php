@@ -11,10 +11,25 @@ use App\Models\Offerings;
 use App\Models\Images;
 use App\Models\Equipment;
 use App\Models\subscription;
+use Cviebrock\EloquentSluggable\Sluggable;
 
 
+//I used this for help with slugs https://www.youtube.com/watch?v=JZ0TwtAtY9E
 class Gym extends Model
 {
+
+    use HasFactory;
+    use Sluggable;
+
+    public function sluggable(): array{
+        return[
+
+            'slug'=>[
+                'source'=> ['name', 'location'],
+            ],
+        ];
+    }
+
     protected $primaryKey = 'Gym_id'; //added when trying to edit gym info
 
      //rela between gym & memberships. gym has many memberships
