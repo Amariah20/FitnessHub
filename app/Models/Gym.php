@@ -21,6 +21,10 @@ class Gym extends Model
     use HasFactory;
     use Sluggable;
 
+    protected $fillable=[
+        'slug',
+    ];
+    
     public function sluggable(): array{
         return[
 
@@ -30,6 +34,7 @@ class Gym extends Model
         ];
     }
 
+    
     protected $primaryKey = 'Gym_id'; //added when trying to edit gym info
 
      //rela between gym & memberships. gym has many memberships
