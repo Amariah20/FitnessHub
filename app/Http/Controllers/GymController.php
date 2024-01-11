@@ -21,24 +21,24 @@ use App\Models\Equipment;
 class GymController extends Controller
 {
       //for showing one gym
-      //public function show($Gym_id){
-        public function show($slug){
+      public function show($Gym_id){
+        ///public function show($slug){
 
       try{
-       // $gym = Gym::where('Gym_id', $Gym_id)->first();
-       $gym = Gym::where('slug', $slug)->first();
+       $gym = Gym::where('Gym_id', $Gym_id)->first();
+      // $gym = Gym::where('slug', $slug)->first();
        // return view('gymIndividual', compact('gym')); //compact ('gym') is passing the variable gym to the view
 
        // Retrieve last images entered in database associated with the gym
        //$images = Images::where('gym_id', $Gym_id)->latest()->first();
-      // $memberships= Membership::where('gym_id', $Gym_id)->get();
-      // $numOfclasses= Classes::where('gym_id', $Gym_id)->count();
-     //  $numOfofferings= Offerings::where('gym_id',$Gym_id)->count();
-     //  $count= $numOfclasses + $numOfofferings;
-     //  $numequipment = Equipment::where('gym_id', $Gym_id)->count();
+      $memberships= Membership::where('gym_id', $Gym_id)->get();
+      $numOfclasses= Classes::where('gym_id', $Gym_id)->count();
+      $numOfofferings= Offerings::where('gym_id',$Gym_id)->count();
+      $count= $numOfclasses + $numOfofferings;
+      $numequipment = Equipment::where('gym_id', $Gym_id)->count();
        
 
-       return view('gymIndividual', compact('gym', 'memberships', 'count', 'numOfclasses','numOfofferings', 'numequipment', 'slug'));
+       return view('gymIndividual', compact('gym', 'memberships', 'count', 'numOfclasses','numOfofferings', 'numequipment'));
     } catch (\Exception $e){
         $error= "An error occured:". $e->getMessage();
         //return view ('gymIndividual', compact('error'));

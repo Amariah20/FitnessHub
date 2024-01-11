@@ -88,8 +88,8 @@ Route::post('/reset-password', function (Request $request) {
 })->middleware('guest')->name('password.update');
 
 //to display gyms
-Route::get('gymIndividual/{slug}', 'App\Http\Controllers\GymController@show')->name('gymIndividual');
-
+//Route::get('gymIndividual/{slug}', 'App\Http\Controllers\GymController@show')->name('gymIndividual');
+Route::get('gymIndividual/{Gym_id}', 'App\Http\Controllers\GymController@show')->name('gymIndividual');
 Route::get('gymAll','App\Http\Controllers\GymController@list')->name('gymAll');
 
 Route::get('classesOfferings/{Gym_id}', 'App\Http\Controllers\GymController@showOfferings')->name('classesOfferings');
