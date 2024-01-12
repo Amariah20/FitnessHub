@@ -94,6 +94,7 @@ Route::get('gymIndividual/{Gym_id}', 'App\Http\Controllers\GymController@show')-
 Route::get('gymAll','App\Http\Controllers\GymController@list')->name('gymAll');
 //Route::get('gymAll/{filter?}','App\Http\Controllers\GymController@list')->name('gymAll'); //? means that filter is optional.
 Route::get('sortMembershipPrice','App\Http\Controllers\FilterSortController@sortMembershipPrice')->name('sortMembershipPrice');
+Route::get('filterLocation','App\Http\Controllers\FilterSortController@filterLocation')->name('filterLocation');
 
 Route::get('classesOfferings/{Gym_id}', 'App\Http\Controllers\GymController@showOfferings')->name('classesOfferings');
 

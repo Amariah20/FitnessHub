@@ -34,6 +34,7 @@ public function search(Request $req){
          ->orWhere(function($query) use ($searchitems){
             $query ->where('description', 'like','%'.$searchitems. '%')
          ->orWhere('location', 'like', '%'.$searchitems. '%')
+         ->orWhere('general_location', 'like', '%'.$searchitems. '%')
         ->orWhere('instagram', 'like','%'.$searchitems. '%')
         ->orWhere('facebook', 'like', '%'.$searchitems. '%');
          });

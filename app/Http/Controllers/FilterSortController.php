@@ -183,10 +183,38 @@ class FilterSortController extends Controller
         $gyms=$sortedGyms;
 
         return view ("/gymAll",compact('gyms'));
-        
-        
+               
+    }
+}
 
-        
+public function filterLocation(Request $req){
+    $filter=$req->filter_location;
+    
+    if($filter=="north"){
+        $gyms= Gym::where('general_location', 'north')->get();
+        return view ("/gymAll",compact('gyms'));
+
+
+    } elseif($filter=="east"){
+        $gyms= Gym::where('general_location', 'east')->get();
+        return view ("/gymAll",compact('gyms'));
+
+
+    } elseif($filter=="south"){
+        $gyms= Gym::where('general_location', 'south')->get();
+        return view ("/gymAll",compact('gyms'));
+
+
+    } elseif($filter=="west"){
+        $gyms= Gym::where('general_location', 'west')->get();
+        return view ("/gymAll",compact('gyms'));
+
+
+    } elseif($filter=="central"){
+        $gyms= Gym::where('general_location', 'central')->get();
+        return view ("/gymAll",compact('gyms'));
+
+
     }
 }
 }

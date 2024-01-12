@@ -52,6 +52,14 @@
       
      
     </tr>
+
+    </tr>
+    <tr>
+      <th scope="row">General Location</th>
+      <td> {{$gym->general_location}}</td>
+      
+     
+    </tr>
     <tr>
       <th scope="row">Opening Hours</th>
       <td> {{$gym-> opening_hours}}</td>

@@ -8,8 +8,8 @@
 @endif
 NOTE: Figure out which piece of info to display here in addition to gym name. what's most important for customers?
 <form action="{{route('sortMembershipPrice')}}" method="get">
-<label class="label">Sort By Membership Price</label>
     <select name="sort">
+    <option value="" disabled selected>Sort By Membership Price</option>
         <option value="monthly-low">Monthly (Low to High)</option>
         <option value="monthly-high">Monthly (High to Low)</option>
         <option value="annual-low">Annual (Low to High)</option>
@@ -18,6 +18,20 @@ NOTE: Figure out which piece of info to display here in addition to gym name. wh
         <option value="daily-high">Daily (High to Low)</option>
         <option value="weekly-low">Weekly (Low to High)</option>
         <option value="weekly-high">Weekly (High to Low)</option>
+    </select>
+    <button type="submit">Apply Filter</button>
+</form>   
+
+<form action="{{route('filterLocation')}}" method="get">
+
+        <select name="filter_location" >
+            <option value="" disabled selected>Filter By Location</option>
+            <option value ="north">North</option>
+            <option value ="east">East</option>
+            <option value ="south">South</option>
+            <option value ="west">West</option>
+            <option value ="central">Central</option>
+        </select>
     </select>
     <button type="submit">Apply Filter</button>
 </form>   
