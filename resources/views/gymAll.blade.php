@@ -6,7 +6,7 @@
         {{ session('no_result') }}
     </div>
 @endif
-NOTE: Figure out which piece of info to display here in addition to gym name. what's most important for customers?
+NOTE: show ratings here too? allow people to filter according to ratings?
 <form action="{{route('sortMembershipPrice')}}" method="get">
     <select name="sort">
     <option value="" disabled selected>Sort By Membership Price</option>
