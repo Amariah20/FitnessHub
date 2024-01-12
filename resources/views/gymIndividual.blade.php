@@ -105,6 +105,11 @@
     <button type="submit">Send Email</button>
 </form>
 
+<h4>Reviews</h4>
+<ul>
+    DISPLAY REVIEWS HERE after they have been approved by global admin. display this heading only if there are reviews for the gym and they have been approved
+    <li></li>
+</ul>
 <h3>Write a Review</h3>
 <form action="{{route('storeRating')}}" method="POST">
 @csrf

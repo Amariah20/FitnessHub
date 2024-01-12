@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Rating;
+use App\Models\Gym;
 
 class GlobalAdminController extends Controller
 {
@@ -34,5 +36,12 @@ class GlobalAdminController extends Controller
 
         return redirect()->route('allUsers')->with('success', 'Admin access revoked successfully.');
         //return ('Admin access revoked successfully.');
+    }
+
+    public function globalAdminGyms(){
+        $gyms=Gym::all();
+        
+        return view('globalAdminGyms', compact('gyms'));
+
     }
 }

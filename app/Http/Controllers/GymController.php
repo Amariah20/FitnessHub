@@ -41,6 +41,7 @@ class GymController extends Controller
       $numOfofferings= Offerings::where('gym_id',$Gym_id)->count();
       $count= $numOfclasses + $numOfofferings;
       $numequipment = Equipment::where('gym_id', $Gym_id)->count();
+    
        
 
        return view('gymIndividual', compact('gym', 'memberships', 'count', 'numOfclasses','numOfofferings', 'numequipment'));
