@@ -147,7 +147,43 @@ class FilterSortController extends Controller
         $gyms=$sortedGyms;
 
         return view ("/gymAll",compact('gyms'));
-    }
+    }else if($sort=="weekly-low"){
+        $memberships=Membership::where('membership_type','weekly')->get();
+        $sortedMemberships= $memberships->sortBy('price');
+
+        $gym_ids=$sortedMemberships->pluck('gym_id')->toArray(); 
+        $gyms=Gym::whereIn('Gym_id',$gym_ids)->get();
+
+        $sortedGyms=collect([]);
+
+        foreach($sortedMemberships as $sortedMembership){
+            $gym=$gyms->where('Gym_id', $sortedMembership->gym_id)->first();
+            if($gym){
+                $sortedGyms->push($gym);
+            }
+        }
+        $gyms=$sortedGyms;
+
+        return view ("/gymAll",compact('gyms'));
+    }else if($sort=="weekly-high"){
+        $memberships=Membership::where('membership_type','weekly')->get();
+        $sortedMemberships= $memberships->sortByDesc('price');
+
+        $gym_ids=$sortedMemberships->pluck('gym_id')->toArray(); 
+        $gyms=Gym::whereIn('Gym_id',$gym_ids)->get();
+
+        $sortedGyms=collect([]);
+
+        foreach($sortedMemberships as $sortedMembership){
+            $gym=$gyms->where('Gym_id', $sortedMembership->gym_id)->first();
+            if($gym){
+                $sortedGyms->push($gym);
+            }
+        }
+        $gyms=$sortedGyms;
+
+        return view ("/gymAll",compact('gyms'));
+        
         
 
         

@@ -16,6 +16,8 @@ NOTE: Figure out which piece of info to display here in addition to gym name. wh
         <option value="annual-high">Annual (High to Low)</option>
         <option value="daily-low">Daily (Low to High)</option>
         <option value="daily-high">Daily (High to Low)</option>
+        <option value="weekly-low">Weekly (Low to High)</option>
+        <option value="weekly-high">Weekly (High to Low)</option>
     </select>
     <button type="submit">Apply Filter</button>
 </form>   

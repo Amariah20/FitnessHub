@@ -39,6 +39,18 @@
         <label class="label">Write a brief description</label>
         <textarea class="form-control" name="description"  rows="3" required></textarea>
     </div>
+    <br>
+    <div class="mb">
+        <label class="label">Membership type</label>
+        <select name="membership_type" >
+            <option value="" disabled selected>Select Membership Type</option>
+            <option value ="annual">Annual</option>
+            <option value ="monthly">Monthly</option>
+            <option value ="weekly">Weekly</option>
+            <option value ="daily">Daily</option>
+        </select>
+    </div>
+    <br>
 
         <button type="submit">Add </button>
 

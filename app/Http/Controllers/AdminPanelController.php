@@ -343,6 +343,7 @@ class AdminPanelController extends Controller
                     $MembershipName = $req-> name;
                     $MembershipPrice= $req->price;
                     $MembershipDescription = $req-> description;
+                    $MembershipType= $req->membership_type;
             }
 
 
@@ -353,6 +354,7 @@ class AdminPanelController extends Controller
         $NewMembership->name = $MembershipName;
         $NewMembership->price = $MembershipPrice;
         $NewMembership->description =  $MembershipDescription;
+        $NewMembership->membership_type = $MembershipType;
         $NewMembership->gym_id = $Gym_id;
 
         $NewMembership->save();
