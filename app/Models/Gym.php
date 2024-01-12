@@ -23,6 +23,7 @@ class Gym extends Model
 
     protected $fillable=[
         'slug',
+        'general_location',
     ];
     
     public function sluggable(): array{
