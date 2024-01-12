@@ -41,7 +41,7 @@ NOTE: Figure out which piece of info to display here in addition to gym name. wh
    <li> <h1><a href="{{ route('gymIndividual', ['Gym_id' => $gym->Gym_id]) }}">{{ $gym->name }}</a></h1> </li>
    <!--<li> <h1><a href="/gymIndividual/{{$gym->slug}}">{{ $gym->name }}</a></h1> </li> -->
   <!-- <li> <h1><a href="{{ route('gymIndividual', $gym) }}">{{ $gym->name }}</a></h1> </li>-->
-   Location: {{$gym->location}}
+   Location: {{$gym->general_location}}
    
 </ul> 
     @endforeach

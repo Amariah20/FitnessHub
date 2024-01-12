@@ -23,6 +23,19 @@
         <label class="label">Name of your Fitness Centre:</label>
         {{$gym->name}}
     </div>
+
+    <div class="mb">
+        <label class="label">General Location</label>
+        <select name="general_location" value="{{$gym->general_location}}">
+            <option value= "{{$gym->general_location}}" disabled selected>{{$gym->general_location}}</option>
+            <option value ="north">North</option>
+            <option value ="east">East</option>
+            <option value ="south">South</option>
+            <option value ="west">West</option>
+            <option value ="central">Central</option>
+        </select>
+    </div>
+
     <div class="mb">
         <label class="label">Location</label>
         <input type="text" name="location" value="{{$gym->location}}" required class="form-control">

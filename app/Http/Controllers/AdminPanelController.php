@@ -124,6 +124,7 @@ class AdminPanelController extends Controller
         $gym->email= $req-> email;
         $gym->instagram= $req->instagram;
         $gym->facebook= $req->facebook;
+        $gym->general_location= $req->general_location;
         $gym->user_id = $req->user()->id; 
         $gymFolder = 'public/images/uploaded/gym_' .  $gym->user_id. $gym->name; //gym Id has not been created yet. 
 
@@ -217,6 +218,7 @@ class AdminPanelController extends Controller
                 $membership->name= $req->name;
                 $membership->description= $req->description;
                 $membership->price=$req->price;
+                $membership->membership_type=$req->membership_type;
             }
         $membership->update();
 

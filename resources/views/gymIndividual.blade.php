@@ -21,6 +21,7 @@
 
 <ul>
     <li>Description: {{$gym->description}} </li>
+    <li>General Location: {{$gym->general_location}}</li>
     <li>Location: {{$gym->location}}</li>
     <li>Opening Hours: {{$gym-> opening_hours}}</li>
     <li>Phone Number: {{$gym->phone_number}}</li>
