@@ -24,10 +24,26 @@
         <label class="label">Name of your Fitness Centre(this cannot be changed)</label>
         <input type="text" name="name" class="form-control" required>
     </div>
+
+    <div class="mb">
+        <label class="label">General Location</label>
+        <select name="general_location" >
+            <option value="" disabled selected>Select Location</option>
+            <option value ="north">North</option>
+            <option value ="east">East</option>
+            <option value ="south">South</option>
+            <option value ="west">West</option>
+            <option value ="central">Central</option>
+        </select>
+    </div>
+
     <div class="mb">
         <label class="label">Location</label>
         <input type="text" name="location" class="form-control" required>
     </div>
+  
+
+    
     <div class="mb">
         <label class="label">Opening Hours</label>
         <input type="text" name="opening_hours" class="form-control" required>

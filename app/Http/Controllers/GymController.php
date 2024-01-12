@@ -100,6 +100,7 @@ class GymController extends Controller
             $gymEmail= $req-> email;
             $gymInstagram=$req->instagram;
             $gymFacebook =$req->facebook;
+            $gymGeneralLocation= $req->general_location;
             $userId = $req->user()->id;
         }
 
@@ -115,6 +116,7 @@ class GymController extends Controller
         $NewGym-> instagram =  $gymInstagram;
         $NewGym-> facebook =  $gymFacebook;
         $NewGym -> opening_hours =  $gymOpeningHours;
+        $NewGym->general_location=  $gymGeneralLocation;
         $NewGym->user_id = $userId;
         //dd($NewGym->Gym_id);
         //$gymFolder = 'public/images/uploaded/gym_' .$NewGym->Gym_id;

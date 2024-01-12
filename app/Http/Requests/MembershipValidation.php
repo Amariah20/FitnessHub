@@ -25,7 +25,7 @@ class MembershipValidation extends FormRequest
             'name'=> 'required|string|max:255',
             'price'=>'required|numeric',
             'description'=>'required|string|max:255',
-            'membership_type'=> 'required|string',
+            'membership_type'=> 'required|in:daily,weekly,monthly,annual',
 
         ];
     }

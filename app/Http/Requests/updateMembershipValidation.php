@@ -24,7 +24,7 @@ class updateMembershipValidation extends FormRequest
         return [
             'name'=> 'string|max:255',
             'description'=>'string|max:255',
-            'membership_type' => 'string',
+            'membership_type' => 'string|in:daily,weekly,monthly,annual',
         ];
     }
 }

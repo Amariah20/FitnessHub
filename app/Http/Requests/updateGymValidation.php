@@ -30,6 +30,7 @@ class updateGymValidation extends FormRequest
             'instagram'=>'nullable|string',
             'facebook'=>'nullable|string',
             'description'=>'string',
+            'general_location' => 'string|in:north,east,south,west,central',
         ];
     }
 }

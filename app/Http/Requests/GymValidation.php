@@ -32,6 +32,7 @@ class GymValidation extends FormRequest
             'instagram'=>'nullable|string',
             'facebook'=>'nullable|string',
             'description'=>'required|string',
+            'general_location' => 'required|in:north,east,south,west,central',
         ];
     }
 }
