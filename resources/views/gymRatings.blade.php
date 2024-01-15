@@ -39,7 +39,7 @@
         <select name="approved" >
             <option value="{{$rating->approved}}" disabled selected>{{$rating->approved}}</option>
             <option value ="approved">Approved</option>
-            <option value ="denied">Denied</option>
+            <option value ="declined">Declined</option>
         </select>
     </div>
       </td>
