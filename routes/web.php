@@ -35,9 +35,12 @@ Route::get('/AboutUs', function () {
 
 //I used this for help to write routes that only admin/global admin can access: https://www.youtube.com/watch?v=-a7JvwW60xk
 Route::middleware(['auth', 'global.admin'])->group(function () {
-    Route::get('/AdminAccess', [App\Http\Controllers\GlobalAdminController::class, 'listUsers'])->name('allUsers');
-    Route::post('/AdminAccess/{user}/grant-admin-access', [App\Http\Controllers\GlobalAdminController::class, 'grantAdminAccess'])->name('grantAdminAccess');
-    Route::post('/AdminAccess/{user}/revoke-admin-access', [App\Http\Controllers\GlobalAdminController::class, 'revokeAdminAccess'])->name('revokeAdminAccess');
+    Route::get('/AdminAccess', 'App\Http\Controllers\GlobalAdminController@listUsers')->name('allUsers');
+    Route::post('/AdminAccess/{user}/grant-admin-access', 'App\Http\Controllers\GlobalAdminController@grantAdminAccess')->name('grantAdminAccess');
+    Route::post('/AdminAccess/{user}/revoke-admin-access', 'App\Http\Controllers\GlobalAdminController@revokeAdminAccess')->name('revokeAdminAccess');
+    Route::get('/globalAdminGyms', 'App\Http\Controllers\GlobalAdminController@globalAdminGyms')->name('globalAdminGyms');
+    Route::get('/reviewStatus/{Gym_id}', 'App\Http\Controllers\RatingController@reviewStatus')->name('reviewStatus');
+    Route::post('approveStatus/{Rating_id}', 'App\Http\Controllers\RatingController@approveStatus')->name('approveStatus');
 });
 
 //The code for password reset is from laravel documentation: https://laravel.com/docs/10.x/passwords

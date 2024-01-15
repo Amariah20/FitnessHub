@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Rating extends Model
 {
     use HasFactory;
+
+    protected $primaryKey = 'rating_id'; //added when trying to update ratings status
 }

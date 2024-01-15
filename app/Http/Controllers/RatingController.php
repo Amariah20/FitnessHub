@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Rating;
+use App\Models\Gym;
 
 class RatingController extends Controller
 {
@@ -39,10 +40,35 @@ class RatingController extends Controller
         $newRating->gym_id=$gym_id;
         $newRating->review=$review;
         $newRating->rating=$rate;
+        $newRating->approved= 'awaiting approval';
 
         $newRating->save();
 
         return redirect()->back()->with('success','Thank you for the review!');
 
     }
+    
+    //global admin accesses this page to see all reviews, and to change review status. if approved, the review is posted on the gym's page
+    public function reviewStatus($Gym_id){
+        $ratings = Rating::where('gym_id', $Gym_id)->get();
+        $gym= Gym::where('Gym_id', $Gym_id)->first();
+
+        return view ('gymRatings', compact('ratings', 'gym'));
+
+    }
+
+    public function approveStatus(Request $req, $rating_id){
+
+        $rating= Rating::where('rating_id', $rating_id)->first();
+       
+        $rating->approved= $req->approved;
+       // dd($rating, $req->approved);
+        $rating->save();
+
+        return redirect()->back()->with('success','Review Status successfully updated!');
+
+
+    }
+
+   
 }

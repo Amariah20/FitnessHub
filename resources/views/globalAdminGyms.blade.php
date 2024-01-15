@@ -6,8 +6,17 @@
         {{ session('no_result') }}
     </div>
 @endif
-@foreach($gyms as $gym){
-    <li>
-        {{$gym->name}}
-    </li>
-}
+@if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+@foreach($gyms as $gym)
+    <ul>
+        <li> <h1><a href="{{ route('reviewStatus', ['Gym_id' => $gym->Gym_id]) }}">{{ $gym->name }}</a></h1> </li>
+    </ul>
+@endforeach
+   
+
+
+@endsection
