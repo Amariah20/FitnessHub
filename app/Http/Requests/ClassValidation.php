@@ -29,7 +29,8 @@ class ClassValidation extends FormRequest
             'schedule'=> 'required|string|max:255',
             'capacity'=>'required|numeric',
             'duration'=>'required|numeric',
-            'price'=>'required|numeric',
+            'price'=>'required|numeric|gt:0',
+            
 
         ];
     }

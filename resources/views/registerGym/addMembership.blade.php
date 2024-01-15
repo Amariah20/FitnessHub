@@ -33,7 +33,7 @@
 
 <div class="container">
 <div class="card-header"><img src="{{ asset('images/FitnessHubLogo.png') }}"  width="400" height="70"></div>
-<form method="POST" action="{{ route('memberships.store') }}">
+<form method="POST" action="{{ route('membership.store') }}">
 @csrf
 
     <div class="mb">

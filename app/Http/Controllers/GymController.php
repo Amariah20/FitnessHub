@@ -166,7 +166,7 @@ class GymController extends Controller
 
         $NewGym-> save();
         
-        return redirect()->route('membership.create')->with('success', 'successfully added');
+        return redirect()->route('memberships.create')->with('success', 'successfully added');
     } catch (\Exception $e){
         $error= "An error occured:". $e->getMessage();
         //return view ('gymIndividual', compact('error'));

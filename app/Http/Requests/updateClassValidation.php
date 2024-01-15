@@ -28,7 +28,7 @@ class updateClassValidation extends FormRequest
             'schedule'=> 'string|max:255',
             'capacity'=>'numeric',
             'duration'=>'numeric',
-            'price'=>'numeric',
+            'price'=>'numeric|gt:0',
         ];
     }
 }

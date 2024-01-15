@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\DB;
 //I used this for guidance for most of my controllers: https://www.youtube.com/watch?v=GAPzqFMSxVY&t=933s
 class MembershipController extends Controller
 {
-    public function createMembership(){
+    public function membershipCreate(){
 
 //find gym related to user by going through gym table. use the rela between gym and user to find it. allow users to choose which gym to assign the membership to
 
@@ -26,7 +26,7 @@ class MembershipController extends Controller
         return view('registerGym.addMembership', compact('gym'));
     }
 
-    public function storeMembership(MembershipValidation $req)
+    public function membershipStore(MembershipValidation $req)
         {
             try{
             $user = Auth::user();
@@ -72,7 +72,7 @@ class MembershipController extends Controller
 
             $new_Membership->save();
           
-             return redirect()->route('membership.create')->with('success_membership', 'Membership successfully added. You may add more or move to the next section.');
+             return redirect()->route('memberships.create')->with('success_membership', 'Membership successfully added. You may add more or move to the next section.');
 
         
           
@@ -84,9 +84,5 @@ class MembershipController extends Controller
             //return redirect()->back()->with('error', $error);
             return redirect()->back()->withErrors(['error'=>$error]);
         }
-
-
-
-
         }
 }
