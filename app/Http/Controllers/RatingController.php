@@ -52,6 +52,7 @@ class RatingController extends Controller
     public function reviewStatus($Gym_id){
         $ratings = Rating::where('gym_id', $Gym_id)->get();
         $gym= Gym::where('Gym_id', $Gym_id)->first();
+        
 
         return view ('gymRatings', compact('ratings', 'gym'));
 

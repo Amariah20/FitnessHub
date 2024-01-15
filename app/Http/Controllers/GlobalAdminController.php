@@ -53,18 +53,17 @@ class GlobalAdminController extends Controller
         //dd($ratings_count);
         
         
-
-        $gyms= $gyms->sortByDesc(function($gym){
+        $sortFunction= function($gym){
+            //counting num of ratings thats waiting for approval for each gym
             return $gym->ratings->where('approved', 'awaiting approval')->count();
-        });
+        };
 
-        /**
-         * sortbyDesc will sort gyms in descending order accordingto  a key or a function.
-         * function ($gym){} is calculating the sorting value for each gym here
-         * $gym = each gym in the gyms collection. 
-         * filtering the ratings that has not yet been approved, and counting them
-         * 
-         */
+        //sorting them in descending order 
+        $sortedGyms= $gyms->sortByDesc($sortFunction);
+      
+        $gyms= $sortedGyms;
+
+      
 
     
         return view('globalAdminGyms', compact('gyms'));
