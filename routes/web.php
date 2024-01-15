@@ -35,7 +35,7 @@ Route::get('/AboutUs', function () {
 
 //I used this for help to write routes that only admin/global admin can access: https://www.youtube.com/watch?v=-a7JvwW60xk
 Route::middleware(['auth', 'global.admin'])->group(function () {
-    Route::get('/AdminAccess', 'App\Http\Controllers\GlobalAdminController@listUsers')->name('allUsers');
+    Route::get('/AdminAccess', 'App\Http\Controllers\GlobalAdminController@listUsers')->name('AdminAccess');
     Route::post('/AdminAccess/{user}/grant-admin-access', 'App\Http\Controllers\GlobalAdminController@grantAdminAccess')->name('grantAdminAccess');
     Route::post('/AdminAccess/{user}/revoke-admin-access', 'App\Http\Controllers\GlobalAdminController@revokeAdminAccess')->name('revokeAdminAccess');
     Route::get('/globalAdminGyms', 'App\Http\Controllers\GlobalAdminController@globalAdminGyms')->name('globalAdminGyms');

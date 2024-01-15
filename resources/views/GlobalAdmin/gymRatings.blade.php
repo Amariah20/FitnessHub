@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.globalAdmin')
 
 @section('content')
 @if (session('no_result'))
