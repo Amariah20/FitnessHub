@@ -21,6 +21,15 @@
 
 <h1>Gym: {{$gym->name}}</h1>
 
+<!--I used this for help with the stars rating: https://www.youtube.com/watch?v=2JUoZGoJwCg&t=749s&ab_channel=StackDevelopers -->
+
+<?php $num=1;
+    while($num<=$ratingsAverage){
+        ?> <span>&#9733;</span>
+        <?php $num++;} ?> 
+    
+
+
 <ul>
     <li>Description: {{$gym->description}} </li>
     <li>General Location: {{$gym->general_location}}</li>

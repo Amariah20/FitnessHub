@@ -54,7 +54,7 @@ class RatingController extends Controller
         $gym= Gym::where('Gym_id', $Gym_id)->first();
 
         
-        return view ('gymRatings', compact('ratings', 'gym'));
+        return view ('GlobalAdmin.gymRatings', compact('ratings', 'gym'));
 
     }
 

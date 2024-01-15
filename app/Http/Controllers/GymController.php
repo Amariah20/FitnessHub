@@ -46,9 +46,20 @@ class GymController extends Controller
       ->where('approved', 'approved')
       ->get();
     
+      //$numOfratings= Rating::where('gym_id', $Gym_id)
+     // ->where('approved', 'approved')->count();
+      //$ratingsTotal=  Rating::where('gym_id', $Gym_id)
+      //->where('approved', 'approved') ->sum('ratings');
+      //$ratingsAverage= $ratingsTotal/$numOfratings;
+      //dd($numOfratings, $ratingsTotal);
        //dd($ratings);
 
-       return view('gymIndividual', compact('gym', 'memberships', 'count', 'numOfclasses','numOfofferings', 'numequipment', 'ratings'));
+       //put an if, to not calculate if there is no approved!
+       //selecting values in rating table that maches the gym id and where rating has been approved. we pass rating column as a parameter to avg() to find the average of records that meet the criteria
+       $ratingsAverage=  Rating::where('gym_id', $Gym_id)->where('approved', 'approved')->avg('rating');
+       //dd($ratingsAverage);
+
+       return view('gymIndividual', compact('gym', 'memberships', 'count', 'numOfclasses','numOfofferings', 'numequipment', 'ratings', 'ratingsAverage'));
     } catch (\Exception $e){
         $error= "An error occured:". $e->getMessage();
         //return view ('gymIndividual', compact('error'));

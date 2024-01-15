@@ -75,7 +75,6 @@
 </div>
 
 
-    <!--<input type="hidden" name="gym_id" value="{{ auth()->user()->gym_id }}">-->
 
     
     <button type="submit">Add </button>

@@ -13,7 +13,7 @@ class GlobalAdminController extends Controller
     {
         $users = User::all();
 
-        return view('AdminAccess', compact('users'));//compact ('users') is passing the variable users to the view
+        return view('GlobalAdmin.AdminAccess', compact('users'));//compact ('users') is passing the variable users to the view
     }
 
     public function grantAdminAccess(Request $request, User $user)
@@ -66,7 +66,7 @@ class GlobalAdminController extends Controller
       
 
     
-        return view('globalAdminGyms', compact('gyms'));
+        return view('GlobalAdmin.globalAdminGyms', compact('gyms'));
 
     }
 }
