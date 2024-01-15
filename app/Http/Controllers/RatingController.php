@@ -50,10 +50,10 @@ class RatingController extends Controller
     
     //global admin accesses this page to see all reviews, and to change review status. if approved, the review is posted on the gym's page
     public function reviewStatus($Gym_id){
-        $ratings = Rating::where('gym_id', $Gym_id)->get();
+        $ratings = Rating::where('gym_id', $Gym_id)->orderBy('created_at', 'desc')->get();
         $gym= Gym::where('Gym_id', $Gym_id)->first();
-        
 
+        
         return view ('gymRatings', compact('ratings', 'gym'));
 
     }

@@ -81,8 +81,9 @@ class GymController extends Controller
     //for showing all gyms 
     public function list(){ //controller method must accept route parameter. 
         
-       
-        return view ('/gymAll', array('gyms'=>Gym::all()) );
+       // $gyms=Gym::all();
+       $gyms= Gym::orderBy('name', 'asc')->get();
+        return view ('/gymAll', compact('gyms'));
         
     }
     
