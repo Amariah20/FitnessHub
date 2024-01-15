@@ -41,19 +41,19 @@
         <input type="text" name="name" class="form-control" required>
     </div>
     <div class="mb">
-        <label class="label">Price of Membership</label>
+        <label class="label">Membership Price</label>
         <input type="number" name="price" class="form-control"  required>
     </div>
  
     <div class="mb">
-        <label class="label">Write a brief description</label>
+        <label class="label">Membership Description</label>
         <textarea class="form-control" name="description"  rows="3" required></textarea>
     </div>
     <br>
     <div class="mb">
         <label class="label">Membership type</label>
         <select name="membership_type" >
-            <option value="" disabled selected>Select Membership Type</option>
+            <option value="" disabled selected>Please Select Membership Type</option>
             <option value ="annual">Annual</option>
             <option value ="monthly">Monthly</option>
             <option value ="weekly">Weekly</option>
@@ -78,9 +78,7 @@
     <!--<input type="hidden" name="gym_id" value="{{ auth()->user()->gym_id }}">-->
 
     
-
-  
-        <button type="submit">Add </button>
+    <button type="submit">Add </button>
 
          
 </form>

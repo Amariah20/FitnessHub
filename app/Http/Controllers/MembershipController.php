@@ -15,12 +15,12 @@ use Illuminate\Support\Facades\DB;
 class MembershipController extends Controller
 {
     public function createMembership(){
-/*Go through gyms table, see what gyms are associated with the user id (the user that is logged in). 
-display these in a drop down and let them select which gym they want the membership to apply to*/
 
-        $user = Auth::user(); // Get the logged in user
+//find gym related to user by going through gym table. use the rela between gym and user to find it. allow users to choose which gym to assign the membership to
+
+        $currentUser = Auth::user(); // Get the logged in user
        
-        $gym = $user->gym; // Retrieve the gyms associated with the user
+        $gym = $currentUser->gym; // Retrieve the gyms associated with the user
 
         
         return view('registerGym.addMembership', compact('gym'));
@@ -29,60 +29,59 @@ display these in a drop down and let them select which gym they want the members
     public function storeMembership(MembershipValidation $req)
         {
             try{
-            $CurrentUser = Auth::user();
+            $user = Auth::user();
             
              
-            // Checking if user has a gym
-            if ($CurrentUser->gym->isEmpty()) { //there's a rela between gym and user in models.
-             // return 'You must create a gym first, before adding memberships.';
+            //  does user have a gym??
+            if ($user->gym->isEmpty()) { //using rela betweeen gyms and users set up in model and database.
+            
               //return redirect()->back()->with('error', 'You must create a gym first, before adding memberships.');
-              return redirect()->back()->withErrors(['error' => 'You must create a gym first, before adding memberships.']);
+              return redirect()->back()->withErrors(['error' => 'You must create a gym before adding memberships.']);
             }
             
 
            
             if (($req->SelectedGymID== "Select Gym")) {
                 //return 'Please select a gym before adding a membership.';
-                return redirect()->back()->withErrors(['error' => 'Please select a gym before adding a membership.']);
+                return redirect()->back()->withErrors(['error' => 'Please select a gym before adding memberships.']);
            }
             
-           $validate = $req->validated();
+           $validated = $req->validated();
            
-           if ($validate == true){
-            $MembershipName = $req-> name;
-            $MembershipPrice= $req->price;
-            $MembershipDescription = $req-> description;
-            $MembershipType= $req->membership_type;
-            $SelectedGymID= $req -> SelectedGymID;
+           if ($validated == true){
+            $membership_Name = $req-> name;
+            $membership_Price= $req->price;
+            $membership_Description = $req-> description;
+            $membership_Type= $req->membership_type;
+            $Gym_ID= $req -> SelectedGymID;
 
            }
 
             
           
 
-            $NewMembership = new \App\Models\Membership();
-            $NewMembership->name = $MembershipName;
-            $NewMembership->price = $MembershipPrice;
-            $NewMembership->description =  $MembershipDescription;
-            $NewMembership->membership_type = $MembershipType;
-            $NewMembership->gym_id = $SelectedGymID;
+            $new_Membership = new \App\Models\Membership();
+            $new_Membership->name = $membership_Name;
+            $new_Membership->price = $membership_Price;
+            $new_Membership->description =  $membership_Description;
+            $new_Membership->membership_type = $membership_Type;
+            $new_Membership->gym_id = $Gym_ID;
 
             
             
 
-            $NewMembership->save();
+            $new_Membership->save();
           
              return redirect()->route('membership.create')->with('success_membership', 'Membership successfully added. You may add more or move to the next section.');
 
-           // }else{
-           ///     Log::error($NewMembership->errors());
-          //  }
+        
           
             
             
-        } catch (\Exception $e){
-            $error= "An error occured:". $e->getMessage();
+        } catch (\Exception $exception){
+            $error= "There has been an error:". $exception->getMessage();
             //return view ('gymIndividual', compact('error'));
+            //return redirect()->back()->with('error', $error);
             return redirect()->back()->withErrors(['error'=>$error]);
         }
 
