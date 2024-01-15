@@ -13,6 +13,7 @@ use App\Models\Classes;
 use App\Models\Membership;
 use App\Models\Offerings;
 use App\Models\Equipment;
+use App\Models\Rating;
 
 
 
@@ -41,10 +42,13 @@ class GymController extends Controller
       $numOfofferings= Offerings::where('gym_id',$Gym_id)->count();
       $count= $numOfclasses + $numOfofferings;
       $numequipment = Equipment::where('gym_id', $Gym_id)->count();
+      $ratings = Rating:: where('gym_id', $Gym_id)
+      ->where('approved', 'approved')
+      ->get();
     
        
 
-       return view('gymIndividual', compact('gym', 'memberships', 'count', 'numOfclasses','numOfofferings', 'numequipment'));
+       return view('gymIndividual', compact('gym', 'memberships', 'count', 'numOfclasses','numOfofferings', 'numequipment', 'ratings'));
     } catch (\Exception $e){
         $error= "An error occured:". $e->getMessage();
         //return view ('gymIndividual', compact('error'));
@@ -70,6 +74,8 @@ class GymController extends Controller
         return view('equipments', compact('gym', 'equipments'));
 
     }
+
+    
 
     
     //for showing all gyms 
