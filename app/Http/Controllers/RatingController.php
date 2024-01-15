@@ -57,12 +57,13 @@ class RatingController extends Controller
 
     }
 
-    public function approveStatus(Request $req, $rating_id){
+    public function approveStatus(Request $req){
+        $rating_id= $req->rating_id;
 
         $rating= Rating::where('rating_id', $rating_id)->first();
        
         $rating->approved= $req->approved;
-       // dd($rating, $req->approved);
+       //dd($rating, $req->approved);
         $rating->save();
 
         return redirect()->back()->with('success','Review Status successfully updated!');

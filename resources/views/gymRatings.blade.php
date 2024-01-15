@@ -11,8 +11,8 @@
         {{ session('success') }}
     </div>
 @endif
-@foreach($ratings as $rating)
-<form method= "POST" action= "{{route('approveStatus', ['Rating_id' => $rating->rating_id] )}}">
+
+<form method= "POST" action= "{{route('approveStatus' )}}">
 @csrf
 <table class="table table-striped">
   <thead class="thead-light">
@@ -28,7 +28,7 @@
   </thead>
 
   <tbody>
-  
+  @foreach($ratings as $rating)
     <tr>
       
       <td>{{$rating->review}}</td>
@@ -44,7 +44,7 @@
     </div>
       </td>
      
-      <td><button type= "submit">Update</button></a></td>
+      <td><button type= "submit" name="rating_id" value="{{$rating->rating_id}}">Update</button></a></td>
       
     </tr>
  @endforeach

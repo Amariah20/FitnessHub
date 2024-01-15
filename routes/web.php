@@ -40,7 +40,7 @@ Route::middleware(['auth', 'global.admin'])->group(function () {
     Route::post('/AdminAccess/{user}/revoke-admin-access', 'App\Http\Controllers\GlobalAdminController@revokeAdminAccess')->name('revokeAdminAccess');
     Route::get('/globalAdminGyms', 'App\Http\Controllers\GlobalAdminController@globalAdminGyms')->name('globalAdminGyms');
     Route::get('/reviewStatus/{Gym_id}', 'App\Http\Controllers\RatingController@reviewStatus')->name('reviewStatus');
-    Route::post('approveStatus/{Rating_id}', 'App\Http\Controllers\RatingController@approveStatus')->name('approveStatus');
+    Route::post('approveStatus', 'App\Http\Controllers\RatingController@approveStatus')->name('approveStatus');
 });
 
 //The code for password reset is from laravel documentation: https://laravel.com/docs/10.x/passwords
