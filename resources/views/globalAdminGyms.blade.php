@@ -14,6 +14,7 @@
 @foreach($gyms as $gym)
     <ul>
         <li> <h1><a href="{{ route('reviewStatus', ['Gym_id' => $gym->Gym_id]) }}">{{ $gym->name }}</a></h1> </li>
+        <p>New ratings: {{$gym->ratings->count()}}</p>
     </ul>
 @endforeach
    

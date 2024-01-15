@@ -85,8 +85,8 @@ class Gym extends Model
         }
         
         public function ratings(){
-            return $this->hasMany(Rating::class);
-        }
+            return $this->hasMany(Rating::class, 'gym_id', 'Gym_id');
+        } //one gym has many ratings. gym_id is the foreign key on ratings table which links each rating to a gym.Gym_id is column in gym table, that matches the foreign key in ratings table
   
      
 }

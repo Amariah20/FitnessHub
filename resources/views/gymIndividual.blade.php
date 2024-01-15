@@ -38,7 +38,29 @@
             <hr>
         @endforeach
     </li>
-    
+    <p>MOVE THIS TO THE OTHER SIDE OF THE PAGE. HAVE A SPLIT SCREEN. ELSE IF IT'S BELOW, IT WILL SCROLL UP WHEN USER RATES</p>
+    <h3>Write a Review</h3>
+<form action="{{route('storeRating')}}" method="POST" id="ratingForm">
+@csrf
+<div class="rate" name="rate">
+    <input type="radio" id="star5" name="rate" value="5" />
+    <label for="star5" title="text">5 stars</label>
+    <input type="radio" id="star4" name="rate" value="4" />
+    <label for="star4" title="text">4 stars</label>
+    <input type="radio" id="star3" name="rate" value="3" />
+    <label for="star3" title="text">3 stars</label>
+    <input type="radio" id="star2" name="rate" value="2" />
+    <label for="star2" title="text">2 stars</label>
+    <input type="radio" id="star1" name="rate" value="1" />
+    <label for="star1" title="text">1 star</label>
+  </div>
+<div class="mb">
+        
+<input class="form-control" name="review"  rows="3" required placeholder="Leave us a review!"></input>
+    </div>
+<input type="hidden" name="gym_id" value="{{$gym->Gym_id}}">
+    <button type="submit" >Post Review</button>
+</form>
     <li>
     @if($count>=1)
         @if($count>1)
@@ -123,28 +145,7 @@
     @endforeach
 </div>
 @endif
-<h3>Write a Review</h3>
-<form action="{{route('storeRating')}}" method="POST">
-@csrf
-<div class="rate" name="rate">
-    <input type="radio" id="star5" name="rate" value="5" />
-    <label for="star5" title="text">5 stars</label>
-    <input type="radio" id="star4" name="rate" value="4" />
-    <label for="star4" title="text">4 stars</label>
-    <input type="radio" id="star3" name="rate" value="3" />
-    <label for="star3" title="text">3 stars</label>
-    <input type="radio" id="star2" name="rate" value="2" />
-    <label for="star2" title="text">2 stars</label>
-    <input type="radio" id="star1" name="rate" value="1" />
-    <label for="star1" title="text">1 star</label>
-  </div>
-<div class="mb">
-        
-<input class="form-control" name="review"  rows="3" required placeholder="Leave us a review!"></input>
-    </div>
-<input type="hidden" name="gym_id" value="{{$gym->Gym_id}}">
-    <button type="submit">Post Review</button>
-</form>
+
 
 <form action="{{route('subscribe',['Gym_id' => $gym->Gym_id])}}" method="get">
     @csrf

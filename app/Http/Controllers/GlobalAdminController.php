@@ -39,8 +39,19 @@ class GlobalAdminController extends Controller
     }
 
     public function globalAdminGyms(){
-        $gyms=Gym::all();
-        
+        //$gyms=Gym::with('ratings')->all();
+       // $pendingCount= Rating::where('approved', 'awaiting approval')->count(); //number of ratings with pending approval
+        $gyms= Gym::with(['ratings'=>function($x){
+            $x->where('approved','awaiting approval');
+        }])->get();
+        /**
+         * for above code. retrieving gyms with their related ratings. " $x->where('approved','awaiting approval')" 
+         * is a filter. loading gyms, and for each gym, load the ratings where approved = awaiting approval. 
+         */
+
+       // $ratings_count= $gyms->count();
+
+    
         return view('globalAdminGyms', compact('gyms'));
 
     }
