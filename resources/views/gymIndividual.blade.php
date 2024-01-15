@@ -105,15 +105,23 @@
     <button type="submit">Send Email</button>
 </form>
 
-@if($ratings)
+@if(count($ratings)>0)
 <h4>Reviews</h4>
-<ul>
-    @foreach($ratings as $rating)
 
-    <li>{{$rating->review}}</li>
-    <li>{{$rating->rating}}</li>
+    @foreach($ratings as $rating)
+<div>
+<!--9733 is the ascii code for star. set num=1, as long as num is less than the rating, add an extra star-->
+
+<?php $num=1;
+    while($num<=$rating->rating){
+        ?> <span>&#9733;</span>
+        <?php $num++;} ?>
+    
+
+    <p>{{$rating->review}}</p>
+    <p>By: {{$rating->user->name}}</p>
     @endforeach
-</ul>
+</div>
 @endif
 <h3>Write a Review</h3>
 <form action="{{route('storeRating')}}" method="POST">

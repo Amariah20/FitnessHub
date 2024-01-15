@@ -66,5 +66,9 @@ class User extends Authenticatable
          return $this->hasMany(Gym::class); 
      }
 
+     public function rating(){
+        return $this->hasMany(Rating::class);
+     }
+
      
 }

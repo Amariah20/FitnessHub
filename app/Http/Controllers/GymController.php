@@ -42,11 +42,11 @@ class GymController extends Controller
       $numOfofferings= Offerings::where('gym_id',$Gym_id)->count();
       $count= $numOfclasses + $numOfofferings;
       $numequipment = Equipment::where('gym_id', $Gym_id)->count();
-      $ratings = Rating:: where('gym_id', $Gym_id)
+      $ratings = Rating:: with('user')->where('gym_id', $Gym_id) //this is getting the details of user that entered the review
       ->where('approved', 'approved')
       ->get();
     
-       
+       //dd($ratings);
 
        return view('gymIndividual', compact('gym', 'memberships', 'count', 'numOfclasses','numOfofferings', 'numequipment', 'ratings'));
     } catch (\Exception $e){

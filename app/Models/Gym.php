@@ -83,6 +83,10 @@ class Gym extends Model
         {
             return $this->hasMany(subscription::class);
         }
+        
+        public function ratings(){
+            return $this->hasMany(Rating::class);
+        }
   
      
 }
