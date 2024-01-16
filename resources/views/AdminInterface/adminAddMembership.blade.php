@@ -26,31 +26,31 @@
 <form method="POST"  action="{{ route('AdminMembershipStore', ['Gym_id' => $Gym_id]) }}">
 @csrf
 
-    <div class="mb">
+<div class="mb">
         <label class="label">Membership Name</label>
         <input type="text" name="name" class="form-control" required>
     </div>
     <div class="mb">
-        <label class="label">Price of Membership</label>
+        <label class="label">Membership Price</label>
         <input type="number" name="price" class="form-control"  required>
     </div>
-   
+ 
     <div class="mb">
-        <label class="label">Write a brief description</label>
+        <label class="label">Membership Description</label>
         <textarea class="form-control" name="description"  rows="3" required></textarea>
     </div>
     <br>
     <div class="mb">
         <label class="label">Membership type</label>
         <select name="membership_type" >
-            <option value="" disabled selected>Select Membership Type</option>
+            <option value="" disabled selected>Please Select Membership Type</option>
             <option value ="annual">Annual</option>
             <option value ="monthly">Monthly</option>
             <option value ="weekly">Weekly</option>
             <option value ="daily">Daily</option>
         </select>
     </div>
-    <br>
+    <br><br>
 
         <button type="submit">Add </button>
 
