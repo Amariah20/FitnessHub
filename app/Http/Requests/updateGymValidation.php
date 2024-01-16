@@ -22,7 +22,7 @@ class updateGymValidation extends FormRequest
     public function rules(): array
     {
         return [
-            'name'=> 'string|max:255',
+            'name'=> 'string|max:255|regex:/^[a-zA-Z]+[a-zA-Z\s\-\.\&]*$/', //name has to start with a letter. after first letter, there can be letters, space (\s), -,.,$
             'location'=>'string',
             'opening_hours'=>'string',
             'phone_number'=>'numeric|gt:0',

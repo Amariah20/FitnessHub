@@ -3,8 +3,11 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use ConsoleTVs\Profanity\Facades\Profanity;
+
 
 //used this for guidance: https://laravel.com/docs/10.x/validation 
+//used this for regular expression for name: https://stackoverflow.com/questions/5231683/javascript-regular-expression-for-english-numeric-characters-only 
 
 class GymValidation extends FormRequest
 {
@@ -16,15 +19,21 @@ class GymValidation extends FormRequest
         return true;
     } 
 
+  
+       
+
     /**
      * Get the validation rules that apply to the request.
      *
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
+
+
     public function rules(): array
     {
         return [
-            'name'=> 'required|string|max:255',
+           
+            'name'=> 'required|string|max:255|regex:/^[a-zA-Z]+[a-zA-Z\s\-\.\&]*$/', //name has to start with a letter. after first letter, there can be letters, space (\s), -,.,$
             'location'=>'required|string',
             'opening_hours'=>'required|string',
             'phone_number'=>'required|numeric|gt:0',

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Gym;
 use App\Models\Equipment;
 use Illuminate\Support\Facades\Auth;
+use ConsoleTVs\Profanity\Facades\Profanity;
 
 
 class EquipmentController extends Controller
@@ -42,6 +43,21 @@ class EquipmentController extends Controller
                 //return 'Please select a gym before adding a membership.';
                 return redirect()->back()->withErrors(['error' => 'Please select a gym before adding equipments.']);
            }
+             /**put all input values ($req->all()) into an array.  iterate over it. as long as coun<array.length, 
+         * input the value into profitanity checker. test if clear()==true, if so, check next array value. else, stop the loop and
+         * throw an exception
+        **/    
+
+        $allInput= $req->all();
+        foreach($allInput as $value){
+            //dd($value);
+            $clean =Profanity::blocker($value)->clean();
+            if($clean==false){
+        return redirect()->back()->withErrors(['Error','Inappropriate language detected in input. Please change ' .$value]);
+        
+            }
+            
+        }
          
            $validate = $req->validated();
            if ($validate==true){

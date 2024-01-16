@@ -21,6 +21,7 @@ use App\Http\Requests\updateClassValidation;
 use App\Http\Requests\updateMembershipValidation;
 use App\Http\Requests\updateEquipmentValidation;
 use App\Http\Requests\updateOfferingValidation;
+use ConsoleTVs\Profanity\Facades\Profanity;
 
 
 class AdminPanelController extends Controller
@@ -33,6 +34,29 @@ class AdminPanelController extends Controller
     return redirect('/');
  }
 
+
+ /**NEED A METHOD TO STORE THE PROFANITY CONTROLLER. IF THAT METHOD RETURNS TRUE, THEN WE UPDATE OR ADD SOMETHING.
+  * METHOD TAKES USER INPUT AS PARAMETER, FROM THE OTHER METHODS. THEN IT TURNS TRUE OR FALSE. EACH METHOD WILL CALL
+  THE PROFANITYFILTER METHOD BEFORE IT STORES/UPDATES SOMETHING
+ **/
+   public function profanityFilter($req){
+        /**put all input values ($req->all()) into an array.  iterate over it. as long as coun<array.length, 
+         * input the value into profitanity checker. test if clear()==true, if so, check next array value. else, stop the loop and
+         * throw an exception
+        **/    
+
+        $allInput= $req->all();
+        foreach($allInput as $value){
+            //dd($value);
+            $clean =Profanity::blocker($value)->clean();
+            if($clean==false){
+        return redirect()->back()->withErrors(['Error','Inappropriate language detected in input. Please change ' .$value]);
+        
+            }
+            
+        }
+        return "true";
+   }
 
 
    public function AdminFirst(Request $req){
@@ -112,6 +136,10 @@ class AdminPanelController extends Controller
 
        
      try{
+
+
+        $clean = $this->profanityFilter($req);
+
         $gym = Gym::where('Gym_id', $Gym_id)->first();    
         //$gym->Gym_id= $Gym_id;
        // $gym->name= $req->name;
@@ -156,8 +184,11 @@ class AdminPanelController extends Controller
             $gym->extra_image=$extra;
            }
         }
-       
+    
+    if ($clean == true){
+
         $gym->update();
+    }
         //return('done');
         //return redirect()->route('AdminWelcome', compact('Gym_id', 'gym'))->with('Success','Gym Updated Successfully');
         //return redirect()->route('AdminWelcome', compact('Gym_id'))->with('Success','Gym Updated Successfully');

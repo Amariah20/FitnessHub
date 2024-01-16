@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Rating;
 use App\Models\Gym;
+use ConsoleTVs\Profanity\Facades\Profanity;
 
 class GlobalAdminController extends Controller
 {

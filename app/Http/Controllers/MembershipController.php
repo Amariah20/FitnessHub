@@ -9,6 +9,7 @@ use App\Models\Membership;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Log;
 use Illuminate\Support\Facades\DB;
+use ConsoleTVs\Profanity\Facades\Profanity;
 
 
 //I used this for guidance for most of my controllers: https://www.youtube.com/watch?v=GAPzqFMSxVY&t=933s
@@ -45,6 +46,22 @@ class MembershipController extends Controller
                 //return 'Please select a gym before adding a membership.';
                 return redirect()->back()->withErrors(['error' => 'Please select a gym before adding memberships.']);
            }
+
+            /**put all input values ($req->all()) into an array.  iterate over it. as long as coun<array.length, 
+         * input the value into profitanity checker. test if clear()==true, if so, check next array value. else, stop the loop and
+         * throw an exception
+        **/    
+
+        $allInput= $req->all();
+        foreach($allInput as $value){
+            //dd($value);
+            $clean =Profanity::blocker($value)->clean();
+            if($clean==false){
+        return redirect()->back()->withErrors(['Error','Inappropriate language detected in input. Please change ' .$value]);
+        
+            }
+            
+        }
             
            $validated = $req->validated();
            

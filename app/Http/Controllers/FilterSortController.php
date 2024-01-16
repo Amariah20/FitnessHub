@@ -5,11 +5,29 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Membership;
 use App\Models\Gym;
+use ConsoleTVs\Profanity\Facades\Profanity;
 
 class FilterSortController extends Controller
 {
     public function sortMembershipPrice(Request $req){
+
+         /**put all input values ($req->all()) into an array.  iterate over it. as long as coun<array.length, 
+         * input the value into profitanity checker. test if clear()==true, if so, check next array value. else, stop the loop and
+         * throw an exception
+        **/    
+
+        $allInput= $req->all();
+        foreach($allInput as $value){
+            //dd($value);
+            $clean =Profanity::blocker($value)->clean();
+            if($clean==false){
+        return redirect()->back()->withErrors(['Error','Inappropriate language detected in input. Please change ' .$value]);
+        
+            }
+            
+        }
         $sort=$req->sort;
+        
         if ($sort=="monthly-low"){
            
             $memberships=Membership::where('membership_type','monthly')->get();

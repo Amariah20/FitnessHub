@@ -80,11 +80,7 @@
     
     <div class="content">
     <main class="py-4">
-         @if (isset($error))
-        <div class="alert alert-danger">
-            <p>{{ $error }}</p>
-        </div>
-        @endif
+        
     @yield('content')
  
     </div>

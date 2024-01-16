@@ -168,6 +168,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        ConsoleTVs\Profanity\ProfanityServiceProvider::class, //I'm using this profanity filter: https://github.com/ConsoleTVs/Profanity 
+
     ])->toArray(),
 
     /*
@@ -183,6 +185,9 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
+        'Profanity' => ConsoleTVs\Profanity\Facades\Profanity::class,
     ])->toArray(),
 
 ];
+
+

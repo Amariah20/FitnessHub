@@ -10,6 +10,7 @@ use App\Models\subscription;
 use Illuminate\Notifications\Notification;
 use Illuminate\Support\Facades;
 use Illuminate\Support\Facades\Notification as FacadesNotification;
+use ConsoleTVs\Profanity\Facades\Profanity;
 
 //used this for help: https://www.youtube.com/watch?v=xigpoxOW1MY 
 
@@ -20,6 +21,23 @@ class MailController extends Controller
   
 
     public function sendMail(Request $req, $Gym_id){
+
+      /**put all input values ($req->all()) into an array.  iterate over it. as long as coun<array.length, 
+         * input the value into profitanity checker. test if clear()==true, if so, check next array value. else, stop the loop and
+         * throw an exception
+        **/    
+
+        $allInput= $req->all();
+        foreach($allInput as $value){
+            //dd($value);
+            $clean =Profanity::blocker($value)->clean();
+            if($clean==false){
+        return redirect()->back()->withErrors(['Error','Inappropriate language detected in input. Please change ' .$value]);
+        
+            }
+            
+        }
+
         $gym = Gym::where('Gym_id', $Gym_id)->first();
         //$gymNames= Gym::where('Gym_id',$Gym_id)->pluck('name'); //this returns an array because we're using pluck
         $gymName= $gym->name;
@@ -44,6 +62,22 @@ class MailController extends Controller
 
 
     public function clientSendMail(Request $req, $Gym_id){
+
+         /**put all input values ($req->all()) into an array.  iterate over it. as long as coun<array.length, 
+         * input the value into profitanity checker. test if clear()==true, if so, check next array value. else, stop the loop and
+         * throw an exception
+        **/    
+
+        $allInput= $req->all();
+        foreach($allInput as $value){
+            //dd($value);
+            $clean =Profanity::blocker($value)->clean();
+            if($clean==false){
+        return redirect()->back()->withErrors(['Error','Inappropriate language detected in input. Please change ' .$value]);
+        
+            }
+            
+        }
         $name = $req->name;
         $email= $req->email;
         $number= $req->number;
