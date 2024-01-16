@@ -2,7 +2,9 @@
 
 @section('content')
 <!--code for star are from: https://codepen.io/hesguru/pen/BaybqXv -->
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> <!--for the bookmark icon. from: https://www.w3schools.com/icons/tryit.asp?filename=trybs_ref_glyph_bookmark -->
 @if (session('success'))
     <div class="alert alert-success">
         {{ session('success') }}
@@ -21,6 +23,16 @@
 
 <h1>Gym: {{$gym->name}}</h1>
 
+
+<form method= "post" action="{{route('storeFavGym')}}">
+@csrf
+<input type="hidden"  name="gym_id" value="{{$gym->Gym_id}}">
+<button type="submit" class="btn btn-default btn-sm">
+        <span class="glyphicon glyphicon-bookmark"></span> Bookmark
+</button>
+
+</form>
+<br>
 <!--I used this for help with the stars rating: https://www.youtube.com/watch?v=2JUoZGoJwCg&t=749s&ab_channel=StackDevelopers -->
 
 <?php $num=1;

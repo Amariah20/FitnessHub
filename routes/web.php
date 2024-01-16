@@ -197,3 +197,6 @@ Route::get('createMail/{Gym_id}', 'App\Http\Controllers\AdminPanelController@adm
 Route::get('sendMail/{Gym_id}', 'App\Http\Controllers\MailController@sendMail')->name('sendMail');
 Route::get('clientSendMail/{Gym_id}', 'App\Http\Controllers\MailController@clientSendMail')->name('clientSendMail');
 Route::get('subscribe/{Gym_id}', 'App\Http\Controllers\MailController@subscribe')->name('subscribe');
+
+//to save gym as favourite/ bookmark gym
+Route::post('storeFavGym', 'App\Http\Controllers\FavouriteGymController@storeFavGym')->name('storeFavGym');

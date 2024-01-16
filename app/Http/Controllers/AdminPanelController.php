@@ -24,6 +24,7 @@ use App\Http\Requests\updateOfferingValidation;
 use ConsoleTVs\Profanity\Facades\Profanity;
 
 
+
 class AdminPanelController extends Controller
 {
 
