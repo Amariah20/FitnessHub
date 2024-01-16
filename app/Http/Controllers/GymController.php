@@ -15,6 +15,8 @@ use App\Models\Offerings;
 use App\Models\Equipment;
 use App\Models\Rating;
 use ConsoleTVs\Profanity\Facades\Profanity;
+use App\Models\FavouriteGym;
+use Illuminate\Support\Facades\Auth;
 
 
 
@@ -95,7 +97,31 @@ class GymController extends Controller
     public function list(){ //controller method must accept route parameter. 
         
        // $gyms=Gym::all();
-       $gyms= Gym::orderBy('name', 'asc')->get();
+       $user= Auth::user();
+       $user_id = $user->id;
+       //dd($user_id);
+       $favGyms_Ids = FavouriteGym::whereIn('user_id', $user_id)->pluck('gym_id')->toArray(); //pluck gets the gym ids of each gym. these are put in an array
+
+       
+       if(!empty($favGyms_Ids)){
+        $favGyms= Gym::whereIn('Gym_id', $favGyms_Ids)->orderBy('name', 'asc')->get();
+        //$ordered_fav_gyms = $favGyms::orderBy('name', 'asc');
+
+
+       }
+
+      
+       $all_gyms= Gym::orderBy('name', 'asc')->get();
+
+       if (!empty($favGyms)){
+       //$gyms = merge($all_gyms, $favGyms);
+       $gyms=$all_gyms->merge($favGyms); 
+
+       } else{
+        $gyms = $all_gyms;
+       }
+
+
         return view ('/gymAll', compact('gyms'));
         
     }
