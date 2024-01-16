@@ -121,7 +121,7 @@ class GymController extends Controller
             $gymFacebook =$req->facebook;
             $gymGeneralLocation= $req->general_location;
             $userId = $req->user()->id;
-        }
+        
 
 
         
@@ -169,6 +169,7 @@ class GymController extends Controller
             $NewGym->extra_image=$extra;
            }
 
+        }
            
 
         
