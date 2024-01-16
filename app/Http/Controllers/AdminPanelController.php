@@ -50,12 +50,13 @@ class AdminPanelController extends Controller
             //dd($value);
             $clean =Profanity::blocker($value)->clean();
             if($clean==false){
-        return redirect()->back()->withErrors(['Error','Inappropriate language detected in input. Please change ' .$value]);
-        
+       
+              
+             return false;
             }
             
         }
-        return "true";
+        return true;
    }
 
 
@@ -140,6 +141,8 @@ class AdminPanelController extends Controller
 
         $clean = $this->profanityFilter($req);
 
+        if ($clean == true){
+
         $gym = Gym::where('Gym_id', $Gym_id)->first();    
         //$gym->Gym_id= $Gym_id;
        // $gym->name= $req->name;
@@ -185,14 +188,21 @@ class AdminPanelController extends Controller
            }
         }
     
-    if ($clean == true){
+   
 
         $gym->update();
-    }
+    
         //return('done');
         //return redirect()->route('AdminWelcome', compact('Gym_id', 'gym'))->with('Success','Gym Updated Successfully');
         //return redirect()->route('AdminWelcome', compact('Gym_id'))->with('Success','Gym Updated Successfully');
         return redirect()->route('AdminWelcome', ['SelectedGymID' => $Gym_id])->with('Success', 'Gym Updated Successfully');
+
+        }
+
+        else if ($clean == false){
+
+            return redirect()->back()->withErrors(['Error','Inappropriate language detected in input.']);
+        }
     } catch (\Exception $e){
         $error= "An error occured:". $e->getMessage();
         //return view ('gymIndividual', compact('error'));
@@ -212,6 +222,10 @@ class AdminPanelController extends Controller
      public function UpdateClass(updateClassValidation $req,$Class_id){
 
         try{
+
+            $clean = $this->profanityFilter($req);
+
+            if ($clean == true){
             $validate = $req->validated();
             if ($validate ==true){
                     $class= Classes::where('Class_id', $Class_id)->first();
@@ -225,6 +239,13 @@ class AdminPanelController extends Controller
             }
         $class->update();
         return redirect()->route('AdminClass', ['Gym_id' => $class->gym_id])->with('Success', 'Class Updated Successfully');
+
+    }
+
+    else if ($clean == false){
+
+        return redirect()->back()->withErrors(['Error','Inappropriate language detected in input.']);
+    }
     } catch (\Exception $e){
         $error= "An error occured:". $e->getMessage();
         //return view ('gymIndividual', compact('error'));
@@ -243,6 +264,11 @@ class AdminPanelController extends Controller
      public function UpdateMembership(UpdateMembershipValidation $req, $Membership_id){
 
         try{
+
+            $clean = $this->profanityFilter($req);
+
+            if ($clean == true){
+
             $validate = $req->validated();
             if ($validate ==true){
                 $membership= Membership::where('membership_id', $Membership_id)->first();
@@ -254,6 +280,13 @@ class AdminPanelController extends Controller
         $membership->update();
 
         return redirect()->route('AdminMembership', ['Gym_id' => $membership->gym_id] )->with('Success', 'Membership updated successfully');
+   
+    }
+
+    else if ($clean == false){
+
+        return redirect()->back()->withErrors(['Error','Inappropriate language detected in input.']);
+    }
     } catch (\Exception $e){
         $error= "An error occured:". $e->getMessage();
         //return view ('gymIndividual', compact('error'));
@@ -273,6 +306,10 @@ class AdminPanelController extends Controller
 
         try{
 
+            $clean = $this->profanityFilter($req);
+
+            if ($clean == true){
+
             $validate = $req->validated();
             if ($validate ==true){
                 $offering= Offerings::where('offerings_id', $Offering_id)->first();
@@ -283,6 +320,11 @@ class AdminPanelController extends Controller
         $offering->update();
 
         return redirect()->route('AdminOffering', ['Gym_id' => $offering->gym_id] )->with('Success', 'Offering updated successfully');
+        } else if ($clean == false){
+
+            return redirect()->back()->withErrors(['Error','Inappropriate language detected in input.']);
+        }
+
     } catch (\Exception $e){
         $error= "An error occured:". $e->getMessage();
         //return view ('gymIndividual', compact('error'));
@@ -301,6 +343,11 @@ class AdminPanelController extends Controller
      public function UpdateEquipment(UpdateEquipmentValidation $req, $Equipment_id){
 
         try{
+
+            $clean = $this->profanityFilter($req);
+
+            if ($clean == true){
+
             $validate = $req->validated();
             if ($validate ==true){
                 $equipment= Equipment::where('equipment_id', $Equipment_id)->first();
@@ -311,6 +358,12 @@ class AdminPanelController extends Controller
         $equipment->update();
 
         return redirect()->route('AdminEquipment', ['Gym_id' => $equipment->gym_id] )->with('Success', 'Equipment updated successfully');
+       
+    } else if ($clean == false){
+
+        return redirect()->back()->withErrors(['Error','Inappropriate language detected in input.']);
+    }
+    
     } catch (\Exception $e){
         $error= "An error occured:". $e->getMessage();
         //return view ('gymIndividual', compact('error'));

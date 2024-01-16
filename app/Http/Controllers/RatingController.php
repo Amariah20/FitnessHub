@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Rating;
 use App\Models\Gym;
+use ConsoleTVs\Profanity\Facades\Profanity;
 
 class RatingController extends Controller
 {

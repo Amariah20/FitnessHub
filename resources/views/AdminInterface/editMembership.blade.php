@@ -30,7 +30,7 @@
     <div class="mb">
         <label class="label">Membership type</label>
         <select name="membership_type" >
-            <option value="{{$membership->membership_type}}" disabled selected>{{$membership->membership_type}}</option>
+            <option value="{{$membership->membership_type}}">{{$membership->membership_type}}</option>
             <option value ="annual">Annual</option>
             <option value ="monthly">Monthly</option>
             <option value ="weekly">Weekly</option>
