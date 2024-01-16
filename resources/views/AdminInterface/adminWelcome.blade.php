@@ -72,6 +72,7 @@
     </tr>
     <tr>
       <th scope="row">Email</th>
+      <td>{{$gym->email}}</td>
 
     </tr>
     <tr>

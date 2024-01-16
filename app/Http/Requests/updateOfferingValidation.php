@@ -24,7 +24,7 @@ class updateOfferingValidation extends FormRequest
         return [
             'name'=> 'string|max:255',
             'description'=>'string|max:255',
-            'price'=>'numeric|gt:0',
+            'price'=>'numeric|gt:0|decimal:2',
         ];
     }
 }

@@ -27,7 +27,7 @@
     <div class="mb">
         <label class="label">General Location</label>
         <select name="general_location" value="{{$gym->general_location}}">
-            <option value= "{{$gym->general_location}}" disabled selected>{{$gym->general_location}}</option>
+            <option value= "{{$gym->general_location}}">{{$gym->general_location}}</option>
             <option value ="north">North</option>
             <option value ="east">East</option>
             <option value ="south">South</option>

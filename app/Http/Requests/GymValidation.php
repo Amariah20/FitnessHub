@@ -33,6 +33,9 @@ class GymValidation extends FormRequest
             'facebook'=>'nullable|string',
             'description'=>'required|string',
             'general_location' => 'required|in:north,east,south,west,central',
+            'logo'=>'image|mimes:jpg,png,jpeg',
+            'banner'=> 'image|mimes:jpg,png,jpeg',
+            'extra_image'=> 'image|mimes:jpg,png,jpeg'
         ];
     }
 }
