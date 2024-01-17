@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\FavouriteGym;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Hash;
 use App\Models\Gym;
 
 
@@ -61,9 +62,16 @@ class UserProfileController extends Controller
         $user->name= $name;
         $user->date_of_birth=$DOB;
         $user->address= $address;
-        $user->update();
+
+       /* $stored_password = $user->password;
+        //dd($stored_password);
+        $entered_password = $req->password;
+        $hased_entered_password= Hash::make($entered_password);
+        dd($stored_password,$hased_entered_password);
+       // if ($req->password =) */
+        $user->update(); 
         
-        return redirect()->route('userProfile')->with('success', 'details updated');
+        return redirect()->route('userProfile')->with('success', 'Details Successfully Updated');
         
         
     }

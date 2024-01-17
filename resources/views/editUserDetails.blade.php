@@ -1,6 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
+@if($errors->any())
+<div class="alert alert-danger">
+    <ul>
+        @foreach($errors->all() as $error)
+        <li>{{ $error}}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
+@if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -51,18 +65,14 @@
                               
                             </div>
                         </div>
-<!--
-                        <div class="row mb-3">
+
+                        <!--<div class="row mb-3">
                             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                               
                             </div>
                         </div>
 
