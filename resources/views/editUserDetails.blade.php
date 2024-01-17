@@ -46,15 +46,7 @@
                             </div>
                         </div>
 
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Date Of Birth') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="date_of_birth" type="date" class="form-control" name="date_of_birth" required autocomplete="date_of_birth" value="{{$user->date_of_birth}}">
-
-                              
-                            </div>
-                        </div>
+                   
 
                         <div class="row mb-3">
                             <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Address') }}</label>
