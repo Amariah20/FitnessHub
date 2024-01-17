@@ -45,6 +45,14 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                                    <a class="nav-link" 
+                                    style="font-size: 22px; font-family: 'Trebuchet MS', Helvetica, sans-serif; color: black;"
+                                    onmouseover="this.style.backgroundColor='#c7c8ca'"
+                                    onmouseout="this.style.backgroundColor='transparent'" 
+                                     href="{{ route('userProfile') }}">Profile</a>
+                                </li>
                         
                         <!-- Authentication Links -->
                         @guest
