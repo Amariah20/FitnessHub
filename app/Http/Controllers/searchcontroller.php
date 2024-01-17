@@ -75,7 +75,7 @@ public function search(Request $req){
             if($equipments->isNotEmpty()){
 
             $gym_Ids= $equipments->pluck('gym_id')->toArray(); //pluck gets the gym ids of each class. these are put in an array
-            $gyms= $gyms->merge( Gym::whereIn('Gym_id', $gym_Ids)->get());  // where will compare with just first value of array or just one single value. and whereIn will compare evey index of array.
+            $gyms= $gyms->merge( Gym::whereIn('Gym_id', $gym_Ids)->get());  // where will compare with just first value of array or just one single value. and whereIn will compare evey index of array.//whereIn is giving me all gyms, but where was showing only the first one
             }  
 
             if($gyms->isEmpty())

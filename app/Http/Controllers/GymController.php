@@ -96,26 +96,31 @@ class GymController extends Controller
     //for showing all gyms 
     public function list(){ //controller method must accept route parameter. 
         
+     if(Auth::check()){  //if user is logged in
        // $gyms=Gym::all();
        $user= Auth::user();
        $user_id = $user->id;
        //dd($user_id);
-       $favGyms_Ids = FavouriteGym::whereIn('user_id', $user_id)->pluck('gym_id')->toArray(); //pluck gets the gym ids of each gym. these are put in an array
-
+       $favGyms_Ids = FavouriteGym::where('user_id', $user_id)->pluck('gym_id')->toArray(); //pluck gets the gym ids of each gym. these are put in an array
+       //dd($favGyms_Ids);
        
        if(!empty($favGyms_Ids)){
-        $favGyms= Gym::whereIn('Gym_id', $favGyms_Ids)->orderBy('name', 'asc')->get();
+        $favGyms= Gym::whereIn('Gym_id', $favGyms_Ids)->orderBy('name', 'asc')->get(); //whereIn is giving me all gyms, but where was showing only the first one
         //$ordered_fav_gyms = $favGyms::orderBy('name', 'asc');
-
+        //dd($favGyms);
 
        }
+
+    }
 
       
        $all_gyms= Gym::orderBy('name', 'asc')->get();
 
        if (!empty($favGyms)){
        //$gyms = merge($all_gyms, $favGyms);
-       $gyms=$all_gyms->merge($favGyms); 
+       //$gyms=$all_gyms->merge($favGyms); 
+       //$not_fav_gyms = $all_gyms->whereNotIn('Gym_id', $favGyms_Ids)->By('name', 'asc');
+       $gyms= $favGyms->concat($all_gyms);  //The concat method appends the given array or collection's values onto the end of another collection
 
        } else{
         $gyms = $all_gyms;
