@@ -200,3 +200,6 @@ Route::get('subscribe/{Gym_id}', 'App\Http\Controllers\MailController@subscribe'
 
 //to save gym as favourite/ bookmark gym
 Route::post('storeFavGym', 'App\Http\Controllers\FavouriteGymController@storeFavGym')->name('storeFavGym');
+
+//accessing user profile
+Route::get('userProfile', 'App\Http\Controllers\UserProfileController@userProfile')->name('userProfile');

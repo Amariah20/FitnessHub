@@ -121,6 +121,7 @@ class GymController extends Controller
        //$gyms=$all_gyms->merge($favGyms); 
        //$not_fav_gyms = $all_gyms->whereNotIn('Gym_id', $favGyms_Ids)->By('name', 'asc');
        $gyms= $favGyms->concat($all_gyms);  //The concat method appends the given array or collection's values onto the end of another collection
+      
 
        } else{
         $gyms = $all_gyms;
