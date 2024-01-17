@@ -36,8 +36,35 @@ class UserProfileController extends Controller
         }
 
         return view ('userProfile', compact('favGyms', 'user'));
+
+    }
+
+    public function editUserDetails(Request $req){ //change this. we dont want to pass the user id as parameter. use hidden
+        // $gym = Gym::find($Gym_id);
+
+        //dd($req->all());
+        $user_id = $req->user_id;
+        $user = User::where('id', $user_id)->first();
+        //dd($user);
+         return view ('editUserDetails', compact('user'));
+ 
+     }
+
+    public function UpdateUser(Request $req){
+        $name = $req->name;
+        $email= $req->email;
+        $DOB= $req->date_of_birth;
+        $address= $req->address;
+        $user_id = $req->user_id;
+
+        $user= User::where('id', $user_id)->first();
+        $user->name= $name;
+        $user->date_of_birth=$DOB;
+        $user->address= $address;
+        $user->update();
         
-
-
+        return redirect()->route('userProfile')->with('success', 'details updated');
+        
+        
     }
 }

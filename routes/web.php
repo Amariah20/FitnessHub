@@ -201,5 +201,7 @@ Route::get('subscribe/{Gym_id}', 'App\Http\Controllers\MailController@subscribe'
 //to save gym as favourite/ bookmark gym
 Route::post('storeFavGym', 'App\Http\Controllers\FavouriteGymController@storeFavGym')->name('storeFavGym');
 
-//accessing user profile
+//user profile
 Route::get('userProfile', 'App\Http\Controllers\UserProfileController@userProfile')->name('userProfile');
+Route::get('editUserDetails', 'App\Http\Controllers\UserProfileController@editUserDetails')->name('editUserDetails');
+Route::post('UpdateUser','App\Http\Controllers\UserProfileController@UpdateUser')->name('UpdateUser');

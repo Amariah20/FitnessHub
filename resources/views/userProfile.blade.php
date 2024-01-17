@@ -12,6 +12,11 @@
 <p>{{$user->email}}</p>
 <p>{{$user->date_of_birth}}</p>
 <p>{{$user->address}}</p>
+<form method="get" action="{{route('editUserDetails')}}">
+    @csrf
+    <input type="hidden"  name="user_id" value="{{$user->id}}">
+   <button type= "submit">Edit Your Information</button>
+</form>
 
 @if(!$favGyms==null)
  <h1>Your Favourite Gyms</h1>
