@@ -203,5 +203,5 @@ Route::post('storeFavGym', 'App\Http\Controllers\FavouriteGymController@storeFav
 
 //user profile
 Route::get('userProfile', 'App\Http\Controllers\UserProfileController@userProfile')->name('userProfile');
-Route::get('editUserDetails', 'App\Http\Controllers\UserProfileController@editUserDetails')->name('editUserDetails');
+Route::match(['get','post'],'editUserDetails', 'App\Http\Controllers\UserProfileController@editUserDetails')->name('editUserDetails');
 Route::post('UpdateUser','App\Http\Controllers\UserProfileController@UpdateUser')->name('UpdateUser');

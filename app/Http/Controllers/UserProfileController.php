@@ -60,7 +60,7 @@ class UserProfileController extends Controller
 
         $user= User::where('id', $user_id)->first();
         $user->name= $name;
-        $user->date_of_birth=$DOB;
+        //$user->date_of_birth=$DOB;
         $user->address= $address;
 
        /* $stored_password = $user->password;
