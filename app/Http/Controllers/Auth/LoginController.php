@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use User;
 use App\Models\Gym;
+use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
 {
@@ -37,7 +38,11 @@ class LoginController extends Controller
 
    protected function authenticated(Request $req,$user){
        
-      
+      if(Session::has('url.intended')){
+
+        return redirect()->intended(Session::get('url.intended'));
+
+      }
         if($user->email == 'globaladmin@gmail.com'){
             return redirect('/AdminAccess');
         }

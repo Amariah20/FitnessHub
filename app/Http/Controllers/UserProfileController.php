@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\FavouriteGym;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 use App\Models\Gym;
 
 
@@ -15,7 +16,8 @@ class UserProfileController extends Controller
 
         if(!Auth::check()){
            // return redirect()->back()->withErrors(['error' => 'You must log in.']);//redirect to log in page??
-           return redirect()->route('login');
+           Session::put('url.intended', route('userProfile'));
+           return redirect()->route('login'); // i want to take them to user profile after they logged in tho. 
         }
 
         $user= Auth::user();
