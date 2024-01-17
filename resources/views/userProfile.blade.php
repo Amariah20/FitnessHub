@@ -7,6 +7,11 @@
     </div>
 @endif
 
+<h1>User Information</h1>
+<p>{{$user->name}}</p>
+<p>{{$user->email}}</p>
+<p>{{$user->date_of_birth}}</p>
+<p>{{$user->address}}</p>
 
 @if(!$favGyms==null)
  <h1>Your Favourite Gyms</h1>
