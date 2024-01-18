@@ -30,6 +30,8 @@ class MembershipController extends Controller
     public function membershipStore(MembershipValidation $req)
         {
             try{
+
+                //dd($req->Gym_id);
             $user = Auth::user();
             
              

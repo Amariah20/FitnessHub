@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Gym;
 use Illuminate\Support\Facades\Storage;
+use Illumintate\Database\Eloquent\Model;
 use App\Http\Controllers\redirect;
 use App\Http\Controllers\view;
 use App\Http\Requests\GymValidation;
@@ -22,7 +23,8 @@ use Illuminate\Support\Facades\Auth;
 
 //using this profanity filter: https://github.com/ConsoleTVs/Profanity everywhere
 //I used this for guidance for most of my controllers: https://www.youtube.com/watch?v=GAPzqFMSxVY&t=933s
-//need to allow admins to add more than one gym 
+//I used this to paginate the collection and to display 3 gyms per pages: https://gist.github.com/simonhamp/549e8821946e2c40a617c85d2cf5af5e 
+
 class GymController extends Controller
 {
       //for showing one gym
@@ -116,6 +118,8 @@ class GymController extends Controller
       
        $all_gyms= Gym::orderBy('name', 'asc')->get();
 
+       //$all_gyms= Gym::orderBy('name', 'asc');
+
        if (!empty($favGyms)){
        //$gyms = merge($all_gyms, $favGyms);
        //$gyms=$all_gyms->merge($favGyms); 
@@ -126,6 +130,11 @@ class GymController extends Controller
        } else{
         $gyms = $all_gyms;
        }
+
+       //$gyms=collect($gyms)->paginate(3); 
+      // collect($gyms)->paginate(3); //tried to use this package from github, and it did not work:https://github.com/spatie/laravel-collection-macros/#paginate UNINSTALL IT
+      //$gyms= $gyms->chunk(3);
+      $gyms= $gyms->paginate(3); //I used this to paginate the collection and to display 3 gyms per pages: https://gist.github.com/simonhamp/549e8821946e2c40a617c85d2cf5af5e 
 
 
         return view ('/gymAll', compact('gyms'));
@@ -231,6 +240,8 @@ class GymController extends Controller
         
 
         $NewGym-> save();
+
+        $Gym_id= $NewGym->Gym_id;
         
         return redirect()->route('memberships.create')->with('success', 'successfully added');
     } catch (\Exception $e){

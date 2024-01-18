@@ -49,6 +49,6 @@ NOTE: show ratings here too? allow people to filter according to ratings?
 </ul> 
     @endforeach
    
-
+{{$gyms->links()}}
 
 @endsection

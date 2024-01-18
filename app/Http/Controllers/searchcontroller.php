@@ -83,6 +83,7 @@ public function search(Request $req){
                 return redirect('gymAll')->with('no_result', 'No Results maching your search were found');
             }
             
+            $gyms= $gyms->paginate(3); //I used this to paginate the collection and to display 3 gyms per pages: https://gist.github.com/simonhamp/549e8821946e2c40a617c85d2cf5af5e 
             return view('gymAll', compact('gyms'));
     }
 
