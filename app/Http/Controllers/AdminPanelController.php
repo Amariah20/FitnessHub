@@ -67,8 +67,14 @@ class AdminPanelController extends Controller
         $gym = $user->gym; // Retrieve the gyms associated with the user
 
         $Gym_Id= $req->SelectedGymID;
+
+        
         //$this->currentGymId = $req->SelectedGymID;
-       
+       //if (($Gym_Id== null)) {
+            
+      //      return redirect()->back()->withErrors(['error' => 'Please select a gym to proceed.']);
+       //}
+
         
       //  return view('AdminWelcome', compact('gym', 'Gym_Id'));
       //return view("{{route('AdminWelcome', ['Gym_id'=>$Gym_Id])}}" , compact('gym', 'Gym_Id'));
@@ -81,6 +87,13 @@ class AdminPanelController extends Controller
     {
         $user = Auth::user(); 
         $Gym_id= $req->SelectedGymID;
+
+        if (($Gym_id=="Select")) {
+            
+                return redirect()->back()->withErrors(['error' => 'Please select a gym to proceed.']);
+        }
+
+        
       //  $Gym_id = $req->Gym_id;
         //$this->currentGymId = $Gym_id;
         $gym = Gym::where('Gym_id', $Gym_id)->first();

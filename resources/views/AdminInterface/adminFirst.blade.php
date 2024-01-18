@@ -7,7 +7,7 @@
     @csrf 
     
     <select name="SelectedGymID">
-        <option>Select Gym</option>
+        <option value= "Select">Select Gym</option>
         @foreach($gym as $gym)
             <option value="{{ $gym->Gym_id }}">{{ $gym->name }}</option>
         @endforeach
