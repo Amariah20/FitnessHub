@@ -7,7 +7,7 @@ use Illuminate\Support\Collection;
 use Illuminate\Pagination\LengthAwarePaginator;
 
 
-//from github. trying to pagingate a collection. i want to show 3 gyms per page. https://gist.github.com/simonhamp/549e8821946e2c40a617c85d2cf5af5e 
+//from github. trying to pagingate a collection. i want to show 3 gyms per page. reference: https://gist.github.com/simonhamp/549e8821946e2c40a617c85d2cf5af5e 
 class AppServiceProvider extends ServiceProvider
 {
     /**

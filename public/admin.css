@@ -1,7 +1,13 @@
 /*<!--I used this for help with designing admin interface: https://www.youtube.com/watch?v=CqzHZP252FM -->*/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Khojki&family=Roboto+Condensed&display=swap');
 *{
     margin: 0px;
     padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Noto Serif Khojki', serif;
+    font-family: 'Roboto Condensed', sans-serif;
+    
+    
 }
 .header{
     line-height: 72px;

@@ -87,6 +87,7 @@ public function search(Request $req){
             return view('gymAll', compact('gyms'));
     }
 
+    //For searching admin panel
     public function searchClass(Request $req, $Gym_id){
         $searchitems = $req->search;
         

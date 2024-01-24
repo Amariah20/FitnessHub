@@ -23,12 +23,17 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script scr="https://cdnjs.cloudflare.com/ajax/libs/jQuery-QueryBuilder/2.7.0/js/query-builder.min.js"></script>
 
 </head>
 <body>
+
+<div class = "menu">
     <header class="header">
     
-<a href="{{ route('gymIndividual', ['Gym_id' => $Gym_id]) }}">LOGO</a>
+<a href="{{ route('gymIndividual', ['Gym_id' => $Gym_id]) }}">
+<img src="{{ asset('public/images/uploaded/gym_' . $gym->user_id.$gym->name . '/' . $gym->logo) }}" alt="Logo"></a>
 
          
 
@@ -42,12 +47,16 @@
             <a href="" class="btn btn-primary"  onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
              {{ __('Logout') }}</a>
-        </div>
+        
         
         </form>
+        </div>
     </header>
     
     <aside>
+        <div class= "side-nav">
+    
+        
 
     <ul>
     <!--<li>
@@ -76,7 +85,10 @@
             
         </li>
     </ul>
+    </div>
     </aside>
+</div>
+
     
     <div class="content">
     <main class="py-4">
