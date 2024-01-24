@@ -18,17 +18,19 @@
     </div>
 @endif
 
-<a href="{{route('AdminAddEquipment', ['Gym_id' => $Gym_id])}}"><button>Add New Equipment</button></a>
+<a href="{{route('AdminAddEquipment', ['Gym_id' => $Gym_id])}}"><button id="add" class="btn btn-success">Add New Equipment</button></a>
 <!--search-->
-<form method="GET" action="{{route ('searchEquipment', ['Gym_id' => $Gym_id])}}" >
-                <input type="text" placeholder="Find something" name="search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>  
+<div class="input-box">
+<form method="GET" action="{{route ('searchEquipment', ['Gym_id' => $Gym_id])}}" id="search" >
+<input type="text" placeholder="Find something" name="search" id="search-box" class="form-control">
+   <button type="submit"><i class="fa fa-search"></i></button>  
+  </div>
 </form>
 
 
 
 
-<table class="table table-striped">
+<table class="table table-hover">
   <thead class="thead-light">
     <tr>
       <th scope="col">Name</th>
@@ -48,8 +50,8 @@
       <td>{{$equipment->description}}</td>
      
       
-      <td><a href="{{route('EditEquipment', ['Equipment_id' => $equipment->equipment_id] )}}"><button type= "submit">Edit</button></a></td>
-      <td><a onclick="return confirm('Are you sure you want to delete?')" href="{{route('DeleteEquipment',['Equipment_id' => $equipment->equipment_id])}}"><button type= "submit">Delete</button></a></td>
+      <td><a href="{{route('EditEquipment', ['Equipment_id' => $equipment->equipment_id] )}}"><button type= "submit" class="btn btn-info">Edit</button></a></td>
+      <td><a onclick="return confirm('Are you sure you want to delete?')" href="{{route('DeleteEquipment',['Equipment_id' => $equipment->equipment_id])}}"><button type= "submit" class="btn btn-danger">Delete</button></a></td>
     </tr>
  @endforeach
  </tbody>

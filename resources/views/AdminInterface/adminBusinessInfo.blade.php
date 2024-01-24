@@ -21,7 +21,7 @@
             @endif
 
 
-<table class="table table-striped">
+<table class="table table-hover">
   <thead class="thead-light">
     <tr>
       <th scope="col"></th>
@@ -88,7 +88,7 @@
   </tbody>
 </table>
 <br><br>
-<a href="{{route('EditGym', ['Gym_id' => $Gym_id] )}}"><button type= "submit">Edit Business Information</button></a>
+<a href="{{route('EditGym', ['Gym_id' => $Gym_id] )}}"><button type= "submit" class="btn btn-info">Edit Business Information</button></a>
 
 
 
