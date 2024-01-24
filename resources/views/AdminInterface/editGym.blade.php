@@ -1,4 +1,6 @@
+@extends('layouts.adminPage')
 
+@section('content')
 <!--I used bootstrap for the forms to register gym: https://getbootstrap.com/docs/5.0/forms/form-control/-->
 <!--I used this for help with updating: https://www.fundaofwebit.com/laravel-8/how-to-edit-update-data-in-laravel -->
     <link rel="stylesheet" type="text/css" href="/getStarted.css"> 
@@ -85,3 +87,5 @@
          
 </form>
 </div>
+
+@endsection

@@ -51,7 +51,7 @@
       
       <td><a href="{{route('EditMembership', ['Membership_id' => $membership->membership_id] )}}"><button type= "submit" class="btn btn-info">Edit</button></a></td>
       <td><a onclick="return confirm('Are you sure you want to delete?')" href="{{route('DeleteMembership', ['Membership_id' => $membership->membership_id] )}}"><button type= "submit" class="btn btn-danger">Delete</button></a></td>
-    <
+    
     </tr>
  @endforeach
  </tbody>

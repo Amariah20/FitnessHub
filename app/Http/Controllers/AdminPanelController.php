@@ -143,7 +143,8 @@ class AdminPanelController extends Controller
     public function EditGym($Gym_id){
        // $gym = Gym::find($Gym_id);
        $gym = Gym::where('Gym_id', $Gym_id)->first();
-        return view ('AdminInterface.editGym', compact('gym'));
+       $Gym_id= $Gym_id;
+        return view ('AdminInterface.editGym', compact('gym', 'Gym_id'));
 
     }
 
@@ -229,7 +230,9 @@ class AdminPanelController extends Controller
         // $gym = Gym::find($Gym_id);
         //$gym = Gym::where('Gym_id', $Gym_id)->first();
         $class= Classes::where('Class_id', $Class_id)->first();
-         return view ('AdminInterface.editClass', compact('class'));
+        $Gym_id= $class->gym_id;
+
+         return view ('AdminInterface.editClass', compact('class', 'Gym_id'));
  
      }
 
@@ -271,7 +274,8 @@ class AdminPanelController extends Controller
      public function EditMembership($Membership_id){
         
         $membership= Membership::where('membership_id', $Membership_id)->first();
-         return view ('AdminInterface.editMembership', compact('membership'));
+        $Gym_id= $membership->gym_id;
+         return view ('AdminInterface.editMembership', compact('membership', 'Gym_id'));
  
      }
 
@@ -312,7 +316,8 @@ class AdminPanelController extends Controller
      public function EditOffering($Offering_id){
         
         $offering= Offerings::where('offerings_id', $Offering_id)->first();
-         return view ('AdminInterface.editOffering', compact('offering'));
+        $Gym_id= $offering->gym_id;
+         return view ('AdminInterface.editOffering', compact('offering', 'Gym_id'));
  
      }
 
@@ -350,7 +355,8 @@ class AdminPanelController extends Controller
      public function EditEquipment($Equipment_id){
         
         $equipment= Equipment::where('equipment_id', $Equipment_id)->first();
-         return view ('AdminInterface.editEquipment', compact('equipment'));
+        $Gym_id= $equipment->gym_id;
+         return view ('AdminInterface.editEquipment', compact('equipment', 'Gym_id'));
  
      }
 

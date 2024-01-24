@@ -121,3 +121,19 @@ tbody{
 .form-control:focus{
     box-shadow: inset;
 }
+
+h2{
+    font-weight: bolder;
+    font-size: 35px;
+}
+
+#info{
+    background-color: white;
+}
+
+.welcome{
+    font-size:40px;
+    font-style: italic;
+    color:rgb(105, 105, 105);
+    font-weight: 600;
+}

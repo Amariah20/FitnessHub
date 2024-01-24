@@ -1,3 +1,6 @@
+@extends('layouts.adminPage')
+
+@section('content')
 <div class="container">
 <div class="card-header">Edit Offering</div>
 @if ($errors->any())
@@ -32,3 +35,4 @@
 
 </form>
 <div>
+@endsection

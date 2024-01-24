@@ -58,7 +58,9 @@
       <td> {{$class->duration}}</td>
       <td>{{$class->capacity}}</td>
       <td> {{$class->price}}</td>
-      <td><a href="{{route('EditClass', ['Class_id' => $class->Class_id] )}}"><button type= "submit" class="btn btn-info" >Edit</button></a></td>
+      
+     
+    <td><a href="{{route('EditClass', ['Class_id' => $class->Class_id] )}}"><button type= "submit" class="btn btn-info" >Edit</button></a></td>
    <td><a onclick="return confirm('Are you sure you want to delete?')" href="{{route('DeleteClass', ['Class_id' => $class->Class_id] )}}"><button type="submit" class="btn btn-danger">Delete</button></a></td>
     </tr>
  @endforeach
