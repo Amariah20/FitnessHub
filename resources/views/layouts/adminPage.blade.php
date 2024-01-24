@@ -32,8 +32,8 @@
 <div class = "menu">
     <header class="header">
     
-<a href="{{ route('gymIndividual', ['Gym_id' => $Gym_id]) }}">
-<img src="{{ asset('public/images/uploaded/gym_' . $gym->user_id.$gym->name . '/' . $gym->logo) }}" alt="Logo"></a>
+
+
 
          
 
@@ -54,14 +54,14 @@
     </header>
     
     <aside>
-        <div class= "side-nav">
+    <div class= "side-nav">
     
         
 
     <ul>
-    <!--<li>
-            <a href="{{ route('AdminWelcome', ['Gym_id' => $Gym_id])}}">Business Information</a>
-        </li>-->
+        <li>
+            <a href="{{ route('AdminWelcome')}} ">Business Information</a><!--not working. need another page with business info to put here-->
+        
     
         <li>
             <a href="{{ route('AdminClass', ['Gym_id' => $Gym_id]) }}">Classes</a>
@@ -84,10 +84,15 @@
             <a href="{{route ('createMail' , ['Gym_id' => $Gym_id])}}">Send Email</a>
             
         </li>
+        <li>
+            <a href="{{ route('gymIndividual', ['Gym_id' => $Gym_id]) }}">View Gym Page</a>
+            
+        </li>
     </ul>
     </div>
     </aside>
 </div>
+
 
     
     <div class="content">
