@@ -39,19 +39,11 @@
 
          
 
-
-        <div class="logout">
-       
-                                    
-        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-        @csrf
-            
-            <a href="" class="btn btn-primary"  onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-             {{ __('Logout') }}</a>
-        
-        
-        </form>
+        <div class = "user-profile">
+         <a href="{{ route('userProfile') }}"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" color="black" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+        </svg></a>
         </div>
     </header>
     
@@ -113,6 +105,17 @@
         <path d="M10.228 15.667a5 5 0 0 0 .303-.086l.082-.025a8.02 8.02 0 0 0 4.162-3.3.25.25 0 0 0-.331-.35q-.322.168-.663.294a6.4 6.4 0 0 1-2.243.4c-2.957 0-5.532-2.031-5.532-4.644q.003-.203.046-.399a4.54 4.54 0 0 0-.46 5.898l.003.005c.315.441.707.821 1.158 1.121h.003l.144.09c.877.55 1.721 1.078 3.328.996"/>
         </svg><a href="{{ route('gymIndividual', ['Gym_id' => $Gym_id]) }}"> View Gym Page</a>
             
+        </li>
+        <li>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+        @csrf
+            
+            <a href=""
+            onclick="event.preventDefault();
+             document.getElementById('logout-form').submit();"><span class="glyphicon glyphicon-log-out"></span> 
+              {{ __('Logout') }}</a>
+               
+        </form>
         </li>
     </ul>
     </div>

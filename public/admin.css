@@ -27,9 +27,14 @@ a,a:hover{
     text-decoration: none!important;
 }
 
-.logout{
-    float: right; /*brings it to the right*/
-    padding-right: 25px;
+
+
+.user-profile{
+
+    float:right;
+    padding-right:30px;
+    padding-top:11px;
+    
 }
 
 
