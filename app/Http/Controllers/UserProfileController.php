@@ -17,8 +17,8 @@ class UserProfileController extends Controller
 
         if(!Auth::check()){
            // return redirect()->back()->withErrors(['error' => 'You must log in.']);//redirect to log in page??
-           Session::put('url.intended', route('userProfile'));
-           return redirect()->route('login'); // i want to take them to user profile after they logged in tho, if they were redirected to log after trying to access user profile
+           Session::put('url.intended', route('userProfile')); //this goes to log in controller, authenticated function. 
+           return redirect()->route('login'); // i want to take them to user profile after they logged in tho, if they were redirected to log in after trying to access user profile
         }
 
 

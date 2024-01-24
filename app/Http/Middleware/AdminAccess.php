@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
+//this was written with the assistance of AI. It was producing an error where the checks were not performing properly. AI helped me fix it. My original code was missing the !auth()->check(). 
 
 class AdminAccess
 {

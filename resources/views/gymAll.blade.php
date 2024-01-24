@@ -19,7 +19,7 @@ NOTE: show ratings here too? allow people to filter according to ratings?
         <option value="weekly-low">Weekly (Low to High)</option>
         <option value="weekly-high">Weekly (High to Low)</option>
     </select>
-    <button type="submit">Apply Filter</button>
+    <button type="submit">Sort</button>
 </form>   
 
 <form action="{{route('filterLocation')}}" method="get">

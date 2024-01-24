@@ -39,6 +39,7 @@ class GlobalAdminController extends Controller
         //return ('Admin access revoked successfully.');
     }
 
+    //lines 46 to 48 of globalAdminGyms function was written with the help of AI. AI helped me debug this part. My original solution has been commented out.
     public function globalAdminGyms(){
         //$gyms=Gym::with('ratings')->all();
        // $pendingCount= Rating::where('approved', 'awaiting approval')->count(); //number of ratings with pending approval
@@ -55,7 +56,7 @@ class GlobalAdminController extends Controller
         
         
         $sortFunction= function($gym){
-            //counting num of ratings thats waiting for approval for each gym
+            //counting num of ratings thats waiting for approval for each gym. also leveraging the rela in models between gym and ratings
             return $gym->ratings->where('approved', 'awaiting approval')->count();
         };
 

@@ -36,7 +36,8 @@ class LoginController extends Controller
    //I used this for help for showing different login screens: https://www.youtube.com/watch?v=xhngdDtJOUY
     
 
-   protected function authenticated(Request $req,$user){
+    //Should I use authenticated function for other stuff that requires log in such as rating and book marking gym?? 
+   protected function authenticated(Request $req,$user){ //this is for when user tries to access their profile when they are not logged in. using it with user profile controller.  
        
       if(Session::has('url.intended')){
 

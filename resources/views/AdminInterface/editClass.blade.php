@@ -1,8 +1,6 @@
 @extends('layouts.adminPage')
 
 @section('content')
-<div class="container">
-<div class="card-header">Edit Class</div>
 @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
@@ -12,11 +10,14 @@
         </ul>
     </div>
 @endif
+<div class="container">
+<div class="card-header">Edit Class</div>
+
 <form method="POST" action="{{route('UpdateClass',  ['Class_id' => $class->Class_id])}}">
 @csrf
 @method("patch")
     <div class="mb">
-        <label class="label">Class Name</label>
+        <label color="black" class="label">Class Name</label>
         <input type="text" name="name" class="form-control" value="{{$class->name}}" required>
     </div>
     <div class="mb">

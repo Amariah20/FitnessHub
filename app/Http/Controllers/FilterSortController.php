@@ -54,7 +54,7 @@ class FilterSortController extends Controller
             foreach($sortedMemberships as $sortedMembership){
                 $gym=$gyms->where('Gym_id', $sortedMembership->gym_id)->first();
                 if($gym){
-                    $sortedGyms->push($gym);
+                    $sortedGyms->push($gym); //push adds an item to the end of the collection. 
                 }
             }
             $gyms=$sortedGyms;

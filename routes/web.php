@@ -204,5 +204,5 @@ Route::post('storeFavGym', 'App\Http\Controllers\FavouriteGymController@storeFav
 
 //user profile
 Route::get('userProfile', 'App\Http\Controllers\UserProfileController@userProfile')->name('userProfile');
-Route::match(['get','post'],'editUserDetails', 'App\Http\Controllers\UserProfileController@editUserDetails')->name('editUserDetails');
+Route::match(['get','post'],'editUserDetails', 'App\Http\Controllers\UserProfileController@editUserDetails')->name('editUserDetails'); //This route was written with the assistance of AI. I was getting an error regarless of whether I was using get or post. AI suggested I use both.
 Route::post('UpdateUser','App\Http\Controllers\UserProfileController@UpdateUser')->name('UpdateUser');
