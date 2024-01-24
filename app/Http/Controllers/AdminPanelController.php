@@ -632,6 +632,14 @@ class AdminPanelController extends Controller
             
         return view('AdminInterface.writeEmail', compact('Gym_id'));
 }
+
+public function AdminBusiness(Request $req, $Gym_id){
+    
+    
+    $gym = Gym::where('Gym_id', $Gym_id)->first();
+    $user = Auth::user(); 
+    return view('AdminInterface.adminBusinessInfo', compact('gym','user','Gym_id'));
+}
 }
     
 

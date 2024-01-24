@@ -150,6 +150,7 @@ Route::get('success','App\Http\Controllers\SuccessController@display' )->name('d
 Route::middleware(['auth', 'admin'])->group(function () {
 Route::get('AdminWelcome',  'App\Http\Controllers\AdminPanelController@AdminWelcome' )->name('AdminWelcome');
 Route::get('AdminFirst', 'App\Http\Controllers\AdminPanelController@AdminFirst')->name('AdminFirst');
+Route::get('AdminBusiness/{Gym_id}', 'App\Http\Controllers\AdminPanelController@AdminBusiness')->name('AdminBusiness');
 Route::get('AdminClass/{Gym_id}', 'App\Http\Controllers\AdminPanelController@AdminClass')->name('AdminClass');
 Route::get('AdminOffering/{Gym_id}', 'App\Http\Controllers\AdminPanelController@AdminOffering')->name('AdminOffering');
 Route::get('AdminMembership/{Gym_id}', 'App\Http\Controllers\AdminPanelController@AdminMembership')->name('AdminMembership');
