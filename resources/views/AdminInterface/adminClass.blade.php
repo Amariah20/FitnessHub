@@ -25,7 +25,7 @@
 
 <div class="input-box">
 <form method="GET" action="{{route ('searchClass', ['Gym_id' => $Gym_id])}}" id="search" >
-   <input type="text" placeholder="Find something" name="search" id="search-box" class="form-control">
+   <input type="text" placeholder="Find something" name="search" id="search-box" class="form-control" id="searchbox>
    <button type="submit"><i class="fa fa-search"></i></button>  
   </div>
 

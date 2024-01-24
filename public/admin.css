@@ -113,12 +113,12 @@ tbody{
     
 }
 
-.form-control{
+.input-box .form-control{
     background-color: rgba(143, 143, 143, 0.121);
     border-color:rgba(0, 128, 0, 0.614);
 }
 
-.form-control:focus{
+.input-box .form-control:focus{
     box-shadow: inset;
 }
 
