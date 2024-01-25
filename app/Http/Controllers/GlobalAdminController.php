@@ -22,9 +22,9 @@ class GlobalAdminController extends Controller
         $user->is_admin = true; //sets is_admin column in database to true. so now, user has access to admin pages
         $user->save();
 
-        return redirect()->route('allUsers')->with('success', 'Admin access granted successfully.');
+        //return redirect()->route('allUsers')->with('success', 'Admin access granted successfully.');
             
-
+        return redirect()->back()->with('success', 'Admin access granted successfully.');
 
         //return('Admin access granted successfully.');
         
@@ -34,8 +34,10 @@ class GlobalAdminController extends Controller
     {
         $user->is_admin = false;
         $user->save();
+        return redirect()->back()->with('success', 'Admin access granted successfully.');
 
-        return redirect()->route('allUsers')->with('success', 'Admin access revoked successfully.');
+
+        //return redirect()->route('allUsers')->with('success', 'Admin access revoked successfully.');
         //return ('Admin access revoked successfully.');
     }
 

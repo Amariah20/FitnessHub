@@ -33,7 +33,8 @@ class GymValidation extends FormRequest
     {
         return [
            
-            'name'=> 'required|string|max:255|regex:/^[a-zA-Z]+[a-zA-Z\s\-\.\&]*$/', //name has to start with a letter. after first letter, there can be letters, space (\s), -,.,$
+            //'name'=> 'required|string|max:255|regex:/^[a-zA-Z]+[a-zA-Z\s\-\.\&]*$/', //name has to start with a letter. after first letter, there can be letters, space (\s), -,.,$
+            'name'=>'required|string|', //I dont think the regex is a good idea. what if some gyms have a unique name that starts with a number
             'location'=>'required|string',
             'opening_hours'=>'required|string',
             'phone_number'=>'required|numeric|gt:0',

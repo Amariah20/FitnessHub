@@ -19,21 +19,21 @@ class Gym extends Model
 {
 
     use HasFactory;
-    use Sluggable;
+    /*use Sluggable;*/
 
     protected $fillable=[
-        'slug',
+        
         'general_location',
     ];
     
-    public function sluggable(): array{
+   /* public function sluggable(): array{
         return[
 
             'slug'=>[
                 'source'=> ['name', 'location'],
             ],
         ];
-    }
+    } */
 
     
     protected $primaryKey = 'Gym_id'; //added when trying to edit gym info
