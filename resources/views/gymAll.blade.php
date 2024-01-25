@@ -9,7 +9,7 @@
 NOTE: show ratings here too? allow people to filter according to ratings?
 <form action="{{route('sortMembershipPrice')}}" method="get">
     <select name="sort">
-    <option value="" disabled selected>Sort By Membership Price</option>
+    <option value="" disabled selected>Sort By Membersh Price</option>
         <option value="monthly-low">Monthly (Low to High)</option>
         <option value="monthly-high">Monthly (High to Low)</option>
         <option value="annual-low">Annual (Low to High)</option>
