@@ -85,8 +85,9 @@
     <label>Additional Image</label>
     <input type="file" class="form-control-file" name="extra_image" class="form-control" >
   </div>
+  
 
-  <button type= "submit" class="btn btn-info">Update </button> 
+  <button id="update-button" type= "submit" class="btn btn-info">Update </button> 
          
 </form>
 </div>
