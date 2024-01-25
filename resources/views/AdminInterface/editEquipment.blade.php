@@ -1,8 +1,7 @@
 @extends('layouts.adminPage')
 
 @section('content')
-<div class="container">
-<div class="card-header">Edit Offering</div>
+
 @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
@@ -12,6 +11,9 @@
         </ul>
     </div>
 @endif
+<div class="container">
+<div class="card-header">Edit Equipment</div>
+
 <form method="POST" action="{{route('UpdateEquipment',  ['Equipment_id' => $equipment->equipment_id])}}">
 @csrf
 @method("patch")
