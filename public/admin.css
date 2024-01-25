@@ -141,7 +141,7 @@ h2{
 
 /*for forms to update/edit info*/
 
-#edit{
+#edit, #add-admin{
     width: 75%;
     align-items: center;
     justify-content: center;
@@ -152,8 +152,9 @@ h2{
 .card-header{
     font-weight: bold;
     font-size: 30px;
-    padding-bottom: 20px;
+    padding: 20px 20px;
     color:#414141;
+    /*color:rgb(21, 171, 21);*/
     text-align: center;
    
 
@@ -161,7 +162,7 @@ h2{
 
 
 
-#update-button{
+#update-button, #add-info-button{
   
   width: 150px;
   height: 60px;
@@ -169,6 +170,8 @@ h2{
   margin-left: auto;
   display:block;
   align-items: center;
+
   
   
 }
+
