@@ -1,8 +1,7 @@
 @extends('layouts.adminPage')
 
 @section('content')
-<div class="container">
-<div class="card-header">Edit Membership</div>
+
 @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
@@ -12,11 +11,42 @@
         </ul>
     </div>
 @endif
+<div id="edit" class="container">
+<div class="card-header">Edit Membership</div>
+
 <form method="POST" action="{{route('UpdateMembership',  ['Membership_id' => $membership->membership_id])}}">
 @csrf
 @method("patch")
 
-    <div class="mb">
+<div class="form-group">
+    <label>Name</label>
+    <input type="text" name="name" class="form-control" value="{{$membership->name}}" required>
+  </div>
+  <div class="form-group">
+    <label>Price</label>
+    <input type="number" name="price" class="form-control" value="{{$membership->price}}"  required>
+  </div>
+  <div class="form-group">
+    <label>Description</label>
+    <input class="form-control" name="description"  value="{{$membership->description}}" required></input>
+  </div>
+  <div class="form-group">
+    <label>Membership Type</label>
+    <select  class="form-control form-control-lg" name="membership_type" >
+            <option value="{{$membership->membership_type}}">{{$membership->membership_type}}</option>
+            <option value ="annual">Annual</option>
+            <option value ="monthly">Monthly</option>
+            <option value ="weekly">Weekly</option>
+            <option value ="daily">Daily</option>
+        </select>
+  </div>
+  <button id="update-button" type= "submit" class="btn btn-info">Update </button> <br>
+         
+ </form>
+</div>
+
+
+  <!--  <div class="mb">
         <label class="label">Membership Name</label>
         <input type="text" name="name" class="form-control" value="{{$membership->name}}" required>
     </div>
@@ -49,5 +79,5 @@
 
          
 </form>
-</div>
+</div> -->
 @endsection

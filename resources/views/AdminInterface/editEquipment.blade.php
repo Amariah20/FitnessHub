@@ -11,14 +11,29 @@
         </ul>
     </div>
 @endif
-<div class="container">
+<div  id="edit" class="container">
 <div class="card-header">Edit Equipment</div>
 
 <form method="POST" action="{{route('UpdateEquipment',  ['Equipment_id' => $equipment->equipment_id])}}">
 @csrf
 @method("patch")
+<div class="form-group">
+    <label>Name</label>
+    <input type="text" name="name" class="form-control" value="{{$equipment->name}}" required>
+</div>
 
-    <div class="mb">
+<div class="form-group">
+    <label>Description</label>
+    <input class="form-control" name="description"   value="{{$equipment->description}}" required></input>
+</div>
+
+<button id="update-button" type= "submit" class="btn btn-info">Update </button> <br>
+         
+         </form>
+         </div>
+
+
+    <!--<div class="mb">
         <label class="label">Name</label>
         <input type="text" name="name" class="form-control" value="{{$equipment->name}}" required>
     </div>
@@ -36,5 +51,5 @@
         <button type="submit">Update </button>
 
 </form>
-<div>
+<div> -->
 @endsection
