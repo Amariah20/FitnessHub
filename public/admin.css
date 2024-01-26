@@ -148,10 +148,14 @@ tbody{
     width: 25%;
 }
 
+.input-box{
+    position: relative;
+}
 .input-box i{
     position: absolute;
-    margin-left:16%;
-    top:209px;
+    margin-left:22%;
+    top:17px;
+    transform: translate(0, -50%);
     
 }
 
