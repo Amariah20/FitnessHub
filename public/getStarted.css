@@ -90,8 +90,25 @@ p{
     
   }
 
+  .admin-first{
+    padding: 50px 20px 20px 50px;
+    width: 80%;
+  }
+
   
+  .admin-first-select{
+    right: 40%;
     
+  }
   
+  .h1-admin-first{
+    font-weight: bolder;
+    font-size: 42px;
+  }
+  
+  .h2-admin-first{
+    font-size: 30px;
+
+  }
 
   

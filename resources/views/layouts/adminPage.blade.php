@@ -12,6 +12,7 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
 <!--I used this for help with designing admin interface: https://www.youtube.com/watch?v=CqzHZP252FM -->
+<!--bootstrap icons are from:https://icons.getbootstrap.com/#icons-->
 
     
     <!-- Latest compiled and minified CSS -->
