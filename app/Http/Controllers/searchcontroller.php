@@ -14,6 +14,7 @@ use App\Models\Membership;
 use App\Models\Offerings;
 use Laravel\Ui\Presets\React;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 //I used these for help:  https://laracasts.com/series/laravel-8-from-scratch/episodes/37 and https://www.youtube.com/watch?v=aPYEOVDTV6E, https://stackoverflow.com/questions/39321570/laravel-wherein-or-wheren-with-where#:~:text=Note%3A%20where%20will%20compare%20with,compare%20evey%20index%20of%20array. 
     //I found information about pluck method here: https://laravel.com/docs/10.x/collections
@@ -57,7 +58,6 @@ public function search(Request $req){
 
 
 
-
             $offerings=Offerings::query()->where(function($query) use ($searchitems){
                 $query->where('name',  'like','%'.$searchitems. '%');
                 })->get();
@@ -89,50 +89,106 @@ public function search(Request $req){
 
     //For searching admin panel
     public function searchClass(Request $req, $Gym_id){
+        $user = Auth::user();
         $searchitems = $req->search;
         
 
-        $classes= Classes::where('gym_id', $Gym_id)
-        ->where('name',  'like','%'.$searchitems. '%')->get(); 
+        $classes= Classes::query()->where(function($query) use ($searchitems, $Gym_id){
+            $query->where('gym_id', $Gym_id)
+            ->Where(function($query) use ($searchitems){
+                $query ->where('name', 'like', '%'.$searchitems. '%')
+                ->orWhere('description', 'like','%'.$searchitems. '%')
+                ->orWhere('location', 'like','%'.$searchitems. '%')
+                ->orWhere('capacity', 'like','%'.$searchitems. '%')
+                ->orWhere('duration', 'like','%'.$searchitems. '%')
+                ->orWhere('price', 'like', '%'.$searchitems. '%');
+                
+           });
+        })->get();
 
-        return view('AdminInterface.adminClass', compact('classes', 'Gym_id'));
+        /*$classes= Classes::where('gym_id', $Gym_id)
+        ->where('name',  'like','%'.$searchitems. '%')->get(); */
+
+        return view('AdminInterface.adminClass', compact('classes', 'Gym_id','user'));
 
     }
 
     
     public function searchEquipment(Request $req, $Gym_id){
+        $user = Auth::user();
         $searchitems = $req->search;
         
+        $equipments= Equipment::query()->where(function($query) use ($searchitems, $Gym_id){
+            $query->where('gym_id', $Gym_id)
+            ->Where(function($query) use ($searchitems){
+                $query ->where('name', 'like', '%'.$searchitems. '%')
+                ->orWhere('description', 'like','%'.$searchitems. '%');
+                
+                
+           });
+        })->get();
 
-        $equipments= Equipment::where('gym_id', $Gym_id)
-        ->where('name',  'like','%'.$searchitems. '%')->get(); 
+        /*$equipments= Equipment::where('gym_id', $Gym_id)
+        ->where('name',  'like','%'.$searchitems. '%')->get(); */
 
-        return view('AdminInterface.adminEquipment', compact('equipments', 'Gym_id'));
+        return view('AdminInterface.adminEquipment', compact('equipments', 'Gym_id', 'user'));
 
     }
 
        
     public function searchOffering(Request $req, $Gym_id){
+        $user = Auth::user();
         $searchitems = $req->search;
+
+       
+
+        $offering= Offerings::query()->where(function($query) use ($searchitems, $Gym_id){
+            $query->where('gym_id', $Gym_id)
+            ->Where(function($query) use ($searchitems){
+                $query ->where('name', 'like', '%'.$searchitems. '%')
+                ->orWhere('description', 'like','%'.$searchitems. '%')
+                ->orWhere('price', 'like', '%'.$searchitems. '%');
+                
+           });
+        })->get();
         
 
-        $offering= Offerings::where('gym_id', $Gym_id)
-        ->where('name',  'like','%'.$searchitems. '%')->get(); 
+       /* $offering= Offerings::where('gym_id', $Gym_id)
+        ->where('name',  'like','%'.$searchitems. '%')->get(); */
 
-        return view('AdminInterface.adminOffering', compact('offering', 'Gym_id'));
+        return view('AdminInterface.adminOffering', compact('offering', 'Gym_id','user'));
 
     }
 
+    /*RESTRICT TO THAT GYM. USE GYM ID*/
     public function searchMembership(Request $req, $Gym_id){
+        $user = Auth::user();
         $searchitems = $req->search;
         
 
-        $memberships= Membership::where('gym_id', $Gym_id)
-        ->where('name',  'like','%'.$searchitems. '%')->get(); 
+       
+       
+        
+       $memberships= Membership::query()->where(function($query) use ($searchitems, $Gym_id){
+        $query->where('gym_id', $Gym_id)
+        ->Where(function($query) use ($searchitems){
+            $query ->where('name', 'like', '%'.$searchitems. '%')
+            ->orWhere('description', 'like','%'.$searchitems. '%')
+            ->orWhere('price', 'like', '%'.$searchitems. '%')
+            ->orWhere('membership_type', 'like', '%'.$searchitems. '%');
+       });
+    })->get();
 
-        return view('AdminInterface.adminMembership', compact('memberships', 'Gym_id'));
+/*
+        $memberships= Membership::where('gym_id', $Gym_id)
+        ->where('name',  'like','%'.$searchitems. '%')->get(); */
+        
+
+        return view('AdminInterface.adminMembership', compact('memberships', 'Gym_id', 'user'));
 
     }
+
+    //global admin
 
     public function searchUser(Request $req){
         $searchitems = $req->search;
