@@ -65,8 +65,9 @@
 </div>
 
 <br><br>
+<div class="edit-padding">
 <a href="{{route('EditGym', ['Gym_id' => $Gym_id] )}}"><button type= "submit" class="btn btn-info">Edit Business Information</button></a>
-
+</div>
 
 
 

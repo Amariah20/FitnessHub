@@ -22,7 +22,7 @@
 
 
 <div id="write-email" class="container">
-    <h1>Write a message to your subsribers</h1>
+    <h1>Send an email to your subsribers</h1>
 <div class="card-header"></div>
  
 <form method="GET" action="{{ route('sendMail', ['Gym_id' => $Gym_id] ) }}">
