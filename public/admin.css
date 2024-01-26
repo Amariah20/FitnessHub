@@ -6,14 +6,12 @@
     box-sizing: border-box;
     font-family: 'Noto Serif Khojki', serif;
     font-family: 'Roboto Condensed', sans-serif;
-    
+   /*overflow: auto;*/
     
     
 }
 
-body{
-    
-}
+
 .header{
     line-height: 72px;
     padding-left: 25px;
@@ -38,29 +36,77 @@ a,a:hover{
     
 }
 
-
+/*
+.sideNav{
+    position: absolute;
+    height: 100vh;
+    width: 15%;
+    background-color: rgba(25, 25, 25, 0.907);
+} */
 .side-nav{
     width: 15%;
-    height:100%;
-    position: fixed;
-    padding-top: 4%;
+    /*height:100%;*/
+    height: 100vh;
+    /*position: fixed; does not allow me see rest of nav bar when scrolling*/
     text-align: center;
-    background-color: rgba(25, 25, 25, 0.907);
+    /*background-color: rgba(25, 25, 25, 0.907);*/
     z-index: 20;
+    top:0;
+    /*bottom: 0;*/
+    position:absolute; /*allows me to scroll and see nav bar*/
+    /*position: relative; this messes up the page design*/
     
-
 }
+.vl{
+    border-left: 6px solid black;
+    height: 100vh;
+    position:fixed;
+    margin-left: 15%;
+    
+}
+.content{
+    margin-left: 20% ;
+    margin-right: 10%;
+    padding-top: 5%;
+    top:5%;
+    box-sizing: border-box;
+
+    
+}
+
+
+/*
+.sideNav{
+    width: 15%;
+    background-color: rgba(25, 25, 25, 0.907);
+} /*does not help to show the background color of nav bar when scrolling*/
+
+
+
+/*
+@media(max-width: 768px){
+    .side-nav{
+        display:none;
+    }
+}
+
+@media(max-width: 768px){
+    .content{
+        margin-left:0;
+    }
+} */
+
 
 ul li{
     
     list-style: none;
-    padding: 30px 30px 30px 30px;
-    font-size: 22px;
+    padding: 20px 20px 20px 20px;
+    font-size: 20px;
     
 }
 
 ul li a {
-    color: white;
+    color: black;
     font-weight: bolder;
 }
 
@@ -78,12 +124,7 @@ ul li a:hover{
 
 }
 
-.content{
-    margin-left: 20%;
-    margin-right: 10%;
-    padding-top: 5%;
-    
-}
+
 
 
 
@@ -174,4 +215,21 @@ h2{
   
   
 }
+
+/*scrollbar reference:https://www.youtube.com/watch?v=nqr-ubBgik8&t=1013s&ab_channel=FutureWeb */
+
+/*
+::-webkit-scrollbar{
+    width:5px;
+
+}
+
+::-webkit-scrollbar-track{
+    background: rgba(25, 25, 25, 0.907);
+}
+
+::-webkit-scrollbar-thumb{
+    background:white;
+} /*
+
 

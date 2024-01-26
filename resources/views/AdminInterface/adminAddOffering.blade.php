@@ -21,7 +21,7 @@
 
 
 <div id="add-admin" class="container">
-
+<div class="card-header">Add New Offering</div>
 <form method="POST" action="{{ route('AdminOfferingStore', ['Gym_id' => $Gym_id]) }}">
 @csrf
 
