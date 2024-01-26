@@ -3,6 +3,7 @@
 @section('content')
 <!--I used bootstrap for tables:https://getbootstrap.com/docs/4.0/content/tables/ -->
 <!--I used this for help with updating all info: https://www.fundaofwebit.com/laravel-8/how-to-edit-update-data-in-laravel -->
+  
 <h1 class="welcome">Welcome, {{$user->name}}!</h1>
 <br><br>
 

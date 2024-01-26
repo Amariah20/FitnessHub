@@ -115,18 +115,18 @@ ul li a {
 ul li:hover{
     
     background-color:gray; 
-    
     text-decoration: none;
+    
 }
 
-ul li a:hover{
+.nav-item:hover a{
+    color:beige;
+}
+
+.nav-item:hover svg{
     color:beige;
 
 }
-
-
-
-
 
 th{
     background-color: rgba(128, 128, 128, 0.836);
