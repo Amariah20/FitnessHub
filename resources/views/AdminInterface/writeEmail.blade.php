@@ -2,7 +2,7 @@
 
 @section('content')
 <!--I used bootstrap for the forms to register gym: https://getbootstrap.com/docs/5.0/forms/form-control/-->
-<link rel="stylesheet" type="text/css" href="/getStarted.css"> 
+<!--<link rel="stylesheet" type="text/css" href="/getStarted.css"> -->
 @if (session('success'))
     <div class="alert alert-success">
         {{ session('success') }}
@@ -28,13 +28,13 @@
 <form method="GET" action="{{ route('sendMail', ['Gym_id' => $Gym_id] ) }}">
 @csrf
 
-    <div class="mb">
-        <label class="form-label">Subject of Email</label>
+    <div class="form-group">
+        <label>Subject of Email</label>
         <input type="text" name="subject" class="form-control" required>
     </div>
  
-       <div class="mb">
-        <label class="form-label">Email Message</label>
+    <div class="form-group">
+        <label>Email Message</label>
         <textarea class="form-control" name="message"  rows="3" required></textarea>
     </div>
 
@@ -42,7 +42,7 @@
     
 
   
-        <button type="submit">Send Email</button>
+    <button id="add-info-button" class="btn btn-success" type="submit">Send Email</button>
 
          
 </form>

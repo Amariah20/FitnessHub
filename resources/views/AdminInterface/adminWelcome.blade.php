@@ -18,7 +18,8 @@
 @endif
 @if (session('Success'))
                 <h6 class="alert alert-success">{{ session('Success') }}</h6>
-            @endif
+@endif
+
 
 
 <table class="table">
