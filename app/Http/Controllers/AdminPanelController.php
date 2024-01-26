@@ -111,40 +111,45 @@ class AdminPanelController extends Controller
     public function AdminClass(Request $req, $Gym_id)
     {
         //dd($Gym_id);
+        $user = Auth::user();
         
         $classes = Classes::where('Gym_id', $Gym_id)->get();
  
     
-        return view('AdminInterface.adminClass', compact('Gym_id','classes'));
+        return view('AdminInterface.adminClass', compact('Gym_id','classes', 'user'));
     }
    
     public function AdminOffering (Request $req, $Gym_id){
+        $user = Auth::user();
         $offering= Offerings::where('Gym_id', $Gym_id)->get();
 
-        return view('AdminInterface.adminOffering', compact ('Gym_id', 'offering'));
+        return view('AdminInterface.adminOffering', compact ('Gym_id', 'offering', 'user'));
     }
 
     public function AdminMembership (Request $req, $Gym_id){
+        $user = Auth::user();
         $memberships= Membership::where('Gym_id', $Gym_id)->get();
 
-        return view('AdminInterface.adminMembership', compact ('Gym_id', 'memberships'));
+        return view('AdminInterface.adminMembership', compact ('Gym_id', 'memberships', 'user'));
 
     }
 
     public function AdminEquipment (Request $req, $Gym_id){
+        $user = Auth::user();
         $equipments= Equipment::where('Gym_id', $Gym_id)->get();
 
-        return view('AdminInterface.adminEquipment', compact ('Gym_id', 'equipments'));
+        return view('AdminInterface.adminEquipment', compact ('Gym_id', 'equipments', 'user'));
 
     }
 
     //I used this for help with updating: https://www.fundaofwebit.com/laravel-8/how-to-edit-update-data-in-laravel 
 
     public function EditGym($Gym_id){
+        $user = Auth::user();
        // $gym = Gym::find($Gym_id);
        $gym = Gym::where('Gym_id', $Gym_id)->first();
        $Gym_id= $Gym_id;
-        return view ('AdminInterface.editGym', compact('gym', 'Gym_id'));
+        return view ('AdminInterface.editGym', compact('gym', 'Gym_id', 'user'));
 
     }
 
@@ -231,8 +236,9 @@ class AdminPanelController extends Controller
         //$gym = Gym::where('Gym_id', $Gym_id)->first();
         $class= Classes::where('Class_id', $Class_id)->first();
         $Gym_id= $class->gym_id;
+        $user = Auth::user();
 
-         return view ('AdminInterface.editClass', compact('class', 'Gym_id'));
+         return view ('AdminInterface.editClass', compact('class', 'Gym_id', 'user'));
  
      }
 
@@ -275,7 +281,8 @@ class AdminPanelController extends Controller
         
         $membership= Membership::where('membership_id', $Membership_id)->first();
         $Gym_id= $membership->gym_id;
-         return view ('AdminInterface.editMembership', compact('membership', 'Gym_id'));
+        $user = Auth::user();
+         return view ('AdminInterface.editMembership', compact('membership', 'Gym_id', 'user'));
  
      }
 
@@ -317,7 +324,8 @@ class AdminPanelController extends Controller
         
         $offering= Offerings::where('offerings_id', $Offering_id)->first();
         $Gym_id= $offering->gym_id;
-         return view ('AdminInterface.editOffering', compact('offering', 'Gym_id'));
+        $user = Auth::user();
+         return view ('AdminInterface.editOffering', compact('offering', 'Gym_id', 'user'));
  
      }
 
@@ -356,7 +364,8 @@ class AdminPanelController extends Controller
         
         $equipment= Equipment::where('equipment_id', $Equipment_id)->first();
         $Gym_id= $equipment->gym_id;
-         return view ('AdminInterface.editEquipment', compact('equipment', 'Gym_id'));
+        $user = Auth::user();
+         return view ('AdminInterface.editEquipment', compact('equipment', 'Gym_id', 'user'));
  
      }
 
@@ -395,8 +404,9 @@ class AdminPanelController extends Controller
 
      public function AdminCreateClass(Request $req, $Gym_id){
         
-        $Gym_id= $Gym_id;   
-        return view('AdminInterface.AdminAddClass',['Gym_id'=> $Gym_id]);
+        $Gym_id= $Gym_id;
+        $user = Auth::user();   
+        return view('AdminInterface.AdminAddClass',['Gym_id'=> $Gym_id], compact ('user'));
  }
 
      public function AdminClassStore(ClassValidation $req, $Gym_id){
@@ -448,8 +458,9 @@ class AdminPanelController extends Controller
 
      public function AdminCreateMembership(Request $req, $Gym_id){
         
-        $Gym_id= $Gym_id;   
-        return view('AdminInterface.AdminAddMembership',['Gym_id'=> $Gym_id]);
+        $Gym_id= $Gym_id;
+        $user = Auth::user();   
+        return view('AdminInterface.AdminAddMembership',['Gym_id'=> $Gym_id], compact('user'));
     }
 
     public function AdminMembershipStore(MembershipValidation $req, $Gym_id){
@@ -498,7 +509,8 @@ class AdminPanelController extends Controller
     public function AdminCreateOffering(Request $req, $Gym_id){
         
         $Gym_id= $Gym_id;   
-        return view('AdminInterface.AdminAddOffering',['Gym_id'=> $Gym_id]);
+        $user = Auth::user();
+        return view('AdminInterface.AdminAddOffering',['Gym_id'=> $Gym_id], compact('user'));
     }
 
     public function AdminOfferingStore(OfferingValidation $req, $Gym_id){
@@ -541,9 +553,9 @@ class AdminPanelController extends Controller
     }
 
     public function AdminCreateEquipment(Request $req, $Gym_id){
-        
+        $user = Auth::user();
         $Gym_id= $Gym_id;   
-        return view('AdminInterface.AdminAddEquipment',['Gym_id'=> $Gym_id]);
+        return view('AdminInterface.AdminAddEquipment',['Gym_id'=> $Gym_id], compact('user'));
     }
 
     public function AdminEquipmentStore(EquipmentValidation $req, $Gym_id){
@@ -624,6 +636,7 @@ class AdminPanelController extends Controller
     }
 
     public function DeleteEquipment($Equipment_id){
+        
         $equipment= Equipment::where('equipment_id',$Equipment_id)->first();
         $Gym_id= $equipment->gym_id;
        
@@ -635,8 +648,9 @@ class AdminPanelController extends Controller
     }
 
     public function adminWriteEmail(Request $req, $Gym_id){
+        $user = Auth::user();
             
-        return view('AdminInterface.writeEmail', compact('Gym_id'));
+        return view('AdminInterface.writeEmail', compact('Gym_id', 'user'));
 }
 
 public function AdminBusiness(Request $req, $Gym_id){
