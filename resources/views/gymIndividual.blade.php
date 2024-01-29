@@ -44,6 +44,7 @@
 <br>
 <!--I used this for help with the stars rating: https://www.youtube.com/watch?v=2JUoZGoJwCg&t=749s&ab_channel=StackDevelopers -->
 
+@if(count($ratings)>0)
 <div class="avg_rating">
     <?php $num=1;
         while($num<=$ratingsAverage){
@@ -51,7 +52,7 @@
             <?php $num++;} ?> 
  <a href=#reviews id="hyperlink">Reviews </a> 
 </div> 
-
+@endif
 
 <div class="description">
  <!--<h4 class="sub-heading">Description</h4>-->
@@ -84,21 +85,58 @@
 </div>
 </div>
 
+<div class="memberships">
+<h4 class="sub-heading">Memberships</h4>
+
+@foreach($memberships as $membership)
+            <p class="membership_name">{{$membership->name}}</p>
+            <p class="price">{{$membership->price}}</p> <!--change line color to gym's color*/-->
+            <p class="item_description">{{$membership->description}}</p>
+            <hr class="membership_line"> <!--change line color to gym's color*/-->
+        @endforeach
+
+</div>
 
 
+<div class="classes_equipments">
+    <div class="classes">
+        @if($count>=1)
+            @if($numOfclasses>=1 && $numOfofferings==0 )
+            <h5 class ="view">View Our Classes </h5>
+            <div class="learn_more_button">
+                <button type="button" class="btn btn-danger" > <a href="{{ route('classesOfferings', ['Gym_id'=>$gym->Gym_id]) }}" class="learn_more">Learn More</a></button>
+            </div>
+            @elseif($numOfofferings>=1 && $numOfclasses==0)
+            <h5 class ="view">View Our Services</h5>
+            <div class="learn_more_button">
+                <button type="button" class="btn btn-danger" > <a href="{{ route('classesOfferings', ['Gym_id'=>$gym->Gym_id]) }}" class="learn_more">Learn More</a></button>
+            </div>
+            @elseif($count>1)
+            <h5 class ="view">View Our Classes & Services</h5>
+            <div class="learn_more_button_both">
+                <button type="button" class="btn btn-danger" > <a href="{{ route('classesOfferings', ['Gym_id'=>$gym->Gym_id]) }}" class="learn_more">Learn More</a></button>
+            </div>
+            @endif
+           
+            @endif
+    </div>
+
+    <div class="equipments">
+        @if($numequipment>=1)
+        <h5 class ="view">View Our Equipments</h5>
+        <div class="learn_more_button_2">
+            <button type="button" class="btn btn-danger"> <a href="{{ route('showEquipments', ['Gym_id'=>$gym->Gym_id]) }}" class="learn_more">Learn More</a></button>
+       </div>
+        @endif
+    </div>
+        
+</div>
 
     <li>Phone Number: {{$gym->phone_number}}</li>
     <li>Email: {{$gym->email}}</li> 
     <li>Instagram: {{$gym->instagram}}</li>
     <li>Facebook: {{$gym->facebook}}</li>
-    <li>Memberships: 
-        @foreach($memberships as $membership)
-            <p>{{$membership->name}}</p>
-            <p>{{$membership->price}}</p>
-            <p>{{$membership->description}}</p>
-            <hr>
-        @endforeach
-    </li>
+   
     <p>MOVE THIS TO THE OTHER SIDE OF THE PAGE. HAVE A SPLIT SCREEN. ELSE IF IT'S BELOW, IT WILL SCROLL UP WHEN USER RATES</p>
     <h3>Write a Review</h3>
 <form action="{{route('storeRating')}}" method="POST" id="ratingForm">
@@ -122,24 +160,9 @@
 <input type="hidden" name="gym_id" value="{{$gym->Gym_id}}">
     <button type="submit" >Post Review</button>
 </form>
-    <li>
-    @if($count>=1)
-        @if($count>1)
-            <p>We have a variety of classes and services available</p>
-        @elseif($numOfclasses==1)
-            <p>View our Class</p>
-        @elseif($numOfofferings==1)
-            <p>View our Service</p>
-        @endif
-        <button type="submit"> <a href="{{ route('classesOfferings', ['Gym_id'=>$gym->Gym_id]) }}">Learn More</a></button>
-    @endif
-        
-    </li>
+    
 
-    @if($numequipment>=1)
-    <h5>View Our Equipments</h5>
-    <button type="submit"> <a href="{{ route('showEquipments', ['Gym_id'=>$gym->Gym_id]) }}">Learn More</a></button>
-    @endif
+   
 
    
 

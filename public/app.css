@@ -193,3 +193,81 @@ transform: translateY(-100%); /*moves it to the top*/
     text-transform: capitalize;
     font-size: 30px;
 }
+
+.memberships h4{
+   text-align: center;
+   padding-top: 20px;
+}
+
+.memberships{
+    padding-left: 30%;
+    padding-right: 20%;
+    padding-bottom: 30px;
+}
+
+.membership_name{
+    font-size:35px;
+    font-weight: 600px;
+    text-transform: capitalize;
+
+}
+
+.membership_line{
+    border-top: 2px dotted green;
+}
+
+.price{
+    font-weight: bold;
+    color:red;
+    font-size: 32px;
+}
+
+.item_description{
+    font-size: 20px;
+}
+
+.classes_equipments{
+    display:flex;
+    align-items: flex-start;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.classes{
+    width:50%;
+    padding-left: 5%;
+}
+
+.equipments{
+    /*text-align: right;*/
+    margin-left: auto;
+    padding-right: 20%;
+}
+
+.view{
+    font-size:35px;
+    font-weight: 545;
+}
+
+.learn_more{
+    text-decoration: none;
+    color:black;
+    font-size: 18px;
+}
+
+.learn_more:hover{
+    color:black;
+    text-decoration: none;;
+}
+
+.learn_more_button_2{
+    margin-left: 100px;
+}
+
+.learn_more_button{
+    margin-left: 93px;
+}
+
+.learn_more_button_both{
+    margin-left: 150px;
+}
