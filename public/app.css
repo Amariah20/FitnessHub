@@ -376,6 +376,8 @@ transform: translateY(-100%); /*moves it to the top*/
     font-size: 25px;
     font-weight: 549;
     padding-bottom: 10px;
+    text-decoration: underline;
+
     /*white-space: nowrap;*/
 
 }
@@ -388,14 +390,18 @@ transform: translateY(-100%); /*moves it to the top*/
     font-weight: 549;
 }
 
-.review_write{
+.review_write_1{
     width:50%;
 
 }
 
 .reviews{
-    /*text-align: right;*/
+    list-style-type: none;
+    font-size: 15px;
    
-   
+}
+
+.review_comment{
+    font-size: 25px;
 }
 

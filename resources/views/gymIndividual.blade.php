@@ -206,8 +206,8 @@
 
 <hr class="review_line">
 <div class="write_view_review">
-    <div class="review_write">
-        <h4 class="review_write">Write a Review</h3>
+    <div class="review_write_1">
+        <h4 class="review_write">Write a Review</h4>
         <form action="{{route('storeRating')}}" method="POST" id="ratingForm">
             @csrf
             <div class="rate" name="rate">
@@ -248,8 +248,8 @@
         <?php $num++;} ?>
     
 
-    <p>{{$rating->review}}</p>
-    <p>By: {{$rating->user->name}}</p>
+    <li class="review_comment">{{$rating->review}}</li>
+    <li>By: {{$rating->user->name}}</li>
     @endforeach
 </div>
 @endif
