@@ -6,10 +6,12 @@
         {{ session('no_result') }}
     </div>
 @endif
+
 <div class="gymAll">
-NOTE: show ratings here too? allow people to filter according to ratings?
-<form action="{{route('sortMembershipPrice')}}" method="get">
-    <select class="sort_filter" name="sort">
+
+<div class="form-sort">
+<form action="{{route('sortMembershipPrice')}}" method="get" class="sort_filter">
+    <select  name="sort">
     <option value="" disabled selected>Sort By Membersh Price</option>
         <option value="monthly-low">Monthly (Low to High)</option>
         <option value="monthly-high">Monthly (High to Low)</option>
@@ -20,12 +22,12 @@ NOTE: show ratings here too? allow people to filter according to ratings?
         <option value="weekly-low">Weekly (Low to High)</option>
         <option value="weekly-high">Weekly (High to Low)</option>
     </select>
-    <button type="submit">Sort</button>
-</form>   
+    <button type="submit" class="btn btn-dark">Sort</button>
+</form>   <br>
 
-<form action="{{route('filterLocation')}}" method="get">
+<form action="{{route('filterLocation')}}" method="get" class="sort_filter">
 
-        <select class="sort_filter" name="filter_location" >
+        <select name="filter_location" >
             <option value="" disabled selected>Filter By Location</option>
             <option value ="north">North</option>
             <option value ="east">East</option>
@@ -34,9 +36,9 @@ NOTE: show ratings here too? allow people to filter according to ratings?
             <option value ="central">Central</option>
         </select>
     </select>
-    <button type="submit">Apply Filter</button>
+    <button type="submit" class="btn btn-dark">Apply Filter</button>
 </form>   
-
+</div>
 
 
 

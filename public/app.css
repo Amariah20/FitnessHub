@@ -415,6 +415,32 @@ transform: translateY(-100%); /*moves it to the top*/
 color: #e3b304;
 }
 /*GYM ALL DESIGN*/
+
+.form-sort{
+    display: flex;
+   
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    /*justify-content: right;*/
+    
+}
+
+.sort_filter{
+    height: 25px;
+}
+
+.sort_filter select{
+    height: 32px;
+    border-radius: 5px;
+   /* margin-bottom: 10px;*/
+}
+
+.sort_filter button{
+    /*margin-top: 10px;*/
+    margin-left: 5px;
+}
+
 .gymAll{
     padding:20px 20px 20px 20px;
 }
@@ -429,10 +455,21 @@ color: #e3b304;
 .gym_box_info{
     display:flex;
     justify-content: space-between;
-    border: 5px solid #e6e6e6ad;
+    border: 5px solid #e6e6e6c0;
     padding: 50px;
     background-color: #E6E6E6;
     color:#2A2A2A;
+    text-transform: capitalize;
+  
+}
+.gym_box_info h1{
+    font-size: 50px;
+    font-weight: bold;
+    
+}
+
+.gym_box_info h2{
+    font-size:20px;
 }
 
 .gym_box_info a{
@@ -445,9 +482,11 @@ color: #e3b304;
 .gym_box_info_left{
     text-align: left;
     
+    
 }
 
 .gym_box_info button{
     padding: 20px 50px 20px 50px;
    
 }
+
