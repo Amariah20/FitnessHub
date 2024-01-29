@@ -411,3 +411,10 @@ transform: translateY(-100%); /*moves it to the top*/
 .rating_divide{
     border-top: 2px dotted green; 
 }
+.ratings_by_customers{
+color: #e3b304;
+}
+/*GYM ALL DESIGN*/
+.sort_filter{
+    background-color: #c59b08;
+}

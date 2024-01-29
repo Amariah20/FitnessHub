@@ -243,12 +243,13 @@
 
 <!--9733 is the ascii code for star. set num=1, as long as num is less than the rating, add an extra star-->
 
+<div class="ratings_by_customers">
 <?php $num=1;
     while($num<=$rating->rating){
         ?> <span>&#9733;</span>
         <?php $num++;} ?>
     
-
+</div>
     <li class="review_comment">{{$rating->review}}</li>
     <li>By: {{$rating->user->name}}</li>
     <hr class="rating_divide">
