@@ -193,6 +193,15 @@
 <!--<p>MOVE THIS TO THE OTHER SIDE OF THE PAGE. HAVE A SPLIT SCREEN. ELSE IF IT'S BELOW, IT WILL SCROLL UP WHEN USER RATES</p>-->
  
 <div class="review_subscribe">
+<div class="subscribe">
+    <form action="{{route('subscribe',['Gym_id' => $gym->Gym_id])}}" method="get">
+        @csrf
+        <h5 class="join">Join our mailing list and be the first to hear about our exciting offers!</h5>
+        <input type="email" name="email" class="form-control" required placeholder="email@example.com">
+        <br>
+        <button type="submit" class="btn btn-dark">Subscribe</button>
+    </form>
+</div>
     <div class="review_write">
         <h4 class="review_write">Write a Review</h3>
         <form action="{{route('storeRating')}}" method="POST" id="ratingForm">
@@ -217,15 +226,7 @@
             <button type="submit"  class="btn btn-success">Post Review</button>
         </form>
 </div>
-<div class="subscribe">
-    <form action="{{route('subscribe',['Gym_id' => $gym->Gym_id])}}" method="get">
-        @csrf
-        <h5 class="join">Join our mailing list and be the first to hear about our exciting offers!</h5>
-        <input type="email" name="email" class="form-control" required placeholder="email@example.com">
-        <br>
-        <button type="submit" class="btn btn-dark">Subscribe</button>
-    </form>
-</div>
+
 </div>
 
 @if(count($ratings)>0)
