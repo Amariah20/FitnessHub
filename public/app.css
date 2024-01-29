@@ -8,6 +8,7 @@ body {
     font-family: 'Trebuchet MS', Helvetica, sans-serif; /*not working*/
 }
 
+
 #app {
     flex: 1; /* Allow the main content to grow and fill available space */
 }
@@ -52,9 +53,9 @@ a:link {
     
     
   }
-  .p{
-    font-size: medium;
-    text-align: center;
+  p{
+    font-size: 30px;
+    
   }
 
 
@@ -149,3 +150,12 @@ transform: translateY(-100%); /*moves it to the top*/
 
 }
 
+.sub-heading{
+    font-size: 40px;
+    text-decoration:underline overline;
+    font-style: oblique;
+}
+
+.extra_img{
+    text-align: right;
+}

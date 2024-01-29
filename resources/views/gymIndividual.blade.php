@@ -53,8 +53,16 @@
 </div> 
 
 
+
+ <h4 class="sub-heading">Description</h4>
+ <p>{{$gym->description}}</p>
+
+
+<div class="extra_img">
+    <img src="{{ asset('public/images/uploaded/gym_' . $gym->user_id.$gym->name . '/' . $gym->extra_image) }}" alt="extra image" >
+</div>
 <ul>
-    <li>Description: {{$gym->description}} </li>
+    
     <li>General Location: {{$gym->general_location}}</li>
     <li>Location: {{$gym->location}}</li>
     <li>Opening Hours: {{$gym-> opening_hours}}</li>
@@ -112,18 +120,7 @@
     <button type="submit"> <a href="{{ route('showEquipments', ['Gym_id'=>$gym->Gym_id]) }}">Learn More</a></button>
     @endif
 
-    @if(( $gym->extra_image >= 1)) 
-    <li>Images:</li>
-        <ul>
-          
-                <li>
-                   
-                    
-                    <img src="{{ asset('public/images/uploaded/gym_' . $gym->user_id.$gym->name . '/' . $gym->extra_image) }}" alt="extra image">
-                </li>     
-               
-        </ul>
-@endif
+   
 
 
    
