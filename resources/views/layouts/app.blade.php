@@ -25,7 +25,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> <!--for the bookmark icon. from: https://www.w3schools.com/icons/tryit.asp?filename=trybs_ref_glyph_bookmark -->
 
-    <script src="/gymIndividualJS.js"></script>
+    <!--<script src="/gymIndividualJS.js"></script>-->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>

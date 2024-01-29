@@ -405,3 +405,6 @@ transform: translateY(-100%); /*moves it to the top*/
     font-size: 25px;
 }
 
+.rating_divide{
+    border-top: 2px dotted green; 
+}
