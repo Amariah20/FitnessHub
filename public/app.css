@@ -98,8 +98,12 @@ a:link {
     color: #c59b08;
 }
 
+.gym_info{
+ padding: 20px 20px 20px 20px;
+}
 .banner{
     position:relative;
+    padding-bottom: 10px;
 }
 
 .gym_logo{
@@ -111,3 +115,37 @@ a:link {
     margin-right:auto;*/
 
 }
+
+
+.gym_name{
+    font-size: 100px;
+    padding-bottom: 0%;
+    font-weight: bolder;
+    margin-bottom: 0;
+    text-transform: capitalize;
+
+}
+
+.avg_rating{
+   
+font-size: 50px;
+top:100%;
+color: #e3b304;
+bottom:0;
+transform: translateY(-100%); /*moves it to the top*/
+    
+}
+
+#hyperlink{
+    font-size: 20px;
+}
+#bookmark{
+    width:10%;
+    height:10%;
+    margin-left:90%;
+    margin-top:-10%;
+    font-size: 20px;
+    
+
+}
+
