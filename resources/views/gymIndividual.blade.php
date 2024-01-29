@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <!--code for star are from: https://codepen.io/hesguru/pen/BaybqXv -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -19,7 +20,14 @@
         </ul>
     </div>
 @endif
+<div class="banner">
+    <img src="{{ asset('public/images/uploaded/gym_' . $gym->user_id.$gym->name . '/' . $gym->banner) }}" alt="banner" style="width:100%; height:600px">
+</div>
+<div class="gym_logo">
+    <img src="{{ asset('public/images/uploaded/gym_' . $gym->user_id.$gym->name . '/' . $gym->logo) }}" alt="Logo">
 
+</div>
+   
 
 <h1>Gym: {{$gym->name}}</h1>
 
@@ -101,18 +109,20 @@
     <button type="submit"> <a href="{{ route('showEquipments', ['Gym_id'=>$gym->Gym_id]) }}">Learn More</a></button>
     @endif
 
-    @if(($gym->logo || $gym->banner || $gym->extra_image >= 1)) 
+    @if(( $gym->extra_image >= 1)) 
     <li>Images:</li>
         <ul>
           
                 <li>
-                    <img src="{{ asset('public/images/uploaded/gym_' . $gym->user_id.$gym->name . '/' . $gym->logo) }}" alt="Logo">
-                    <img src="{{ asset('public/images/uploaded/gym_' . $gym->user_id.$gym->name . '/' . $gym->banner) }}" alt="banner">
+                   
+                    
                     <img src="{{ asset('public/images/uploaded/gym_' . $gym->user_id.$gym->name . '/' . $gym->extra_image) }}" alt="extra image">
                 </li>     
                
         </ul>
 @endif
+
+
    
 </ul>
 
