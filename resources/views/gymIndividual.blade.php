@@ -52,24 +52,41 @@
  <a href=#reviews id="hyperlink">Reviews </a> 
 </div> 
 
-<div class="description_img">
+
 <div class="description">
- <h4 class="sub-heading">Description</h4>
+ <!--<h4 class="sub-heading">Description</h4>-->
  <p>{{$gym->description}}</p>
 </div>
 
 
+<div class="location_img">
+    <div class="location_hours">
+        <h4 class="sub-heading">Location</h4>
+    <ul class="location">    
+      <li>  {{$gym->location}} </li>
+      <li>  {{$gym->general_location}} </li>
+    </ul>
+
+    <h4 class="sub-heading">Opening Hours</h4>
+    <div class= "hours">
+        <!--explode function splits opening_hours into array based on '.'
+        each item between '.' is placed in its own array index. then foreach loop 
+        goes through array and displays each index in a sepate <p> tag. -->
+        @foreach(explode('.', $gym->opening_hours) as $hour)
+            <p> {{trim($hour)}}</p>
+        @endforeach
+    </div>
+    <!--<p class="hours"> {{$gym-> opening_hours}} </p>-->
+</div>
 
 <div class="extra_img">
     <img src="{{ asset('public/images/uploaded/gym_' . $gym->user_id.$gym->name . '/' . $gym->extra_image) }}" alt="extra image" >
 </div>
 </div>
 
-<ul>
-    
-    <li>General Location: {{$gym->general_location}}</li>
-    <li>Location: {{$gym->location}}</li>
-    <li>Opening Hours: {{$gym-> opening_hours}}</li>
+
+
+
     <li>Phone Number: {{$gym->phone_number}}</li>
     <li>Email: {{$gym->email}}</li> 
     <li>Instagram: {{$gym->instagram}}</li>

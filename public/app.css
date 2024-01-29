@@ -151,24 +151,45 @@ transform: translateY(-100%); /*moves it to the top*/
 }
 
 .sub-heading{
-    font-size: 40px;
-    text-decoration:underline overline;
-    font-style: oblique;
+    font-size: 45px;
+    font-style: italic;
+    font-weight: 750;
 }
 
-/*decription and img starts at the same height. description is on left, img is on right. screen is split in middle at 50%*/
-.description_img{
-    display:flex;
-    align-items: flex-start;
-}
+
 
 
 .description{
-    width: 50%;
+    width: 85%;
+    justify-content: center;
+    text-align: center;
+    padding-left: 15%;
+    padding-bottom: 20px;
 
+}
+
+/*location and img starts at the same height. location is on left, img is on right. screen is split in middle at 50%*/
+
+.location_img{
+    display:flex;
+    align-items: flex-start;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.location_hours{
+    width:50%;
+    padding-left: 5%;
 }
 
 .extra_img{
     /*text-align: right;*/
     margin-left: auto;
+}
+
+.location{
+    
+    list-style-type: circle;
+    text-transform: capitalize;
+    font-size: 30px;
 }
