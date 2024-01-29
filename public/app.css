@@ -358,6 +358,9 @@ transform: translateY(-100%); /*moves it to the top*/
 }
 
 
+.subscribe button{
+    margin-left:25%;
+}
  
 .subscribe button:hover{
     color:white;
