@@ -6,6 +6,7 @@
         {{ session('no_result') }}
     </div>
 @endif
+<div class="gymAll">
 NOTE: show ratings here too? allow people to filter according to ratings?
 <form action="{{route('sortMembershipPrice')}}" method="get">
     <select class="sort_filter" name="sort">
@@ -24,7 +25,7 @@ NOTE: show ratings here too? allow people to filter according to ratings?
 
 <form action="{{route('filterLocation')}}" method="get">
 
-        <select name="filter_location" >
+        <select class="sort_filter" name="filter_location" >
             <option value="" disabled selected>Filter By Location</option>
             <option value ="north">North</option>
             <option value ="east">East</option>
@@ -38,17 +39,27 @@ NOTE: show ratings here too? allow people to filter according to ratings?
 
 
 
-@foreach($gyms as $gym)
-<ul> 
 
-   <li> <h1><a href="{{ route('gymIndividual', ['Gym_id' => $gym->Gym_id]) }}">{{ $gym->name }}</a></h1> </li>
-   <!--<li> <h1><a href="/gymIndividual/{{$gym->slug}}">{{ $gym->name }}</a></h1> </li> -->
-  <!-- <li> <h1><a href="{{ route('gymIndividual', $gym) }}">{{ $gym->name }}</a></h1> </li>-->
-   Location: {{$gym->general_location}}
-   
-</ul> 
+@foreach($gyms as $gym)
+<div class="gym_cards">
+
+ <div class="gym_box_info">
+    <div class="gym_info_left">
+   <!--<h1><a href="{{ route('gymIndividual', ['Gym_id' => $gym->Gym_id]) }}">{{ $gym->name }}</a></h1> -->
+   <h1>{{ $gym->name }}</h1>
+   <h2>Location: {{$gym->general_location}}</h2>
+    </div>
+    <div class="gym_info_right">
+   <button class="btn btn-dark"><a href="{{ route('gymIndividual', ['Gym_id' => $gym->Gym_id]) }}">View</a></button>
+    </div>
+</div>
+
+
+</div>
+
     @endforeach
    
 {{$gyms->links()}}
+</div>
 
 @endsection

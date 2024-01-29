@@ -415,6 +415,39 @@ transform: translateY(-100%); /*moves it to the top*/
 color: #e3b304;
 }
 /*GYM ALL DESIGN*/
-.sort_filter{
-    background-color: #c59b08;
+.gymAll{
+    padding:20px 20px 20px 20px;
+}
+
+.gym_cards{
+    padding-bottom: 30px;
+    padding:30px 30px 30px 30px;
+    
+   
+}
+
+.gym_box_info{
+    display:flex;
+    justify-content: space-between;
+    border: 5px solid #e6e6e6ad;
+    padding: 50px;
+    background-color: #E6E6E6;
+    color:#2A2A2A;
+}
+
+.gym_box_info a{
+    text-decoration: none;
+    color:white;
+    font-size: 20px;
+    
+}
+
+.gym_box_info_left{
+    text-align: left;
+    
+}
+
+.gym_box_info button{
+    padding: 20px 50px 20px 50px;
+   
 }
