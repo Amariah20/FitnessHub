@@ -343,12 +343,7 @@ transform: translateY(-100%); /*moves it to the top*/
     color:#ccc;
 }*/
 
-.review_write{
-    font-size: 25px;
-    font-weight: 549;
-    padding-bottom: 10px;
 
-}
 
 .subscribe{
     width:75%;
@@ -371,5 +366,36 @@ transform: translateY(-100%); /*moves it to the top*/
 .join{
     font-size: 25px;
     margin-left: 25%;
+}
+
+.review_line{
+    border-top: 2px dotted green;
+}
+
+.review_write{
+    font-size: 25px;
+    font-weight: 549;
+    padding-bottom: 10px;
+    /*white-space: nowrap;*/
+
+}
+
+.write_view_review{
+    display:flex;
+    align-items: flex-start;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    font-weight: 549;
+}
+
+.review_write{
+    width:50%;
+
+}
+
+.reviews{
+    /*text-align: right;*/
+   
+   
 }
 

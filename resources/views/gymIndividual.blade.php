@@ -192,7 +192,7 @@
 
 <!--<p>MOVE THIS TO THE OTHER SIDE OF THE PAGE. HAVE A SPLIT SCREEN. ELSE IF IT'S BELOW, IT WILL SCROLL UP WHEN USER RATES</p>-->
  
-<div class="review_subscribe">
+
 <div class="subscribe">
     <form action="{{route('subscribe',['Gym_id' => $gym->Gym_id])}}" method="get">
         @csrf
@@ -202,6 +202,10 @@
         <button type="submit" class="btn btn-dark">Subscribe</button>
     </form>
 </div>
+
+
+<hr class="review_line">
+<div class="write_view_review">
     <div class="review_write">
         <h4 class="review_write">Write a Review</h3>
         <form action="{{route('storeRating')}}" method="POST" id="ratingForm">
@@ -220,21 +224,22 @@
             </div>
             <div class="mb">
                 
-            <input class="form-control" name="review"  rows="3" required placeholder="Leave us a review!" style="height:100px;"></input>
+            <input class="form-control" name="review"  rows="3" required placeholder="Leave us a review!" style="height:100px; width:500px;"></input>
             </div><br>
             <input type="hidden" name="gym_id" value="{{$gym->Gym_id}}">
             <button type="submit"  class="btn btn-success">Post Review</button>
         </form>
-</div>
+    </div>
 
-</div>
+
+
 
 @if(count($ratings)>0)
 <div class="reviews" id="reviews">
-<h4>Reviews</h4>
+<h4 class="review_write">What Our Customers Say</h4>
 
     @foreach($ratings as $rating)
-<div>
+
 <!--9733 is the ascii code for star. set num=1, as long as num is less than the rating, add an extra star-->
 
 <?php $num=1;
@@ -248,6 +253,8 @@
     @endforeach
 </div>
 @endif
+</div>
+</div>
 </div>
 
 
