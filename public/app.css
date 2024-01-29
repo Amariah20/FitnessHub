@@ -156,6 +156,19 @@ transform: translateY(-100%); /*moves it to the top*/
     font-style: oblique;
 }
 
+/*decription and img starts at the same height. description is on left, img is on right. screen is split in middle at 50%*/
+.description_img{
+    display:flex;
+    align-items: flex-start;
+}
+
+
+.description{
+    width: 50%;
+
+}
+
 .extra_img{
-    text-align: right;
+    /*text-align: right;*/
+    margin-left: auto;
 }

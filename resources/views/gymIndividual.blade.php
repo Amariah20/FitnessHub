@@ -52,15 +52,19 @@
  <a href=#reviews id="hyperlink">Reviews </a> 
 </div> 
 
-
-
+<div class="description_img">
+<div class="description">
  <h4 class="sub-heading">Description</h4>
  <p>{{$gym->description}}</p>
+</div>
+
 
 
 <div class="extra_img">
     <img src="{{ asset('public/images/uploaded/gym_' . $gym->user_id.$gym->name . '/' . $gym->extra_image) }}" alt="extra image" >
 </div>
+</div>
+
 <ul>
     
     <li>General Location: {{$gym->general_location}}</li>
