@@ -480,16 +480,31 @@ color: #e3b304;
     
 }
 
-.gym_box_info_left{
-    text-align: left;
+.gym_info_left{
+  text-align: left;
+  margin-right: 55%;
+  display: inline;
+   
+
+}
     
     
+
+
+.gym_info_left h1{
+  
 }
 
+.gym_box_info img{
+    padding:10 10 10 10px;
+}
+    
 .gym_box_info button{
     padding: 20px 50px 20px 50px;
    
 }
+
+
 /*CLASSES AND OFFERINGS*/
 .classes_offerings{
     padding:20px 20px 20px 20px;

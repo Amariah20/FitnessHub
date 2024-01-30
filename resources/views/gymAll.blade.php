@@ -46,7 +46,10 @@
 <div class="gym_cards">
 
  <div class="gym_box_info">
+   <img src="{{ asset('public/images/uploaded/gym_' . $gym->user_id.$gym->name . '/' . $gym->logo) }}" alt="Logo" style="width:120px; height:120px"  >
+
     <div class="gym_info_left">
+        
    <!--<h1><a href="{{ route('gymIndividual', ['Gym_id' => $gym->Gym_id]) }}">{{ $gym->name }}</a></h1> -->
    <h1>{{ $gym->name }}</h1>
    <h2>Location: {{$gym->general_location}}</h2>

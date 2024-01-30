@@ -134,7 +134,7 @@ class GymController extends Controller
        //$gyms=collect($gyms)->paginate(3); 
       // collect($gyms)->paginate(3); //tried to use this package from github, and it did not work:https://github.com/spatie/laravel-collection-macros/#paginate UNINSTALL IT
       //$gyms= $gyms->chunk(3);
-      $gyms= $gyms->paginate(3); //I used this to paginate the collection and to display 3 gyms per pages: https://gist.github.com/simonhamp/549e8821946e2c40a617c85d2cf5af5e 
+      $gyms= $gyms->paginate(5); //I used this to paginate the collection and to display 3 gyms per pages: https://gist.github.com/simonhamp/549e8821946e2c40a617c85d2cf5af5e 
 
 
         return view ('/gymAll', compact('gyms'));

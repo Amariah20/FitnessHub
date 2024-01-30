@@ -59,7 +59,7 @@ class FilterSortController extends Controller
             }
             $gyms=$sortedGyms;
             //must call paginate before calling gymAll route, all ways
-            $gyms= $gyms->paginate(3); //I used this to paginate the collection and to display 3 gyms per pages: https://gist.github.com/simonhamp/549e8821946e2c40a617c85d2cf5af5e 
+            $gyms= $gyms->paginate(5); //I used this to paginate the collection and to display 3 gyms per pages: https://gist.github.com/simonhamp/549e8821946e2c40a617c85d2cf5af5e 
 
             return view ("/gymAll",compact('gyms'));
 
@@ -85,7 +85,7 @@ class FilterSortController extends Controller
 
             $gyms=$sortedGyms;
               //must call paginate before calling gymAll route, all ways
-              $gyms= $gyms->paginate(3); 
+              $gyms= $gyms->paginate(5); 
 
             return view ("/gymAll",compact('gyms'));
 
@@ -108,7 +108,7 @@ class FilterSortController extends Controller
         $gyms=$sortedGyms;
 
           //must call paginate before calling gymAll route, all ways
-          $gyms= $gyms->paginate(3); 
+          $gyms= $gyms->paginate(5); 
         return view ("/gymAll",compact('gyms'));
 
     }else if($sort=="annual-high"){
@@ -131,7 +131,7 @@ class FilterSortController extends Controller
 
         $gyms=$sortedGyms;
           //must call paginate before calling gymAll route, all ways
-          $gyms= $gyms->paginate(3); 
+          $gyms= $gyms->paginate(5); 
 
         return view ("/gymAll",compact('gyms'));
 
@@ -153,7 +153,7 @@ class FilterSortController extends Controller
         $gyms=$sortedGyms;
 
           //must call paginate before calling gymAll route, all ways
-          $gyms= $gyms->paginate(3); 
+          $gyms= $gyms->paginate(5); 
         return view ("/gymAll",compact('gyms'));
         
 
@@ -174,7 +174,7 @@ class FilterSortController extends Controller
         }
         $gyms=$sortedGyms;
           //must call paginate before calling gymAll route, all ways
-          $gyms= $gyms->paginate(3); 
+          $gyms= $gyms->paginate(5); 
 
         return view ("/gymAll",compact('gyms'));
     }else if($sort=="weekly-low"){
@@ -194,7 +194,7 @@ class FilterSortController extends Controller
         }
         $gyms=$sortedGyms;
           //must call paginate before calling gymAll route, all ways
-          $gyms= $gyms->paginate(3); 
+          $gyms= $gyms->paginate(5); 
 
         return view ("/gymAll",compact('gyms'));
     }else if($sort=="weekly-high"){
@@ -214,7 +214,7 @@ class FilterSortController extends Controller
         }
         $gyms=$sortedGyms;
           //must call paginate before calling gymAll route, all ways
-          $gyms= $gyms->paginate(3); 
+          $gyms= $gyms->paginate(5); 
 
         return view ("/gymAll",compact('gyms'));
                
@@ -227,35 +227,35 @@ public function filterLocation(Request $req){
     if($filter=="north"){
         $gyms= Gym::where('general_location', 'north')->get();
           //must call paginate before calling gymAll route, all ways
-          $gyms= $gyms->paginate(3); 
+          $gyms= $gyms->paginate(5); 
         return view ("/gymAll",compact('gyms'));
 
 
     } elseif($filter=="east"){
         $gyms= Gym::where('general_location', 'east')->get();
           //must call paginate before calling gymAll route, all ways
-          $gyms= $gyms->paginate(3); 
+          $gyms= $gyms->paginate(5); 
         return view ("/gymAll",compact('gyms'));
 
 
     } elseif($filter=="south"){
         $gyms= Gym::where('general_location', 'south')->get();
           //must call paginate before calling gymAll route, all ways
-          $gyms= $gyms->paginate(3); 
+          $gyms= $gyms->paginate(5); 
         return view ("/gymAll",compact('gyms'));
 
 
     } elseif($filter=="west"){
         $gyms= Gym::where('general_location', 'west')->get();
           //must call paginate before calling gymAll route, all ways
-          $gyms= $gyms->paginate(3); 
+          $gyms= $gyms->paginate(5); 
         return view ("/gymAll",compact('gyms'));
 
 
     } elseif($filter=="central"){
         $gyms= Gym::where('general_location', 'central')->get();
           //must call paginate before calling gymAll route, all ways
-          $gyms= $gyms->paginate(3); 
+          $gyms= $gyms->paginate(5); 
         return view ("/gymAll",compact('gyms'));
 
 
