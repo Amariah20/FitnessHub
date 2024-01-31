@@ -591,8 +591,8 @@ color: #e3b304;
 }
 
 .input-box .form-control{
-    background-color: rgba(143, 143, 143, 0.121);
-    border-color:rgba(0, 128, 0, 0.614);
+    background-color: rgba(223, 223, 223, 0.121);
+    border-color:black;
 }
 
 .input-box .form-control:focus{
