@@ -1,5 +1,5 @@
 
-/*code for star are from: https://codepen.io/hesguru/pen/BaybqXv */
+/*code for stars (rate) are from: https://codepen.io/hesguru/pen/BaybqXv */
 
 body {
     min-height: 100vh; 
@@ -482,22 +482,23 @@ color: #e3b304;
 
 .gym_info_left{
   text-align: left;
-  margin-right: 55%;
+  /*margin-right: 55%;*/
   display: inline;
+  /*display: flex;*/
+  align-items: center;
    
 
 }
-    
-    
 
 
 .gym_info_left h1{
-  
+    margin-right: 20px;
 }
-
+    
+/*
 .gym_box_info img{
-    padding:10 10 10 10px;
-}
+    padding:10px 10px 10px 10px;
+}*/
     
 .gym_box_info button{
     padding: 20px 50px 20px 50px;
