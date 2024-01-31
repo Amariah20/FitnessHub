@@ -514,23 +514,83 @@ color: #e3b304;
 /*CLASSES AND OFFERINGS*/
 .classes_offerings{
     padding:20px 20px 20px 20px;
+   
     
 
 }
 
 .classes_offerings h1{
     font-size: 50px;
-    font-weight: bold;
+    font-weight: bolder;
     text-align: center;
+    padding-bottom: 30px;
+    
+}
+
+.classes_offerings a{
+    text-decoration: none;
+    color: white;
+}
+
+.card-header{
+    font-size: 35px;
+    text-transform: capitalize;
+    text-align: center;
+   
+}
+
+.classes_offerings h6{
+    font-size: 20px;
+}
+
+.classes_offerings p{
+    font-size: 19px;
+}
+/*
+.classes_offerings h2{
+    font-size: 35px;
+    font-weight: 550;
+    padding-bottom: 30px;
+    padding-top: 20px;
+    margin-left: 10%;
+   
+    
+}
+
+.classes_offerings a{
+   text-decoration: none;
+   color:black;
+   font-weight: 500;
+   font-size: 25px;
+   text-transform: capitalize;
+   
+   
+  
+  
+   
+}
+
+
+.class_list{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+
+.classes_cards{
+    background-color: rgba(143, 143, 143, 0.121);
+    
+    width: 30%;
+    height: 100px;
     margin-bottom: 20px;
-}
-
-.class_list h2{
-    font-size: 45px;
+    border-radius: 20%;
+    padding:30px 30px 30px 80px;
+   
+   
     
-    
-}
-
+}*/
 
 .review_line{
     border-top: 2px dotted green;
