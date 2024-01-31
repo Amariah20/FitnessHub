@@ -1,12 +1,29 @@
 @extends('layouts.app')
 
 @section('content')
+
+<div class="class_show">
 <h1>{{$class->name}}</h1>
 
-<p>Description: {{$class->description}}</p>
-<p>Location: {{$class->location}}</p>
-<p>Schedule: {{$class->schedule}}</p>
-<p>Duration: {{$class->duration}}</p>
-<p>Maximum number of person per class (capacity):{{$class->capacity}}</p>
-<p>Price: SCR {{$class->price}}</p>
+
+
+    <h2>Description: </h2> 
+      <p>  {{$class->description}} </p>
+
+      <h2>Location:  </h2> 
+    <p> {{$class->location}} </p>
+
+    <h2>Schedule:  </h2> 
+    <p>  {{$class->schedule}} </p>
+
+    <h2>Duration:  </h2> 
+    <p>  {{$class->duration}} </p>
+
+    <h2>Capacity:  </h2> 
+    <p>   {{$class->capacity}} People </p>
+    
+    <h2>Price:  </h2> 
+    <p>  SCR {{$class->price}} </p>
+
+</div>
 @endsection

@@ -546,51 +546,8 @@ color: #e3b304;
 .classes_offerings p{
     font-size: 19px;
 }
-/*
-.classes_offerings h2{
-    font-size: 35px;
-    font-weight: 550;
-    padding-bottom: 30px;
-    padding-top: 20px;
-    margin-left: 10%;
-   
-    
-}
-
-.classes_offerings a{
-   text-decoration: none;
-   color:black;
-   font-weight: 500;
-   font-size: 25px;
-   text-transform: capitalize;
-   
-   
-  
-  
-   
-}
 
 
-.class_list{
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-
-}
-
-
-.classes_cards{
-    background-color: rgba(143, 143, 143, 0.121);
-    
-    width: 30%;
-    height: 100px;
-    margin-bottom: 20px;
-    border-radius: 20%;
-    padding:30px 30px 30px 80px;
-   
-   
-    
-}*/
 
 .review_line{
     border-top: 2px dotted green;
@@ -623,4 +580,28 @@ color: #e3b304;
 
 .input-box .form-control:focus{
     box-shadow: inset;
+}
+
+/*CLASS SHOW DESIGN*/
+.class_show{
+    padding:20px 20px 20px 20px;
+}
+
+.class_show h1{
+    font-size: 50px;
+    font-weight: bolder;
+    text-align: center;
+    padding-bottom: 30px;
+    text-transform: capitalize;
+    
+}
+
+.class_show h2{
+    font-size: 30px;
+    color: rgb(74, 74, 74);
+}
+
+.class_show p{
+    margin-left: 10px;
+    font-size: 20px;
 }
