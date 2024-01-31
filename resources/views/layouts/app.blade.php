@@ -29,14 +29,17 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>
+
+
     <div id="app">
+        
+
+   
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" >
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/gymAll') }}">
                    
                     <img class="nav-logo" src="{{ asset('images/FitnessHubLogo.png') }}"  width="220" height="70">
-                
-
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -44,14 +47,16 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
+                <ul class="navbar-nav me-auto">
 
                     </ul>
 
                     <!-- Right Side Of Navbar -->
+                <div class="nav_right">
                     <ul class="navbar-nav ms-auto">
 
                    
+               
                              
                         <!-- Authentication Links -->
                         @guest
@@ -95,9 +100,10 @@
                             </li>
                         @endguest
                     </ul>
-                </div>
-                <!--search bar-->
+               
 
+                <!--search bar-->
+            
                 <div class="input-box">
                     <form method="GET"  action="{{route('search')}}" >
                     <input type="text" placeholder="Search this page" name="search" id="search-box" class="form-control">
@@ -106,14 +112,16 @@
                     </form>
             </div>
              
-
+            
+            
              <div class = "user-profile">
          <a href="{{ route('userProfile') }}"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" color="black" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
         <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
         <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
         </svg></a>
-        </div>
-            </div>
+    </div>
+                </div>
+       </div>
         </nav>
        
         <!--this is to catch exceptions-->
