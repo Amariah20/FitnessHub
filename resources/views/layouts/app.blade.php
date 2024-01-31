@@ -51,14 +51,8 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
 
-                    <li class="nav-item">
-                                    <a class="nav-link" 
-                                    style="font-size: 22px; font-family: 'Trebuchet MS', Helvetica, sans-serif; color: black;"
-                                    onmouseover="this.style.backgroundColor='#c7c8ca'"
-                                    onmouseout="this.style.backgroundColor='transparent'" 
-                                     href="{{ route('userProfile') }}">Profile</a>
-                                </li>
-                        
+                   
+                             
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
@@ -108,6 +102,13 @@
              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
              
              </form>
+
+             <div class = "user-profile">
+         <a href="{{ route('userProfile') }}"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" color="black" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+        </svg></a>
+        </div>
             </div>
         </nav>
        
