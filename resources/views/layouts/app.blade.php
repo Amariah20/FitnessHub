@@ -19,7 +19,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-
+ 
 
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -37,6 +37,7 @@
    
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" >
             <div class="container">
+                
                 <a class="navbar-brand" href="{{ url('/gymAll') }}">
                    
                     <img class="nav-logo" src="{{ asset('images/FitnessHubLogo.png') }}"  width="220" height="70">
@@ -115,7 +116,7 @@
             
             
              <div class = "user-profile">
-         <a href="{{ route('userProfile') }}"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" color="black" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+         <a href="{{ route('userProfile') }}"  ><svg  xmlns="http://www.w3.org/2000/svg" width="40" height="40" color="black" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
         <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
         <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
         </svg></a>

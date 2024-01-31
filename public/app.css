@@ -1,11 +1,15 @@
 
 /*code for stars (rate) are from: https://codepen.io/hesguru/pen/BaybqXv */
 
+*{
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;
+}
 body {
     min-height: 100vh; 
     display: flex;
     flex-direction: column;
-    font-family: 'Trebuchet MS', Helvetica, sans-serif; /*not working*/
+   
+   
 }
 
 
@@ -28,8 +32,9 @@ body {
     padding-left: 130px;
 }
 
+
 #navbarDropdown{
-    font-size: 22px;
+    font-size: 18px;
 }
 
 .footer{
@@ -38,6 +43,11 @@ body {
     font-family: 'Trebuchet MS', Helvetica, sans-serif;
     color:black;
     
+}
+
+.footer a:hover{
+    text-decoration: none;
+    color: black;
 }
 .footer-left{
     position:relative;
