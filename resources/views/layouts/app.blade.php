@@ -32,7 +32,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" >
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ url('/gymAll') }}">
                    
                     <img class="nav-logo" src="{{ asset('images/FitnessHubLogo.png') }}"  width="220" height="70">
                 
@@ -97,11 +97,15 @@
                     </ul>
                 </div>
                 <!--search bar-->
-             <form method="GET" action="{{route('search')}}">
-             <input type="text" placeholder="Find something" name="search">
-             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+
+                <div class="input-box">
+                    <form method="GET"  action="{{route('search')}}" >
+                    <input type="text" placeholder="Search this page" name="search" id="search-box" class="form-control">
+                    <button style="background: none; border:none;"><i class="fa fa-search"></i></button>  
+                    
+                    </form>
+            </div>
              
-             </form>
 
              <div class = "user-profile">
          <a href="{{ route('userProfile') }}"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" color="black" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">

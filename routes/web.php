@@ -22,9 +22,13 @@ use App\Http\Middleware\AdminAccess;
 |
 */
 
+/*
 Route::get('/', function () {
     return view('welcome');
-});
+});*/
+
+Route::get('/', 'App\Http\Controllers\GymController@list')->name('welcome');
+
 
 Auth::routes();
 
