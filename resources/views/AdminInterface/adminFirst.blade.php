@@ -15,7 +15,7 @@
 
     @csrf 
    
-    <select class="form-control form-control-lg" name="SelectedGymID" style="width: 500px;">
+    <select id="dropdown_select_gym"  style=" border-radius: 10px; width:50%" name="SelectedGymID" style="width: 500px;">
         <option value= "Select">Click here to select gym</option>
         @foreach($gym as $gym)
        
