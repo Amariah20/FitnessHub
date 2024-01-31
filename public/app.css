@@ -535,3 +535,32 @@ color: #e3b304;
 .review_line{
     border-top: 2px dotted green;
 }
+
+
+/*SEARCH BOX*/
+
+#search{
+    margin-left:70%;
+    padding-bottom: 20px;
+    width: 25%;
+}
+
+.input-box{
+    position: relative;
+}
+.input-box i{
+    position: absolute;
+    margin-left:22%;
+    top:17px;
+    transform: translate(0, -50%);
+    
+}
+
+.input-box .form-control{
+    background-color: rgba(143, 143, 143, 0.121);
+    border-color:rgba(0, 128, 0, 0.614);
+}
+
+.input-box .form-control:focus{
+    box-shadow: inset;
+}
