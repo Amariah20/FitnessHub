@@ -87,6 +87,38 @@ public function search(Request $req){
             return view('gymAll', compact('gyms'));
     }
 
+    public function searchClassOffering(Request $req, $Gym_id){
+        $searchitems = $req->search;
+        $gym=Gym::where('Gym_id', $Gym_id)->first();
+        
+
+        $classes= Classes::query()->where(function($query) use ($searchitems, $Gym_id){
+            $query->where('gym_id', $Gym_id)
+            ->Where(function($query) use ($searchitems){
+                $query ->where('name', 'like', '%'.$searchitems. '%')
+                ->orWhere('description', 'like','%'.$searchitems. '%')
+                ->orWhere('location', 'like','%'.$searchitems. '%')
+                ->orWhere('capacity', 'like','%'.$searchitems. '%')
+                ->orWhere('duration', 'like','%'.$searchitems. '%')
+                ->orWhere('price', 'like', '%'.$searchitems. '%');
+                
+           });
+        })->get();
+
+        $offerings= Offerings::query()->where(function($query) use ($searchitems, $Gym_id){
+            $query->where('gym_id', $Gym_id)
+            ->Where(function($query) use ($searchitems){
+                $query ->where('name', 'like', '%'.$searchitems. '%')
+                ->orWhere('description', 'like','%'.$searchitems. '%')
+                ->orWhere('price', 'like', '%'.$searchitems. '%');
+                
+           });
+        })->get();
+
+        return view('classesOfferings', compact('classes','offerings','gym'));
+    }
+
+
     //For searching admin panel
     public function searchClass(Request $req, $Gym_id){
         $user = Auth::user();

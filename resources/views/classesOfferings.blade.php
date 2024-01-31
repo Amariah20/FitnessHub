@@ -1,7 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
+<form method="GET" action="{{route('searchClassOffering',['Gym_id' => $gym->Gym_id] )}}">
+             <input type="text" placeholder="Find a class/service" name="search">
+             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+             
+</form>
 
+</form>
 <div class="classes_offerings">
     <h1>Classes and Offerings</h1>
     <div class="class_list">   
