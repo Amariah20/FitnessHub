@@ -260,12 +260,12 @@ transform: translateY(-100%); /*moves it to the top*/
 
 .learn_more{
     text-decoration: none;
-    color:black;
+    color:whitesmoke;
     font-size: 18px;
 }
 
 .learn_more:hover{
-    color:black;
+    color:whitesmoke;
     text-decoration: none;;
 }
 
@@ -279,6 +279,8 @@ transform: translateY(-100%); /*moves it to the top*/
 
 .learn_more_button_both{
     margin-left: 150px;
+    
+    
 }
 
 .contact_split{

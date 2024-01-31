@@ -94,7 +94,7 @@
 
 @foreach($memberships as $membership)
             <p class="membership_name">{{$membership->name}}</p>
-            <p class="price">SCR {{$membership->price}}</p> <!--change line color to gym's color*/-->
+            <p class="price">SCR{{$membership->price}}</p> <!--change line color to gym's color*/-->
             <p class="item_description">{{$membership->description}}</p>
             <hr class="membership_line"> <!--change line color to gym's color*/-->
         @endforeach
