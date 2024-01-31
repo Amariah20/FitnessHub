@@ -8,5 +8,5 @@
 <p>Schedule: {{$class->schedule}}</p>
 <p>Duration: {{$class->duration}}</p>
 <p>Maximum number of person per class (capacity):{{$class->capacity}}</p>
-<p>Price: {{$class->price}}</p>
+<p>Price: SCR {{$class->price}}</p>
 @endsection

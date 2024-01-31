@@ -57,7 +57,7 @@
       <td>{{$class->schedule}}</td>
       <td> {{$class->duration}}</td>
       <td>{{$class->capacity}}</td>
-      <td> {{$class->price}}</td>
+      <td> SCR {{$class->price}}</td>
       
      
     <td><a href="{{route('EditClass', ['Class_id' => $class->Class_id] )}}"><button type= "submit" class="btn btn-info" >Edit</button></a></td>

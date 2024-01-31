@@ -48,7 +48,7 @@
       
       <td>{{$offerin->name}}</td>
       <td>{{$offerin->description}}</td>
-      <td>{{$offerin->price}}</td>
+      <td>SCR {{$offerin->price}}</td>
       
       <td><a href="{{route('EditOffering', ['Offering_id' => $offerin->offerings_id] )}}"><button type= "submit" class="btn btn-info">Edit</button></a></td>
       <td><a onclick="return confirm('Are you sure you want to delete?')" href="{{route('DeleteOffering',['Offering_id' => $offerin->offerings_id])}}"><button type= "submit" class="btn btn-danger">Delete</button></a></td>

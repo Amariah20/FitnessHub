@@ -5,5 +5,5 @@
 
 
 <p>{{$offering->description}}</p>
-<p>{{$offering->price}}</p>
+<p>SCR {{$offering->price}}</p>
 @endsection

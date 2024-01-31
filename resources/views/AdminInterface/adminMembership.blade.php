@@ -46,7 +46,7 @@
       
       <td>{{$membership->name}}</td>
       <td>{{$membership->description}}</td>
-      <td>{{$membership->price}}</td>
+      <td>SCR {{$membership->price}}</td>
       <td>{{$membership->membership_type}}</td>
       
       <td><a href="{{route('EditMembership', ['Membership_id' => $membership->membership_id] )}}"><button type= "submit" class="btn btn-info">Edit</button></a></td>
