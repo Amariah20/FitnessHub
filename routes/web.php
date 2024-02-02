@@ -97,6 +97,7 @@ Route::post('/reset-password', function (Request $request) {
 //to display gyms
 //Route::get('gymIndividual/{slug}', 'App\Http\Controllers\GymController@show')->name('gymIndividual');
 Route::get('gymIndividual/{Gym_id}', 'App\Http\Controllers\GymController@show')->name('gymIndividual');
+
 //Route::get('gymIndividual/{gym}', 'App\Http\Controllers\GymController@show')->name('gymIndividual');
 Route::get('gymAll','App\Http\Controllers\GymController@list')->name('gymAll');
 //Route::get('gymAll/{filter?}','App\Http\Controllers\GymController@list')->name('gymAll'); //? means that filter is optional.
@@ -152,6 +153,7 @@ Route::get('success','App\Http\Controllers\SuccessController@display' )->name('d
 
 //Admin Interface
 Route::middleware(['auth', 'admin'])->group(function () {
+    
 Route::get('AdminWelcome',  'App\Http\Controllers\AdminPanelController@AdminWelcome' )->name('AdminWelcome');
 Route::get('AdminFirst', 'App\Http\Controllers\AdminPanelController@AdminFirst')->name('AdminFirst');
 Route::get('AdminBusiness/{Gym_id}', 'App\Http\Controllers\AdminPanelController@AdminBusiness')->name('AdminBusiness');

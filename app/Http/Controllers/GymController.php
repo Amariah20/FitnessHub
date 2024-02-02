@@ -34,6 +34,7 @@ class GymController extends Controller
 
       try{
 
+    
       
       $gym = Gym::where('Gym_id', $Gym_id)->first();
       // $gym = Gym::where('slug', $slug)->first();
@@ -72,6 +73,9 @@ class GymController extends Controller
         return redirect()->back()->withErrors(['error'=>$error]);
     }
 }
+
+
+
 
   
 

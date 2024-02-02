@@ -33,8 +33,12 @@
     </div>
 @endif
 
+
+
 <div class="gym_info">
 <h1 class="gym_name">{{$gym->name}}</h1>
+
+
 
 <form method= "post" action="{{route('storeFavGym')}}" >
 @csrf
