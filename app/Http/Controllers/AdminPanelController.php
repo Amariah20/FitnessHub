@@ -173,8 +173,8 @@ class AdminPanelController extends Controller
         $gym->opening_hours= $req-> opening_hours;
         $gym->phone_number= $req-> phone_number;
         $gym->email= $req-> email;
-        $gym->instagram= $req->instagram;
-        $gym->facebook= $req->facebook;
+        $gym->instagram= "https://www.instagram.com/".$req->instagram."/";
+        $gym->facebook= "https://www.facebook.com/".$req->facebook."/";
         $gym->general_location= $req->general_location;
         $gym->user_id = $req->user()->id; 
         $gymFolder = 'public/images/uploaded/gym_' .  $gym->user_id. $gym->name; //gym Id has not been created yet. 

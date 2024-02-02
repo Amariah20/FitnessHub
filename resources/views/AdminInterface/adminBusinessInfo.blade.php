@@ -53,12 +53,22 @@
   <h4> Email: </h4> <h3>{{$gym->email}}</h3>
   </div>
 
+  <?php
+    use Illuminate\Support\Str;
+    $instaUsername = Str::substr($gym->instagram, 26);
+    
+    $instaUsername= rtrim($instaUsername, '/');
+    $facebookUsername = Str::substr($gym->facebook,25);
+    $facebookUsername = rtrim ($facebookUsername, '/');
+    
+    ?>
+
   <div class="info">
-  <h4> Instagram: </h4> <h3>{{$gym->instagram}}</h3>
+  <h4> Instagram: </h4> <h3>{{$instaUsername}}</h3>
   </div> 
 
   <div class="info">
-  <h4> Facebook: </h4> <h3>{{$gym->facebook}}</h3>
+  <h4> Facebook: </h4> <h3>{{ $facebookUsername }}</h3>
   </div>
 
 

@@ -62,14 +62,24 @@
     <label>Email Address</label>
     <input type="email" name="email" value="{{$gym->email}}" required class="form-control">
   </div>
+
+  <?php
+    use Illuminate\Support\Str;
+    $instaUsername = Str::substr($gym->instagram, 26);
+    
+    $instaUsername= rtrim($instaUsername, '/');
+    $facebookUsername = Str::substr($gym->facebook,25);
+    $facebookUsername = rtrim ($facebookUsername, '/');
+    
+    ?>
    
   <div class="form-group">
     <label>Instagram Username</label>
-    <input type="text" name="instagram" value="{{$gym->instagram}}" class="form-control">
+    <input type="text" name="instagram" value="{{ $instaUsername}}" class="form-control">
   </div>
   <div class="form-group">
     <label>Facebook Username</label>
-    <input type="text" name="facebook" value="{{$gym->facebook}}" class="form-control">
+    <input type="text" name="facebook" value="{{ $facebookUsername }}" class="form-control">
   </div>
 
   <div class="form-group">
