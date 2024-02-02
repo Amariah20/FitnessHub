@@ -49,10 +49,12 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav me-auto">
-                @if(auth()->user()?->email == 'globaladmin@gmail.com')
-                 <p><a href="{{route('AdminAccess')}}">All Users</p> 
-                 <p><a href="{{route('globalAdminGyms')}}">Ratings</p>
-            @endif
+                    <div class="global-admin-nav">
+                        @if(auth()->user()?->email == 'globaladmin@gmail.com')
+                        <a href="{{route('AdminAccess')}}">Users</a>
+                        <a href="{{route('globalAdminGyms')}}">Ratings</a>
+                        @endif
+                    </div>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -110,7 +112,7 @@
             
                 <div class="input-box">
                     <form method="GET"  action="{{route('search')}}" >
-                    <input type="text" placeholder="Search this page" name="search" id="search-box" class="form-control">
+                    <input type="text" placeholder="Search" name="search" id="search-box" class="form-control">
                     <button style="background: none; border:none;"><i class="fa fa-search"></i></button>  
                     
                     </form>

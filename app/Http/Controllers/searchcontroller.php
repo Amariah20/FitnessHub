@@ -228,7 +228,7 @@ public function search(Request $req){
         $users= User::where('name', 'like','%'.$searchitems. '%')
         ->orWhere('email',  'like','%'.$searchitems. '%')->get();
 
-        return view('AdminAccess', compact('users'));
+        return view('GlobalAdmin.AdminAccess', compact('users'));
 
 
     }
