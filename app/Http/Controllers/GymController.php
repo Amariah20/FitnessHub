@@ -182,11 +182,15 @@ class GymController extends Controller
             $gymOpeningHours= $req-> opening_hours;
             $gymNumber= $req-> phone_number;
             $gymEmail= $req-> email;
-            $gymInstagram=$req->instagram;
-            $gymFacebook =$req->facebook;
+           // $gymInstagram=$req->instagram;
+           // $gymFacebook =$req->facebook;
             $gymGeneralLocation= $req->general_location;
             $userId = $req->user()->id;
 
+            $gymInstagram="https://www.instagram.com/".$req->instagram."/";
+           
+            $gymFacebook ="https://www.facebook.com/".$req->facebook."/";
+       
 
         
 

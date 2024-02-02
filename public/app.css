@@ -350,9 +350,21 @@ transform: translateY(-100%); /*moves it to the top*/
   
 }
 
+.contact_info a{
+    text-decoration: none;
+    color:white;
+    
+}
+
+.contact_info a:hover{
+    text-decoration: none;
+    color:white;
+}
+
 .class_info_1{
     background-color: black;
     padding: 30px 30px 30px 30px;
+    
     color:white;
     
     
