@@ -266,20 +266,3 @@ h2{
 
 
 
-/*scrollbar reference:https://www.youtube.com/watch?v=nqr-ubBgik8&t=1013s&ab_channel=FutureWeb */
-
-/*
-::-webkit-scrollbar{
-    width:5px;
-
-}
-
-::-webkit-scrollbar-track{
-    background: rgba(25, 25, 25, 0.907);
-}
-
-::-webkit-scrollbar-thumb{
-    background:white;
-} /*
-
-

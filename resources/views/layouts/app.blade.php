@@ -49,7 +49,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav me-auto">
-                 
+                @if(auth()->user()?->email == 'globaladmin@gmail.com')
+                 <p><a href="{{route('AdminAccess')}}">All Users</p> 
+                 <p><a href="{{route('globalAdminGyms')}}">Ratings</p>
+            @endif
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -128,8 +131,13 @@
          <div class="admin-panel-button">
              <button class="btn btn-dark"><a href="{{ route('AdminFirst')}}">Admin Panel</a></button>
          </div>
+         
          @endif
-        @endif
+         @endif
+       
+       
+       
+    
 
                  
          </div>
