@@ -16,18 +16,13 @@
         {{ session('success') }}
     </div>
 @endif
-
-<div class="add-gym">
-
 @if(session('success_membership'))
     <div class="alert alert-success">
         {{ session('success_membership') }}
     </div>
-
-   
-    
 @endif
 
+<div class="add-gym">
 
 
 <div class="card-header"><h1>Memberships</h1></div>
