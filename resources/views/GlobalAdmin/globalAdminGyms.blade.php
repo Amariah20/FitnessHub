@@ -30,8 +30,8 @@
             {{ $gym->name }}
             </div>
             <div class="card-body">
-                
-                <p class="card-text">New ratings: {{$gym->ratings->count()}}</p>
+               
+                <p class="card-text <?php echo $gym->ratings->count()>0 ? 'text-danger':'';?>">New ratings: {{$gym->ratings->count()}}</p>
                 <button class="btn btn-primary"> <a href="{{ route('reviewStatus', ['Gym_id' => $gym->Gym_id]) }}" class="card-link">View Review</a></button>
              </div>
     </div>
