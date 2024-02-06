@@ -239,7 +239,7 @@
             </div>
             <div class="mb">
    
-            <input class="form-control" name="review"  rows="3" required placeholder="Leave us a review!" style="height:100px; width:500px;"></input>
+            <input class="form-control" name="review"  rows="3"  placeholder="Leave us a review!" style="height:100px; width:500px;"></input>
             </div><br>
             <input type="hidden" name="gym_id" value="{{$gym->Gym_id}}">
             <button type="submit"  class="btn btn-success">Post Review</button>

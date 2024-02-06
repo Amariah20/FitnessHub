@@ -25,6 +25,10 @@ class RatingController extends Controller
         if($rate==null){
             return redirect()->back()->withErrors(['error' => 'Please add at least one star rating for this gym.']);
         }
+
+        if($review==null){
+            $review="";
+        }
         /* on one hand, it's a good idea to block this because then it prevents people from leaving multiple hate/good reviews
         on the other hand, what if someone initially had a good experience but then had a bad experience or visa versa and wants to change their review?
          $count_rating = Rating::where(['user_id'=> $user_id, 'gym_id'=>$gym_id])->count();
