@@ -1,6 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
+<!--I used bootstrap for the forms to register gym: https://getbootstrap.com/docs/5.0/forms/form-control/-->
+<!--used bootstrap for cards throughout the application:https://getbootstrap.com/docs/4.3/components/card/-->
+<!--icons: https://icons.getbootstrap.com/icons/info-circle/-->
+<link rel="stylesheet" type="text/css" href="/getStarted.css"> 
+
+
+<div class="add-gym">
+
+
+
+<div class="container">
+<h7>Step 1 of 5</h7>
 @if($errors->any())
 <div class="alert alert-danger">
     <ul>
@@ -10,18 +22,7 @@
     </ul>
 </div>
 @endif
-<!--I used bootstrap for the forms to register gym: https://getbootstrap.com/docs/5.0/forms/form-control/-->
-<!--used bootstrap for cards throughout the application:https://getbootstrap.com/docs/4.3/components/card/-->
-<!--icons: https://icons.getbootstrap.com/icons/info-circle/-->
-    <link rel="stylesheet" type="text/css" href="/getStarted.css"> 
 
-
-<div class="add-gym">
-
-
-
-<div class="container">
-<h7>Step 1 of 5</h7>
 <div class="card-header"><h1>Gym Information</h1></div>
 <div class="register-info">
 <div class="register">

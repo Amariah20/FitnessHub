@@ -119,7 +119,7 @@ p{
   .add-gym .mb{
     width: 60%;
     font-size: 20px;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
     
   }
 
@@ -156,7 +156,20 @@ p{
 
   .add-gym  button{
     margin-top: 20px;
+    
+    
   }
+
+  .add-gym a{
+    color:white;
+  }
+
+  .add-gym a:hover {
+    color:white;
+
+  }
+
+
   /*easier method to split in half*/
 
   .register-info{

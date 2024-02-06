@@ -40,7 +40,7 @@
         <input type="text" name="name" class="form-control" required>
     </div>
     <div class="mb">
-        <label class="label">Price</label>
+        <label class="label">Price (SCR)</label>
         <input type="number" name="price" class="form-control"  required>
     </div>
    
