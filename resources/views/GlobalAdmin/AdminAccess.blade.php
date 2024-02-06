@@ -8,7 +8,7 @@
     </div>
 @endif
 <div class= "admin-access">
-    <h1>User List</h1>
+    
 
     <!--search-->
 <!--<form method="GET" action="{{route ('searchUser')}}" >
@@ -23,6 +23,8 @@
  
 </form>
 </div>
+
+<h1>User List</h1>
 
 <table class="table table-hover"> 
 <thead class="thead-light">
@@ -54,7 +56,7 @@
                         @else
                             <form method="POST" action="{{ route('grantAdminAccess', $user) }}">
                                 @csrf
-                                <button type="submit" class="btn btn-success">Grant</button>
+                                <button type="submit" class="btn btn-success">  Grant  </button>
                             </form>
                         @endif
                     </td>

@@ -697,6 +697,12 @@ color: #e3b304;
     padding: 20px 20px 20px 20px;
 }
 
+.admin-access h1{
+    font-size: 50px;
+    font-weight: bolder;
+    text-align: center;
+    padding-bottom: 30px;
+}
 
 .admin-access th{
     background-color: rgba(128, 128, 128, 0.836);
