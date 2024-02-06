@@ -46,7 +46,7 @@
     </div>
     
     <div class="mb">
-        <label class="label">Membership type</label>
+        <label class="label">Membership Type</label>
         <select name="membership_type" >
             <option value="" disabled selected>Select Membership Type</option>
             <option value ="annual">Annual</option>

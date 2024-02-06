@@ -30,7 +30,7 @@
         @csrf
 
             <div class="mb">
-                <label class="label">Name of your Fitness Centre</label>
+                <label class="label">Fitness Centre's Name</label>
                 <input type="text" name="name" class="form-control" required>
             </div>
 
