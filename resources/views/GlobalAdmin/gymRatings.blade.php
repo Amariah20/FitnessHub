@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 @if (session('no_result'))
     <div class="alert alert-danger">
         {{ session('no_result') }}
@@ -11,6 +12,7 @@
         {{ session('success') }}
     </div>
 @endif
+<div class="approveRating">
 
 <form method= "POST" action= "{{route('approveStatus' )}}">
 @csrf
@@ -20,8 +22,8 @@
       <th scope="col">Review</th>
       <th scope="col">Rating</th>
       <th scope="col">Status</th>
-      <th scope="col">Approve</th>
-      <th scope="col">Decline</th>
+      <th scope="col">Approve Rating</th>
+      <th scope="col">Decline Rating</th>
      
      
      
@@ -36,8 +38,8 @@
       <td>{{$rating->review}}</td>
       <td>{{$rating->rating}}</td>
       <td>{{$rating->approved}}</td>
-      <td> <td><button type= "submit" name="rating_id" value="a.{{$rating->rating_id}}">Approve</button></a></td>
-      <td> <td><button type= "submit" name="rating_id" value="d.{{$rating->rating_id}}">Decline</button></a></td>
+      <td><button class="btn btn-danger" type="submit" name="rating" value="a.{{$rating->rating_id}}">Approve</button></a></td>
+       <td><button class="btn btn-success" type="submit" name="rating" value="d.{{$rating->rating_id}}">Decline</button></a></td>
     
     
      
@@ -47,6 +49,9 @@
  </tbody>
  </table>
 </form>
+</div>
+
+@endsection
 
 <!--
 
@@ -91,4 +96,3 @@
 </form> -->
       
       
-@endsection

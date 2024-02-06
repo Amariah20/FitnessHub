@@ -78,7 +78,7 @@ class RatingController extends Controller
 
     public function approveStatus(Request $req){
 
-        $data= $req->rating_id;
+        $data= $req->rating;
         //dd($data);
        
         
