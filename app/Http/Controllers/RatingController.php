@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Rating;
 use App\Models\Gym;
 use ConsoleTVs\Profanity\Facades\Profanity;
+use Illuminate\Support\Str;
 
 class RatingController extends Controller
 {
@@ -77,12 +78,29 @@ class RatingController extends Controller
 
     public function approveStatus(Request $req){
 
-        
-        $rating_id= $req->rating_id;
-
-        $rating= Rating::where('rating_id', $rating_id)->first();
+        $data= $req->rating_id;
+        //dd($data);
        
-        $rating->approved= $req->approved;
+        
+        $approved = Str::before($data, '.');
+        //dd($approved);
+    
+        $id=Str::after($data, '.');
+        //dd($id);
+        
+
+        //$rating_id= $req->rating_id;
+
+        $rating= Rating::where('rating_id', $id)->first();
+        if($approved=="a"){
+            $rating->approved= "approved";
+
+        } else if($approved="d"){
+            $rating->approved="declined";
+        }
+
+       
+     
        //dd($rating, $req->approved);
         $rating->save();
 

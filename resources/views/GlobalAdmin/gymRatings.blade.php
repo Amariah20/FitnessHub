@@ -19,6 +19,44 @@
     <tr>
       <th scope="col">Review</th>
       <th scope="col">Rating</th>
+      <th scope="col">Status</th>
+      <th scope="col">Approve</th>
+      <th scope="col">Decline</th>
+     
+     
+     
+      
+    </tr>
+  </thead>
+
+  <tbody>
+  @foreach($ratings as $rating)
+    <tr>
+      
+      <td>{{$rating->review}}</td>
+      <td>{{$rating->rating}}</td>
+      <td>{{$rating->approved}}</td>
+      <td> <td><button type= "submit" name="rating_id" value="a.{{$rating->rating_id}}">Approve</button></a></td>
+      <td> <td><button type= "submit" name="rating_id" value="d.{{$rating->rating_id}}">Decline</button></a></td>
+    
+    
+     
+      
+    </tr>
+ @endforeach
+ </tbody>
+ </table>
+</form>
+
+<!--
+
+<form method= "POST" action= "{{route('approveStatus' )}}">
+@csrf
+<table class="table table-striped">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Review</th>
+      <th scope="col">Rating</th>
       <th scope="col">Approved</th>
       <th scope="col">Change Review Status</th>
      
@@ -50,7 +88,7 @@
  @endforeach
  </tbody>
  </table>
-</form>
+</form> -->
       
       
 @endsection
