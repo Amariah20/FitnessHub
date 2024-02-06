@@ -13,8 +13,10 @@ class GlobalAdminController extends Controller
     public function listUsers()
     {
         $users = User::all();
+        $ratings= Rating::where('approved', 'awaiting approval');
+        $newRatings =$ratings->count();
 
-        return view('GlobalAdmin.AdminAccess', compact('users'));//compact ('users') is passing the variable users to the view
+        return view('GlobalAdmin.AdminAccess', compact('users', 'newRatings'));//compact ('users') is passing the variable users to the view
     }
 
     public function grantAdminAccess(Request $request, User $user)
@@ -68,9 +70,10 @@ class GlobalAdminController extends Controller
         $gyms= $sortedGyms;
 
       
-
+        $newRating = Rating::where('approved', 'awaiting approval');
+        $newRatings =$newRating->count();
     
-        return view('GlobalAdmin.globalAdminGyms', compact('gyms'));
+        return view('GlobalAdmin.globalAdminGyms', compact('gyms', 'newRatings'));
 
     }
 }

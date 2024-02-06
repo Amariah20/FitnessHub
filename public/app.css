@@ -757,3 +757,15 @@ color: #e3b304;
 .global_admin_gyms p{
     font-size: 19px;
 }
+
+.new-ratings-message{
+    padding-right: 100px;
+    padding-left: 100px;
+    
+}
+
+.new-ratings-message p{
+    font-size: 25px;
+    font-weight: 400;
+    text-align: center;
+}

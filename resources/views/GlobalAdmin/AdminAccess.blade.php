@@ -7,6 +7,22 @@
         {{ session('success') }}
     </div>
 @endif
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                {{ $error }}
+            @endforeach
+        </ul>
+    </div>
+@endif
+<div class="new-ratings-message">
+@if($newRatings>0)
+<div class="alert alert-danger">
+        <p>New Reviews Awaiting Approval!</p>
+    </div>
+@endif
+</div>
 <div class= "admin-access">
     
 

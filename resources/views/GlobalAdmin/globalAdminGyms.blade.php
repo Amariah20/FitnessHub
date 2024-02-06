@@ -11,6 +11,13 @@
         {{ session('success') }}
     </div>
 @endif
+<div class="new-ratings-message">
+@if($newRatings>0)
+<div class="alert alert-danger">
+        <p>New Reviews Awaiting Approval!</p>
+    </div>
+@endif
+</div>
 
 <div class="global_admin_gyms">
     <h1>Gym Reviews</h1>

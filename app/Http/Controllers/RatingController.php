@@ -74,8 +74,8 @@ class RatingController extends Controller
     public function reviewStatus($Gym_id){
         $ratings = Rating::where('gym_id', $Gym_id)->orderBy('created_at', 'desc')->get();
         $gym= Gym::where('Gym_id', $Gym_id)->first();
-
-        
+       
+       
         return view ('GlobalAdmin.gymRatings', compact('ratings', 'gym'));
 
     }
