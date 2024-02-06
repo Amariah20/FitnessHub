@@ -725,3 +725,29 @@ color: #e3b304;
     font-size: 20px;
     text-align: center;
 }
+
+.global_admin_gyms{
+    padding: 20px 20px 20px 20px;
+}
+
+
+.global_admin_gyms a{
+    text-decoration: none;
+    color: white;
+}
+
+.global_admin_gyms h1{
+    font-size: 50px;
+    font-weight: bolder;
+    text-align: center;
+    padding-bottom: 30px;
+    
+}
+
+.global_admin_gyms h6{
+    font-size: 20px;
+}
+
+.global_admin_gyms p{
+    font-size: 19px;
+}

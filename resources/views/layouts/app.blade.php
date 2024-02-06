@@ -52,7 +52,7 @@
                     <div class="global-admin-nav">
                         @if(auth()->user()?->email == 'globaladmin@gmail.com')
                         <a href="{{route('AdminAccess')}}">Users</a>
-                        <a href="{{route('globalAdminGyms')}}">Ratings</a>
+                        <a href="{{route('globalAdminGyms')}}">Reviews</a>
                         @endif
                     </div>
                     </ul>

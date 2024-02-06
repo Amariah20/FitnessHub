@@ -11,13 +11,34 @@
         {{ session('success') }}
     </div>
 @endif
-@foreach($gyms as $gym)
+
+<div class="global_admin_gyms">
+    <h1>Gym Reviews</h1>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+@foreach($gyms as $gym) 
+
+<div class="col">
+    <div class="card border-secondary mb-3" style="width: 75%;">
+            <div class="card-header">
+            {{ $gym->name }}
+            </div>
+            <div class="card-body">
+                
+                <p class="card-text">New ratings: {{$gym->ratings->count()}}</p>
+                <button class="btn btn-primary"> <a href="{{ route('reviewStatus', ['Gym_id' => $gym->Gym_id]) }}" class="card-link">View Review</a></button>
+             </div>
+    </div>
+    </div>
+
+   <!--
     <ul>
         <li> <h1><a href="{{ route('reviewStatus', ['Gym_id' => $gym->Gym_id]) }}">{{ $gym->name }}</a></h1> </li>
         <p>New ratings: {{$gym->ratings->count()}}</p>
-    </ul>
+    </ul>-->
+    
+    
 @endforeach
    
-
+</div>
 
 @endsection
