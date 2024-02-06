@@ -7,24 +7,30 @@
     z-index: 1;
     /*top: 0;*/
     overflow-x: hidden;
-    padding-top: 10%;
+    padding-top: 5%;
+   
   }
 
   /*control left side*/
   .left{
     left:0;
+    padding-left: 10px;
   }
 
     /* Control the right side */
 .right {
     right: 0;
+    padding-right: 20px;
     
  } 
  
 .right .container{
     background-color: #E6E6E6;
+    padding: 30px 30px 30px 30px;
+    margin-bottom: 20px;
     
 }
+
 
 .heading{
     color:#4e4d4d;
@@ -63,14 +69,15 @@ p{
     
   }
 
+  /*
   .gympic{
-    width: 20%;
-    height: 10%;
+    width: 100px;
+    height: 100px;
     position: absolute;
     right: 0%;
     
     
-  }
+  }*/
 
   /*for addGym*/
 
@@ -78,13 +85,13 @@ p{
   .container{
     position: relative;
     font-size: large;
-    padding-top: 20px;;
+    padding-top: 20px 20px 20px 20px;
     
     
   }
 
   .mb{
-    width: 30%;
+    width: 70%;
     
 
     

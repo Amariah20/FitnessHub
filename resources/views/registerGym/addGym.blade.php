@@ -16,7 +16,7 @@
 
 
 <div class="container">
-<div class="card-header"><img src="{{ asset('images/FitnessHubLogo.png') }}"  width="400" height="70"></div>
+<div class="card-header">Gym Information</div>
 <form method="POST" action="{{ route('gym.store') }}" enctype="multipart/form-data">
 @csrf
 

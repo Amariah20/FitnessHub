@@ -13,16 +13,17 @@
 </div>
 
 <div class="split right">
+    
     <div class= "container"> 
-        <br>
-    <img class="gympic" src="{{ asset('images/gym.png') }}">
+        
+        <!-- <img class="gympic" src="{{ asset('images/gym.png') }}">-->
         <h1 class="heading">1. Introduce Your Centre</h1>
         <p>Share essential details like name, location, opening hours, a captivating description and your images</p>
         
-        <br><br>
-        <img class="gympic" src="{{ asset('images/gym 1.png') }}">
+        
+        <!--<img class="gympic" src="{{ asset('images/gym 1.png') }}">-->
         <h1 class="heading">2. Highlight Your Offerings</h1>
-        <p>Showcase the diverse range of classes, services and facilities your fitness centre offers</p>
+        <p>Showcase the diverse range of memberships, classes, services and equipments your fitness centre offers</p>
        
         
        
@@ -32,9 +33,11 @@
    
     
 
-    
+  
     <form action="{{ route('gyms.create') }}" method="GET">
     <button type="submit">Get Started</button>
+
+    
 </form>
 
 
