@@ -27,6 +27,10 @@
 
     <!--<script src="/gymIndividualJS.js"></script>-->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
+    <!--favicon-->
+    <link rel="icon" type="image/x-icon" href="{{ asset('images/SmallLogo.png') }}">
+   
 </head>
 <body>
 
