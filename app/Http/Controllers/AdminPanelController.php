@@ -186,6 +186,18 @@ class AdminPanelController extends Controller
            
            if($req->hasfile('logo')){
             $pic=$req->file('logo');
+
+            $logo_info= getimagesize($pic->getPathname());
+            $width=$logo_info[0];
+            $height=$logo_info[1];
+            //dd($width, $height);
+           // $mime=$logo_info['mime'];
+
+            if(!($width==$height)){
+                return redirect()->back()->withErrors(['error', 'please enter a squared image']);
+
+            } 
+
             $extension= $pic->getClientOriginalExtension();
             $logo= time().'._logo.'.$extension;
             $pic->move($gymFolder, $logo);
