@@ -5,6 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1 , maximum-scale=2.0"> <!--for responsive design-->
 
+    <title>Fitness Hub</title>
+     <!--favicon-->
+     <link rel="icon" type="image/x-icon" href="{{ asset('images/SmallLogo.png') }}">
+     
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Fonts -->
@@ -28,6 +32,7 @@
 <script scr="https://cdnjs.cloudflare.com/ajax/libs/jQuery-QueryBuilder/2.7.0/js/query-builder.min.js"></script>
 
 <link rel="stylesheet" type="text/css" href="/admin.css">
+
 
 </head>
 

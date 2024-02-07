@@ -769,3 +769,8 @@ color: #e3b304;
     font-weight: 400;
     text-align: center;
 }
+
+/*About us page*/
+.about-us{
+    padding: 30px 30px 30px 30px;
+}

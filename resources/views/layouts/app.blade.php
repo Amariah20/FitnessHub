@@ -7,8 +7,10 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+   <!-- <title>{{ config('app.name', 'Laravel') }}</title>-->
     <title>Fitness Hub</title>
+     <!--favicon-->
+     <link rel="icon" type="image/x-icon" href="{{ asset('images/SmallLogo.png') }}">
 
     <!--css-->
     <link rel="stylesheet" type="text/css" href="/app.css">
@@ -28,8 +30,7 @@
     <!--<script src="/gymIndividualJS.js"></script>-->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
-    <!--favicon-->
-    <link rel="icon" type="image/x-icon" href="{{ asset('images/SmallLogo.png') }}">
+   
    
 </head>
 <body>

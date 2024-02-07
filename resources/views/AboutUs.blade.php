@@ -2,7 +2,8 @@
 
 @section('content')
 
-<img src="{{asset('images/gym 2.png')}}">
+<img src="{{asset('images/aboutUs.png')}}" style="width:100%; height:300px;">
+<div class="about-us">
 <h1>About Us</h1>
 
 <h2>Fitness Hub: Bridging the Gap to a Healthier You</h2>
@@ -16,5 +17,6 @@
 <i>Join us in promoting a fitter and healthier Seychelles!</i>
 
 <i>Discover gyms and fitness centres, right here on Fitness Hub</i>
+</div>
 
 @endSection
