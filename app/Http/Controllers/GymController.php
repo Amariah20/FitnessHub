@@ -21,6 +21,8 @@ use Illuminate\Support\Facades\Auth;
 
 
 
+
+
 //using this profanity filter: https://github.com/ConsoleTVs/Profanity everywhere
 //I used this for guidance for most of my controllers: https://www.youtube.com/watch?v=GAPzqFMSxVY&t=933s
 //I used this to paginate the collection and to display 3 gyms per pages: https://gist.github.com/simonhamp/549e8821946e2c40a617c85d2cf5af5e 
@@ -173,6 +175,7 @@ class GymController extends Controller
         }
 
         $validate = $req->validated();
+       
      
 
         if ($validate==true ){
@@ -212,13 +215,31 @@ class GymController extends Controller
         //$gymFolder = 'public/images/uploaded/gym_' .$NewGym->Gym_id;
         $gymFolder = 'public/images/uploaded/gym_' . $userId.$gymName; //gym Id has not been created yet
 
+
+
             // checking that subfolder exists, and if not, create it
             if (!file_exists($gymFolder)) {
                 mkdir($gymFolder, 0755, true);
             }
+
+           
+           
            
            if($req->hasfile('logo')){
             $pic=$req->file('logo');
+
+            $logo_info= getimagesize($pic->getPathname());
+            $width=$logo_info[0];
+            $height=$logo_info[1];
+            //dd($width, $height);
+           // $mime=$logo_info['mime'];
+
+            if(!($width==$height)){
+                return redirect()->back()->withErrors(['error', 'please enter a squared image']);
+
+            } 
+
+            
             $extension= $pic->getClientOriginalExtension();
             $logo= time().'._logo.'.$extension;
             $pic->move($gymFolder, $logo);
@@ -227,6 +248,10 @@ class GymController extends Controller
 
            if($req->hasfile('banner')){
             $pic=$req->file('banner');
+
+          
+
+            
             $extension= $pic->getClientOriginalExtension();
             $banner= time().'._banner.'.$extension;
             $pic->move($gymFolder, $banner);

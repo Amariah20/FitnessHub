@@ -188,6 +188,9 @@ return [
         'Profanity' => ConsoleTVs\Profanity\Facades\Profanity::class,
     ])->toArray(),
 
+
+
 ];
+
 
 

@@ -32,7 +32,7 @@ class GymValidation extends FormRequest
     public function rules(): array
     {
         return [
-           
+        
             //'name'=> 'required|string|max:255|regex:/^[a-zA-Z]+[a-zA-Z\s\-\.\&]*$/', //name has to start with a letter. after first letter, there can be letters, space (\s), -,.,$
             'name'=>'required|string|', //I dont think the regex is a good idea. what if some gyms have a unique name that starts with a number
             'location'=>'required|string',
@@ -43,9 +43,10 @@ class GymValidation extends FormRequest
             'facebook'=>'nullable|string',
             'description'=>'required|string',
             'general_location' => 'required|in:north,east,south,west,central',
-            'logo'=>'image|mimes:jpg,png,jpeg',
-            'banner'=> 'image|mimes:jpg,png,jpeg',
-            'extra_image'=> 'image|mimes:jpg,png,jpeg'
+            'logo'=>'required|image|mimes:jpg,png,jpeg', //dimensions:width=height nope
+            'banner'=> 'required|image|mimes:jpg,png,jpeg|dimensions:min_width=1920,min_height=1080',
+            'extra_image'=> 'required|image|mimes:jpg,png,jpeg'
+
         ];
     }
 }
