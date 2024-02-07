@@ -772,5 +772,40 @@ color: #e3b304;
 
 /*About us page*/
 .about-us{
-    padding: 30px 30px 30px 30px;
+    padding: 50px 50px 50px 50px;
+}
+
+/*code to centre text over image:https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_image_text*/
+.about-us h1{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 60px;
+  font-weight: bolder;
+}
+
+.about-us h2{
+  font-size: 50px;
+  font-weight: bolder;    
+  text-align: center;
+  padding-bottom: 35px;
+
+}
+
+.about-us p{
+    font-size: 40px;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.about-us .below{
+    font-size: 30px;
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    color:red;
+
 }
