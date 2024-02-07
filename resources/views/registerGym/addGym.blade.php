@@ -31,7 +31,7 @@
 
             <div class="mb">
                 <label class="label">Fitness Centre's Name</label>
-                <input type="text" name="name" class="form-control" required>
+                <input type="text" name="name" class="form-control" value="{{ old ('name') }} " required>
             </div>
 
             <div class="mb">
@@ -48,47 +48,47 @@
 
             <div class="mb">
                 <label class="label">Location</label>
-                <input type="text" name="location" class="form-control" required>
+                <input type="text" name="location" class="form-control" value="{{ old ('location') }}" required>
             </div>
         
 
             
             <div class="mb">
                 <label class="label">Opening Hours</label>
-                <input type="text" name="opening_hours" class="form-control" required>
+                <input type="text" name="opening_hours" class="form-control" value="{{ old ('opening_hours') }}" required>
             </div>
             <div class="mb">
                 <label class="label">Phone Number</label>
-                <input type="number" name="phone_number" class="form-control" required>
+                <input type="number" name="phone_number" class="form-control" value="{{ old ('phone_number') }}" required>
             </div>
             <div class="mb">
                 <label class="label">Email Adress</label>
-                <input type="email" name="email" class="form-control" required>
+                <input type="email" name="email" class="form-control" value="{{ old ('email') }}" required>
             </div>
             <div class="mb">
                 <label class="label">Instagram username</label>
-                <input type="text" name="instagram" class="form-control">
+                <input type="text" name="instagram" class="form-control" value="{{ old ('instagram') }}">
             </div>
             <div class="mb">
                 <label class="label">Facebook Username</label>
-                <input type="text" name="facebook" class="form-control">
+                <input type="text" name="facebook" class="form-control" value="{{ old ('facebook') }}">
             </div>
             <div class="mb">
                 <label class="label">Write a captivating description</label>
-                <textarea class="form-control" name="description" required rows="3"></textarea>
+                <textarea class="form-control" name="description" required rows="3" value="{{ old ('description') }}"></textarea>
             </div>
 
             <div class="mb">
                 <label class="label">Logo</label>
-                <input type="file" name="logo" class="form-control" required>
+                <input type="file" name="logo" class="form-control"  value="{{ old ('logo') }}" required>
             </div>
             <div class="mb">
                 <label class="label">Banner</label>
-                <input type="file" name="banner" class="form-control" required>
+                <input type="file" name="banner" class="form-control" value="{{ old ('banner') }}" required>
             </div>
             <div class="mb">
                 <label class="label">Additional Image to be displayed on website</label>
-                <input type="file" name="extra_image" class="form-control" required>
+                <input type="file" name="extra_image" class="form-control" value="{{ old ('extra_image') }}" required>
             </div>
                 <button type="submit">Add </button>
                 

@@ -168,7 +168,7 @@ class GymController extends Controller
             //dd($value);
             $clean =Profanity::blocker($value)->clean();
             if($clean==false){
-        return redirect()->back()->withErrors(['Error','Inappropriate language detected in input. Please change ' .$value]);
+        return redirect()->back()->withErrors(['Error','Inappropriate language detected in input. Please change ' .$value])->withInput();
         
             }
             
@@ -235,7 +235,7 @@ class GymController extends Controller
            // $mime=$logo_info['mime'];
 
             if(!($width==$height)){
-                return redirect()->back()->withErrors(['error', 'please enter a squared image']);
+                return redirect()->back()->withErrors(['error', 'please enter a squared image'])->withInput();
 
             } 
 
@@ -280,7 +280,7 @@ class GymController extends Controller
     } catch (\Exception $e){
         $error= "An error occured:". $e->getMessage();
         //return view ('gymIndividual', compact('error'));
-        return redirect()->back()->withErrors(['error'=>$error]);
+        return redirect()->back()->withErrors(['error'=>$error])->withInput();
     }
 
         
