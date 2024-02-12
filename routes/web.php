@@ -222,3 +222,7 @@ Route::get('/maps', function () {
 Route::get('/newmaps', function () {
     return view('newmaps');
 });
+
+//give only admin access once it works
+Route::get('/gps/create', 'App\Http\Controllers\GpsController@createGps')->name('gps.create'); 
+Route::post('/gps/store', 'App\Http\Controllers\GpsController@storeGps')->name('gps.store');
