@@ -135,7 +135,7 @@
             </div>
                     <div class="card-body">
                         
-                        <p class="card-text">Please enter a squared image (with equal width and height) for the logo. Please ensure that the banner is at least 1920x1080 pixels</p>
+                        <p class="card-text">Please enter a squared image (with equal width and height) for the logo. Please ensure that the banner is at least 1920x1080 pixels.</p>
                         
                     </div>
         </div>
