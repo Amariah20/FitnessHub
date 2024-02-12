@@ -12,6 +12,21 @@ $(document).ready(function(){
 });*/
 
 
+//ref for below: https://www.youtube.com/watch?v=FkibP9Wnreo&ab_channel=AndrewSchmelyun 
+//for newmaps.blade.php
+/*
+require('./bootstrap');
+window.Vue = require('vue');
+Vue.component('example-component', require ('.components/ExampleComponent.vue')).default
 
+import * as VueGoogleMaps from 'vue2-google-maps';
 
+Vue.use(VueGoogleMaps, {
+    load: {
+        key:'AIzaSyDQdqqTKe1wfqWcre5mWru75IVS7KAGFE8'
+    }
+});
 
+const app = new Vue({
+    el: '#app',
+});*/

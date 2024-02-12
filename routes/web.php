@@ -218,3 +218,7 @@ Route::post('UpdateUser','App\Http\Controllers\UserProfileController@UpdateUser'
 Route::get('/maps', function () {
     return view('maps');
 });
+
+Route::get('/newmaps', function () {
+    return view('newmaps');
+});
