@@ -6,7 +6,7 @@
 <!--icons: https://icons.getbootstrap.com/icons/info-circle/-->
 <link rel="stylesheet" type="text/css" href="/getStarted.css"> 
 
-@vite(['resources/sass/app.scss', 'resources/js/imageCheck.js'])
+
 <div class="add-gym">
 
 
