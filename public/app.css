@@ -89,7 +89,8 @@ body {
 
 .footer-middle{
     position:relative;
-    left: 25%;
+    
+    left: 40%;
     bottom:50%;
     color:black;
     font-size: 30px;
@@ -559,7 +560,7 @@ color: #e3b304;
 }
 
 .gym_info_left{
-  text-align: left;
+  text-align: center;
   /*margin-right: 55%;*/
   display: inline;
   /*display: flex;*/
@@ -821,7 +822,7 @@ color: #e3b304;
 }
 
 .gymss{
-    width:75%;
+    width:25%;
     flex:1;
    
 }
