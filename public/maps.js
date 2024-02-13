@@ -43,7 +43,7 @@ fetch('/locations')
                 title: title // this title must be the gym name from database. //change this to url that is within your page. 
                 });
 
-                  marker.addListener('click', function() { //this function is from stackoverflow: https://stackoverflow.com/questions/8769966/google-maps-api-open-url-by-clicking-on-marker 
+                  marker.addListener('click', function() { // used stackoverflow for help with this function: https://stackoverflow.com/questions/8769966/google-maps-api-open-url-by-clicking-on-marker 
                 //window.location.href = 'https://www.google.com/maps/search/?api=1&query='+lat+','+lng;
                 var googleMaps= 'https://www.google.com/maps/search/?api=1&query='+latlng.lat()+','+latlng.lng();
                 window.open(googleMaps, '_blank');
