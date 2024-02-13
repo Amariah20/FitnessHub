@@ -88,8 +88,16 @@
                 </svg>
             </div>
                     <div class="card-body">
-                        
-                        <p class="card-text">Tell customers the purpose of the class, which muscle groups are targeted, and what they can expect.</p>
+                        <!--the below instructions are from google maps documentation: https://support.google.com/maps/answer/18539?hl=en-GB&co=GENIE.Platform%3DDesktop  -->
+                        <p class="card-text">To get the coordinates for your business:
+
+                                    <li> Open <a href= "https://www.google.com/maps" target="_blank" style="color:blue; text-decoration:underline;">Google Maps</a>.  </li>
+
+                                    <li> Right-click the place or area on the map. </li>
+
+                                    <li> This will open a pop-up window. You can find your latitude and longitude in decimal format at the top. </li>
+
+                                    <li> To copy the coordinates automatically, left click on the latitude and longitude. </p></li>
                        
                         
                     </div>
@@ -105,7 +113,7 @@
             </div>
                     <div class="card-body">
                         
-                        <p class="card-text">Please state the number of people that can participate in this class.</p>
+                        <p class="card-text">Alternatively, visit the following website <a href= "https://www.latlong.net/" target="_blank" style="color:blue; text-decoration:underline;">latlong.net</a> and follow the provided instructions to find your latitude and longitude.</p>
                         
                     </div>
         </div>
@@ -118,7 +126,9 @@
             </div>
                     <div class="card-body">
                         
-                        <p class="card-text">If the class is included with the membership, please say so in the description, and set the price as 0.</p>
+                        <p class="card-text">To format your coordinates so that they work in Google Maps, use decimal places in the following format: 
+                            <li>Correct:41.40338, 2.17403 </li> 
+                            <li>Incorrect:41,40338, 2,17403 </li></p>
                         
                     </div>
         </div>
