@@ -13,13 +13,13 @@ fetch('/locations')
      //function initMap() {
     function initMap(locations) {
 
-       var aston = new google.maps.LatLng( 52.4862,-1.8881 ); //aston uni gps. Change this to Victoria seychelles
-
+       //var aston = new google.maps.LatLng( 52.4862,-1.8881 ); //aston uni gps. Change this to Victoria seychelles
+        var victoria = new google.maps.LatLng(-4.623540, 55.452492);
         
 
             const map =  new google.maps.Map(document.getElementById('map'),{
-                center: aston,  
-                zoom: 12,
+                center: victoria,  
+                zoom: 14,
                 mapTypeControl: true,
                 mapTypeControlOptions: {
                 style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
