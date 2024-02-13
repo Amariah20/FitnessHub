@@ -4,7 +4,7 @@
 <!--I used bootstrap for the forms to register gym: https://getbootstrap.com/docs/5.0/forms/form-control/-->
 <link rel="stylesheet" type="text/css" href="/getStarted.css"> 
 <div class="container">
-<h7>Step 3 of 5</h7>
+<h7>Step 3 of 6</h7>
 @if($errors->any())
 <div class="alert alert-danger">
     <ul>

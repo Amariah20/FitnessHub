@@ -4,7 +4,7 @@
 <!--I used bootstrap for the forms to register gym: https://getbootstrap.com/docs/5.0/forms/form-control/-->
 <link rel="stylesheet" type="text/css" href="/getStarted.css"> 
 <div class="container">
-<h7>Step 4 of 5</h7>
+<h7>Step 6 of 6</h7>
 @if($errors->any())
 <div class="alert alert-danger">
     <ul>
@@ -20,15 +20,12 @@
     </div>
 @endif
 
-@if(session('success_offering'))
-    <div class="alert alert-success">
-        {{ session('success_offering') }}
-    </div>
+
 
    
 
    
-@endif
+
 
 
 <div class="add-gym">
@@ -67,7 +64,11 @@
 
   
         <button type="submit">Add </button>
-       
+        <br><br><br>
+        
+        @if(session('success'))
+            <button type="submit"> <a href="{{ route('AdminFirst') }}">Next</a></button>
+        @endif
 
          
 </form>

@@ -12,7 +12,7 @@
 
 
 <div class="container">
-<h7>Step 1 of 5</h7>
+<h7>Step 1 of 6</h7>
 @if($errors->any())
 <div class="alert alert-danger">
     <ul>
