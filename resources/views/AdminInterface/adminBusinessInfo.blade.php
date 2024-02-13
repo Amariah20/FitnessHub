@@ -70,9 +70,19 @@
   <div class="info">
   <h4> Facebook: </h4> <h3>{{ $facebookUsername }}</h3>
   </div>
+  @if($gps)
+  <div class="info">
+  <h4> Latitude: </h4> <h3>{{ $gps->latitude }}</h3>
+  </div>
 
+  <div class="info">
+  <h4> Longitude: </h4> <h3>{{$gps->longitude }}</h3>
+  </div>
+  @endif
 
 </div>
+
+
 
 <br><br>
 <div class="edit-padding">

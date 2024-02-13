@@ -68,16 +68,30 @@
 
   <div class="info">
   <h4> Facebook: </h4> <h3>{{ $facebookUsername }}</h3>
-  </div><div class="info">
+  </div>
+
+  <!--check if user has that info before displaying-->
+ 
+  @if($gps)
+  <div class="info">
+  <h4> Latitude: </h4> <h3>{{ $gps->latitude }}</h3>
+  </div>
+
+  <div class="info">
+  <h4> Longitude: </h4> <h3>{{$gps->longitude }}</h3>
+  </div>
+  @endif
+</div>
+ 
+  <br><br><br>
+<div class="edit-padding">
+        <a href="{{route('EditGym', ['Gym_id' => $Gym_id] )}}"><button type= "submit" class="btn btn-info">Edit Business Information</button></a>
+ </div>
   
 
 
-</div>
 
-<br><br>
-<div class="edit-padding">
-<a href="{{route('EditGym', ['Gym_id' => $Gym_id] )}}"><button type= "submit" class="btn btn-info">Edit Business Information</button></a>
-</div>
+
 
 
 @endsection

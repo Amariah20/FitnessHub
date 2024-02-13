@@ -11,6 +11,7 @@ use App\Models\Classes;
 use App\Models\Equipment;
 use App\Models\Membership;
 use App\Models\Offerings;
+use App\Models\gps;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\ClassValidation;
 use App\Http\Requests\EquipmentValidation;
@@ -100,12 +101,15 @@ class AdminPanelController extends Controller
         $classes = Classes::where('gym_id', $Gym_id)->get();
         $offerings =  Offerings::where('gym_id',$Gym_id)->get();
         $memberships= Membership::where('gym_id', $Gym_id)->get();
+        $gps = gps::where('gym_id', $Gym_id)->first();
+
+        //dd($gps);
 
 
        
        // return redirect()->route('AdminInterface.adminWelcome',compact('Gym_id' ));
         //return view('AdminInterface.adminWelcome', compact('Gym_id'));
-        return view('AdminInterface.adminWelcome', compact('Gym_id', 'gym', 'classes', 'offerings','memberships', 'user'));
+        return view('AdminInterface.adminWelcome', compact('Gym_id', 'gym', 'classes', 'offerings','memberships', 'user', 'gps'));
     }
 
     public function AdminClass(Request $req, $Gym_id)
@@ -670,7 +674,8 @@ public function AdminBusiness(Request $req, $Gym_id){
     
     $gym = Gym::where('Gym_id', $Gym_id)->first();
     $user = Auth::user(); 
-    return view('AdminInterface.adminBusinessInfo', compact('gym','user','Gym_id'));
+    $gps = gps::where('gym_id', $Gym_id)->first();
+    return view('AdminInterface.adminBusinessInfo', compact('gym','user','Gym_id', 'gps'));
 }
 }
     
