@@ -46,7 +46,11 @@ fetch('/locations')
                 var title = location.name;
                 var latlng = new google.maps.LatLng (lat, lng );
                // console.log (lat, lng, name);
-                var icon = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'; //idc about this. can have a random icon for every business. 
+                var icon = { 
+                    url:'https://maps.google.com/mapfiles/ms/icons/red-dot.png', //https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png
+                    scaledSize: new google.maps.Size(60,60)
+                };
+                
                 createMarker (latlng, icon, title);
             });
 
@@ -55,6 +59,8 @@ fetch('/locations')
                 position: latlng, 
                 map: map,
                 icon:icon,
+                //label: ,
+
                 title: title // this title must be the gym name from database. //change this to url that is within your page. 
                 });
 
