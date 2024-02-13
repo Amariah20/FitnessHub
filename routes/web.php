@@ -103,6 +103,7 @@ Route::get('gymAll','App\Http\Controllers\GymController@list')->name('gymAll');
 //Route::get('gymAll/{filter?}','App\Http\Controllers\GymController@list')->name('gymAll'); //? means that filter is optional.
 Route::get('sortMembershipPrice','App\Http\Controllers\FilterSortController@sortMembershipPrice')->name('sortMembershipPrice');
 Route::get('filterLocation','App\Http\Controllers\FilterSortController@filterLocation')->name('filterLocation');
+Route::get('sortRating', 'App\Http\Controllers\FilterSortController@sortRating')->name('sortRating');
 Route::post('storeRating', 'App\Http\Controllers\RatingController@storeRating')->name('storeRating');
 
 Route::get('classesOfferings/{Gym_id}', 'App\Http\Controllers\GymController@showOfferings')->name('classesOfferings');
@@ -215,9 +216,8 @@ Route::match(['get','post'],'editUserDetails', 'App\Http\Controllers\UserProfile
 Route::post('UpdateUser','App\Http\Controllers\UserProfileController@UpdateUser')->name('UpdateUser');
 
 //maps
-Route::get('/maps', function () {
-    return view('maps');
-});
+Route::get('/maps', 'App\Http\Controllers\GpsController@displayMaps')->name('maps');
+Route::get('/locations', 'App\Http\Controllers\GpsController@locations')->name('locations');
 
 Route::get('/newmaps', function () {
     return view('newmaps');
@@ -226,3 +226,4 @@ Route::get('/newmaps', function () {
 //give only admin access once it works
 Route::get('/gps/create', 'App\Http\Controllers\GpsController@createGps')->name('gps.create'); 
 Route::post('/gps/store', 'App\Http\Controllers\GpsController@storeGps')->name('gps.store');
+

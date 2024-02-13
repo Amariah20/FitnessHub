@@ -37,7 +37,17 @@
         </select>
     </select>
     <button type="submit" class="btn btn-dark">Apply Filter</button>
-</form>   
+</form>   <br>
+
+<form action="{{'sortRating'}}" method="get" class="sort_filter">
+    <select name="sort_rating">
+    <option value="" disabled selected>Sort By Customer Reviews</option>
+        <option value="rating-low">Low to High</option>
+        <option value="rating-high">High to Low</option>
+    </select>
+    <button type="submit" class="btn btn-dark">Sort</button>
+
+</form>
 </div>
 
 

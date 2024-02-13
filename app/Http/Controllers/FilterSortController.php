@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Membership;
 use App\Models\Gym;
+use App\Models\Rating;
 use ConsoleTVs\Profanity\Facades\Profanity;
 
 class FilterSortController extends Controller
@@ -260,5 +261,43 @@ public function filterLocation(Request $req){
 
 
     }
+}
+
+    public function sortRating (Request $req){
+        //actually, put this into the existing sort function 
+        //what if a gym has no rating?? it wont be in the rating table.
+
+        //from highest rating to lowest rating
+        
+        //MUST CALCULATE AVERAGE RATING FOR THIS ONE x
+        $sort=$req->sort_rating;
+        
+        if ($sort=="rating-low"){
+           
+            $ratings = Rating::all()->sortBy('rating');
+            $gym_ids=$ratings->pluck('gym_id')->toArray(); 
+            
+            $gyms=Gym::whereIn('Gym_id',$gym_ids)->get();
+
+            $sortedGyms=collect([]);
+
+            foreach($ratings as $rating){
+                $gym=$gyms->where('Gym_id', $rating->gym_id)->first();
+                if($gym){
+                    $sortedGyms->push($gym);
+                }
+            }
+
+            $gyms=$sortedGyms;
+           
+            //must call paginate before calling gymAll route, all ways
+            $gyms= $gyms->paginate(5); //I used this to paginate the collection and to display 3 gyms per pages: https://gist.github.com/simonhamp/549e8821946e2c40a617c85d2cf5af5e 
+
+            return view ("/gymAll",compact('gyms'));
+
+
+        //from lowest rating to highest rating
+    }
+
 }
 }

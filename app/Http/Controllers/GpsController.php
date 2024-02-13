@@ -38,4 +38,17 @@ class GpsController extends Controller
         }  
 
     }
+
+    public function displayMaps(){
+        $locations = gps::all();
+        //dd($locations);
+
+        return view ('maps', compact('locations'));
+    }
+
+    public function locations(){
+        $locations = gps::all();
+        return response()->json ($locations);
+
+    }
 }
