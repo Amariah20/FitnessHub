@@ -6,8 +6,11 @@
         {{ session('no_result') }}
     </div>
 @endif
-
+<div class= "gym_maps">
+    <div class="gymss">
 <div class="gymAll">
+<!--<button class="btn btn-dark"><a href="{{ route('maps') }}">Map</a></button>-->
+<!--<a href=#maps id="hyperlink">Maps </a> -->
 
 <div class="form-sort">
 <form action="{{route('sortMembershipPrice')}}" method="get" class="sort_filter">
@@ -38,7 +41,7 @@
     </select>
     <button type="submit" class="btn btn-dark">Apply Filter</button>
 </form>   <br>
-
+<!--
 <form action="{{'sortRating'}}" method="get" class="sort_filter">
     <select name="sort_rating">
     <option value="" disabled selected>Sort By Customer Reviews</option>
@@ -47,7 +50,9 @@
     </select>
     <button type="submit" class="btn btn-dark">Sort</button>
 
-</form>
+</form>-->
+
+
 </div>
 
 
@@ -73,8 +78,20 @@
 </div>
 
     @endforeach
+</div>
    
 {{$gyms->links()}}
+</div>
+
+    <div class="maps" id="maps" >
+        <script type="text/javascript" src="{{asset('/maps.js') }}"></script>
+
+
+
+        <div class="container">
+            <div id="map" style= "height:1522px; width: 600px; padding-left:0px;">
+            </div>
+    </div>
 </div>
 
 @endsection

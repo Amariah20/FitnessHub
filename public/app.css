@@ -810,3 +810,26 @@ color: #e3b304;
     color:red;
 
 }
+
+/*gymAll and maps. split screen*/
+.gym_maps{
+    display:flex;
+    height:100%;
+    /*align-items: flex-start;
+    padding-bottom: 20px;
+    padding-top: 20px;*/
+}
+
+.gymss{
+    width:75%;
+    flex:1;
+   
+}
+
+.maps{
+    /*text-align: right;*/
+    
+   
+  
+}
+
