@@ -59,7 +59,7 @@ class GpsController extends Controller
 
     public function locations(){
         $locations = gps::all();
-        return response()->json ($locations);
+        return response()->json ($locations); //this goes to map.js
 
     }
 }
