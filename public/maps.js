@@ -13,7 +13,7 @@ fetch('/locations')
      //function initMap() {
     function initMap(locations) {
 
-        var aston = new google.maps.LatLng( 52.4862,-1.8881 ); //aston uni gps
+       var aston = new google.maps.LatLng( 52.4862,-1.8881 ); //aston uni gps. Change this to Victoria seychelles
 
         
 
@@ -40,10 +40,18 @@ fetch('/locations')
                 position: latlng, 
                 map: map,
                 icon:icon,
-                title: title // this title must be the gym name from database
+                title: title // this title must be the gym name from database. //change this to url that is within your page. 
                 });
 
+                  marker.addListener('click', function() { //this function is from stackoverflow: https://stackoverflow.com/questions/8769966/google-maps-api-open-url-by-clicking-on-marker 
+                //window.location.href = 'https://www.google.com/maps/search/?api=1&query='+lat+','+lng;
+                var googleMaps= 'https://www.google.com/maps/search/?api=1&query='+latlng.lat()+','+latlng.lng();
+                window.open(googleMaps, '_blank');
+            });
+
             }
+
+          
 
            
             
