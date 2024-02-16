@@ -169,7 +169,10 @@ p{
 
   }
 
+ .add-gym .info{
+  margin-left: -240px;
 
+ }
   /*easier method to split in half*/
 
   .register-info{
