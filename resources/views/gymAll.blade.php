@@ -73,7 +73,7 @@
    <h2>Location: {{$gym->general_location}}</h2>
     </div>
     <div class="gym_info_right">
-   <button class="btn btn-dark"><a href="{{ route('gymIndividual', ['Gym_id' => $gym->Gym_id]) }}">View</a></button>
+   <button class="btn btn-dark"><a href="{{ route('gymIndividual', ['Gym_id' => $gym->Gym_id]) }}">More Info</a></button>
     </div>
 </div>
 

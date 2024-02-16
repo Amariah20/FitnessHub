@@ -29,6 +29,8 @@ Route::get('/', function () {
 
 Route::get('/', 'App\Http\Controllers\GymController@list')->name('welcome');
 
+//Route::get('/', 'App\Http\Controllers\GymController@list')->name('welcome')->middleware('setPreviousUrl');
+
 
 Auth::routes();
 
