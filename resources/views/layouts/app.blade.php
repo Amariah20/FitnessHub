@@ -140,11 +140,18 @@
     </div>
 
     
-        @if(auth()->check())
-         @if(auth()->user()->is_admin && Route::currentRouteName() !== 'AdminFirst')
+        @if(auth()->check() && auth()->user()->is_admin)
+        @if(auth()->user()->gym->isEmpty() && Route::currentRouteName() !== 'registerGym/getStarted')
+         <div class="admin-panel-button">
+             <button class="btn btn-dark"><a href="{{ route('registerGym/getStarted')}}">Register Gym</a></button>
+         </div>
+         @elseif(auth()->user()->gym->isNotEmpty() && Route::currentRouteName() !== 'AdminFirst')
          <div class="admin-panel-button">
              <button class="btn btn-dark"><a href="{{ route('AdminFirst')}}">Admin Panel</a></button>
          </div>
+
+         
+         
          
          @endif
          @endif
