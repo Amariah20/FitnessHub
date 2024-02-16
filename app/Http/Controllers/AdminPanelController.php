@@ -23,7 +23,7 @@ use App\Http\Requests\updateMembershipValidation;
 use App\Http\Requests\updateEquipmentValidation;
 use App\Http\Requests\updateOfferingValidation;
 use ConsoleTVs\Profanity\Facades\Profanity;
-
+use Illuminate\Support\Facades\DB;
 
 
 class AdminPanelController extends Controller
@@ -228,11 +228,19 @@ class AdminPanelController extends Controller
         }
 
        //gps
+       $gps= gps::where('gym_id',$Gym_id)->first();   
        $gps->latitude= $req->latitude;
        $gps->longitude = $req->longitude;
 
 
+
+
+       //DB::transaction makes sure that both updates take place together. otherwise, only one will occur. if we tried to update both gym and gps details, only gym's would be updated
+       DB::transaction(function() use ($gym, $gps){
         $gym->update();
+        $gps->update();
+       });
+        
 
       
 
