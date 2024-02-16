@@ -39,12 +39,12 @@
 
     <div class="mb">
         <label class="label">Equipment Name</label>
-        <input type="text" name="name" class="form-control">
+        <input type="text" name="name"  value="{{ old ('name') }}" class="form-control">
     </div>
  
        <div class="mb">
         <label class="label">Equipment Description</label>
-        <textarea class="form-control" name="description"  rows="3"></textarea>
+        <textarea class="form-control" name="description" value="{{ old ('description') }}" rows="3"></textarea>
     </div>
 
     <div class="mb">
@@ -53,7 +53,7 @@
     <option>Select Gym</option>
             @foreach($gym as $gym)
                 
-                <option value="{{ $gym->Gym_id }}">{{ $gym->name }}</option>
+                <option value="{{ $gym->Gym_id }}" {{old('SelectedGymID')==$gym->Gym_id? 'selected':''}}>{{ $gym->name }}</option>
             @endforeach
        
     </select>

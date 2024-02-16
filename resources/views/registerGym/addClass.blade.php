@@ -38,31 +38,31 @@
 
     <div class="mb">
         <label class="label">Class Name</label>
-        <input type="text" name="name" class="form-control" required>
+        <input type="text" name="name" class="form-control"  value="{{ old ('name') }}" required>
     </div>
     <div class="mb">
         <label class="label">Class Location</label>
-        <input type="text" name="location" class="form-control" required>
+        <input type="text" name="location" class="form-control" value="{{ old ('location') }}" required>
     </div>
     <div class="mb">
         <label class="label">Class Description</label>
-        <textarea class="form-control" name="description" required rows="3"></textarea>
+        <textarea class="form-control" name="description" required rows="3" value="{{ old ('description') }}"></textarea>
     </div>
     <div class="mb">
         <label class="label">Class Schedule</label>
-        <textarea class="form-control" name="schedule" required rows="3"></textarea>
+        <textarea class="form-control" name="schedule" value="{{ old ('schedule') }}" required rows="3"></textarea>
     </div>
     <div class="mb">
         <label class="label">Class Capacity</label>
-        <input type="number" name="capacity" class="form-control" required>
+        <input type="number" name="capacity" class="form-control" value="{{ old ('capacity') }}" required>
     </div>
     <div class="mb">
         <label class="label">Class Duration (in minutes)</label>
-        <input type="number" name="duration" class="form-control" required>
+        <input type="number" name="duration" class="form-control" value="{{ old ('duration') }}" required>
     </div>
     <div class="mb">
         <label class="label">Class Price(SCR)</label>
-        <input type="number" name="price" class="form-control" required>
+        <input type="number" name="price" class="form-control"  value="{{ old ('price') }}" required>
     </div>
     
     <div class="mb">
@@ -71,7 +71,7 @@
     <option>Select Gym</option>
             @foreach($gym as $gym)
                 
-                <option value="{{ $gym->Gym_id }}">{{ $gym->name }}</option>
+                <option value="{{ $gym->Gym_id }}" {{old('SelectedGymID')==$gym->Gym_id? 'selected':''}}>{{ $gym->name }}</option>
             @endforeach
        
     </select>

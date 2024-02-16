@@ -40,16 +40,16 @@
 
     <div class="mb">
         <label class="label">Service Name</label>
-        <input type="text" name="name" class="form-control" required>
+        <input type="text" name="name" class="form-control"  value="{{ old ('name') }}" required>
     </div>
     <div class="mb">
         <label class="label">Service Price (SCR)</label>
-        <input type="number" name="price" class="form-control"  required>
+        <input type="number" name="price" class="form-control" value="{{ old ('price') }}" required>
     </div>
    
     <div class="mb">
         <label class="label">Service Description</label>
-        <textarea class="form-control" name="description"  rows="3" required></textarea>
+        <textarea class="form-control" name="description"  rows="3" value="{{ old ('description') }}" required></textarea>
     </div>
 
     <div class="mb">
@@ -58,7 +58,7 @@
     <option>Select Gym</option>
             @foreach($gym as $gym)
                 
-                <option value="{{ $gym->Gym_id }}">{{ $gym->name }}</option>
+                <option value="{{ $gym->Gym_id }}" {{old('SelectedGymID')==$gym->Gym_id? 'selected':''}}>{{ $gym->name }}</option>
             @endforeach
        
     </select>

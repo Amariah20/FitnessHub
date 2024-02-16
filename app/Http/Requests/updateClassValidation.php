@@ -26,8 +26,8 @@ class updateClassValidation extends FormRequest
             'location'=>'string|max:255',
             'description'=>'string|max:255',
             'schedule'=> 'string|max:255',
-            'capacity'=>'numeric',
-            'duration'=>'numeric',
+            'capacity'=>'numeric|gt:0',
+            'duration'=>'numeric|gt:0',
             'price'=>'numeric|gt:0',
         ];
     }

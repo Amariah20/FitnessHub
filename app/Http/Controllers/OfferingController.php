@@ -44,7 +44,7 @@ class OfferingController extends Controller
            
             if (($req->SelectedGymID== "Select Gym")) {
                 
-                return redirect()->back()->withErrors(['error' => 'Please select a gym before adding an offering.']);
+                return redirect()->back()->withErrors(['error' => 'Please select a gym before adding an offering.'])->withInput();
            }
 
 
@@ -58,7 +58,7 @@ class OfferingController extends Controller
             //dd($value);
             $clean =Profanity::blocker($value)->clean();
             if($clean==false){
-        return redirect()->back()->withErrors(['Error','Inappropriate language detected in input. Please change ' .$value]);
+        return redirect()->back()->withErrors(['Error','Inappropriate language detected in input. Please change ' .$value])->withInput();
         
             }
             
@@ -89,7 +89,7 @@ class OfferingController extends Controller
         } catch (\Exception $e){
             $error= "An error occured:". $e->getMessage();
             //return view ('gymIndividual', compact('error'));
-            return redirect()->back()->withErrors(['error'=>$error]);
+            return redirect()->back()->withErrors(['error'=>$error])->withInput();
         }  
 
       }

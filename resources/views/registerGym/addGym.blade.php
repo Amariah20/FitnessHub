@@ -38,11 +38,11 @@
                 <label class="label">General Location</label><br>
                 <select name="general_location" >
                     <option value="" disabled selected>Select Location</option>
-                    <option value ="north">North</option>
-                    <option value ="east">East</option>
-                    <option value ="south">South</option>
-                    <option value ="west">West</option>
-                    <option value ="central">Central</option>
+                    <option value ="north" {{old('general_location')=='north'? 'selected':''}}>North</option>
+                    <option value ="east" {{old('general_location')=='east'? 'selected':''}}>East</option>
+                    <option value ="south" {{old('general_location')=='south'? 'selected':''}}>South</option>
+                    <option value ="west" {{old('general_location')=='west'? 'selected':''}}>West</option>
+                    <option value ="central" {{old('general_location')=='central'? 'selected':''}}>Central</option>
                 </select>
             </div>
 

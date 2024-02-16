@@ -42,12 +42,12 @@
     </div>-->
     <div class="mb">
         <label class="label">Latitude</label>
-        <input type="float" name="latitude" class="form-control"  >
+        <input type="float" name="latitude" class="form-control"  value="{{ old ('price') }}"  >
     </div>
 
     <div class="mb">
         <label class="label">Longitude</label>
-        <input type="float" name="longitude" class="form-control"  >
+        <input type="float" name="longitude" class="form-control"  value="{{ old ('price') }}" >
     </div>
     <div class="mb">
     <label class="label">Which gym do you want to associate with this class?</label>
@@ -55,7 +55,7 @@
     <option>Select Gym</option>
             @foreach($gym as $gym)
                 
-                <option value="{{ $gym->Gym_id }}">{{ $gym->name }}</option>
+                <option value="{{ $gym->Gym_id }}" {{old('SelectedGymID')==$gym->Gym_id? 'selected':''}}>{{ $gym->name }}</option>
             @endforeach
        
     </select>

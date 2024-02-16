@@ -41,7 +41,7 @@ class EquipmentController extends Controller
            
             if (($req->SelectedGymID== "Select Gym")) {
                 //return 'Please select a gym before adding a membership.';
-                return redirect()->back()->withErrors(['error' => 'Please select a gym before adding equipments.']);
+                return redirect()->back()->withErrors(['error' => 'Please select a gym before adding equipments.'])->withInput();
            }
              /**put all input values ($req->all()) into an array.  iterate over it. as long as coun<array.length, 
          * input the value into profitanity checker. test if clear()==true, if so, check next array value. else, stop the loop and
@@ -53,7 +53,7 @@ class EquipmentController extends Controller
             //dd($value);
             $clean =Profanity::blocker($value)->clean();
             if($clean==false){
-        return redirect()->back()->withErrors(['Error','Inappropriate language detected in input. Please change ' .$value]);
+        return redirect()->back()->withErrors(['Error','Inappropriate language detected in input. Please change ' .$value])->withInput();
         
             }
             
@@ -81,7 +81,7 @@ class EquipmentController extends Controller
         } catch (\Exception $e){
             $error= "An error occured:". $e->getMessage();
             //return view ('gymIndividual', compact('error'));
-            return redirect()->back()->withErrors(['error'=>$error]);
+            return redirect()->back()->withErrors(['error'=>$error])->withInput();
         }     
 
       }

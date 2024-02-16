@@ -9,7 +9,13 @@
 <div class="container">
 <h7>Step 2 of 6</h7>
 @if($errors->any())
-
+<div class="alert alert-danger">
+    <ul>
+        @foreach($errors->all() as $error)
+        <li>{{ $error}}</li>
+        @endforeach
+    </ul>
+</div>
 @endif
 @if (session('success'))
     <div class="alert alert-success">
@@ -33,26 +39,26 @@
 
     <div class="mb">
         <label class="label">Membership Name</label>
-        <input type="text" name="name" class="form-control" required>
+        <input type="text" name="name" class="form-control"  value="{{ old ('name') }}" required>
     </div>
     <div class="mb">
         <label class="label">Membership Price (SCR)</label>
-        <input type="number" name="price" class="form-control"  required>
+        <input type="number" name="price" class="form-control"  value="{{ old ('price') }}" required>
     </div>
  
     <div class="mb">
         <label class="label">Membership Description</label>
-        <textarea class="form-control" name="description"  rows="3" required></textarea>
+        <textarea class="form-control" name="description"  rows="3" value="{{ old ('description') }}"  required></textarea>
     </div>
     
     <div class="mb">
         <label class="label">Membership Type</label>
         <select name="membership_type" >
             <option value="" disabled selected>Select Membership Type</option>
-            <option value ="annual">Annual</option>
-            <option value ="monthly">Monthly</option>
-            <option value ="weekly">Weekly</option>
-            <option value ="daily">Daily</option>
+            <option value ="annual" {{old('membership_type')=='annual'? 'selected':''}}>Annual</option>
+            <option value ="monthly"  {{old('membership_type')=='monthly'? 'selected':''}}>Monthly</option>
+            <option value ="weekly"  {{old('membership_type')=='weekly'? 'selected':''}}>Weekly</option>
+            <option value ="daily"  {{old('membership_type')=='daily'? 'selected':''}}>Daily</option>
         </select>
     </div>
     
@@ -63,7 +69,7 @@
     <option>Select Gym</option>
             @foreach($gym as $gym)
                 
-                <option value="{{ $gym->Gym_id }}">{{ $gym->name }}</option>
+                <option value="{{ $gym->Gym_id }}" {{old('SelectedGymID')==$gym->Gym_id? 'selected':''}}>{{ $gym->name }}</option>
             @endforeach
        
     </select>

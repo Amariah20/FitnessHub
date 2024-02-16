@@ -28,7 +28,7 @@ class GpsController extends Controller
             $SelectedGymID= $req -> SelectedGymID;
 
            if(!empty(gps::where('gym_id', $SelectedGymID)->first())){
-                return redirect()->back()->withErrors(['error'=>'Each gym can have only one GPS coordinates. Coordinates can be updated in the admin panel.']);
+                return redirect()->back()->withErrors(['error'=>'Each gym can have only one GPS coordinates. Coordinates can be updated in the admin panel.'])->withInput();
            }
 
            $validate = $req->validated();
@@ -58,7 +58,7 @@ class GpsController extends Controller
         }catch (\Exception $e){
             $error= "An error occured:". $e->getMessage();
             
-            return redirect()->back()->withErrors(['error'=>$error]);
+            return redirect()->back()->withErrors(['error'=>$error])->withInput();
         }  
 
     }

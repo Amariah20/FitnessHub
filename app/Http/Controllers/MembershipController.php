@@ -46,7 +46,7 @@ class MembershipController extends Controller
            
             if (($req->SelectedGymID== "Select Gym")) {
                 //return 'Please select a gym before adding a membership.';
-                return redirect()->back()->withErrors(['error' => 'Please select a gym before adding memberships.']);
+                return redirect()->back()->withErrors(['error' => 'Please select a gym before adding memberships.'])->withInput();
            }
 
             /**put all input values ($req->all()) into an array.  iterate over it. as long as coun<array.length, 
@@ -59,7 +59,7 @@ class MembershipController extends Controller
             //dd($value);
             $clean =Profanity::blocker($value)->clean();
             if($clean==false){
-        return redirect()->back()->withErrors(['Error','Inappropriate language detected in input. Please change ' .$value]);
+        return redirect()->back()->withErrors(['Error','Inappropriate language detected in input. Please change ' .$value])->withInput();
         
             }
             
@@ -101,7 +101,7 @@ class MembershipController extends Controller
             $error= "There has been an error:". $exception->getMessage();
             //return view ('gymIndividual', compact('error'));
             //return redirect()->back()->with('error', $error);
-            return redirect()->back()->withErrors(['error'=>$error]);
+            return redirect()->back()->withErrors(['error'=>$error])->withInput();
         }
         }
 }
