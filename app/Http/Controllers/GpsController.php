@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\GpsValidation;
 use Illuminate\Http\Request;
 use App\Models\gps;
 use App\Models\Gym;
@@ -18,7 +19,7 @@ class GpsController extends Controller
         return view ('registerGym.inputGps', compact('gym'));
     }
 
-    public function storeGps(Request $req){
+    public function storeGps(GpsValidation $req){
         try{
 
             //dd('work');
@@ -29,6 +30,9 @@ class GpsController extends Controller
            if(!empty(gps::where('gym_id', $SelectedGymID)->first())){
                 return redirect()->back()->withErrors(['error'=>'Each gym can have only one GPS coordinates. Coordinates can be updated in the admin panel.']);
            }
+
+           $validate = $req->validated();
+           if ($validate ==true){
 
 
             $gym = Gym::where('Gym_id',  $SelectedGymID)->first();
@@ -49,7 +53,7 @@ class GpsController extends Controller
 
             return redirect()->back()->with('success', 'Gps coordinates successfully added!');
 
-
+           }
 
         }catch (\Exception $e){
             $error= "An error occured:". $e->getMessage();
