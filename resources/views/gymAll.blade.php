@@ -15,15 +15,18 @@
 <div class="form-sort">
 <form action="{{route('sortMembershipPrice')}}" method="get" class="sort_filter">
     <select  name="sort">
-    <option value="" disabled selected>Sort By Membersh Price</option>
-        <option value="monthly-low">Monthly (Low to High)</option>
-        <option value="monthly-high">Monthly (High to Low)</option>
-        <option value="annual-low">Annual (Low to High)</option>
-        <option value="annual-high">Annual (High to Low)</option>
-        <option value="daily-low">Daily (Low to High)</option>
-        <option value="daily-high">Daily (High to Low)</option>
-        <option value="weekly-low">Weekly (Low to High)</option>
-        <option value="weekly-high">Weekly (High to Low)</option>
+    <option value="" disabled selected>Sorty By:</option>
+        <option value="rating">Avg. Customer Rating</option>
+        <option value="monthly-low">Monthly Membership Price: Low to High</option>
+        <option value="monthly-high">Monthly Membership Price: High to Low</option>
+        <option value="annual-low">Annual Membership Price: Low to High</option>
+        <option value="annual-high">Annual Membership Price: High to Low</option>
+        <option value="daily-low">Daily Membership Price: Low to High</option>
+        <option value="daily-high">Daily Membership Price: High to Low</option>
+        <option value="weekly-low">Weekly Membership Price: Low to High</option>
+        <option value="weekly-high">Weekly Membership Price: High to Low</option>
+       
+       
     </select>
     <button type="submit" class="btn btn-dark">Sort</button>
 </form>   <br>

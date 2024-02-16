@@ -141,6 +141,7 @@ class AdminPanelController extends Controller
     public function AdminEquipment (Request $req, $Gym_id){
         $user = Auth::user();
         $equipments= Equipment::where('Gym_id', $Gym_id)->get();
+        
 
         return view('AdminInterface.adminEquipment', compact ('Gym_id', 'equipments', 'user'));
 
@@ -153,7 +154,9 @@ class AdminPanelController extends Controller
        // $gym = Gym::find($Gym_id);
        $gym = Gym::where('Gym_id', $Gym_id)->first();
        $Gym_id= $Gym_id;
-        return view ('AdminInterface.editGym', compact('gym', 'Gym_id', 'user'));
+       $gps = gps::where('gym_id', $Gym_id)->first();
+
+        return view ('AdminInterface.editGym', compact('gym', 'Gym_id', 'user','gps'));
 
     }
 
@@ -223,10 +226,14 @@ class AdminPanelController extends Controller
             $gym->extra_image=$extra;
            }
         }
-    
+
+       
    
 
         $gym->update();
+
+      
+
     
         //return('done');
         //return redirect()->route('AdminWelcome', compact('Gym_id', 'gym'))->with('Success','Gym Updated Successfully');
@@ -246,6 +253,36 @@ class AdminPanelController extends Controller
     }
 
     }
+
+
+    //for gps
+    public function UpdateGps(Request $req, $gps_id){
+
+        //dd($gps_id); //works
+
+        try{
+           // $gps = gps::where('id', $gps_id)->get(); //use first?? 
+            $gps = gps::where('id', $gps_id)->first();
+            //dd($gps); //working 
+            $lat = $req->latitude;
+            $long = $req->longitude;
+
+            $gps->latitude= $lat;
+            $gps->longitude =$long;
+
+            //dd($lat,$long); //working
+            $gps->update();
+
+            return redirect()->with('Success', 'Gps Updated Successfully');
+
+        }catch (\Exception $e){
+            $error= "An error occured:". $e->getMessage();
+            //return view ('gymIndividual', compact('error'));
+            return redirect()->back()->withErrors(['error'=>$error]);
+        }
+
+    }
+    
 
     public function EditClass($Class_id){
         // $gym = Gym::find($Gym_id);
@@ -318,6 +355,7 @@ class AdminPanelController extends Controller
                 $membership->price=$req->price;
                 $membership->membership_type=$req->membership_type;
             }
+            
         $membership->update();
 
         return redirect()->route('AdminMembership', ['Gym_id' => $membership->gym_id] )->with('Success', 'Membership updated successfully');

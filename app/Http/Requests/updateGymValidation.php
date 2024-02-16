@@ -33,7 +33,7 @@ class updateGymValidation extends FormRequest
             'description'=>'string',
             'general_location' => 'string|in:north,east,south,west,central',
             'logo'=>'image|mimes:jpg,png,jpeg',
-            'banner'=> 'required|image|mimes:jpg,png,jpeg|dimensions:min_width=1920,min_height=1080',
+            'banner'=> 'image|mimes:jpg,png,jpeg|dimensions:min_width=1920,min_height=1080',
             'extra_image'=> 'image|mimes:jpg,png,jpeg'
         ];
     }

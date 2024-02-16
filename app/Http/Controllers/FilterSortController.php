@@ -17,7 +17,7 @@ class FilterSortController extends Controller
          * throw an exception
         **/    
 
-        $allInput= $req->all();
+      /*  $allInput= $req->all();
         foreach($allInput as $value){
             //dd($value);
             $clean =Profanity::blocker($value)->clean();
@@ -26,9 +26,8 @@ class FilterSortController extends Controller
         
             }
             
-        }
+        }*/
         $sort=$req->sort;
-        
         if ($sort=="monthly-low"){
            
             $memberships=Membership::where('membership_type','monthly')->get();
@@ -219,6 +218,75 @@ class FilterSortController extends Controller
 
         return view ("/gymAll",compact('gyms'));
                
+    }else if($sort=="rating"){
+
+        //get all the ratings from the ratings table.
+        //take a gym_id, find all the ratings associated with it. get the average rating.
+        //do that for every gym in the table. then sort by avg rating. 
+
+        //IDEA 2: I have average rating for each gym, on all the individual gym page. why don't i create a table with avg rating and gym id? but what happens when there are new ratings? will the table keep updating? 
+        //in gym individual, I am calculating the avg ratings at run time. 
+
+        $ratings = Rating::all();
+
+        //avg= sum/count
+      
+        $avg_ratings=[];
+
+        foreach ($ratings as $rating){
+            $gym_id = $rating->gym_id;
+            //$ratings_for_this_gym = $ratings ->where('gym_id', $gym_id); //but if we have 10 records in table, 3 of which are ratings for the same gym, how would i make sure that i am not entering that again?
+            //$review = $rating->rating;
+            if(array_key_exists($gym_id, $avg_ratings)){ //check if gym id already exists in the array. if it exists, add rating to existing array. if not, create new array for gym_id
+                $avg_ratings [$gym_id][]= $rating->rating;
+            } else{
+                $avg_ratings[$gym_id]= [$rating->rating];
+            }
+
+        } //avg_ratings has arrays of ratings for each gym
+        //dd($avg_ratings);
+
+        foreach ($avg_ratings as $gym_id=> $ratings_array){ //calculating avg rating for each gym
+            $avg_rating = array_sum($ratings_array)/ count($ratings_array); //calculate avg rating for current gym
+            $avg_ratings [$gym_id] = $avg_rating;
+        } 
+
+        //dd($avg_ratings);
+
+        //display gym with highest avg rating first. then display the gyms with no ratings
+      //  $avg_ratings ->sortBy('avg_rating');
+      //$avg_ratings ->rsort('avg_rating');
+
+      arsort($avg_ratings);  //sorts arrays in descending order, according to the value
+
+      //dd($avg_ratings);
+      
+      $sorted_gyms=collect([]);
+
+      foreach($avg_ratings as $gym_id=>$avg_rating){
+          $gym=Gym::where('Gym_id', $gym_id)->first();
+          if($gym){
+              $sorted_gyms->push($gym);
+          }
+      }
+
+      //display gym with highest avg rating first. then display the gyms with no ratings
+      $all_gyms= Gym::orderBy('name', 'asc')->get();
+      if (!empty($sorted_gyms)){
+        $gyms= $sorted_gyms->concat($all_gyms);  //The concat method appends the given array or collection's values onto the end of another collection
+     } else{
+        $gyms = $all_gyms;
+       }
+
+
+       $gyms= $gyms->paginate(5);
+    
+        //$gyms= $sorted_gyms->paginate(5); 
+
+        
+      return view ("/gymAll",compact('gyms'));
+
+
     }
 }
 
@@ -263,6 +331,8 @@ public function filterLocation(Request $req){
     }
 }
 
+/*
+
     public function sortRating (Request $req){
         //actually, put this into the existing sort function 
         //what if a gym has no rating?? it wont be in the rating table.
@@ -299,5 +369,5 @@ public function filterLocation(Request $req){
         //from lowest rating to highest rating
     }
 
-}
+}*/
 }

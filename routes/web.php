@@ -172,6 +172,7 @@ Route::get('EditEquipment/{Equipment_id}','App\Http\Controllers\AdminPanelContro
 Route::patch('UpdateEquipment/{Equipment_id}','App\Http\Controllers\AdminPanelController@UpdateEquipment')->name('UpdateEquipment');
 Route::get('EditOffering/{Offering_id}','App\Http\Controllers\AdminPanelController@EditOffering')->name('EditOffering');
 Route::patch('UpdateOffering/{Offering_id}','App\Http\Controllers\AdminPanelController@UpdateOffering')->name('UpdateOffering');
+Route::patch('UpdateGps/{gps_id}','App\Http\Controllers\AdminPanelController@UpdateGps')->name('UpdateGps');
 Route::get('AdminAddClass/{Gym_id}','App\Http\Controllers\AdminPanelController@AdminCreateClass')->name('AdminAddClass');
 Route::post('AdminClassStore/{Gym_id}', 'App\Http\Controllers\AdminPanelController@AdminClassStore')->name('AdminClassStore');
 Route::get('AdminAddMembership/{Gym_id}','App\Http\Controllers\AdminPanelController@AdminCreateMembership')->name('AdminAddMembership');
