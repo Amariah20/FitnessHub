@@ -18,6 +18,7 @@ use App\Models\Rating;
 use ConsoleTVs\Profanity\Facades\Profanity;
 use App\Models\FavouriteGym;
 use Illuminate\Support\Facades\Auth;
+use App\Models\gps;
 
 
 
@@ -68,7 +69,12 @@ class GymController extends Controller
        $ratingsAverage=  Rating::where('gym_id', $Gym_id)->where('approved', 'approved')->avg('rating');
        //dd($ratingsAverage);
 
-       return view('gymIndividual', compact('gym', 'memberships', 'count', 'numOfclasses','numOfofferings', 'numequipment', 'ratings', 'ratingsAverage'));
+       $gps= gps::where('gym_id', $Gym_id)->first();
+
+       //dd($gps);
+
+
+       return view('gymIndividual', compact('gym', 'memberships', 'count', 'numOfclasses','numOfofferings', 'numequipment', 'ratings', 'ratingsAverage', 'gps'));
     } catch (\Exception $e){
         $error= "An error occured:". $e->getMessage();
         //return view ('gymIndividual', compact('error'));
