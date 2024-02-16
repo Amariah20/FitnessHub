@@ -67,7 +67,7 @@
         <br><br><br>
         
         
-        <button type="submit"> <a href="{{ route('AdminFirst') }}">Next</a></button>
+     <!--   <button type="submit"> <a href="{{ route('AdminFirst') }}">Next</a></button>-->
         
 
          

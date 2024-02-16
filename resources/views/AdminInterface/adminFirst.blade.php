@@ -1,6 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
+@if($errors->any())
+<div class="alert alert-danger">
+    <ul>
+        @foreach($errors->all() as $error)
+        <li>{{ $error}}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
+@if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
 <link rel="stylesheet" type="text/css" href="/getStarted.css">
 <div class="admin-first">
 

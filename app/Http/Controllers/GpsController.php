@@ -51,7 +51,8 @@ class GpsController extends Controller
 
             $gps->save();
 
-            return redirect()->back()->with('success', 'Gps coordinates successfully added!');
+            
+            return redirect()->route('AdminFirst')->with('success', 'Gps coordinates successfully added!');
 
            }
 
