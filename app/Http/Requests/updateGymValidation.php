@@ -34,7 +34,9 @@ class updateGymValidation extends FormRequest
             'general_location' => 'string|in:north,east,south,west,central',
             'logo'=>'image|mimes:jpg,png,jpeg',
             'banner'=> 'image|mimes:jpg,png,jpeg|dimensions:min_width=1920,min_height=1080',
-            'extra_image'=> 'image|mimes:jpg,png,jpeg'
+            'extra_image'=> 'image|mimes:jpg,png,jpeg',
+            'latitude'=> 'numeric|between: -90.0000000,90.0000000',
+            'longitude'=>'numeric|between: -180.0000000,180.0000000'
         ];
     }
 }

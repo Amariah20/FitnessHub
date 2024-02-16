@@ -96,17 +96,17 @@
     <input type="file" class="form-control-file" name="extra_image" class="form-control" >
   </div>
 
-  <!--
+  
   
   <div class="form-group">
     <label>Latitude</label>
-    <input type="text" name="facebook" value="{{ $gps->latitude }}" class="form-control">
+    <input type="text" name="latitude" value="{{ $gps->latitude }}" class="form-control">
   </div>
 
   <div class="form-group">
     <label>Longitude</label>
-    <input type="text" name="facebook" value="{{  $gps->longitude  }}" class="form-control">
-  </div>-->
+    <input type="text" name="longitude" value="{{  $gps->longitude  }}" class="form-control">
+  </div>
 
 
   <button id="update-button" type= "submit" class="btn btn-info">Update </button> <br>
@@ -116,6 +116,7 @@
 </div>
 
 
+<!--
 <div id="edit" class="container">
 <div class="card-header">Edit Gps Coordinate</div>
 
@@ -136,7 +137,7 @@
   <button id="update-button" type= "submit" class="btn btn-info">Update </button> <br>
 
 </form>
-</div>
+</div>-->
 
 
 @endsection

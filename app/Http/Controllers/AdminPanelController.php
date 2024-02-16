@@ -227,8 +227,10 @@ class AdminPanelController extends Controller
            }
         }
 
-       
-   
+       //gps
+       $gps->latitude= $req->latitude;
+       $gps->longitude = $req->longitude;
+
 
         $gym->update();
 
@@ -255,6 +257,7 @@ class AdminPanelController extends Controller
     }
 
 
+    /***
     //for gps
     public function UpdateGps(Request $req, $gps_id){
 
@@ -281,7 +284,7 @@ class AdminPanelController extends Controller
             return redirect()->back()->withErrors(['error'=>$error]);
         }
 
-    }
+    }*/
     
 
     public function EditClass($Class_id){

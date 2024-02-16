@@ -24,10 +24,19 @@ class GpsController extends Controller
             //dd('work');
 
             //$name = $req->name; //retrieve from gym_id
+            $SelectedGymID= $req -> SelectedGymID;
+
+           if(!empty(gps::where('gym_id', $SelectedGymID)->first())){
+                return redirect()->back()->withErrors(['error'=>'Each gym can have only one GPS coordinates. Coordinates can be updated in the admin panel.']);
+           }
+
+
+            $gym = Gym::where('Gym_id',  $SelectedGymID)->first();
+            
             $lat = $req->latitude;
             $lng = $req-> longitude;
-            $SelectedGymID= $req -> SelectedGymID;
-            $gym = Gym::where('Gym_id',  $SelectedGymID)->first();
+           
+           
             $name= $gym->name;
 
             $gps = new \App\Models\gps();
