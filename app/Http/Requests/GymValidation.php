@@ -37,7 +37,7 @@ class GymValidation extends FormRequest
             'name'=>'required|string|', //I dont think the regex is a good idea. what if some gyms have a unique name that starts with a number
             'location'=>'required|string',
             'opening_hours'=>'required|string',
-            'phone_number'=>'required|numeric|gt:0',
+            'phone_number'=>'required|numeric|gt:0|digits_between:1,20',
             'email'=>'required|email',
             'instagram'=>'nullable|string',
             'facebook'=>'nullable|string',

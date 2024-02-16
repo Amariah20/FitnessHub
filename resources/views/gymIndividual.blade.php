@@ -104,7 +104,7 @@
 </div>
 
 <div class="extra_img">
-    <img src="{{ asset('public/images/uploaded/gym_' . $gym->user_id.$gym->name . '/' . $gym->extra_image) }}" alt="extra image" >
+    <img src="{{ asset('public/images/uploaded/gym_' . $gym->user_id.$gym->name . '/' . $gym->extra_image) }}" alt="extra image" style="width:500px; height: 500px;" >
 </div>
 </div>
 
