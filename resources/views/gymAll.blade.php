@@ -42,7 +42,7 @@
             <option value ="central">Central</option>
         </select>
     </select>
-    <button type="submit" class="btn btn-dark">Apply Filter</button>
+    <button type="submit" class="btn btn-dark">Filter</button>
 </form>   <br>
 <!--
 <form action="{{'sortRating'}}" method="get" class="sort_filter">
