@@ -23,7 +23,7 @@ class OfferingValidation extends FormRequest
     {
         return [
             'name'=> 'required|string|max:255',
-            'price'=>'required|numeric|gt:0',
+            'price'=>'required|numeric|gte:0',
             'description'=>'required|string|max:255',
         ];
     }
