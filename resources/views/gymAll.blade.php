@@ -15,7 +15,7 @@
 <div class="form-sort">
 <form action="{{route('sortMembershipPrice')}}" method="get" class="sort_filter">
     <select  name="sort">
-    <option value="" disabled selected>Sorty By:</option>
+    <option value="" disabled selected>Sort By:</option>
         <option value="rating">Avg. Customer Rating</option>
         <option value="monthly-low">Monthly Membership Price: Low to High</option>
         <option value="monthly-high">Monthly Membership Price: High to Low</option>
