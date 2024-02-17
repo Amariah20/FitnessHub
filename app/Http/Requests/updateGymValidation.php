@@ -26,7 +26,7 @@ class updateGymValidation extends FormRequest
             'name'=>'string',
             'location'=>'string',
             'opening_hours'=>'string',
-            'phone_number'=>'numeric|gt:0',
+            'phone_number'=>'numeric|gt:0|digits_between:1,20',
             'email'=>'email',
             'instagram'=>'nullable|string',
             'facebook'=>'nullable|string',
