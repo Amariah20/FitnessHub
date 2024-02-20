@@ -120,6 +120,8 @@ a:link {
     margin: 0;
     padding: 0;
 }
+
+/*gym individual*/
 .rate {
     float: left;
     height: 46px;
@@ -164,6 +166,22 @@ a:link {
 #ratingForm{
     width:25%;
 }
+
+/*trying responsive layout*/
+
+.wrapper{
+  display: flex;  
+  flex-flow: row wrap;
+  font-weight: bold;
+ 
+}
+
+.wrapper > * {
+    padding: 10px;
+    flex: 1 100%;
+  }
+
+  
 
 .gym_info{
  padding: 20px 20px 20px 20px;

@@ -8,7 +8,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>--> <!--for the bookmark icon. from: https://www.w3schools.com/icons/tryit.asp?filename=trybs_ref_glyph_bookmark -->
     
   
- 
+
+<div class="wrapper">
 
 <div class="banner">
     <img src="{{ asset('public/images/uploaded/gym_' . $gym->user_id.$gym->name . '/' . $gym->banner) }}" alt="banner" style="width:100%; height:600px">
@@ -82,16 +83,12 @@
 </div>
 
 
-<div class="row">
+<!--<div class="row">-->
     
 <div class="location_img">
-<div class="col-8">
+<!--<div class="col-8">-->
     <div class="location_hours">
-      <!--  <h4 class="sub-heading">Location</h4>
-    <ul class="location">    
-      <li>  {{$gym->location}} </li>
-      <li>  {{$gym->general_location}} </li>
-    </ul>-->
+     
 
     <h4 class="sub-heading">Opening Hours</h4>
     <div class= "hours">
@@ -103,15 +100,15 @@
         @endforeach
     </div>
     </div>
-</div>
+<!--</div>-->
 
-<div class="col-4">
+<!--<div class="col-4">-->
 <div class="extra_img">
     <img src="{{ asset('public/images/uploaded/gym_' . $gym->user_id.$gym->name . '/' . $gym->extra_image) }}" alt="extra image" style="width:500px; height: 500px;" >
 </div>
+<!--</div>-->
 </div>
-</div>
-</div>
+<!--</div>-->
 
 <div class="memberships">
 <h4 class="sub-heading">Memberships</h4>
@@ -126,9 +123,9 @@
 </div>
  
 
-<div class="row">
+<!--<div class="row">-->
 <div class="classes_equipments">
-<div class="col-6">
+<!--<div class="col-6">-->
     <div class="classes">
         @if($count>=1)
             @if($numOfclasses>=1 && $numOfofferings==0 )
@@ -150,9 +147,9 @@
            
             @endif
     </div>
-</div>
+<!--</div>-->
 
-<div class="col-6">
+<!--<div class="col-6">-->
     <div class="equipments">
         @if($numequipment>=1)
         <h5 class ="view">View Our Equipments</h5>
@@ -163,10 +160,10 @@
     </div>
         
 </div>
-</div>
-</div>
+<!--</div>
+</div>-->
 
-<div class="row">
+
     
 <h4 class="sub-heading" id="contact">Contact us</h4>
 <div class="contact_split">
@@ -233,7 +230,7 @@
      </div>
 </div> 
 </div>
-</div>
+
 <!--<p>MOVE THIS TO THE OTHER SIDE OF THE PAGE. HAVE A SPLIT SCREEN. ELSE IF IT'S BELOW, IT WILL SCROLL UP WHEN USER RATES</p>-->
  
 
@@ -306,6 +303,7 @@
 
 
 </div>
+    </div>
 
     
    
