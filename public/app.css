@@ -865,10 +865,13 @@ color: #e3b304;
 .gymss{
     width:25%;
     flex:1;
+    align-items: flex-start;
    
 }
 
 .maps{
+    flex:1;
+    margin-top: 72px;
     /*text-align: right;*/
     
    
