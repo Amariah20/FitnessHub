@@ -82,8 +82,10 @@
 </div>
 
 
-
+<div class="row">
+    
 <div class="location_img">
+<div class="col-8">
     <div class="location_hours">
       <!--  <h4 class="sub-heading">Location</h4>
     <ul class="location">    
@@ -100,11 +102,14 @@
             <p> {{trim($hour)}}</p>
         @endforeach
     </div>
-    <!--<p class="hours"> {{$gym-> opening_hours}} </p>-->
+    </div>
 </div>
 
+<div class="col-4">
 <div class="extra_img">
     <img src="{{ asset('public/images/uploaded/gym_' . $gym->user_id.$gym->name . '/' . $gym->extra_image) }}" alt="extra image" style="width:500px; height: 500px;" >
+</div>
+</div>
 </div>
 </div>
 
