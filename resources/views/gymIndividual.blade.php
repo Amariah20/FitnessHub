@@ -67,7 +67,7 @@
   <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
 </svg>
 @if($gps)
-<p  > <a href="https://www.google.com/maps/search/?api=1&query={{$gps->latitude}},{{$gps->longitude}}" target="blank" style="color:black;">
+<p  > <a href="https://www.google.com/maps/search/?api=1&query={{$gps->latitude}},{{$gps->longitude}}" target="blank" >
     {{$gym->location}}, {{$gym->general_location}} </p></a>
 @else
     <p style="color:black;">{{$gym->location}}, {{$gym->general_location}} </p>
