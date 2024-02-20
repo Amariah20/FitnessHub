@@ -166,7 +166,8 @@
 </div>
 </div>
 
-
+<div class="row">
+    
 <h4 class="sub-heading" id="contact">Contact us</h4>
 <div class="contact_split">
 <div class="contact_form">
@@ -232,7 +233,7 @@
      </div>
 </div> 
 </div>
-
+</div>
 <!--<p>MOVE THIS TO THE OTHER SIDE OF THE PAGE. HAVE A SPLIT SCREEN. ELSE IF IT'S BELOW, IT WILL SCROLL UP WHEN USER RATES</p>-->
  
 

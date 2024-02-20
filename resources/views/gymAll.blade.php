@@ -29,7 +29,7 @@
        
     </select>
     <button type="submit" class="btn btn-dark">Sort</button>
-</form>   <br>
+</form>   
 
 <form action="{{route('filterLocation')}}" method="get" class="sort_filter">
 

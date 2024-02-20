@@ -539,15 +539,14 @@ color: #e3b304;
 
 .form-sort{
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-end;
-    /*justify-content: right;*/
+  
     
 }
 
 .sort_filter{
     height: 25px;
+    margin-right: 5%;
+    padding-left: 30px;
 }
 
 .sort_filter select{
