@@ -21,22 +21,27 @@
     </div>
 @endif
 
+
+    <div class="profile">
+
 <h1>User Information</h1>
-<p>{{$user->name}}</p>
-<p>{{$user->email}}</p>
-<p>{{$user->date_of_birth}}</p>
-<p>{{$user->address}}</p>
+
+<p>Name: {{$user->name}}</p>
+<p>Email: {{$user->email}}</p>
+<p>Date of Birth: {{$user->date_of_birth}}</p>
+<p>Address: {{$user->address}}</p>
 <form method="post" action="{{route('editUserDetails')}}">
     @csrf
     <input type="hidden"  name="user_id" value="{{$user->id}}">
-   <button type= "submit">Edit Your Information</button>
-</form>
+   <button class="btn btn-success" type= "submit">Edit Your Information</button>
+</form> <br><BR>
 
 @if(!$favGyms==null)
  <h1>Your Favourite Gyms</h1>
  @foreach($favGyms as $gym)
- <li> <h1><a href="{{ route('gymIndividual', ['Gym_id' => $gym->Gym_id]) }}">{{ $gym->name }}</a></h1> </li>
+ <li> <a href="{{ route('gymIndividual', ['Gym_id' => $gym->Gym_id]) }}">{{ $gym->name }}</a></li>
  @endforeach
 @endif
+    </div>
 
 @endsection
