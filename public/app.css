@@ -171,8 +171,11 @@ a:link {
 
 .wrapper{
   display: flex;  
-  flex-flow: row wrap;
-  font-weight: bold;
+  /*flex-flow: row wrap;*/
+  flex-direction: column;
+  
+  min-height: 100vh;
+  
  
 }
 
