@@ -326,7 +326,7 @@ transform: translateY(-100%); /*moves it to the top*/
 .classes{
     width:50%;
     padding-left: 5%;
-    padding: 10px 10px 10px 10px;
+    padding: 10px 10px 10px 20px;
     align-items: center;
     justify-content: center;
     text-align: center;
