@@ -15,6 +15,7 @@ use App\Models\Offerings;
 use Laravel\Ui\Presets\React;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Rating;
 
 //I used these for help:  https://laracasts.com/series/laravel-8-from-scratch/episodes/37 and https://www.youtube.com/watch?v=aPYEOVDTV6E, https://stackoverflow.com/questions/39321570/laravel-wherein-or-wheren-with-where#:~:text=Note%3A%20where%20will%20compare%20with,compare%20evey%20index%20of%20array. 
     //I found information about pluck method here: https://laravel.com/docs/10.x/collections
@@ -227,8 +228,11 @@ public function search(Request $req){
 
         $users= User::where('name', 'like','%'.$searchitems. '%')
         ->orWhere('email',  'like','%'.$searchitems. '%')->get();
+        $newRating = Rating::where('approved', 'awaiting approval');
+        $newRatings =$newRating->count();
+    
 
-        return view('GlobalAdmin.AdminAccess', compact('users'));
+        return view('GlobalAdmin.AdminAccess', compact('users', 'newRatings'));
 
 
     }
