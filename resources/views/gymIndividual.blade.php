@@ -126,7 +126,9 @@
 </div>
  
 
+<div class="row">
 <div class="classes_equipments">
+<div class="col-6">
     <div class="classes">
         @if($count>=1)
             @if($numOfclasses>=1 && $numOfofferings==0 )
@@ -148,7 +150,9 @@
            
             @endif
     </div>
+</div>
 
+<div class="col-6">
     <div class="equipments">
         @if($numequipment>=1)
         <h5 class ="view">View Our Equipments</h5>
@@ -159,7 +163,8 @@
     </div>
         
 </div>
-
+</div>
+</div>
 
 
 <h4 class="sub-heading" id="contact">Contact us</h4>
