@@ -10,7 +10,6 @@
   
 
 
-
             
 <div class="banner">
     <img src="{{ asset('public/images/uploaded/gym_' . $gym->user_id.$gym->name . '/' . $gym->banner) }}" alt="banner" style="width:100%; height:600px">
@@ -302,8 +301,6 @@
 </div>
 </div>
 
-
-</div>
 
 
     

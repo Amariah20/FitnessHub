@@ -230,3 +230,7 @@ Route::get('/newmaps', function () {
 Route::get('/gps/create', 'App\Http\Controllers\GpsController@createGps')->middleware('admin')->name('gps.create'); 
 Route::post('/gps/store', 'App\Http\Controllers\GpsController@storeGps')->middleware('admin')->name('gps.store');
 
+/*
+Route::get('/css', function () {
+    return view('csstest');
+})->name('css');*/
