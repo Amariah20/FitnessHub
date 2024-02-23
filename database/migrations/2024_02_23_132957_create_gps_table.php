@@ -11,13 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('gps', function (Blueprint $table) {
-            
+        Schema::create('gps', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->float('latitude', 10, 7); //10 nums allowed in total, 7 decimal places allowed
             $table->float('longitude', 10, 7 );
             $table->timestamps();
+    $table->unsignedBigInteger('gym_id'); // The foreign key column
+
+            // Define the foreign key constraint
+            $table->foreign('gym_id')->references('gym_id')->on('gyms')->onDelete('cascade');
         });
     }
 
@@ -26,8 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('gps', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('gps');
     }
 };
