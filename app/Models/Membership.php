@@ -12,7 +12,7 @@ class Membership extends Model
       //rela between gym and membership
       public function gym()
       {
-          return $this->belongsTo(Gym::class, 'gym_id');
+          return $this->belongsTo(Gym::class, 'gym_id', 'Gym_id');
       }
 
       protected $fillable = [
@@ -20,5 +20,6 @@ class Membership extends Model
         'price',
         'description',
         'membership_type',
+        'gym_id',
       ];
 }
