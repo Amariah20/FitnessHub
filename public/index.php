@@ -54,7 +54,7 @@ $response = $kernel->handle(
 
 $kernel->terminate($request, $response);
 
-
+/*
 //reference:https://www.doabledanny.com/Deploy-PHP-And-MySQL-to-Heroku 
 //Get Heroku ClearDB connection information
 $cleardb_url = parse_url(getenv("CLEARDB_DATABASE_URL"));
@@ -67,4 +67,4 @@ $query_builder = TRUE;
 // Connect to DB
 $conn = mysqli_connect($cleardb_server, $cleardb_username, $cleardb_password, $cleardb_db);
 //$conn = new PDO ("mysql:host=$cleardb_server;dbname=$cleardb_db",$cleardb_username, $cleardb_password);
-//$conn = new PDO ($cleardb_server,$cleardb_username, $cleardb_password);
+//$conn = new PDO ($cleardb_server,$cleardb_username, $cleardb_password); */
