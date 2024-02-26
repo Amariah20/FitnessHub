@@ -5,6 +5,7 @@ use Illuminate\Support\Str;
 
  //reference:https://www.doabledanny.com/Deploy-PHP-And-MySQL-to-Heroku 
         //Get Heroku ClearDB connection information
+        //$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
         $url = parse_url(getenv("CLEARDB_RED_URL"));
         $host = $url["host"];
         $username = $url["user"];

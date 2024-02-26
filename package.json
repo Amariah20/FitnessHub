@@ -2,10 +2,19 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "dev": "vite",
-        "build": "vite build"
+        "vite": "vite",
+        "server": "nodemon server.cjs",
+        "dev": "concurrently \"npm:server\" \"npm:vite\"",
+        "build": "vite build",
+        "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+        "preview": "vite preview",
+        "start": "serve -s dist",
+        "heroku-postbuild": "npm run build"
     },
-    "devDependencies": {
+ 
+    "dependencies": {
+        "@googlemaps/js-api-loader": "^1.16.2",
+        "vue2-google-maps": "^0.10.7",
         "@popperjs/core": "^2.11.6",
         "@vitejs/plugin-vue": "^4.5.0",
         "axios": "^1.1.2",
@@ -14,9 +23,6 @@
         "sass": "^1.56.1",
         "vite": "^4.0.0",
         "vue": "^3.2.37"
-    },
-    "dependencies": {
-        "@googlemaps/js-api-loader": "^1.16.2",
-        "vue2-google-maps": "^0.10.7"
+        
     }
 }
