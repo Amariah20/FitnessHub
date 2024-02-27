@@ -55,7 +55,8 @@ fetch('/locations')
             });
 
             function createMarker(latlng, icon, title){
-                var marker = new google.maps.Marker({
+              //var marker = new google.maps.Marker({
+                var marker = new google.maps.marker({
                 position: latlng, 
                 map: map,
                 icon:icon,
