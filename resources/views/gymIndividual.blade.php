@@ -252,15 +252,15 @@
         <form action="{{route('storeRating')}}" method="POST" id="ratingForm">
             @csrf
             <div class="rate" name="rate">
-                <input type="radio" id="star5" name="rate" value="5" />
+                <input type="radio" id="star5" class="rating-star-disable" name="rate" value="5" />
                 <label for="star5" title="text">5 stars</label>
-                <input type="radio" id="star4" name="rate" value="4" />
+                <input type="radio" class="rating-star-disable" id="star4" name="rate" value="4" />
                 <label for="star4" title="text">4 stars</label>
-                <input type="radio" id="star3" name="rate" value="3" />
+                <input type="radio" class="rating-star-disable" id="star3" name="rate" value="3" />
                 <label for="star3" title="text">3 stars</label>
-                <input type="radio" id="star2" name="rate" value="2" />
+                <input type="radio" class="rating-star-disable" id="star2" name="rate" value="2" />
                 <label for="star2" title="text">2 stars</label>
-                <input type="radio" id="star1" name="rate" value="1" />
+                <input type="radio" class="rating-star-disable" id="star1" name="rate" value="1" />
                 <label for="star1" title="text">1 star</label>
             </div>
             <div class="mb">
@@ -302,16 +302,14 @@
 </div>
 
 
-
-    
-   
-<!--
+<!-- Trying to disable auto scroll up of stars -->
 <script>
-    document.querySelectorAll('.rate input').forEach(function(star){
+    var ratingStars = document.querySelectorAll('.rating-star-disable');
+    
+    ratingStars.forEach(function(star){
         star.addEventListener('click', function(event){
             event.preventDefault();
-         
         });
     });
-</script>-->
+</script>
 @endsection
