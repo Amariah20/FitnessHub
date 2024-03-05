@@ -52,7 +52,7 @@ class GpsController extends Controller
             $gps->save();
 
             
-            return redirect()->route('AdminFirst')->with('success', 'Gps coordinates successfully added!');
+            return redirect()->route('AdminFirst')->with('success', 'Gps coordinates successfully added and gym has been created!');
 
            }
 

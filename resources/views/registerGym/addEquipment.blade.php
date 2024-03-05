@@ -39,12 +39,12 @@
 
     <div class="mb">
         <label class="label">Equipment Name</label>
-        <input type="text" name="name"  value="{{ old ('name') }}" class="form-control">
+        <input type="text" name="name"  value="{{ old ('name') }}" class="form-control" required>
     </div>
  
        <div class="mb">
         <label class="label">Equipment Description</label>
-        <textarea class="form-control" name="description" value="{{ old ('description') }}" rows="3"></textarea>
+        <textarea class="form-control" name="description" value="{{ old ('description') }}" rows="3" required></textarea>
     </div>
 
     <div class="mb">

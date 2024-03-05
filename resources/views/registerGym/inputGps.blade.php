@@ -42,12 +42,12 @@
     </div>-->
     <div class="mb">
         <label class="label">Latitude</label>
-        <input type="float" name="latitude" class="form-control"  value="{{ old ('latitude') }}"  >
+        <input type="float" name="latitude" class="form-control"  value="{{ old ('latitude') }}" required >
     </div>
 
     <div class="mb">
         <label class="label">Longitude</label>
-        <input type="float" name="longitude" class="form-control"  value="{{ old ('longitude') }}" >
+        <input type="float" name="longitude" class="form-control"  value="{{ old ('longitude') }}" required>
     </div>
     <div class="mb">
     <label class="label">Which gym do you want to associate with this class?</label>
