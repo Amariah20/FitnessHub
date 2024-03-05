@@ -37,14 +37,14 @@ class OfferingController extends Controller
             // Checking if user has a gym
             if ($CurrentUser->gym->isEmpty()) { //there's a rela between gym and user in models.
             
-              return redirect()->back()->withErrors(['error' => 'You must create a gym first, before adding an offering.']);
+              return redirect()->back()->withErrors(['error' => 'You must create a gym first, before adding a service.']);
             }
             
 
            
             if (($req->SelectedGymID== "Select Gym")) {
                 
-                return redirect()->back()->withErrors(['error' => 'Please select a gym before adding an offering.'])->withInput();
+                return redirect()->back()->withErrors(['error' => 'Please select a gym before adding  a service.'])->withInput();
            }
 
 

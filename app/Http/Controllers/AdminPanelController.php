@@ -411,7 +411,7 @@ class AdminPanelController extends Controller
             }
         $offering->update();
 
-        return redirect()->route('AdminOffering', ['Gym_id' => $offering->gym_id] )->with('Success', 'Offering updated successfully');
+        return redirect()->route('AdminOffering', ['Gym_id' => $offering->gym_id] )->with('Success', 'Service updated successfully');
         } else if ($clean == false){
 
             return redirect()->back()->withErrors(['Error','Inappropriate language detected in input.']);
@@ -602,7 +602,7 @@ class AdminPanelController extends Controller
             $NewOffering->gym_id = $Gym_id;
 
             $NewOffering->save();
-            return redirect()->route('AdminOffering', ['Gym_id' => $Gym_id] )->with('Success', 'Offering added successfully');
+            return redirect()->route('AdminOffering', ['Gym_id' => $Gym_id] )->with('Success', 'Service added successfully');
        
         } else if ($clean == false){
 
@@ -696,7 +696,7 @@ class AdminPanelController extends Controller
 
         $offering->delete();
     
-        return redirect()->route('AdminOffering', ['Gym_id' =>  $Gym_id])->with('Success', 'Offering Deleted Successfully');
+        return redirect()->route('AdminOffering', ['Gym_id' =>  $Gym_id])->with('Success', 'Service Deleted Successfully');
 
     }
 
