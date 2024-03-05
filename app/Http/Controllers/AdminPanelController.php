@@ -525,7 +525,7 @@ class AdminPanelController extends Controller
         
         $Gym_id= $Gym_id;
         $user = Auth::user();   
-        return view('AdminInterface.AdminAddMembership',['Gym_id'=> $Gym_id], compact('user'));
+        return view('AdminInterface.adminAddMembership',['Gym_id'=> $Gym_id], compact('user'));
     }
 
     public function AdminMembershipStore(MembershipValidation $req, $Gym_id){
@@ -575,7 +575,7 @@ class AdminPanelController extends Controller
         
         $Gym_id= $Gym_id;   
         $user = Auth::user();
-        return view('AdminInterface.AdminAddOffering',['Gym_id'=> $Gym_id], compact('user'));
+        return view('AdminInterface.adminAddOffering',['Gym_id'=> $Gym_id], compact('user'));
     }
 
     public function AdminOfferingStore(OfferingValidation $req, $Gym_id){
