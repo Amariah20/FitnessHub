@@ -4,7 +4,7 @@
 
 
 <!--I used this for help with splitting the screen in two: https://www.w3schools.com/howto/howto_css_split_screen.asp -->
-<<link rel="stylesheet" type="text/css" href="/getStarted.css"> 
+<link rel="stylesheet" type="text/css" href="/getStarted.css"> 
 <div class="split left">
     
     <img class="logo" src="{{ asset('images/SmallLogo.png') }}">
