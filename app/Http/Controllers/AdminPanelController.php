@@ -471,7 +471,7 @@ class AdminPanelController extends Controller
         
         $Gym_id= $Gym_id;
         $user = Auth::user();   
-        return view('AdminInterface.AdminAddClass',['Gym_id'=> $Gym_id], compact ('user'));
+        return view('AdminInterface.adminAddClass',['Gym_id'=> $Gym_id], compact ('user'));
  }
 
      public function AdminClassStore(ClassValidation $req, $Gym_id){
