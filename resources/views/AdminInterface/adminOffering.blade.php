@@ -4,7 +4,7 @@
 
 
 
-<h2>Offerings</h2>
+<h2>Services</h2>
 @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
