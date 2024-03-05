@@ -3,7 +3,7 @@
 @section('content')
 
 
-<img src="{{asset('images/google.png')}}" style="width: 100%; height:750px;" >
+<img src="{{asset('images/AboutUs2.jpg')}}" style="width: 100%; height:750px;" >
 
 <div class="about-us">
 <h1>About Us</h1>
