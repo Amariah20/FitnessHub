@@ -18,7 +18,7 @@
     <h6 class="alert alert-success">{{ session('Success') }}</h6>
 @endif
 
-<a href="{{route('AdminAddOffering', ['Gym_id' => $Gym_id])}}"><button id="add" class="btn btn-success">Add New Offering</button></a>
+<a href="{{route('AdminAddOffering', ['Gym_id' => $Gym_id])}}"><button id="add" class="btn btn-success">Add New Service</button></a>
 <!--search-->
 <div class="input-box">
 <form method="GET" action="{{route ('searchOffering', ['Gym_id' => $Gym_id])}}" id="search" >

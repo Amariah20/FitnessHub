@@ -21,12 +21,12 @@
 
 
 <div id="add-admin" class="container">
-<div class="card-header">Add New Offering</div>
+<div class="card-header">Add New Service</div>
 <form method="POST" action="{{ route('AdminOfferingStore', ['Gym_id' => $Gym_id]) }}">
 @csrf
 
 <div class="form-group">
-        <label>Name of Service/Offering</label>
+        <label>Name of Service</label>
         <input type="text" name="name" class="form-control" required>
     </div>
     <div class="form-group">
