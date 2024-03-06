@@ -54,8 +54,8 @@ class AdminPanelController extends Controller
             if($clean==false){
        
               
-               return $value;
-               //return false;
+              // return $value;
+               return false;
             }
             
         }
@@ -330,10 +330,10 @@ class AdminPanelController extends Controller
 
     }
 
-    //else if ($clean == false){
-        else{
+    else if ($clean == false){
+        //else{
 
-        return redirect()->back()->withErrors(['Error','Inappropriate language detected in input.'.$clean]);
+        return redirect()->back()->withErrors(['Error','Inappropriate language detected in input.']);
     }
     } catch (\Exception $e){
         $error= "An error occured:". $e->getMessage();
