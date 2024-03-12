@@ -23,7 +23,8 @@
 @method("patch")
 
     
-
+<div class="register-info">
+<div class="register">
     <div class="form-group">
         <label>Fitness Centre Name:</label>
         <input class="form-control" type="text" placeholder="{{$gym->name}}" readonly>
@@ -114,6 +115,9 @@
 </form>
 
 </div>
+</div>
+
+<div class="info">
 
 <div class="card" style="width: 18rem; margin-top:115px;">
             <div class="icon">
@@ -172,7 +176,8 @@
                         
                     </div>
         </div>
-
+</div>
+</div>
 
 <!--
 <div id="edit" class="container">
