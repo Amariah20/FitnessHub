@@ -277,7 +277,7 @@ h2{
 .info{
     float: right;
     width: 20%;
-    padding-right: -110%;
+    margin-right: -110%;
 }
 
 
