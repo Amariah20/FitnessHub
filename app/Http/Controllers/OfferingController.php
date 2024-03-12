@@ -58,7 +58,7 @@ class OfferingController extends Controller
             //dd($value);
             $clean =Profanity::blocker($value)->clean();
             if($clean==false){
-        return redirect()->back()->withErrors(['Error','Inappropriate language detected in input. Please change ' .$value])->withInput();
+            return redirect()->back()->withErrors(['Error','Inappropriate language detected in input. Please change ' .$value])->withInput();
         
             }
             
