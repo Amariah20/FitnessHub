@@ -275,10 +275,9 @@ h2{
 }
 
 .info-edit1{
-    margin-right: auto;
     float: right;
     width: 10%;
-   /* margin-right: -30%;*/
+    margin-right: -30%;
 }
 
 
