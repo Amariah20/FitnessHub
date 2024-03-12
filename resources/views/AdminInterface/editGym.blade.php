@@ -120,6 +120,8 @@
 
 <div class="info-edit1">
   
+
+
 <div class="card" style="width: 18rem; margin-top:-800px;">
             <div class="icon">
                 <svg  xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor"  class="bi bi-info-circle" viewBox="0 0 16 16">
@@ -131,10 +133,33 @@
                         
                         <p class="card-text">Please specifiy your opening hours in detail. If you have different opening hours for different days, please separate them with a dot (.) </p>
                         <p class="card-text">   For example: Monday to Friday 6am to 7pm. Saturday 9am to 12pm.</p>
+
+                          <!--the below instructions are from google maps documentation: https://support.google.com/maps/answer/18539?hl=en-GB&co=GENIE.Platform%3DDesktop  -->
+                          <p class="card-text">In order to display your business on the map, please enter your latitude and longitude. This step is optional. 
+                            <p class="card-text"> To get the coordinates for your business: 
+
+                           
+                                    <li> Open <a href= "https://www.google.com/maps" target="_blank" style="color:blue; text-decoration:underline;">Google Maps</a>.  </li>
+
+                                    <li> Right-click the place or area on the map. </li>
+
+                                    <li> This will open a pop-up window. You can find your latitude and longitude in decimal format at the top. </li>
+
+                                    <li> To copy the coordinates automatically, left click on the latitude and longitude.</li></p>
+                                    <p class="card-text">Alternatively, visit the following website <a href= "https://www.latlong.net/" target="_blank" style="color:blue; text-decoration:underline;">latlong.net</a> and follow the provided instructions to find your latitude and longitude.</p>
+                       
+                                    <p class="card-text">To format your coordinates so that they work in Google Maps, use decimal places in the following format: 
+                                     
+                                            <li>Correct: 41.40338, 2.17403 </p>
+                                             <li>Incorrect: 41,40338, 2,17403 </p></p>
+
+                                             <p class="card-text">Please enter a squared image (with equal width and height) for the logo. Please ensure that the banner is at least 1920x1080 pixels.</p>
                         
                     </div>
         </div>
 
+
+        <!--
 
         <div class="card" style="width: 18rem; margin-top:-740px;padding-bottom:10px;">
             <div class="icon">
@@ -158,7 +183,7 @@
             </div>
                     <div class="card-body">
                         <!--the below instructions are from google maps documentation: https://support.google.com/maps/answer/18539?hl=en-GB&co=GENIE.Platform%3DDesktop  -->
-                        <p class="card-text">In order to display your business on the map, please enter your latitude and longitude. This step is optional. 
+                        <!--<p class="card-text">In order to display your business on the map, please enter your latitude and longitude. This step is optional. 
                             <p class="card-text"> To get the coordinates for your business: 
 
                            
@@ -176,8 +201,8 @@
                                             <li>Correct: 41.40338, 2.17403 </p>
                                              <li>Incorrect: 41,40338, 2,17403 </p></p>
                         
-                    </div>
-        </div>
+                    </div>-->
+       <!-- </div>-->
 
         
 
