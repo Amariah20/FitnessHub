@@ -15,8 +15,8 @@
     </div>
 @endif
  
-<div class="register-info">
-<div class="register">
+<!--<div class="register-info">
+<div class="register">-->
 <div id="edit" class="container">
 <div class="card-header">Edit Gym Details</div>
 
@@ -116,6 +116,7 @@
 </form>
 
 </div>
+
 
 
 
