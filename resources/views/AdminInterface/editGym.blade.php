@@ -116,7 +116,7 @@
 </form>
 
 </div>
-
+<div class="info">
 <div class="card" style="width: 18rem; margin-top:115px;">
             <div class="icon">
                 <svg  xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor"  class="bi bi-info-circle" viewBox="0 0 16 16">
@@ -173,6 +173,7 @@
         </div>
 
       </div>
+</div>
 </div>
 
 
