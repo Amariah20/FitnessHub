@@ -162,11 +162,11 @@
                             <p class="card-text"> To get the coordinates for your business: 
 
                            
-                                    <li> Open <a href= "https://www.google.com/maps" target="_blank" style="color:blue; text-decoration:underline;">Google Maps</a>.  </li>
+                                    <li> Open <a href= "https://www.google.com/maps" target="_blank" style="color:blue; text-decoration:underline;">Google Maps</a>.  </li></p>
 
-                                    <li> Right-click the place or area on the map. </li>
+                                    <li> Right-click the place or area on the map. </li></p>
 
-                                    <li> This will open a pop-up window. You can find your latitude and longitude in decimal format at the top. </li>
+                                    <li> This will open a pop-up window. You can find your latitude and longitude in decimal format at the top. </li></p>
 
                                     <li> To copy the coordinates automatically, left click on the latitude and longitude.</li></p>
                                     <p class="card-text">Alternatively, visit the following website <a href= "https://www.latlong.net/" target="_blank" style="color:blue; text-decoration:underline;">latlong.net</a> and follow the provided instructions to find your latitude and longitude.</p>
