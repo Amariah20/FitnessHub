@@ -133,7 +133,7 @@
                         
                         <p class="card-text">Please specifiy your opening hours in detail. If you have different opening hours for different days, please separate them with a dot (.) </p>
                         <p class="card-text">   For example: Monday to Friday 6am to 7pm. Saturday 9am to 12pm.</p>
-                        <br><br><br><br><br>
+                        <br><br><br>
                         <div class="icon">
                           <svg  xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor"  class="bi bi-info-circle" viewBox="0 0 16 16">
                           <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
@@ -143,7 +143,7 @@
 
                         <p class="card-text">Please enter a squared image (with equal width and height) for the logo. Please ensure that the banner is at least 1920x1080 pixels.</p>
 
-                        <br><br><br><br><br>
+                        <br><br>
                         <div class="icon">
                           <svg  xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor"  class="bi bi-info-circle" viewBox="0 0 16 16">
                           <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
