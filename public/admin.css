@@ -274,6 +274,10 @@ h2{
     padding-left: 5%;
 }
 
-
+.info{
+    float: right;
+    width: 20%;
+    padding-right: 6%;
+}
 
 
