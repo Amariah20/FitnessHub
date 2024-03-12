@@ -161,20 +161,20 @@
                         <p class="card-text">In order to display your business on the map, please enter your latitude and longitude. This step is optional. 
                             <p class="card-text"> To get the coordinates for your business: </p>
 
-                            <ul>
-                                    <li> Open <a href= "https://www.google.com/maps" target="_blank" style="color:blue; text-decoration:underline;">Google Maps</a>.  </li>
+                           
+                                    <p> Open <a href= "https://www.google.com/maps" target="_blank" style="color:blue; text-decoration:underline;">Google Maps</a>.  </p>
 
-                                    <li> Right-click the place or area on the map. </li>
+                                    <p> Right-click the place or area on the map. </p>
 
-                                    <li> This will open a pop-up window. You can find your latitude and longitude in decimal format at the top. </li>
+                                    <p> This will open a pop-up window. You can find your latitude and longitude in decimal format at the top. </p>
 
-                                    <li> To copy the coordinates automatically, left click on the latitude and longitude.</li></ul> </p>
+                                    <p> To copy the coordinates automatically, left click on the latitude and longitude.</p> </p>
                                     <p class="card-text">Alternatively, visit the following website <a href= "https://www.latlong.net/" target="_blank" style="color:blue; text-decoration:underline;">latlong.net</a> and follow the provided instructions to find your latitude and longitude.</p>
                        
                                     <p class="card-text">To format your coordinates so that they work in Google Maps, use decimal places in the following format: 
-                                        <ul style=" font-size:20px;">
-                                            <li>Correct: 41.40338, 2.17403 </li> 
-                                             <li>Incorrect: 41,40338, 2,17403 </li> </ul></p>
+                                     
+                                            <li>Correct: 41.40338, 2.17403 </p>
+                                             <li>Incorrect: 41,40338, 2,17403 </p></p>
                         
                     </div>
         </div>
