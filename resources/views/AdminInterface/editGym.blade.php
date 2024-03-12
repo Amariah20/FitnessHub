@@ -15,6 +15,8 @@
     </div>
 @endif
  
+<div class="register-info">
+<div class="register">
 <div id="edit" class="container">
 <div class="card-header">Edit Gym Details</div>
 
@@ -169,32 +171,12 @@
                                              <li>Incorrect: 41,40338, 2,17403 </li> </ul></p>
                     </div>
         </div>
-        
+
+      </div>
+</div>
 
 
 
-<!--
-<div id="edit" class="container">
-<div class="card-header">Edit Gps Coordinate</div>
-
-<form method="post" action="{{route('UpdateGps',  ['gps_id' => $gps->id])}}" enctype="multipart/form-data">
-  @csrf
-  @method("patch")
-    
-  <div class="form-group">
-    <label>Latitude</label>
-    <input type="text" name="latitude" value="{{ $gps->latitude }}" class="form-control">
-  </div>
-
-  <div class="form-group">
-    <label>Longitude</label>
-    <input type="text" name="longitude" value="{{  $gps->longitude  }}" class="form-control">
-  </div>
-
-  <button id="update-button" type= "submit" class="btn btn-info">Update </button> <br>
-
-</form>
-</div>-->
 
 
 @endsection
