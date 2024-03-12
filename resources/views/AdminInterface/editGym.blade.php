@@ -161,7 +161,7 @@
                         <p class="card-text">In order to display your business on the map, please enter your latitude and longitude. This step is optional. 
                             <p class="card-text"> To get the coordinates for your business: </p>
 
-                            <ul style=" font-size:20px;">
+                            <ul>
                                     <li> Open <a href= "https://www.google.com/maps" target="_blank" style="color:blue; text-decoration:underline;">Google Maps</a>.  </li>
 
                                     <li> Right-click the place or area on the map. </li>
