@@ -67,23 +67,6 @@
                         <a href="{{route('AdminAccess')}}">Users</a>
                         <a href="{{route('globalAdminGyms')}}">Reviews</a>
                         @endif
-
-
-                        
-        @if(auth()->check() && auth()->user()->is_admin)
-        @if(auth()->user()->gym->isEmpty() && Route::currentRouteName() !== 'registerGym/getStarted')
-         
-             <a href="{{ route('registerGym/getStarted')}}">Register Gym</a>
-        
-         @elseif(auth()->user()->gym->isNotEmpty() && Route::currentRouteName() !== 'AdminFirst')
-         
-             <a href="{{ route('AdminFirst')}}">Admin Panel</a>
-         
-         
-         
-         
-         @endif
-         @endif
                     </div>
                     </ul>
 
@@ -157,7 +140,7 @@
         </svg></a>
     </div>
 
-    <!--
+    
         @if(auth()->check() && auth()->user()->is_admin)
         @if(auth()->user()->gym->isEmpty() && Route::currentRouteName() !== 'registerGym/getStarted')
          <div class="admin-panel-button">
@@ -172,7 +155,7 @@
          
          
          @endif
-         @endif-->
+         @endif
        
        
        
