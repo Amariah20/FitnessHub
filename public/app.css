@@ -878,7 +878,7 @@ color: #e3b304;
 .split {
     height: 100%;
     width: 50%;
-    position: fixed;
+    position: fixed; 
     z-index: 1;
    
     padding-top: 20px; 
@@ -886,8 +886,8 @@ color: #e3b304;
 
   .left {
     left: 0;
-    overflow-y: auto;
-    box-sizing: border-box;
+    overflow-y: auto; /*allows vertical scrolling if content overflows. browser adds scroll bar if needed to see overflowed content*/
+    box-sizing: border-box; /*includes padding and border in elements total width and height. */
 
     
   }
