@@ -72,14 +72,13 @@
                         
         @if(auth()->check() && auth()->user()->is_admin)
         @if(auth()->user()->gym->isEmpty() && Route::currentRouteName() !== 'registerGym/getStarted')
-         <div class="admin-panel-button">
+         
              <a href="{{ route('registerGym/getStarted')}}">Register Gym</a>
-         </div>
+        
          @elseif(auth()->user()->gym->isNotEmpty() && Route::currentRouteName() !== 'AdminFirst')
-         <div class="admin-panel-button">
+         
              <a href="{{ route('AdminFirst')}}">Admin Panel</a>
-         </div>
-
+         
          
          
          
