@@ -6,14 +6,16 @@
         {{ session('no_result') }}
     </div>
 @endif
+
+<div class="split left">
 <div class= "gym_maps">
     <div class="gymss">
-<div class="gymAll">
-<!--<button class="btn btn-dark"><a href="{{ route('maps') }}">Map</a></button>-->
-<!--<a href=#maps id="hyperlink">Maps </a> -->
+    <div class="gymAll">
+    <!--<button class="btn btn-dark"><a href="{{ route('maps') }}">Map</a></button>-->
+    <!--<a href=#maps id="hyperlink">Maps </a> -->
 
-<div class="form-sort">
-<form action="{{route('sortMembershipPrice')}}" method="get" class="sort_filter">
+    <div class="form-sort">
+    <form action="{{route('sortMembershipPrice')}}" method="get" class="sort_filter">
     <select  name="sort">
     <option value="" disabled selected>Sort By:</option>
         <option value="rating">Avg. Customer Rating</option>
@@ -29,9 +31,9 @@
        
     </select>
     <button type="submit" class="btn btn-dark">Sort</button>
-</form>   
+    </form>   
 
-<form action="{{route('filterLocation')}}" method="get" class="sort_filter">
+    <form action="{{route('filterLocation')}}" method="get" class="sort_filter">
 
         <select name="filter_location" >
             <option value="" disabled selected>Filter By Location</option>
@@ -41,7 +43,7 @@
             <option value ="west">West</option>
             <option value ="central">Central</option>
         </select>
-    </select>
+        </select>
     <button type="submit" class="btn btn-dark">Filter</button>
 </form>   <br>
 <!--
@@ -79,13 +81,17 @@
 
 
 </div>
+    
 
     @endforeach
 </div>
    
 {{$gyms->links()}}
 </div>
+</div>
 
+
+<div class="split right">
     <div class="maps" id="maps" >
         <script type="text/javascript" src="{{asset('/maps.js') }}"></script>
 
@@ -96,5 +102,5 @@
             </div>
     </div>
 </div>
-
+</div>
 @endsection
