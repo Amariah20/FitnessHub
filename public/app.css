@@ -902,6 +902,7 @@ color: #e3b304;
     /*width: calc(50% -36px);*/
     /*text-align: right;*/
     width: 50%;
+    box-sizing: border-box;
    
   
 }
