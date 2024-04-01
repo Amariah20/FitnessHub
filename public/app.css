@@ -878,13 +878,14 @@ color: #e3b304;
 .gym_maps{
     display:flex;
     height:100%;
-    /*align-items: flex-start;
-    padding-bottom: 20px;
+    align-items: flex-start;
+    /*padding-bottom: 20px;
     padding-top: 20px;*/
 }
 
 .gymss{
-    width:25%;
+    /*width:25%;*/
+    width: 50%;
     flex:1;
     align-items: flex-start;
    
@@ -893,6 +894,7 @@ color: #e3b304;
 .maps{
     flex:1;
     margin-top: 72px;
+    margin-left: auto;
     /*text-align: right;*/
     /*width: 40%;*/
    
