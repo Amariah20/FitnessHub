@@ -874,7 +874,8 @@ color: #e3b304;
 
 }
 
-/*gymAll and maps. split screen*/
+
+/*gymAll and maps. split screen*//*currently looks good only on screen size 80%*/
 .gym_maps{
     display:flex;
     height:100%;
@@ -883,9 +884,11 @@ color: #e3b304;
     padding-top: 20px;*/
 }
 
+
 .gymss{
     /*width:25%;*/
-    width: 50%;
+   /* width: 50%;*/
+   width: calc(50% -36px);
     flex:1;
     align-items: flex-start;
    
@@ -895,6 +898,7 @@ color: #e3b304;
     flex:1;
     margin-top: 72px;
     margin-left: auto;
+    width: calc(50% -36px);
     /*text-align: right;*/
     /*width: 40%;*/
    
