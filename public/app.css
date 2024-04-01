@@ -874,7 +874,7 @@ color: #e3b304;
 
 }
 
-/*new method to split screen*/
+/*new method to split screen for gym cards and map. from w3schools same as method used in getStarted.css*/
 .split {
     height: 100%;
     width: 50%;
@@ -886,12 +886,30 @@ color: #e3b304;
 
   .left {
     left: 0;
+    overflow-y: auto;
+    box-sizing: border-box;
+
     
   }
   
   .right {
     right: 0;
+    overflow-y: auto;
+    box-sizing: border-box;
     
+  }
+
+  .gym_maps{
+    height: 100%;
+  }
+
+  .maps{
+    height:100%;
+  }
+
+  #map{
+    height:100%;
+    width: 100%;
   }
 /*gymAll and maps. split screen*//*currently looks good only on screen size 80%*/
 /*.gym_maps{
