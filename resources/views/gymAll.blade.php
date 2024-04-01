@@ -7,7 +7,7 @@
     </div>
 @endif
 
-<div class="split left">
+
 <div class= "gym_maps">
     <div class="gymss">
     <div class="gymAll">
@@ -46,21 +46,12 @@
         </select>
     <button type="submit" class="btn btn-dark">Filter</button>
 </form>   <br>
-<!--
-<form action="{{'sortRating'}}" method="get" class="sort_filter">
-    <select name="sort_rating">
-    <option value="" disabled selected>Sort By Customer Reviews</option>
-        <option value="rating-low">Low to High</option>
-        <option value="rating-high">High to Low</option>
-    </select>
-    <button type="submit" class="btn btn-dark">Sort</button>
 
-</form>-->
 
 
 </div>
 
-
+<div class="split left">
 
 @foreach($gyms as $gym)
 <div class="gym_cards">
