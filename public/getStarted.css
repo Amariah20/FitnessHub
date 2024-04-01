@@ -30,8 +30,8 @@
  .bannerlogo_instructions{
   display:flex;
   align-items: flex-start;
-  padding-bottom: 20px;
-  padding-top: 20px;
+  padding-bottom: 5%;
+  padding-top: 5%;
 }
 
 .bannerlogo{

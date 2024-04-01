@@ -31,8 +31,7 @@
         
        
     </div>
-</div>
-</div>
+
    
     
 
@@ -40,7 +39,8 @@
     <form action="{{ route('gyms.create') }}" method="GET">
     <button type="submit">Get Started</button>
 
-    
+    </div>
+</div>
 </form>
 
 
