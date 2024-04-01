@@ -89,7 +89,7 @@
 
 
         <div class="container">
-            <div id="map">
+            <div id="map" style= "height:100%; width: 100%; padding-left:0px;">
             </div>
     </div>
 </div>
