@@ -1,5 +1,5 @@
 /*I used this for help with splitting the screen in two: https://www.w3schools.com/howto/howto_css_split_screen.asp */
-/*CHECK APP.CSS FOR ANOTHER WAY TO SPLIT SCREEN. DID IT FOR INDIVIDUAL GYM PG*/
+/*CHECK APP.CSS FOR ANOTHER WAY TO SPLIT SCREEN. DID IT FOR INDIVIDUAL GYM PG*//*
 .split {
     height: 100%;
     width: 50%;
@@ -8,24 +8,42 @@
     padding-top: 5%;
     overflow: auto;
    
-  }
+  }*/
 
-  /*control left side*/
+  /*control left side*//*
   .left{
     left:0;
     padding-left: 10px;
     overflow-y: auto;
     position: fixed;
-  }
+  }*/
 
-    /* Control the right side */
+    /* Control the right side *//*
 .right {
     right: 0;
     padding-right: 20px;
     overflow-y: auto;
     position: fixed;
     
- } 
+ } */
+
+ .bannerlogo_instructions{
+  display:flex;
+  align-items: flex-start;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.bannerlogo{
+  width:50%;
+  padding-left: 5%;
+}
+
+.instructions{
+  /*text-align: right;*/
+  margin-left: auto;
+
+}
  
 .right .container{
     background-color: #E6E6E6;

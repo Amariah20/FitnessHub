@@ -874,7 +874,7 @@ color: #e3b304;
 
 }
 
-/*new method to split screen for gym cards and map. from w3schools same as method used in getStarted.css*/
+/*new method to split screen for gym cards and map. from *I used this for help with splitting the screen in two. from https://www.w3schools.com/howto/howto_css_split_screen.asp */*/
 .split {
     height: 100%;
     width: 50%;

@@ -5,13 +5,16 @@
 
 <!--I used this for help with splitting the screen in two: https://www.w3schools.com/howto/howto_css_split_screen.asp -->
 <link rel="stylesheet" type="text/css" href="/getStarted.css"> 
+<div class= "bannerlogo_instructions">
+<div class="bannerlogo">
 <div class="split left">
     
     <img class="logo" src="{{ asset('images/SmallLogo.png') }}">
     <p class="banner">It's easy to get started on</p>
     <p class= "banner"> Fitness Hub</p>
 </div>
-
+</div>
+<div class="instructions">
 <div class="split right">
     
     <div class= "container"> 
@@ -28,8 +31,8 @@
         
        
     </div>
-    
-
+</div>
+</div>
    
     
 
