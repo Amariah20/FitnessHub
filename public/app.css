@@ -876,20 +876,22 @@ color: #e3b304;
 
 /*new method to split screen*/
 .gym_maps{
- display:flex;
- height: 100%;
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+ 
 
 }
 
-.gymss, .maps{
- flex:1;
- box-sizing: border-box;
-
+.gymss{
+    left:0;
 }
 
 .maps{
  margin-top: 72px;
- margin-left: auto;
+ right: 0;
+ 
 
 }
 /*gymAll and maps. split screen*//*currently looks good only on screen size 80%*/
