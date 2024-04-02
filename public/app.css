@@ -51,10 +51,13 @@ body {
     font-size: 18px;
 }
 
+.admin-panel-button{
+    margin-left: 500px;
+}
 .admin-panel-button button{
     height:35px;
     width:110px;
-    margin-left: 500px;
+    
    
 }
 
