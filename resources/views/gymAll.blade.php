@@ -89,7 +89,7 @@
 
 
         <div class="container">
-            <div id="map" style= "height:1530px; width: 500px; padding-left:0px;">
+            <div id="map" style= "height:1530px; width: 550px; padding-left:0px; margin-top:72px;">
             <!--<div id="map" style= "height:1530px; width: 1000px; padding-left:0px;">-->
             </div>
     </div>
