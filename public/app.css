@@ -964,7 +964,7 @@ color: #e3b304;
 .maps{
     right:0;
     margin-left: auto;
-    
+    transform: translateX(50%);
   
 }
 
