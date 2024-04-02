@@ -962,11 +962,11 @@ color: #e3b304;
 }
 
 .maps{
-    right:0;
+    
     margin-left: auto;
    /* transform: translateX(50%);*/
    margin-top: 72px;
-   margin-right:20%;
+   margin-right:-70%;
   
 }
 
