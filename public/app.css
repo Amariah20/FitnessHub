@@ -883,7 +883,6 @@ color: #e3b304;
     width: 50%;
     position: fixed; 
     z-index: 1;
-   
     padding-top: 20px; 
   }
 
@@ -905,11 +904,17 @@ color: #e3b304;
   }
 
   .gym_maps{
+    display: flex;
     height: 100%;
+  }
+  
+  .gymss{
+    flex:1;
   }
 
   .maps{
     height:100%;
+    
   }
 
  
