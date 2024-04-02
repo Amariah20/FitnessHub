@@ -51,12 +51,7 @@ body {
     font-size: 18px;
 }
 
-.admin-panel-button{
-    position: absolute;
-    left:20px;
-    transform: translateY(-50%); /*moves to the left along x axis*/
 
-}
 .admin-panel-button button{
     height:35px;
     width:110px;
