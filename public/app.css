@@ -878,7 +878,7 @@ color: #e3b304;
 }
 
 /*new method to split screen for gym cards and map. from *I used this for help with splitting the screen in two. from https://www.w3schools.com/howto/howto_css_split_screen.asp */*/
-.split {
+/*.split {
     height: 100%;
     width: 50%;
     position: fixed; 
@@ -886,13 +886,14 @@ color: #e3b304;
    
     padding-top: 20px; 
   }
-
+*/
+  /*
   .left {
     left: 0;
-    overflow-y: auto; /*allows vertical scrolling if content overflows. browser adds scroll bar if needed to see overflowed content*/
-    box-sizing: border-box; /*includes padding and border in elements total width and height. */
+    overflow-y: auto; *//*allows vertical scrolling if content overflows. browser adds scroll bar if needed to see overflowed content*/
+   /* box-sizing: border-box;*/ /*includes padding and border in elements total width and height. */
 
-    
+  /*  
   }
   
   .right {
@@ -908,9 +909,10 @@ color: #e3b304;
 
   .maps{
     height:100%;
-  }
+  }*/
 
  
+
 /*gymAll and maps. split screen*//*currently looks good only on screen size 80%*/
 /*.gym_maps{
     display:flex;
@@ -942,6 +944,28 @@ color: #e3b304;
    
   
 }*/
+
+/*gymALL split screen*/ 
+
+
+.gym_maps{
+    display:flex;
+    align-items: flex-start;
+    height:100%;
+    padding-top: 20px;
+}
+
+.gymss{
+    width:50%;
+   
+}
+
+.maps{
+    /*text-align: right;*/
+    margin-left: auto;
+    margin-top: 70px;
+  
+}
 
 /*user profile*/
 .profile{
