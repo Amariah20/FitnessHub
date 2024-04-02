@@ -149,11 +149,7 @@
          @elseif(auth()->user()->gym->isNotEmpty() && Route::currentRouteName() !== 'AdminFirst')
          <div class="admin-panel-button">
              <button class="btn btn-dark"><a href="{{ route('AdminFirst')}}">Admin Panel</a></button>
-         </div>
-
-         
-         
-         
+         </div>             
          @endif
          @endif
        

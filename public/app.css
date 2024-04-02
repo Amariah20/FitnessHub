@@ -53,13 +53,15 @@ body {
 
 .admin-panel-button button{
     height:35px;
-    width:130px;
+    width:110px;
+    padding-right: 20px;
    
 }
 
 .admin-panel-button a{
     text-decoration:none; 
     color:white;
+   
 
 }
 
