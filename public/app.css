@@ -957,6 +957,7 @@ color: #e3b304;
 
 .gymss{
     width:50%;
+    box-sizing: border-box;
    
 }
 
@@ -964,6 +965,7 @@ color: #e3b304;
     right:0;
     margin-left: auto;
     margin-top: 70px;
+    box-sizing: border-box;
   
 }
 
