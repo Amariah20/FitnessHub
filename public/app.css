@@ -961,7 +961,7 @@ color: #e3b304;
 }
 
 .maps{
-    /*text-align: right;*/
+    right:0;
     margin-left: auto;
     margin-top: 70px;
   
