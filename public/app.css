@@ -369,6 +369,7 @@ transform: translateY(-100%); /*moves it to the top*/
 }
 
 
+
 .view{
     font-size:35px;
     font-weight: 545;
@@ -756,6 +757,7 @@ color: #e3b304;
 
 .equipments h1{
     padding-bottom: 30px;
+    text-align: center;
 }
 
 /*GLOBAL ADMIN PANEL*/
