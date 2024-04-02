@@ -52,8 +52,9 @@ body {
 }
 
 .admin-panel-button{
-    
-    transform: translate(-200px,0); /*moves to the left along x axis*/
+    position: absolute;
+    left:20px;
+    transform: translateY(-50%); /*moves to the left along x axis*/
 
 }
 .admin-panel-button button{
