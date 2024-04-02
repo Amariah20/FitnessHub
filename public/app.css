@@ -20,6 +20,7 @@ body {
 .nav-logo{
     position: relative;
     left:-50%;
+    padding-left: 5%;
 }
 
 .global-admin-nav a{
