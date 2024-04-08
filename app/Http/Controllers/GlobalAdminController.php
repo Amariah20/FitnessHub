@@ -43,7 +43,7 @@ class GlobalAdminController extends Controller
         //return ('Admin access revoked successfully.');
     }
 
-    //lines 46 to 48 of globalAdminGyms function was written with the help of AI. AI helped me debug this part. My original solution has been commented out.
+    //lines 50 to 52 of globalAdminGyms function was written with the help of AI. AI helped me debug this part. My original solution has been commented out.
     public function globalAdminGyms(){
         //$gyms=Gym::with('ratings')->all();
        // $pendingCount= Rating::where('approved', 'awaiting approval')->count(); //number of ratings with pending approval
